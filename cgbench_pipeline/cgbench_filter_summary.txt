@@ -1,0 +1,32 @@
+CG-Bench Filter Summary
+============================================================
+Source:                   C:\Users\sun13\Desktop\dataset\source_datasets\cg_bench\CG-Bench\cgbench.json
+Output:                   C:\Users\sun13\Desktop\dataset\cgbench_pipeline\cgbench_filtered.json
+
+总样本数（筛选前）:         12129
+通过筛选的样本数:           1596
+对应唯一视频数:             618
+
+evidence_condition 分布:
+  sufficient:             1152
+  Hallucination:          444
+
+Question type 分布:
+  Perception:             758
+  Reasoning:              0
+  未映射类型（保留原始 sub_category）:
+    Event Cognition: 215
+    Hallucination: 444
+    Entity Cognition: 128
+    Time Cognition: 33
+    Text Cognition: 18
+
+evidence_count 分布（sufficient条目）:
+  2个 clue:               967
+  3个 clue:               186
+  4个及以上:              185
+
+被过滤掉的样本数（各条件独立统计，不去重，不含Hallucination）:
+  clue 数量 < 2:          10529
+  clue 总时长占比超 40%:  18
+  非英语问题排除:         0
