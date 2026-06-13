@@ -1,0 +1,5 @@
+git+https://github.com/salaniz/pycocoevalcap.git@a24f74c
+nncore==0.4.5
+numpy==1.26.4
+sentence-transformers==3.0.1
+torch==2.4.0
