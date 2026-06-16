@@ -1,0 +1,3289 @@
+1
+00:00:04,069 --> 00:00:12,139
+The man known to history as Nikola Tesla was
+born on the 10th of July 1856 in Smiljan,
+
+2
+00:00:12,139 --> 00:00:19,890
+Lika, which was originally part of the Austro-Hungarian
+empire but is now located in Croatia.
+
+3
+00:00:19,890 --> 00:00:26,070
+His father was Milutin Tesla, a priest of
+the Serbian Orthodox Church and the son of
+
+4
+00:00:26,070 --> 00:00:32,070
+Nikola Tesla’s grandfather who was also
+named Nikola. His grandfather had served as
+
+5
+00:00:32,070 --> 00:00:37,640
+a military officer for the French Empire during
+the Napoleonic Wars and had risen to the rank
+
+6
+00:00:37,640 --> 00:00:44,719
+of sergeant, before marrying Tesla’s grandmother
+Ana Kalinic, the daughter of a respected colonel.
+
+7
+00:00:44,719 --> 00:00:49,790
+Following the defeat of Napoleon, Nikola Tesla
+returned to Lika, which was assimilated into
+
+8
+00:00:49,790 --> 00:00:55,840
+the Austro-Hungarian empire, where he fathered
+two sons including Milutin and his brother
+
+9
+00:00:55,840 --> 00:01:02,450
+Josif, as well as 3 daughters named Stanka,
+Janja, and another whose name is unknown.
+
+10
+00:01:02,450 --> 00:01:07,909
+Milutin Tesla and his brother were sent to
+the Austrian Military Officer’s Training
+
+11
+00:01:07,909 --> 00:01:13,259
+Academy to follow the career path of their
+father, and while Josif thrived, eventually
+
+12
+00:01:13,259 --> 00:01:18,900
+becoming a professor of Mathematics at a military
+academy in Austria where he authored several
+
+13
+00:01:18,900 --> 00:01:26,079
+standard mathematical textbooks, Milutin decided
+instead to choose a devotional path, enrolling
+
+14
+00:01:26,079 --> 00:01:33,380
+in the Orthodox Seminary in Plaski to train
+as a priest after being castigated in training
+
+15
+00:01:33,380 --> 00:01:39,409
+for not maintaining the shininess of his brass
+buttons. Nikola Tesla’s mother was Djuka
+
+16
+00:01:39,409 --> 00:01:46,010
+Mandic, the daughter of a priest from Gracac
+called Nikola Mandic, and the sister to three
+
+17
+00:01:46,010 --> 00:01:51,630
+very successful brothers including Nikolai,
+who climbed the ecclesiastical ranks to become
+
+18
+00:01:51,630 --> 00:01:58,009
+the Archbishop of Sarajevo and the Metropolitan
+of the Serbian Orthodox Church in Bosnia,
+
+19
+00:01:58,009 --> 00:02:04,290
+Pajo who became a colonel in the general staff
+of the Austrian army, and finally Trifun who
+
+20
+00:02:04,290 --> 00:02:09,750
+excelled in the business sphere as a respected
+hotelier and landowner. In addition to being
+
+21
+00:02:09,750 --> 00:02:16,790
+a dedicated housewife, Djuka Mandic possessed
+a keen intellect and a strong work ethic and
+
+22
+00:02:16,790 --> 00:02:22,209
+was herself an innovator of her household
+appliances which she often modified to make
+
+23
+00:02:22,209 --> 00:02:28,010
+more efficient. She was “An inventor of
+the first order” according to Tesla and
+
+24
+00:02:28,010 --> 00:02:32,970
+a creative influence on him until her death
+in 1892.
+
+25
+00:02:32,970 --> 00:02:41,599
+Milutin Tesla was a gifted student and graduated
+with top honors in 1845, marrying the 25-year-old
+
+26
+00:02:41,599 --> 00:02:48,790
+Djuka Mandic in 1847 after being delegated
+to oversee the parish of Senj on the Adriatic
+
+27
+00:02:48,790 --> 00:02:54,659
+Coast. Settling into a house perched on top
+of a cliff overlooking the ocean, the newlyweds
+
+28
+00:02:54,659 --> 00:03:01,770
+started a family, with Djuka giving birth
+to their eldest son Dane in 1848, a firstborn
+
+29
+00:03:01,770 --> 00:03:09,910
+daughter Angelina in 1850, and finally another
+daughter Milka in 1852. However due to the
+
+30
+00:03:09,910 --> 00:03:15,360
+poor pay he received and the salty sea air
+which caused him health problems, Milutin
+
+31
+00:03:15,360 --> 00:03:22,470
+Tesla was reassigned to the Church of St Apostles
+Peter and Paul in Smiljan, which meant “the
+
+32
+00:03:22,470 --> 00:03:28,430
+place of sweet basil”, in Lika province,
+where he was provided with a picturesque farmhouse,
+
+33
+00:03:28,430 --> 00:03:35,340
+a parcel of fertile land, and even an Arabian
+horse so that he could ride to see his parishioners,
+
+34
+00:03:35,340 --> 00:03:41,769
+it was given to him by a Turkish pasha based
+in Bosnia as a reward for assisting some local
+
+35
+00:03:41,769 --> 00:03:47,909
+Muslims. As well as being an extremely smart
+man who assembled a vast library packed full
+
+36
+00:03:47,909 --> 00:03:54,360
+of volumes on religion, mathematics, science,
+and literary works in many different tongues,
+
+37
+00:03:54,360 --> 00:04:01,140
+Milutin Tesla was also an arduous reformer
+of the Serbian people, regularly writing articles
+
+38
+00:04:01,140 --> 00:04:06,810
+for a variety of newspapers and tirelessly
+promoting the establishment of language schools
+
+39
+00:04:06,810 --> 00:04:11,209
+where Serbians could learn to read and write.
+
+40
+00:04:11,209 --> 00:04:16,370
+According to his family, Nikola Tesla was
+born at midnight sometime between the ninth
+
+41
+00:04:16,370 --> 00:04:23,139
+and tenth of July 1856 in the middle of a
+terrific thunderstorm. Three days later Nikola
+
+42
+00:04:23,139 --> 00:04:29,180
+was baptized at his family home, and with
+his future seemingly already planned, he was
+
+43
+00:04:29,180 --> 00:04:35,740
+also enlisted as a member of the First Lika
+Regiment of the Ninth Medak Company, a squadron
+
+44
+00:04:35,740 --> 00:04:41,500
+he was to join when he was 15 years old by
+law. By all accounts, Tesla’s childhood
+
+45
+00:04:41,500 --> 00:04:47,630
+was happy, and one he shared with his older
+siblings as well as his younger sister Marica,
+
+46
+00:04:47,630 --> 00:04:53,229
+born in 1859, who would often accompany him
+to the churchyard or the farmyard to play
+
+47
+00:04:53,229 --> 00:04:59,139
+with the chickens, geese, sheep and other
+livestock which his father kept. Tesla was
+
+48
+00:04:59,139 --> 00:05:05,230
+often joined by his black cat Macak, who first
+introduced him to the phenomenon that would
+
+49
+00:05:05,230 --> 00:05:11,580
+define his life’s work after he set off
+a loud spark upon stroking him, an event which
+
+50
+00:05:11,580 --> 00:05:17,800
+was explained by his father as a secretion
+of electricity. In another formative experience
+
+51
+00:05:17,800 --> 00:05:24,190
+again involving Macak, Tesla noted one day
+how a halo of light suddenly surrounded his
+
+52
+00:05:24,190 --> 00:05:30,860
+dear cat, illuminating briefly, the candlelit
+room he was sitting in. Inspired by such marvels,
+
+53
+00:05:30,860 --> 00:05:37,229
+Tesla devoted much of his energy as a child
+to experimenting and encouraged by his mother’s
+
+54
+00:05:37,229 --> 00:05:42,080
+inventive streak, drew up plans for flying
+machines very similar to how a helicopter
+
+55
+00:05:42,080 --> 00:05:47,550
+would later function, he disassembled clocks
+to see how they worked, and even designed
+
+56
+00:05:47,550 --> 00:05:54,020
+himself a wooden sword so that he could pretend
+to be a valiant Serbian warrior. Behind the
+
+57
+00:05:54,020 --> 00:06:00,199
+fascination however lay a troubled young mind,
+as Tesla revealed that as a young boy, he
+
+58
+00:06:00,199 --> 00:06:05,660
+suffered from a strange affliction whereby
+he couldn’t distinguish images from reality
+
+59
+00:06:05,660 --> 00:06:11,370
+which troubled him greatly. Tesla’s childhood
+trauma was exacerbated by the death of his
+
+60
+00:06:11,370 --> 00:06:17,620
+older brother Dane in 1863, who was killed
+in front of Tesla by the family’s Arabian
+
+61
+00:06:17,620 --> 00:06:23,520
+horse in a traumatic experience that would
+endlessly haunt him, and which was also the
+
+62
+00:06:23,520 --> 00:06:29,699
+reason why his distraught father moved his
+family from the idyllic Croatian countryside
+
+63
+00:06:29,699 --> 00:06:35,729
+to the larger town of Gospić, an unfamiliar
+environment where Tesla struggled to adjust
+
+64
+00:06:35,729 --> 00:06:37,800
+to urban living.
+
+65
+00:06:37,800 --> 00:06:43,800
+The untimely passing of Dane cast a long shadow
+over Tesla’s own relationship with his father
+
+66
+00:06:43,800 --> 00:06:50,449
+who, mired in grief, always under appreciated
+the talents of his youngest son, a neglect
+
+67
+00:06:50,449 --> 00:06:55,870
+that young Nikola tried to compensate for,
+by striving to be perfect in everything he
+
+68
+00:06:55,870 --> 00:07:03,050
+did so that he could win back the love of
+his parents. Blinded by sorrow, Milutin Tesla
+
+69
+00:07:03,050 --> 00:07:08,400
+treated his young son with contempt, flying
+into rages when he caught him reading from
+
+70
+00:07:08,400 --> 00:07:14,819
+his private library, and on one particularly
+hurtful occasion, after Nikola had accidentally
+
+71
+00:07:14,819 --> 00:07:21,320
+ruined a local noblewomen’s dress by unintentionally
+jumping on it as it trailed down the aisle
+
+72
+00:07:21,320 --> 00:07:27,819
+of a church, he slapped his son across the
+face in public as a punishment. As a result
+
+73
+00:07:27,819 --> 00:07:34,319
+of his strained relations, Tesla developed
+a series of peculiar phobias as a child, such
+
+74
+00:07:34,319 --> 00:07:40,930
+as a repulsion for women who wore earrings
+and pearls, a strong aversion to hair, a loathing
+
+75
+00:07:40,930 --> 00:07:46,900
+for the smell of camphor, as well as a number
+of other strange habits, including an obsession
+
+76
+00:07:46,900 --> 00:07:53,150
+with counting his steps and measuring in volume
+the contents of his meals, calculations he
+
+77
+00:07:53,150 --> 00:07:59,830
+was only satisfied with if they were divisible
+by three. Overwhelmed by a plethora of odd
+
+78
+00:07:59,830 --> 00:08:06,010
+neuroses, Tesla was able to regain some sense
+of balance after he came across a novel called
+
+79
+00:08:06,010 --> 00:08:13,830
+Abafi, published in 1836 by Hungarian author
+Miklós Jósika, which featured the story
+
+80
+00:08:13,830 --> 00:08:20,490
+of Olivér Abafi, a young impulsive nobleman
+and hedonist, recast as a valiant national
+
+81
+00:08:20,490 --> 00:08:27,280
+hero who sacrifices himself for the wellbeing
+of the country. Tesla was particularly inspired
+
+82
+00:08:27,280 --> 00:08:33,159
+by the character of the protagonist, seeing
+in his desire to better his moral character
+
+83
+00:08:33,159 --> 00:08:39,640
+while ignoring frivolous distractions, a masterful
+example of self-restraint, which showed Tesla
+
+84
+00:08:39,640 --> 00:08:45,960
+that it was indeed possible for him to control
+his wild emotions. Tesla realized that a good
+
+85
+00:08:45,960 --> 00:08:51,620
+coping strategy was to work with, rather than
+against, the nebulous visions that assaulted
+
+86
+00:08:51,620 --> 00:08:57,670
+his consciousness, and delving even deeper
+into the make-believe world of his imagining,
+
+87
+00:08:57,670 --> 00:09:02,950
+Tesla began to embark on strange journeys
+where he would stumble across fantastical
+
+88
+00:09:02,950 --> 00:09:06,350
+countries, people, and cities that he dreamed
+up.
+
+89
+00:09:06,350 --> 00:09:13,720
+As Tesla honed that untamed imagination that
+would later serve him so well in his profession,
+
+90
+00:09:13,720 --> 00:09:19,300
+he began theorizing about the nature of reality
+itself, coming to the conclusion, that he
+
+91
+00:09:19,300 --> 00:09:25,790
+could trace all of his mental images back
+to something he either saw, smelt, or touched,
+
+92
+00:09:25,790 --> 00:09:31,480
+in an early echoe of the mechanistic view
+of the world he would later espouse. It was
+
+93
+00:09:31,480 --> 00:09:37,829
+also an idea that had real-life application
+for Tesla, who on one occasion was extolled
+
+94
+00:09:37,829 --> 00:09:44,649
+as a hero by a band of firemen after he spotted
+a small kink in a fire hose he instinctively
+
+95
+00:09:44,649 --> 00:09:49,959
+knew was preventing water from reaching a
+burning building, a problem he quickly fixed
+
+96
+00:09:49,959 --> 00:09:56,459
+by ironing the groove out. Tesla’s ingenuity
+would be further fostered at the Real Gymnasium,
+
+97
+00:09:56,459 --> 00:10:02,029
+the grammar school he attended in Gospić,
+where he would amaze his mathematics professors
+
+98
+00:10:02,029 --> 00:10:08,910
+by demonstrating a natural ability to calculate
+numbers, but while he excelled in scientific
+
+99
+00:10:08,910 --> 00:10:15,070
+pursuits, Tesla was unable to translate his
+talents to drawing class, where a preference
+
+100
+00:10:15,070 --> 00:10:22,300
+for undisturbed contemplation distracted Tesla
+heavily, leading to grades that were so extremely
+
+101
+00:10:22,300 --> 00:10:28,160
+poor, his father had to speak with the principal,
+which instilled in a young Nikola a lifelong
+
+102
+00:10:28,160 --> 00:10:31,329
+aversion to diagrams.
+
+103
+00:10:31,329 --> 00:10:37,600
+During his schooling at the Real Gymnasium
+Tesla began to take invention seriously, devising
+
+104
+00:10:37,600 --> 00:10:44,440
+the schematics for a flying machine that would
+use the pressure of a vacuum to push air molecules,
+
+105
+00:10:44,440 --> 00:10:50,390
+a concept that a grown-up Tesla would later
+go on to disprove. Shortly after he graduated
+
+106
+00:10:50,390 --> 00:10:57,310
+from the Real Gymnasium in 1870 Tesla, perhaps
+because of his overactive imagination, became
+
+107
+00:10:57,310 --> 00:11:03,139
+very sick with a range of maladies sufficiently
+serious enough for the doctors treating him
+
+108
+00:11:03,139 --> 00:11:10,690
+to nearly give up on his case entirely. Throughout
+his recuperation Tesla began voraciously reading,
+
+109
+00:11:10,690 --> 00:11:16,089
+and it was during this period that he was
+first introduced to the tales of Mark Twain.
+
+110
+00:11:16,089 --> 00:11:21,950
+It was a story he would later recount to Mark
+Twain himself, who burst into tears upon hearing
+
+111
+00:11:21,950 --> 00:11:28,310
+it. After a period of convalescence, Nikola
+Tesla was next enrolled at the higher Real
+
+112
+00:11:28,310 --> 00:11:36,360
+Gymnasium in Karlovac in 1873 where, in accordance
+with his father’s wish for Tesla to continue
+
+113
+00:11:36,360 --> 00:11:42,889
+the family profession, he was enlisted in
+classes at the local seminary. However, Tesla’s
+
+114
+00:11:42,889 --> 00:11:48,880
+true desire was to learn everything he could
+about electricity, a passion ignited by an
+
+115
+00:11:48,880 --> 00:11:54,620
+inspirational physics teacher who taught him
+about the radiometer invented by British scientist
+
+116
+00:11:54,620 --> 00:12:00,829
+William Crookes, a device that powered a vacuum
+bulb with energy produced by four rapidly
+
+117
+00:12:00,829 --> 00:12:07,240
+spinning tinfoil vanes, this roused Tesla
+to conduct some of his first experiments with
+
+118
+00:12:07,240 --> 00:12:13,570
+batteries, induction coils, and electro-static
+generators. Yet Tesla would have to put some
+
+119
+00:12:13,570 --> 00:12:19,880
+of his projects on hold after again falling
+seriously ill with cholera upon his return
+
+120
+00:12:19,880 --> 00:12:26,740
+home to Gospić, causing the young prodigy
+to be bedridden for over 9 months and to experience
+
+121
+00:12:26,740 --> 00:12:32,990
+several close shaves with death. After one
+particularly worrying incident, Tesla supposedly
+
+122
+00:12:32,990 --> 00:12:39,040
+implored his father that if he were to study
+engineering instead of entering the priesthood
+
+123
+00:12:39,040 --> 00:12:44,279
+that he may well recover causing Milutin,
+desperate to avoid the unbearable pain of
+
+124
+00:12:44,279 --> 00:12:50,750
+losing another son, to solemnly promise that
+Nikola would go to the best technical institution
+
+125
+00:12:50,750 --> 00:12:53,089
+in the world.
+
+126
+00:12:53,089 --> 00:12:59,720
+Having finally been heard, Tesla made a miraculous
+recovery, but before he could become a student
+
+127
+00:12:59,720 --> 00:13:04,850
+he was sent to the Croatian mountains with
+nothing but a bundle of books and some hunting
+
+128
+00:13:04,850 --> 00:13:10,420
+equipment by his father who, worried for his
+son’s health, did everything in his power
+
+129
+00:13:10,420 --> 00:13:16,660
+to hide his son from the authorities, as by
+law, Tesla would have to serve in the Austrian
+
+130
+00:13:16,660 --> 00:13:23,750
+armed forces for 3 years. For nine months
+starting in the early fall of 1874, Tesla
+
+131
+00:13:23,750 --> 00:13:29,380
+wandered the forests and lakes of the eastern
+European countryside, becoming stronger physically
+
+132
+00:13:29,380 --> 00:13:35,820
+and mentally as he thought deeply about invention,
+reshaping the vividness of his visions from
+
+133
+00:13:35,820 --> 00:13:42,300
+a debilitating weakness into a powerful contemplative
+tool that could be used to flesh out the contraptions
+
+134
+00:13:42,300 --> 00:13:48,160
+that flashed across his mind, such as a pipe
+installed underwater that could transport
+
+135
+00:13:48,160 --> 00:13:53,980
+letters and packages placed in capsules using
+the principles of hydraulic pressure, and
+
+136
+00:13:53,980 --> 00:13:59,450
+a ring constructed around the earth’s equator
+that could be used as a high-tech transport
+
+137
+00:13:59,450 --> 00:14:01,170
+network.
+
+138
+00:14:01,170 --> 00:14:06,449
+When Tesla returned, his father had kept his
+promise, securing for him a scholarship at
+
+139
+00:14:06,449 --> 00:14:12,639
+the Military Frontier Administration Authority
+that would enable him to study for three years
+
+140
+00:14:12,639 --> 00:14:19,170
+at the Polytechnic School in Graz, Austria.
+Receiving an embroidered bag made from typical
+
+141
+00:14:19,170 --> 00:14:26,660
+Serbian materials from his mother which he
+would always prize, in 1875 Tesla left Gospić
+
+142
+00:14:26,660 --> 00:14:32,300
+to start anew in a completely different culture
+and environment, in the same way that his
+
+143
+00:14:32,300 --> 00:14:39,240
+own Serbian relatives had adapted to life
+on the Austro-Hungarian border decades prior.
+
+144
+00:14:39,240 --> 00:14:45,019
+During his freshman year, Tesla proved himself
+to be a perfect student, never once missing
+
+145
+00:14:45,019 --> 00:14:52,110
+a lecture and supposedly studying from 3am
+to 7pm every day, a schedule that was thought
+
+146
+00:14:52,110 --> 00:14:57,970
+so extreme that one professor wrote to Milutin
+warning him that unless his son was escorted
+
+147
+00:14:57,970 --> 00:15:03,699
+out of the school, that he might work himself
+to death, while others commended him for his
+
+148
+00:15:03,699 --> 00:15:09,290
+zeal, such as the Dean of the Technical Faculty
+who informed Milutin Tesla that his son was
+
+149
+00:15:09,290 --> 00:15:13,279
+quote: “a star of first rank.”
+
+150
+00:15:13,279 --> 00:15:19,410
+In fact, Tesla was keeping himself very busy,
+administering his earliest experiments with
+
+151
+00:15:19,410 --> 00:15:25,660
+alternating current or ‘AC’ that would
+later make his name, but during his sophomore
+
+152
+00:15:25,660 --> 00:15:31,709
+year Tesla would be sidetracked, developing
+a destructive gambling habit and wagering
+
+153
+00:15:31,709 --> 00:15:38,329
+away his entire tuition fund in the process.
+Near destitute, Tesla had also neglected his
+
+154
+00:15:38,329 --> 00:15:45,170
+studies, scoring extremely poorly in the examinations,
+and with no marks registered for his final
+
+155
+00:15:45,170 --> 00:15:51,269
+semester, he was also unable to graduate and
+was forced to abandon the university in December
+
+156
+00:15:51,269 --> 00:15:58,770
+1878, a failure he made sure to keep secret
+from his family as well as his classmates,
+
+157
+00:15:58,770 --> 00:16:06,259
+as he was riddled with guilt and embarrassment.
+In 1879, Tesla would live for a while in self-imposed
+
+158
+00:16:06,259 --> 00:16:12,490
+exile, first making his way to the city of
+Maribor where he became a draughtsman and
+
+159
+00:16:12,490 --> 00:16:18,870
+was paid 60 florins a month, while in his
+free time he continued to play cards and wager
+
+160
+00:16:18,870 --> 00:16:25,339
+money on the streets with the locals, yet
+Tesla’s Slovenian sojourn would be short-lived,
+
+161
+00:16:25,339 --> 00:16:30,300
+as a couple of months into his stay, he was
+seized by the authorities for not possessing
+
+162
+00:16:30,300 --> 00:16:36,790
+a proper residency permit and returned to
+Gospić escorted by armed police. Back home
+
+163
+00:16:36,790 --> 00:16:43,040
+Tesla’s father would not get much time to
+set his son straight, as only a month later,
+
+164
+00:16:43,040 --> 00:16:51,579
+on the 17th of April 1879, Milutin died, heartbroken
+that his son had been labelled as a ‘vagrant’
+
+165
+00:16:51,579 --> 00:16:57,730
+and had chosen to indulge in a life of vice.
+Not content to see their talented nephew waste
+
+166
+00:16:57,730 --> 00:17:04,660
+his abilities, in January 1880 two of Tesla’s
+uncles gave him enough money to start courses
+
+167
+00:17:04,660 --> 00:17:11,920
+at the Charles-Ferdinand University in Prague,
+despite Tesla not meeting the language requirement,
+
+168
+00:17:11,920 --> 00:17:18,371
+which specified that students had to be fluent
+in both Czech and Greek. However, communication
+
+169
+00:17:18,371 --> 00:17:25,140
+issues aside, he also arrived too late, and
+was unable to enroll in classes, and so for
+
+170
+00:17:25,140 --> 00:17:32,890
+the entire time Tesla was only permitted to
+attend lectures and received no formal grades.
+
+171
+00:17:32,890 --> 00:17:39,600
+In 1881 Nikola Tesla landed his first job
+for a telecommunications firm in Budapest
+
+172
+00:17:39,600 --> 00:17:45,789
+called The American Telephone Company, where
+he was drafted in as an electrical engineer
+
+173
+00:17:45,789 --> 00:17:52,140
+by Tivador Puskas, who had previously worked
+alongside Thomas Edison, the inventor of the
+
+174
+00:17:52,140 --> 00:17:58,420
+lightbulb, at the Edison laboratories in Menlo
+Park. Making himself a valuable employee and
+
+175
+00:17:58,420 --> 00:18:04,390
+sharing his findings with his work colleague
+Anital Szigety, Tesla continued his study
+
+176
+00:18:04,390 --> 00:18:10,159
+of the concept of the alternate current in
+his spare time, proposing that a motor driven
+
+177
+00:18:10,159 --> 00:18:17,140
+by circuits that were out of phase could maintain
+power levels to supply a constant stream of
+
+178
+00:18:17,140 --> 00:18:22,250
+electricity, but in order to make the system
+function, Tesla realized he needed to figure
+
+179
+00:18:22,250 --> 00:18:28,750
+out how to rotate magnetic fields. Strolling
+in the park with Anital Szigety in February
+
+180
+00:18:28,750 --> 00:18:36,580
+1882, Tesla had a sudden stroke of genius
+and solved the rotating magnetic field problem,
+
+181
+00:18:36,580 --> 00:18:42,929
+going on to explain the concept of the induction
+motor to his friend by drawing its basic blueprints
+
+182
+00:18:42,929 --> 00:18:49,100
+in the sand with a stick, outlining a new
+type of engine that unlike its Direct Current
+
+183
+00:18:49,100 --> 00:18:55,950
+or ‘DC’ counterpart, did not need a commutator,
+an inefficient cylindrical device segmented
+
+184
+00:18:55,950 --> 00:19:03,290
+with metal that had to be regularly maintained.
+Impressed by Tesla’s genius, Tivador Puskas
+
+185
+00:19:03,290 --> 00:19:08,679
+recommended that Tesla move to Paris to work
+for his old acquaintance Thomas Edison at
+
+186
+00:19:08,679 --> 00:19:14,140
+his Continental Edison Company, a firm that
+specialized in electrical equipment, where
+
+187
+00:19:14,140 --> 00:19:19,179
+he was first assigned by his boss Charles
+Batchelor, a manager who had worked for Edison
+
+188
+00:19:19,179 --> 00:19:26,650
+since 1870, with designing dynamos, a contraption
+that converted mechanical energy into electrical
+
+189
+00:19:26,650 --> 00:19:32,880
+energy and which was used most commonly in
+direct-current circuits. Off the clock however,
+
+190
+00:19:32,880 --> 00:19:39,980
+Tesla continued to advance the AC theory after
+he was sent to work on a project in Strasbourg,
+
+191
+00:19:39,980 --> 00:19:43,679
+where he built the first induction motor prototype.
+
+192
+00:19:43,679 --> 00:19:50,800
+However, Tesla was unable to garner any serious
+interest in Alternating Currents. This was
+
+193
+00:19:50,800 --> 00:19:56,770
+unfortunate, as alternating current is recognized
+today as a better method of electric current
+
+194
+00:19:56,770 --> 00:20:02,010
+delivery than direct current. Direct current,
+of the kind which came to dominate electricity
+
+195
+00:20:02,010 --> 00:20:07,850
+delivery systems in the late nineteenth century,
+consistently sends electricity in one direction
+
+196
+00:20:07,850 --> 00:20:13,690
+along an electric grid. Alternating current,
+by way of contrast, periodically reverses
+
+197
+00:20:13,690 --> 00:20:21,090
+and changes direction along a grid or system
+as its magnitude alternately reverses course.
+
+198
+00:20:21,090 --> 00:20:26,110
+Alternating current is considerably more efficient
+than direct current. Tesla’s error, if it
+
+199
+00:20:26,110 --> 00:20:31,950
+can be defined as such, is that he was simply
+ahead of his time in trying to propose alternating
+
+200
+00:20:31,950 --> 00:20:38,190
+current as the better method of energy generation.
+He was correct, but the technology available
+
+201
+00:20:38,190 --> 00:20:43,970
+at the time simply favoured the more crude
+direct current method. Tesla soon found himself
+
+202
+00:20:43,970 --> 00:20:50,270
+in another personal finance crisis after spending
+all of his wages, yet he had done enough during
+
+203
+00:20:50,270 --> 00:20:55,830
+his stint at the company to impress his overseer
+Charles Batchelor, who was convinced that
+
+204
+00:20:55,830 --> 00:21:02,570
+Tesla had the intellectual fortitude to work
+alongside Thomas Edison himself.
+
+205
+00:21:02,570 --> 00:21:08,480
+In 1884, after being mistakenly registered
+as a migrant from Sweden after the immigration
+
+206
+00:21:08,480 --> 00:21:14,510
+officer misheard him say ‘Smiljan’, Nikola
+Tesla arrived in America armed with an introductory
+
+207
+00:21:14,510 --> 00:21:21,320
+letter penned by his mentor Charles Batchelor,
+who stated quote: “I know two great men,
+
+208
+00:21:21,320 --> 00:21:27,870
+one is you and the other is this young man.”
+Although Tesla fundamentally disagreed with
+
+209
+00:21:27,870 --> 00:21:34,380
+the notion of direct-current, he was put to
+work improving the DC motors devised by Edison,
+
+210
+00:21:34,380 --> 00:21:40,460
+who believed that the AC devices that Tesla
+envisioned were too dangerous and unfeasible,
+
+211
+00:21:40,460 --> 00:21:45,870
+a divergence of opinion that would become
+a lifelong rivalry. Forced to develop an invention
+
+212
+00:21:45,870 --> 00:21:52,760
+he had no belief in, Tesla became disillusioned
+and began outlining the weaknesses of DC and
+
+213
+00:21:52,760 --> 00:21:58,250
+championing the advantages of AC, pointing
+out the inefficiency of Edison’s direct
+
+214
+00:21:58,250 --> 00:22:03,830
+current which only dimly lit lamps, and proposing
+instead that generators should be engineered
+
+215
+00:22:03,830 --> 00:22:10,400
+with what he termed the ‘polyphase principle’,
+whereby energy would be constantly recycled,
+
+216
+00:22:10,400 --> 00:22:16,250
+since he believed in the cyclical nature of
+electricity. Tesla also insisted that a huge
+
+217
+00:22:16,250 --> 00:22:22,150
+disadvantage of the direct current was its
+reliance on costly power stations installed
+
+218
+00:22:22,150 --> 00:22:28,380
+at 2 mile intervals, since it was unable to
+maintain high levels of voltage over distance,
+
+219
+00:22:28,380 --> 00:22:34,070
+in contrast arguing that the alternating current,
+in which the direction of energy was changed
+
+220
+00:22:34,070 --> 00:22:39,510
+50 to 60 times per second, was a lot more
+effective, since it could flexibly sustain
+
+221
+00:22:39,510 --> 00:22:45,940
+varying levels of high voltage power and minimize
+power loss over long distances. This is why
+
+222
+00:22:45,940 --> 00:22:51,919
+today, the power delivered to consumers via
+power grids is AC, which sustains power over
+
+223
+00:22:51,919 --> 00:22:59,110
+long distances using transformer substations,
+these reduce the AC voltage over a given distance.
+
+224
+00:22:59,110 --> 00:23:05,060
+Once the AC power reaches its destination
+such as a home, the AC power is used directly
+
+225
+00:23:05,060 --> 00:23:10,400
+for electrical appliances such as washing
+machines but for other smaller appliances
+
+226
+00:23:10,400 --> 00:23:16,840
+it is possible to convert AC power to DC,
+via diodes within the appliance’s power
+
+227
+00:23:16,840 --> 00:23:21,750
+supply, these only allow the electrical current
+to flow in one direction, thus ensuring the
+
+228
+00:23:21,750 --> 00:23:26,260
+appliance receives a constant stream of power.
+
+229
+00:23:26,260 --> 00:23:32,230
+Disassociating himself from Edison and eager
+to spread the AC gospel, Tesla started his
+
+230
+00:23:32,230 --> 00:23:38,280
+own company in 1885 called the Tesla Electric
+Light Company with the financial backing of
+
+231
+00:23:38,280 --> 00:23:44,419
+two rich benefactors, Robert Lane and Benjamin
+Vail, who were certain that the alternating
+
+232
+00:23:44,419 --> 00:23:49,799
+current was the future. However in a common
+issue that would prevent almost all of his
+
+233
+00:23:49,799 --> 00:23:56,230
+later endeavors from succeeding, Tesla asked
+for too much money from his patrons, who,
+
+234
+00:23:56,230 --> 00:24:01,980
+increasingly fearful that AC was too risky,
+ejected Tesla from his own company that same
+
+235
+00:24:01,980 --> 00:24:08,990
+year, forcing him to eek out a living for
+the majority of 1885 as a repairman and even
+
+236
+00:24:08,990 --> 00:24:15,520
+as a manual laborer, a job in which he was
+paid just 2 dollars a day to dig ditches.
+
+237
+00:24:15,520 --> 00:24:21,020
+Having learned from his mistakes, in 1886,
+with the aid of philanthropists Alfred S.
+
+238
+00:24:21,020 --> 00:24:27,650
+Brown, a Western Union superintendent, and
+Charles F. Peck, Tesla established another
+
+239
+00:24:27,650 --> 00:24:33,360
+company, this time called the Tesla Electric
+Company based in Manhattan, New York, where
+
+240
+00:24:33,360 --> 00:24:39,409
+he finalized the designs of the polyphase
+induction motor, unveiling it to the amazement
+
+241
+00:24:39,409 --> 00:24:45,870
+of the scientific community in 1888, when
+he presented a landmark paper to the American
+
+242
+00:24:45,870 --> 00:24:52,480
+Institute of Electrical Engineers entitled
+'A New System of Alternating Current Motors
+
+243
+00:24:52,480 --> 00:24:55,130
+and Transformers.’
+
+244
+00:24:55,130 --> 00:25:00,770
+George Westinghouse, an investor most famous
+for inventing the railway air brake and head
+
+245
+00:25:00,770 --> 00:25:06,770
+of the Westinghouse Electric &amp; Manufacturing
+Company, was particularly impressed, and his
+
+246
+00:25:06,770 --> 00:25:12,039
+curiosity was piqued in a visit to Tesla’s
+lab a few days later where he was shown an
+
+247
+00:25:12,039 --> 00:25:18,120
+early polyphase prototype. Convinced that
+Tesla’s groundbreaking invention could power
+
+248
+00:25:18,120 --> 00:25:23,700
+America, Westinghouse purchased all 40 of
+Tesla’s trailblazing patents pertaining
+
+249
+00:25:23,700 --> 00:25:29,580
+to the generators, motors, and transformers
+necessary to construct a polyphase alternating
+
+250
+00:25:29,580 --> 00:25:35,659
+current circuit and recruited Tesla as an
+adviser to serve for 12 months at the Westinghouse
+
+251
+00:25:35,659 --> 00:25:41,330
+plant in Philadelphia where some of the first
+commercially available AC devices would be
+
+252
+00:25:41,330 --> 00:25:48,730
+produced. The release of the first AC machine
+in 1886 was the harbinger of a bitter conflict
+
+253
+00:25:48,730 --> 00:25:54,520
+that erupted between Westinghouse and Edison
+known as the ‘War of the Currents’, which
+
+254
+00:25:54,520 --> 00:26:03,890
+pitted AC against DC from 1888 to 1892. During
+the dispute Edison would try to use his resources
+
+255
+00:26:03,890 --> 00:26:10,510
+to sway public opinion in his favor, and despite
+the evidence clearly showing that AC was safe
+
+256
+00:26:10,510 --> 00:26:15,830
+and more effective over long distances, he
+issued a number of articles in the biggest
+
+257
+00:26:15,830 --> 00:26:21,780
+publications, warning of the dangers of the
+alternating current. Edison was unable, however,
+
+258
+00:26:21,780 --> 00:26:27,950
+to convince his largest benefactor of the
+superiority of DC, and Wall Street wolf John
+
+259
+00:26:27,950 --> 00:26:35,130
+Pierpoint Morgan, who in 1892 merged Edison
+General Electric with the AC-focused Thomas
+
+260
+00:26:35,130 --> 00:26:40,600
+Houston Company, removed Edison’s name to
+create ‘General Electric’ and switched
+
+261
+00:26:40,600 --> 00:26:44,679
+entirely to alternating current instruments.
+
+262
+00:26:44,679 --> 00:26:50,510
+With Edison sidelined, the alternating current
+emerged as the undisputed victor of ‘War
+
+263
+00:26:50,510 --> 00:26:56,550
+of the Currents’ as Westinghouse increased
+his annual turnover from 800,000 dollars in
+
+264
+00:26:56,550 --> 00:27:06,140
+1887 to 4.2 million in 1890, while Tesla was
+paid around 105,000 dollars in royalties by
+
+265
+00:27:06,140 --> 00:27:12,500
+the end of 1891, a period that also witnessed
+several other personal and professional triumphs
+
+266
+00:27:12,500 --> 00:27:19,750
+for Tesla, who officially became a US citizen
+in July 1891 at the same time as he established
+
+267
+00:27:19,750 --> 00:27:27,490
+two personal laboratories in New York, situated
+at South Fifth Avenue and East Houston Street.
+
+268
+00:27:27,490 --> 00:27:33,519
+On the other hand, Tesla’s dividend cheques
+would come to an abrupt end after Westinghouse’s
+
+269
+00:27:33,519 --> 00:27:39,780
+finances were left in disarray, their plans
+to expand the company by borrowing heavily,
+
+270
+00:27:39,780 --> 00:27:44,960
+falling through in November 1890, after the
+collapse of the Baring Brothers brokerage
+
+271
+00:27:44,960 --> 00:27:51,200
+firm compelled panicked creditors to call
+in their loans. To cover his losses, Tesla
+
+272
+00:27:51,200 --> 00:27:57,620
+continued to focus his attention on high-frequency
+AC experiments, inventing a lamp that required
+
+273
+00:27:57,620 --> 00:28:03,390
+only one wire, an oscillating transformer,
+and a high frequency alternator, which he
+
+274
+00:28:03,390 --> 00:28:10,659
+exhibited at a lecture in spring 1891 at Columbia
+College in New York on behalf of the American
+
+275
+00:28:10,659 --> 00:28:17,360
+Institute of Electrical Engineers to a flabbergasted
+crowd, who were amazed at the ways that AC
+
+276
+00:28:17,360 --> 00:28:21,410
+could be implemented into modern lighting
+circuits.
+
+277
+00:28:21,410 --> 00:28:27,300
+The Colombia lecture established him as the
+leading electricity researcher of his day,
+
+278
+00:28:27,300 --> 00:28:32,429
+and in follow-up experiments, Tesla would
+consistently show that electricity for light
+
+279
+00:28:32,429 --> 00:28:38,950
+and power could be transmitted over long distances.
+Before long, Tesla was also sketching out
+
+280
+00:28:38,950 --> 00:28:45,860
+the fundamentals of radio technology. In an
+1893 lecture at the Franklin Institute, later
+
+281
+00:28:45,860 --> 00:28:52,049
+popularized by Century Magazine, illustrating
+the concept of telegraphy without wires, he
+
+282
+00:28:52,049 --> 00:28:57,409
+first underlined the importance of grounding
+the transmitter and receiver to astonished
+
+283
+00:28:57,409 --> 00:29:03,390
+onlookers. The same year Tesla’s company
+achieved its greatest accomplishment to date,
+
+284
+00:29:03,390 --> 00:29:08,990
+after lighting up the Chicago venue hosting
+the World’s Columbian Exposition entirely
+
+285
+00:29:08,990 --> 00:29:14,860
+with alternating current, an honor that Tesla
+procured after outbidding General Electric
+
+286
+00:29:14,860 --> 00:29:21,980
+by 1 million dollars. By 1894, Tesla had gained
+the admiration of his peers, and was awarded
+
+287
+00:29:21,980 --> 00:29:27,600
+honorary doctoral degrees from Columbia and
+Yale Universities as well as the Elliot Cresson
+
+288
+00:29:27,600 --> 00:29:33,610
+Medal by the Franklin Institute. More good
+news followed after the Tesla Electric Company
+
+289
+00:29:33,610 --> 00:29:40,279
+was contracted to build the first ever hydroelectric
+power-plant at Niagara Falls, a childhood
+
+290
+00:29:40,279 --> 00:29:47,120
+dream of Tesla’s that became a reality in
+1895 after the first schematics were unveiled.
+
+291
+00:29:47,120 --> 00:29:52,320
+The Niagara facility was an accomplishment
+that represented the ultimate defeat of the
+
+292
+00:29:52,320 --> 00:29:58,850
+direct energy school of thought, and Tesla
+was lavished with the highest praise and honors,
+
+293
+00:29:58,850 --> 00:30:04,440
+including even the Order of Danilo from King
+Nicolas of Montenegro, as his achievement
+
+294
+00:30:04,440 --> 00:30:10,909
+was celebrated worldwide as an important step
+for the future of humanity.
+
+295
+00:30:10,909 --> 00:30:17,240
+Tesla remained unperturbed after a fire in
+March 1895 at his laboratory destroyed much
+
+296
+00:30:17,240 --> 00:30:23,679
+of his early research, including hundreds
+of models, notes, scientific tools and photographs
+
+297
+00:30:23,679 --> 00:30:31,010
+that had a combined value of 50,000 dollars.
+Despite this, in 1896 he demonstrated some
+
+298
+00:30:31,010 --> 00:30:36,460
+of the earliest uses of the x-ray, discovered
+around the same time by the German scientist
+
+299
+00:30:36,460 --> 00:30:42,360
+Wilhelm Conrad Roentgen, and astonished his
+contemporaries with the first ever x-ray of
+
+300
+00:30:42,360 --> 00:30:48,360
+a man, published in The Electrical Review,
+printed using rudimentary x-ray tubes of his
+
+301
+00:30:48,360 --> 00:30:54,240
+own design. Having revealed some of the most
+innovative functions of the x-ray, Tesla next
+
+302
+00:30:54,240 --> 00:31:01,590
+devised the basic elements of the radio transmitter,
+and in 1896 built a rudimentary unit that
+
+303
+00:31:01,590 --> 00:31:07,200
+received radio waves. He assessed his new
+invention at the Gerlach Hotel located on
+
+304
+00:31:07,200 --> 00:31:13,360
+27th Street in Manhattan where he was living,
+by sending radio waves to it from his New
+
+305
+00:31:13,360 --> 00:31:20,570
+York laboratory on South 5th Avenue. Tesla
+presented his insights at an 1898 exhibition
+
+306
+00:31:20,570 --> 00:31:27,380
+at Madison Square Gardens, where he demonstrated
+a radio-controlled boat he called a Telautomaton,
+
+307
+00:31:27,380 --> 00:31:33,789
+to stunned audiences, and by 1901 he had been
+awarded with a patent clarifying that he had
+
+308
+00:31:33,789 --> 00:31:38,840
+created a system for transmitting electrical
+energy.
+
+309
+00:31:38,840 --> 00:31:45,409
+Between 1899 and 1900, after being commissioned
+by John Jacob Astor to assemble a new lighting
+
+310
+00:31:45,409 --> 00:31:51,490
+system in a contract worth 100,000 dollars,
+Tesla relocated his laboratory at Colorado
+
+311
+00:31:51,490 --> 00:31:57,480
+Springs where, disobeying his patron’s instructions
+completely, he decided instead to explore
+
+312
+00:31:57,480 --> 00:32:02,500
+‘terrestrial stationary waves’, which
+he regarded as his greatest discovery. At
+
+313
+00:32:02,500 --> 00:32:08,570
+this rural outpost located far away from the
+humdrum of New York City, Tesla started to
+
+314
+00:32:08,570 --> 00:32:14,279
+piece together an enormous transmitter powered
+by millions of volts of electricity at an
+
+315
+00:32:14,279 --> 00:32:19,750
+experimental facility built on the outskirts
+of the town of Knob Hill, keeping inquisitive
+
+316
+00:32:19,750 --> 00:32:25,200
+onlookers away with an ominous Dante line
+nailed to the front entrance which read quote:
+
+317
+00:32:25,200 --> 00:32:31,070
+‘Abandon hope, all ye who enter here”.
+It was here that Tesla first discovered that
+
+318
+00:32:31,070 --> 00:32:36,900
+the earth had electric potential, and could
+be employed as a finely tuned conductor to
+
+319
+00:32:36,900 --> 00:32:42,510
+transfer electrical energy without wires,
+while next noticing that when his experimental
+
+320
+00:32:42,510 --> 00:32:48,269
+Tesla coil was powered, it emitted sparks
+as far as 30 feet that could be detected by
+
+321
+00:32:48,269 --> 00:32:54,120
+antennae 10 miles away. Realizing that he
+could now wirelessly transmit signals using
+
+322
+00:32:54,120 --> 00:33:00,309
+the electromagnetic frequencies of the planet,
+Tesla explored the practical applications,
+
+323
+00:33:00,309 --> 00:33:07,330
+managing to light up 200 lamps fed by a power
+source situated 26 miles away. Exploiting
+
+324
+00:33:07,330 --> 00:33:13,419
+the same phenomenon, he was even able to produce
+manmade lightning as a result. Tesla noted
+
+325
+00:33:13,419 --> 00:33:18,769
+that the discovery of stationary electromagnetic
+waves and how they interacted with the earth,
+
+326
+00:33:18,769 --> 00:33:24,530
+had far-reaching implications. It was a discovery
+which Tesla would spend the majority of the
+
+327
+00:33:24,530 --> 00:33:29,840
+rest of his career investigating, as he felt
+it had the potential to transmit electrical
+
+328
+00:33:29,840 --> 00:33:35,990
+power across large distances without the need
+for wires, indeed he hoped that his work could
+
+329
+00:33:35,990 --> 00:33:42,399
+one day provide the whole world with clean
+and free electrical power, however as with
+
+330
+00:33:42,399 --> 00:33:48,490
+so many of Tesla’s ideas, it was funded
+by investors, such as J.P Morgan who intended
+
+331
+00:33:48,490 --> 00:33:53,760
+to market his inventions for profit and were
+only prepared to fund research which would
+
+332
+00:33:53,760 --> 00:33:59,960
+garner a return on their investments, thus
+it would be the all-powerful market forces,
+
+333
+00:33:59,960 --> 00:34:04,640
+that would eventually scupper so many of Tesla’s
+imaginings.
+
+334
+00:34:04,640 --> 00:34:10,210
+It was during this fertile period of discovery,
+that Tesla also made some more unorthodox
+
+335
+00:34:10,210 --> 00:34:15,570
+assertions, claiming that he had made contact
+with extraterrestrial beings, that had triggered
+
+336
+00:34:15,570 --> 00:34:21,250
+a series of ominous beeps that sounded from
+one of his receivers. Tesla had first heard
+
+337
+00:34:21,250 --> 00:34:26,440
+this strange combination of noise from the
+device in the middle of the night, and interpreted
+
+338
+00:34:26,440 --> 00:34:32,020
+the regularity of the beeps as a sign that
+they were being manipulated by an intelligent
+
+339
+00:34:32,020 --> 00:34:38,129
+entity, a theory he publicly advanced in a
+letter to the American Red Cross in January
+
+340
+00:34:38,129 --> 00:34:44,109
+1901. Although Tesla’s story was discounted
+by many skeptics there were still some who
+
+341
+00:34:44,109 --> 00:34:50,210
+believed him. Influenced by the notion of
+an intergalactic race of Martians, first popularized
+
+342
+00:34:50,210 --> 00:34:55,950
+in 1895 with the release of a book called
+‘Mars’ penned by the American astronomer
+
+343
+00:34:55,950 --> 00:35:01,849
+Percival Lowell, Tesla’s supporters pointed
+out that he may have established contact with
+
+344
+00:35:01,849 --> 00:35:07,490
+aliens from the Red Planet. Nevertheless,
+convinced of the revolutionary potential of
+
+345
+00:35:07,490 --> 00:35:14,740
+terrestrial stationary waves, Tesla returned
+to New York in January 1900 eager to secure
+
+346
+00:35:14,740 --> 00:35:21,089
+funding for a major invention that would eclipse
+his scientific rivals who were also investigating
+
+347
+00:35:21,089 --> 00:35:27,480
+wireless systems, such as Reginald Fessenden,
+Lee de Forest, and in particular Guglielmo
+
+348
+00:35:27,480 --> 00:35:34,099
+Giovanni Maria Marconi, an Italian inventor
+who became Tesla’s next arch-nemesis after
+
+349
+00:35:34,099 --> 00:35:35,119
+Edison.
+
+350
+00:35:35,119 --> 00:35:42,280
+Eager to keep his May 1899 promise in which
+he vowed to wirelessly communicate with Paris
+
+351
+00:35:42,280 --> 00:35:49,050
+by 1900, Tesla hunted for a source of funding
+after patenting the magnifying transmitter
+
+352
+00:35:49,050 --> 00:35:55,300
+he had constructed at Colorado Springs. Since
+the device he envisioned had to generate enormous
+
+353
+00:35:55,300 --> 00:36:01,140
+volumes of electricity from AC equipment,
+Tesla first approached his old ally George
+
+354
+00:36:01,140 --> 00:36:07,211
+Westinghouse who declined to become involved
+but loaned him the necessary machinery, while
+
+355
+00:36:07,211 --> 00:36:12,319
+the majority of the project’s funding came
+from the coffers of Wall Street whizz J.P.
+
+356
+00:36:12,319 --> 00:36:18,410
+Morgan, who signed a deal with Tesla after
+negotiations discussing the purchase of Marconi’s
+
+357
+00:36:18,410 --> 00:36:24,460
+wireless patents broke down. After convincing
+him that the wireless transfer of information
+
+358
+00:36:24,460 --> 00:36:30,500
+would make the expensive underwater cables
+his company used to send transatlantic messages
+
+359
+00:36:30,500 --> 00:36:38,140
+obsolete, Morgan informed Tesla he was willing
+to support him with a 150,000 dollar investment
+
+360
+00:36:38,140 --> 00:36:45,010
+on the condition that he would own a 51% stake
+of the inventor’s patents.
+
+361
+00:36:45,010 --> 00:36:51,220
+Between 1901 and 1905, with the backing of
+the biggest financial titan in the world,
+
+362
+00:36:51,220 --> 00:36:58,710
+Nikola Tesla constructed the 187-foot-high
+transmission tower at Wardenclyffe laboratory,
+
+363
+00:36:58,710 --> 00:37:04,160
+topped with a 68 foot copper dome, which was
+the first wireless broadcasting system ever
+
+364
+00:37:04,160 --> 00:37:09,690
+built, and was largely powered by a gigantic
+magnifying transmitter designed to channel
+
+365
+00:37:09,690 --> 00:37:16,260
+large concentrations of electricity to any
+destination conceivable. Assured that by setting
+
+366
+00:37:16,260 --> 00:37:20,930
+up receivers attached to the ground, he could
+pick up the electromagnetic waves emitted
+
+367
+00:37:20,930 --> 00:37:27,160
+by the tower anywhere, Tesla was desperate
+to overshadow his rival Marconi, who in December
+
+368
+00:37:27,160 --> 00:37:33,260
+1901 at St Johns in Newfoundland was hailed
+as the inventor of wireless telegraphy by
+
+369
+00:37:33,260 --> 00:37:39,040
+the world’s press, after reporting triumphantly,
+that he had successfully received the first
+
+370
+00:37:39,040 --> 00:37:45,050
+transatlantic signal sent by colleagues at
+Poldhu in Cornwall, England.
+
+371
+00:37:45,050 --> 00:37:50,859
+With a jaded Tesla making it explicitly clear
+in newspaper interviews that he believed Marconi
+
+372
+00:37:50,859 --> 00:37:57,290
+had stolen many of his ideas from the 1890s,
+and wishing to keep his benefactor onside,
+
+373
+00:37:57,290 --> 00:38:02,859
+he next announced that he was going to create
+a World Telegraphy System, a cutting-edge
+
+374
+00:38:02,859 --> 00:38:09,300
+communication array similar to the World Wide
+Web of the 1990s, in which individual receivers
+
+375
+00:38:09,300 --> 00:38:15,369
+would pick up messages and news broadcasted
+by transmitting facilities. Tesla pictured
+
+376
+00:38:15,369 --> 00:38:21,430
+several different types of receiver, one that
+anticipated the fax machine, by acting as
+
+377
+00:38:21,430 --> 00:38:26,869
+a printer and publishing daily newspapers,
+one that was a loudspeaker that could play
+
+378
+00:38:26,869 --> 00:38:33,370
+voice messages, and another that was a handheld
+contraption attached to a vertical wire on
+
+379
+00:38:33,370 --> 00:38:39,619
+a short pole, that could decode radio waves,
+foreshadowing the modern cellphone. By the
+
+380
+00:38:39,619 --> 00:38:45,880
+summer of 1902, Tesla had moved permanently
+to Wardenclyffe laboratory and was focusing
+
+381
+00:38:45,880 --> 00:38:52,000
+exclusively on amping up the power levels.
+On the other hand, after setting up a company
+
+382
+00:38:52,000 --> 00:38:57,369
+with Morgan to assist the enterprise, Tesla
+found it hard to sell shares to the moneyed
+
+383
+00:38:57,369 --> 00:39:02,980
+New York elite, who believed the investment
+was too risky, an appraisal not shared by
+
+384
+00:39:02,980 --> 00:39:09,680
+Tesla, who sold 33,000 dollars of his personal
+property and borrowed a further 10,000 dollars
+
+385
+00:39:09,680 --> 00:39:12,390
+to realize his dream.
+
+386
+00:39:12,390 --> 00:39:17,940
+Faced with an additional 30,000 dollar bill
+from Westinghouse for the equipment, a lawsuit
+
+387
+00:39:17,940 --> 00:39:23,710
+from the landlord James Warden, who was taking
+Tesla to court for not paying property tax,
+
+388
+00:39:23,710 --> 00:39:28,920
+as well as another bill from the phone company
+who had installed a special line out of the
+
+389
+00:39:28,920 --> 00:39:34,580
+laboratory, Tesla struggled financially. Tesla’s
+promise to extend the coverage of his system
+
+390
+00:39:34,580 --> 00:39:40,381
+so that it could be detected as far away as
+Australia failed to persuade Morgan, who in
+
+391
+00:39:40,381 --> 00:39:47,910
+July 1903 let Tesla know that he was unwilling
+to invest any more capital, a mortal and unexpected
+
+392
+00:39:47,910 --> 00:39:55,100
+blow to the World Telegraphy System that enraged
+Tesla, who in true mad scientist fashion furiously
+
+393
+00:39:55,100 --> 00:40:01,720
+cranked up the voltage of the magnifying transmitter
+at Wardenclyffe to the maximum level and hurled
+
+394
+00:40:01,720 --> 00:40:07,440
+lightning bolts into the New York sky. From
+a risk perspective Morgan’s decision was
+
+395
+00:40:07,440 --> 00:40:13,050
+quite understandable, since after 2 and a
+half years Tesla had failed to fulfill his
+
+396
+00:40:13,050 --> 00:40:20,000
+pledge to provide a transatlantic system in
+6 to 8 months and a Pacific branch a year
+
+397
+00:40:20,000 --> 00:40:25,870
+later, yet others have postulated that Morgan
+abandoned Wardenclyffe because he was worried
+
+398
+00:40:25,870 --> 00:40:32,260
+that Tesla was going to make the energy completely
+free for everyone and thus deprive his firm
+
+399
+00:40:32,260 --> 00:40:38,690
+of a lucrative paycheck, while another interpretation
+contests that Morgan was growing increasingly
+
+400
+00:40:38,690 --> 00:40:44,250
+less confident in the wireless industry, which
+had been mired in scandal by the actions of
+
+401
+00:40:44,250 --> 00:40:50,790
+Lancelot E. Pike. He was a conman who had
+stolen investor money after promising to create
+
+402
+00:40:50,790 --> 00:40:57,119
+a wireless service between Philadelphia and
+New York. Moreover, Morgan felt more inclined
+
+403
+00:40:57,119 --> 00:41:03,079
+to invest in Deforest Wireless automobiles,
+a company founded by another of Tesla’s
+
+404
+00:41:03,079 --> 00:41:08,480
+rivals that was projected to make 5 million
+dollars a year, and which had already secured
+
+405
+00:41:08,480 --> 00:41:16,250
+for itself a major contract with the US Navy
+by February 1903 supplying wireless De Forest
+
+406
+00:41:16,250 --> 00:41:17,980
+transmitters.
+
+407
+00:41:17,980 --> 00:41:23,050
+After this, Tesla, no longer the darling of
+electrical engineering, continued to have
+
+408
+00:41:23,050 --> 00:41:29,180
+no luck attracting investors as the breakdown
+of his Wardenclyffe project had turned academic
+
+409
+00:41:29,180 --> 00:41:35,280
+and public opinion against him, with the once
+celebrated genius, now painted as a man who
+
+410
+00:41:35,280 --> 00:41:41,550
+could never quite fulfill his promises. Determined
+to restore his credibility to investors by
+
+411
+00:41:41,550 --> 00:41:48,119
+putting out a commercial product, Tesla devised
+a scheme to sell small Tesla coils to laboratories
+
+412
+00:41:48,119 --> 00:41:54,690
+around the country, via a company called the
+Tesla Electric and Manufacturing Company but
+
+413
+00:41:54,690 --> 00:42:00,390
+this ultimately went under because of a lack
+of investment. Downtrodden and defamed in
+
+414
+00:42:00,390 --> 00:42:06,880
+the US, Tesla would learn that even his reputation
+in his homeland could not save him, after
+
+415
+00:42:06,880 --> 00:42:13,609
+Serbian bankers declined to fund him, while
+his old business partner John Jacob Astor,
+
+416
+00:42:13,609 --> 00:42:20,329
+still annoyed that Tesla had spent his 1899
+loan researching terrestrial stationary waves
+
+417
+00:42:20,329 --> 00:42:26,960
+instead of wireless lighting, politely refused
+to get involved. By early 1904, Tesla was
+
+418
+00:42:26,960 --> 00:42:32,860
+hiring out his services as a consultant and
+had embarked on a new project that aimed to
+
+419
+00:42:32,860 --> 00:42:39,160
+harness the power of Niagara Falls in partnership
+with the businessman William B. Rankine, yet
+
+420
+00:42:39,160 --> 00:42:45,000
+Tesla’s real desire was always to restart
+his experiments at Wardenclyffe, a prospect
+
+421
+00:42:45,000 --> 00:42:50,710
+that was becoming increasingly unlikely since
+investors were discouraged by the fact that
+
+422
+00:42:50,710 --> 00:42:56,350
+Morgan still owned 51% of Tesla’s patents,
+meaning that business partners would always
+
+423
+00:42:56,350 --> 00:43:02,760
+have to consult him to reap any financial
+benefit from Tesla’s inventions. In response,
+
+424
+00:43:02,760 --> 00:43:08,680
+Tesla bombarded Morgan with impassioned appeals
+to take him back on, in a series of letters
+
+425
+00:43:08,680 --> 00:43:14,910
+that could come in many forms, with some carefully
+prepared proposals promising Morgan unrealistically
+
+426
+00:43:14,910 --> 00:43:21,160
+high profit margins, while in others Tesla
+desperately scribbled emotional outbursts
+
+427
+00:43:21,160 --> 00:43:24,800
+decrying his unfair treatment.
+
+428
+00:43:24,800 --> 00:43:30,099
+Unable to drum up financial backing and still
+struggling to get the Wardenclyffe tower functioning,
+
+429
+00:43:30,099 --> 00:43:36,440
+Tesla was in a dark place and began spiraling
+into a true nervous breakdown after the untimely
+
+430
+00:43:36,440 --> 00:43:41,839
+death of his business associate Rankine and
+the collapse of Canadian Niagara Power in
+
+431
+00:43:41,839 --> 00:43:48,849
+the fall of 1905. A man who was always fascinated
+with human psychology, in the 1920s Tesla
+
+432
+00:43:48,849 --> 00:43:54,330
+shared his experience of emotional collapse
+with author George Sylvester Viereck in a
+
+433
+00:43:54,330 --> 00:44:00,950
+well-publicized book on Freudian theory, explaining
+how in his delirium, he was haunted by images
+
+434
+00:44:00,950 --> 00:44:06,720
+of his deceased brother Dane as well as their
+mother. Tesla would recover from his breakdown
+
+435
+00:44:06,720 --> 00:44:13,640
+in 1906, and with a new determination to prove
+himself as a valuable asset, he switched his
+
+436
+00:44:13,640 --> 00:44:19,700
+focus from electrical to mechanical engineering,
+delving into the science of flight in a bid
+
+437
+00:44:19,700 --> 00:44:26,270
+to raise money so that he could continue his
+work at Wardenclyffe, which in 1904, due to
+
+438
+00:44:26,270 --> 00:44:31,440
+lack of funds, he had mortgaged to George
+C. Boldt, the owner of the Waldorf-Astoria
+
+439
+00:44:31,440 --> 00:44:37,150
+Hotel where Tesla lived for many years. The
+result was the invention of a turbine that
+
+440
+00:44:37,150 --> 00:44:43,869
+worked without blades, but Tesla’s contraption
+was met less than enthusiastically by John
+
+441
+00:44:43,869 --> 00:44:50,390
+James Astor, who refused to invest in the
+idea in 1909, yet Tesla still remained highly
+
+442
+00:44:50,390 --> 00:44:56,920
+confident in his design, issuing two patents
+for a pump and a turbine in October and even
+
+443
+00:44:56,920 --> 00:45:02,760
+starting a new company, the Tesla Propulsion
+Company. However, after Tesla again failed
+
+444
+00:45:02,760 --> 00:45:08,869
+to impress at a demonstration at the Waterside
+Power Station in New York, and still daydreaming
+
+445
+00:45:08,869 --> 00:45:14,970
+about restarting his research into wireless
+power, he approached the son of J.P Morgan,
+
+446
+00:45:14,970 --> 00:45:21,350
+Jack Morgan, in 1913 about him becoming a
+potential investor. More interested in his
+
+447
+00:45:21,350 --> 00:45:28,369
+turbine designs, Jack Morgan allocated Tesla
+20,000 dollars, who instead of using the money
+
+448
+00:45:28,369 --> 00:45:34,730
+in the way it was intended, spent it all trying
+to persuade Sigmund Bergmann, a German industrialist,
+
+449
+00:45:34,730 --> 00:45:41,579
+to finance his project, which was discontinued
+after the outbreak of World War One.
+
+450
+00:45:41,579 --> 00:45:47,480
+Over the next 10 years, as his personal wealth
+began to evaporate, Tesla continued to assess
+
+451
+00:45:47,480 --> 00:45:53,670
+his turbine and to work in conjunction with
+manufacturers such as Pyle National in Chicago,
+
+452
+00:45:53,670 --> 00:45:58,930
+Allis-Chalmers in Milwaukee, and the Budd
+company in Philadelphia, but he was unable
+
+453
+00:45:58,930 --> 00:46:04,540
+to fix a recurring problem that ultimately
+spelled the project’s doom, as if operated
+
+454
+00:46:04,540 --> 00:46:11,200
+at over 10,000 rpm, the thin disks of the
+internal machinery would start to deform,
+
+455
+00:46:11,200 --> 00:46:16,280
+and there were no stronger materials available.
+Tesla’s inability to secure funding for
+
+456
+00:46:16,280 --> 00:46:21,530
+any of his pursuits, and his penchant for
+overspending, led to the near emptying of
+
+457
+00:46:21,530 --> 00:46:27,920
+his bank accounts and from 1916, he was forced
+to file for bankruptcy. Tesla admitted that
+
+458
+00:46:27,920 --> 00:46:34,540
+his monthly income was no more than 350 to
+400 dollars after declaring he was unable
+
+459
+00:46:34,540 --> 00:46:41,290
+to pay 935 dollars in taxes to the New York
+treasury, and although he was still technically
+
+460
+00:46:41,290 --> 00:46:46,770
+the president and treasurer of the Nikola
+Tesla Company, over 90% of the company’s
+
+461
+00:46:46,770 --> 00:46:53,470
+stock was owned by friends, bankers, and creditors,
+and many of his patents by then had expired,
+
+462
+00:46:53,470 --> 00:46:59,569
+leaving Tesla virtually penniless. In a bid
+to save himself from financial ruin, Tesla
+
+463
+00:46:59,569 --> 00:47:06,780
+launched a lawsuit against Marconi in August
+1915, accusing the Italian of illegally patenting
+
+464
+00:47:06,780 --> 00:47:13,510
+radio technology in 1904, but the case went
+nowhere and Marconi remained the official
+
+465
+00:47:13,510 --> 00:47:20,930
+owner for the time being, with the decision
+later overturned by the Supreme Court in 1943
+
+466
+00:47:20,930 --> 00:47:24,180
+only a few months after Tesla’s death.
+
+467
+00:47:24,180 --> 00:47:29,850
+Consequently, Tesla was forced to earn a living
+by creating minor inventions and registering
+
+468
+00:47:29,850 --> 00:47:36,010
+several improvements in automobile speedometers,
+frequency meters, and flow meters which he
+
+469
+00:47:36,010 --> 00:47:42,809
+licensed to Waltham Watch Company in 1918.
+The company used Tesla’s name as a marketing
+
+470
+00:47:42,809 --> 00:47:49,089
+ploy to sell ‘scientifically built speedometers’,
+as despite Tesla’s changing circumstances,
+
+471
+00:47:49,089 --> 00:47:54,369
+his name still carried a certain gravitas,
+and Tesla’s opinions and thoughts still
+
+472
+00:47:54,369 --> 00:48:01,520
+garnered much press interest, such as in 1917
+when, presaging the advent of radar technology
+
+473
+00:48:01,520 --> 00:48:08,290
+in the 1930s, he forecast that microwave radiation
+could be employed to detect ships. In the
+
+474
+00:48:08,290 --> 00:48:14,829
+midst of his financial troubles, Tesla still
+had his admirers, and in 1915 it was reported
+
+475
+00:48:14,829 --> 00:48:20,470
+by the New York Times that he had jointly
+won the Nobel Prize for Physics, an honor
+
+476
+00:48:20,470 --> 00:48:26,369
+he was to share with his one-time ally and
+now bitter enemy Thomas Edison, but when it
+
+477
+00:48:26,369 --> 00:48:31,790
+was presented at the awards ceremony it was
+instead given to William H. Bragg and his
+
+478
+00:48:31,790 --> 00:48:38,180
+son, as Tesla refused to share the award with
+his nemesis nor had he forgiven the institute
+
+479
+00:48:38,180 --> 00:48:43,730
+for recognizing Marconi as the pioneer of
+radio communication technology after they
+
+480
+00:48:43,730 --> 00:48:51,470
+had awarded him the same accolade in 1909.
+Two years later in 1917 however, Tesla’s
+
+481
+00:48:51,470 --> 00:48:56,460
+individual efforts would be recognized when
+he accepted the Edison Medal from the American
+
+482
+00:48:56,460 --> 00:49:02,890
+Institute of Electrical Engineers, the most
+prestigious prize in electronic engineering,
+
+483
+00:49:02,890 --> 00:49:08,440
+where his life’s work was praised in an
+address by the vice-president of the organization,
+
+484
+00:49:08,440 --> 00:49:09,440
+who said:
+
+485
+00:49:09,440 --> 00:49:14,880
+“Were we to seize and eliminate from our
+industrial world the result of Mr. Tesla's
+
+486
+00:49:14,880 --> 00:49:21,440
+work, the wheels of industry would cease to
+turn, our electric cars and trains would stop,
+
+487
+00:49:21,440 --> 00:49:28,339
+our towns would be dark and our mills would
+be idle and dead. His name marks an epoch
+
+488
+00:49:28,339 --> 00:49:31,430
+in the advance of electrical science.”
+
+489
+00:49:31,430 --> 00:49:36,770
+Yet Tesla cared very little for the decoration,
+opting to leave the Engineer’s Club where
+
+490
+00:49:36,770 --> 00:49:42,500
+the awards ceremony was taking place shortly
+before he was presented with the medallion,
+
+491
+00:49:42,500 --> 00:49:47,510
+forcing his friend and the person who had
+nominated him, B.A Behrend to embark on a
+
+492
+00:49:47,510 --> 00:49:53,300
+frantic search that ended in Bryant Park,
+across from the venue, where Tesla was busy
+
+493
+00:49:53,300 --> 00:49:59,730
+feeding pigeons. Tesla particularly loathed
+the fact that the award was in his rival’s
+
+494
+00:49:59,730 --> 00:50:05,350
+name. Despite being lauded for his work in
+electricity, Nikola Tesla remained poor throughout
+
+495
+00:50:05,350 --> 00:50:10,880
+the 1920s, and because he made only a small
+income from the royalties he received from
+
+496
+00:50:10,880 --> 00:50:17,350
+licensing his minor inventions he became embroiled
+in a string of legal disputes, such as in
+
+497
+00:50:17,350 --> 00:50:25,260
+June 1925 when he was sued by the attorney
+Ralph J. Hawkins for failing to pay 913 dollars
+
+498
+00:50:25,260 --> 00:50:31,930
+in fees. It was during this decade that Tesla
+started to retreat from the public eye, living
+
+499
+00:50:31,930 --> 00:50:37,599
+hotel to hotel as an eccentric recluse and
+spending so much of his time feeding the pigeons
+
+500
+00:50:37,599 --> 00:50:43,690
+in Bryant Park behind the New York Public
+Library, that one end of the park, Nikola
+
+501
+00:50:43,690 --> 00:50:46,890
+Tesla Corner, now honors his name.
+
+502
+00:50:46,890 --> 00:50:54,549
+However, on his 75th birthday in 1931 Nikola
+Tesla was suddenly back in the spotlight,
+
+503
+00:50:54,549 --> 00:50:59,260
+appearing on the front cover of Time magazine,
+and thanks to the efforts of a young science
+
+504
+00:50:59,260 --> 00:51:04,579
+writer called Kenneth Swezey, he received
+over 70 letters of congratulation published
+
+505
+00:51:04,579 --> 00:51:10,339
+in a testimonial volume from some of the most
+esteemed scientists of the day, including
+
+506
+00:51:10,339 --> 00:51:17,150
+Albert Einstein. Interviewed by Time magazine,
+Tesla outlined many of his future plans, and
+
+507
+00:51:17,150 --> 00:51:22,910
+confidently disclosed how he was going to
+disprove Einstein’s theory of relativity,
+
+508
+00:51:22,910 --> 00:51:28,620
+how he was unconvinced that energy was released
+from a split atom, as well as espousing the
+
+509
+00:51:28,620 --> 00:51:34,250
+possibility of interplanetary communications
+in a conversation he enjoyed so much that
+
+510
+00:51:34,250 --> 00:51:40,000
+every year thereafter, Tesla would organize
+a press conference on his birthday, usually
+
+511
+00:51:40,000 --> 00:51:45,700
+a 6 hour affair where Tesla would speak to
+a number of reporters and update them about
+
+512
+00:51:45,700 --> 00:51:51,640
+his scientific and personal progress. For
+example, in 1932, he informed the general
+
+513
+00:51:51,640 --> 00:51:59,569
+public about his desire to build a motor propelled
+by cosmic rays, and in 1936 he told journalists
+
+514
+00:51:59,569 --> 00:52:05,680
+that he wiggled his toes hundreds of times
+before he went to bed, an exercise he believed
+
+515
+00:52:05,680 --> 00:52:12,940
+would tone his body and enable him to live
+until he was 135 years old. The 1934 party
+
+516
+00:52:12,940 --> 00:52:18,740
+was a particular highlight, where Tesla first
+revealed he was in the process of creating
+
+517
+00:52:18,740 --> 00:52:24,010
+a particle beam weapon, claiming in the New
+York Times that it could:
+
+518
+00:52:24,010 --> 00:52:30,010
+“…send concentrated beams of particles
+through the free air, of such tremendous energy
+
+519
+00:52:30,010 --> 00:52:36,710
+that they will bring down a fleet of 10,000
+enemy airplanes at a distance of 250 miles
+
+520
+00:52:36,710 --> 00:52:42,119
+from a defending nation’s border and will
+cause armies of millions to drop dead in their
+
+521
+00:52:42,119 --> 00:52:43,150
+tracks.”
+
+522
+00:52:43,150 --> 00:52:48,049
+Anticipating the later doctrine of ‘Mutually
+Assured Destruction’ and the concept of
+
+523
+00:52:48,049 --> 00:52:54,460
+nuclear stalemate, Tesla believed his laser
+beam could end war completely since it was
+
+524
+00:52:54,460 --> 00:53:00,610
+so devastating that every conceivable defensive
+measure would be useless against it. Although
+
+525
+00:53:00,610 --> 00:53:07,270
+Tesla was susceptible to flights of fancy
+on occasion, the death beam was a real project,
+
+526
+00:53:07,270 --> 00:53:14,340
+and was the subject of a Tesla study rediscovered
+in 1984 entitled ‘The New Art of Projecting
+
+527
+00:53:14,340 --> 00:53:20,310
+Concentrated Non-dispersive Energy through
+Natural Media’, which laid out the fundamentals
+
+528
+00:53:20,310 --> 00:53:27,030
+of a weapons system that discharged tungsten
+and mercury particles at 48 times the speed
+
+529
+00:53:27,030 --> 00:53:32,080
+of sound to produce devastating projectiles.
+
+530
+00:53:32,080 --> 00:53:37,240
+Despite Tesla’s invention being impossible,
+it elicited a great deal of publicity, motivating
+
+531
+00:53:37,240 --> 00:53:43,630
+Tesla to recruit Hungarian architect Titus
+deBobula to design a new tower to evaluate
+
+532
+00:53:43,630 --> 00:53:50,240
+the death beam, yet the project would never
+get off the ground, as by 1935, Tesla was
+
+533
+00:53:50,240 --> 00:53:56,270
+no longer working with deBobula, who had proven
+himself a slippery character after attempting
+
+534
+00:53:56,270 --> 00:54:02,790
+to borrow money from Tesla and trying to get
+him involved in an illegal arms deal in Paraguay.
+
+535
+00:54:02,790 --> 00:54:08,810
+Nevertheless Tesla, ever wily, was still able
+to use the furore that surrounded him to his
+
+536
+00:54:08,810 --> 00:54:15,180
+advantage in some situations, offering up
+a working prototype of the laser beam, valued
+
+537
+00:54:15,180 --> 00:54:21,130
+at 10,000 dollars, to the managers of the
+Governor Clinton Hotel as compensation for
+
+538
+00:54:21,130 --> 00:54:26,860
+the 400 dollars that he owed them, while warning
+them that the box he gave them supposedly
+
+539
+00:54:26,860 --> 00:54:33,530
+containing the weapon would explode if improperly
+handled, resulting in terrified staff depositing
+
+540
+00:54:33,530 --> 00:54:39,560
+it at the back end of the hotel vault. The
+laser beam also came to the attention of the
+
+541
+00:54:39,560 --> 00:54:45,109
+international community, and Tesla soon found
+himself entering negotiations with the League
+
+542
+00:54:45,109 --> 00:54:51,119
+of Nations, the UK government, and even the
+Soviet Union, who signed a contract in April
+
+543
+00:54:51,119 --> 00:54:57,470
+1935 stipulating that Tesla was to supply
+them with the information necessary to construct
+
+544
+00:54:57,470 --> 00:55:03,680
+the weapon, although it is unknown if Soviet
+scientists actually carried out the research.
+
+545
+00:55:03,680 --> 00:55:09,910
+The project however would start to disintegrate
+from January 1938, after the British concluded
+
+546
+00:55:09,910 --> 00:55:16,490
+negotiations with Tesla, while the final nail
+in the coffin would occur in 1940, after he
+
+547
+00:55:16,490 --> 00:55:21,849
+was left empty-handed following a desperate
+attempt to persuade the US government that
+
+548
+00:55:21,849 --> 00:55:26,740
+the laser beam could be a viable World War
+Two weapon.
+
+549
+00:55:26,740 --> 00:55:31,589
+Hampering Tesla in his last ditch attempts
+to liaise with international governments,
+
+550
+00:55:31,589 --> 00:55:37,589
+was his declining health, which had started
+to deteriorate in 1937 after he was run over
+
+551
+00:55:37,589 --> 00:55:43,970
+by a taxi and refused to get medical treatment
+for injuries that he would never recover from.
+
+552
+00:55:43,970 --> 00:55:49,660
+Subsisting on a meager diet of boiled vegetables
+and warm milk, and making sure to keep three
+
+553
+00:55:49,660 --> 00:55:55,780
+feet away from everyone to avoid catching
+germs, Tesla’s personal health choices led
+
+554
+00:55:55,780 --> 00:56:03,470
+to no improvements, and by 1942 he was spending
+the majority of his days confined to his bed
+
+555
+00:56:03,470 --> 00:56:08,690
+where his grip on reality started to loosen,
+when in July, for example, Tesla tried to
+
+556
+00:56:08,690 --> 00:56:16,600
+send money to Mark Twain who had died in 1913.
+Opting to see only a select few visitors,
+
+557
+00:56:16,600 --> 00:56:22,240
+including the exiled prince of Yugoslavia
+Peter II and a young scientist called Bloyce
+
+558
+00:56:22,240 --> 00:56:28,100
+Fitzgerald, the creator of an anti-tank gun
+who would come to discuss inventions, Tesla
+
+559
+00:56:28,100 --> 00:56:31,800
+isolated himself from the world as he deteriorated.
+
+560
+00:56:31,800 --> 00:56:38,380
+Nikola Tesla died of a heart attack in his
+sleep on the 7th of January 1943 at his executive
+
+561
+00:56:38,380 --> 00:56:45,130
+suite in Room 3327 of the Hotel New Yorker,
+where he had been living for the previous
+
+562
+00:56:45,130 --> 00:56:51,220
+10 years. Inundated with letters of condolence
+from major scientific and political figures
+
+563
+00:56:51,220 --> 00:56:56,720
+all over the world, such as Eleanor Roosevelt,
+the wife of the US President, the vice-president
+
+564
+00:56:56,720 --> 00:57:02,290
+Henry Wallace, and a host of nobel laureates,
+Tesla’s funeral took place at St John the
+
+565
+00:57:02,290 --> 00:57:08,540
+Divine Cathedral in New York City on the 12th
+of January, where it was attended by over
+
+566
+00:57:08,540 --> 00:57:15,160
+2000 people and presided over by members of
+the Serbian Orthodox Church. Afterwards Nikola
+
+567
+00:57:15,160 --> 00:57:21,630
+Tesla, who by the end of his life boasted
+over 700 patents to his name, was cremated
+
+568
+00:57:21,630 --> 00:57:27,609
+and his ashes were placed inside a golden
+sphere, which is still exhibited at the Tesla
+
+569
+00:57:27,609 --> 00:57:29,799
+Museum in Belgrade.
+
+570
+00:57:29,799 --> 00:57:35,220
+Following his death, the US government were
+curious as to whether among Tesla’s surviving
+
+571
+00:57:35,220 --> 00:57:40,130
+notes there could be information to help them
+in the war effort, and so they investigated
+
+572
+00:57:40,130 --> 00:57:47,089
+his documents but found nothing of profound
+importance, and by 1951 they had been repatriated
+
+573
+00:57:47,089 --> 00:57:54,569
+to the Tesla Museum in Belgrade and were accompanied
+a few years later in 1957 by Tesla’s ashes.
+
+574
+00:57:54,569 --> 00:58:01,069
+For decades after though, the mystery surrounding
+the laser beam gun persisted, as the US government
+
+575
+00:58:01,069 --> 00:58:06,400
+consistently denied they had in their possession
+one of Tesla’s microfilms, which according
+
+576
+00:58:06,400 --> 00:58:12,349
+to official records had been intensively reviewed
+for over a month sometime after his death
+
+577
+00:58:12,349 --> 00:58:17,390
+- the truth of these claims however remains
+unproven.
+
+578
+00:58:17,390 --> 00:58:23,059
+Born to Serbian parents on the Austro-Hungarian
+borderlands, Nikola spent his early childhood
+
+579
+00:58:23,059 --> 00:58:29,180
+in pastoral paradise, playing for hours in
+the farmyard and the churchyard with his siblings
+
+580
+00:58:29,180 --> 00:58:35,160
+and his cat Macack, who first set in motion
+Tesla’s lifelong obsession after showing
+
+581
+00:58:35,160 --> 00:58:41,690
+him the strange ways that electric phenomena
+interacted with the material world. As a youngster,
+
+582
+00:58:41,690 --> 00:58:47,450
+Tesla was besieged by a catalogue of perplexing
+illnesses, including an oversensitivity to
+
+583
+00:58:47,450 --> 00:58:53,530
+mental images which made the products of his
+imagination seem real as well as a fixation
+
+584
+00:58:53,530 --> 00:59:00,500
+with quantifying everything he saw and experienced.
+Tesla was a classic eccentric genius, possessing
+
+585
+00:59:00,500 --> 00:59:07,349
+an irrepressible self-belief in his own ability
+to devise fresh and original concepts, which
+
+586
+00:59:07,349 --> 00:59:13,490
+he presented with the flamboyance and performance
+flair of a showman, as onstage he was equally
+
+587
+00:59:13,490 --> 00:59:19,710
+as electric as his subject matter, coming
+across, in the words of New York World reporter
+
+588
+00:59:19,710 --> 00:59:21,190
+Arthur Brisbane, as:
+
+589
+00:59:21,190 --> 00:59:27,460
+“A most radiant creature, with light flaming
+at every pore of his skin, from the tips of
+
+590
+00:59:27,460 --> 00:59:32,660
+his fingers and from the end of every hair
+on his head”
+
+591
+00:59:32,660 --> 00:59:39,150
+By the middle of the 1890s Tesla was at the
+apex of his power and making major contributions
+
+592
+00:59:39,150 --> 00:59:45,480
+to a number of other academic fields, but
+Tesla, who prioritized his intellectual pursuits
+
+593
+00:59:45,480 --> 00:59:51,420
+and never took a wife or started a family,
+also had his fair share of anxieties, the
+
+594
+00:59:51,420 --> 00:59:57,500
+pressure of his line of work making him particularly
+susceptible to emotional outbursts of despair
+
+595
+00:59:57,500 --> 01:00:03,630
+and anger when things were not going his way.
+Tesla’s misfortunes often arose because
+
+596
+01:00:03,630 --> 01:00:09,380
+he was overly confident in his outlook, produced
+only a few tangible commercial results from
+
+597
+01:00:09,380 --> 01:00:15,530
+his experiments, and had no qualms about irresponsibly
+spending all of his investor’s money while
+
+598
+01:00:15,530 --> 01:00:20,900
+still asking for more, a habit that would
+irreparably damage his reputation in his later
+
+599
+01:00:20,900 --> 01:00:28,319
+years and transform him into an impoverished
+recluse who hid away in New York hotels.
+
+600
+01:00:28,319 --> 01:00:34,849
+As he began to ail in the 1930s, Tesla enjoyed
+a renewed wave of international popularity
+
+601
+01:00:34,849 --> 01:00:40,599
+when he revealed that he was planning to assemble
+a laser gun that he anticipated would be so
+
+602
+01:00:40,599 --> 01:00:46,960
+powerful that it would end all conflict, yet
+like many of his schemes it would never come
+
+603
+01:00:46,960 --> 01:00:53,670
+to fruition, fizzling out by 1940 after his
+last effort to interest the US government
+
+604
+01:00:53,670 --> 01:00:59,431
+failed, although many decades after, curiosity
+about the death ray would still persist. Following
+
+605
+01:00:59,431 --> 01:01:06,260
+a period of mental and physical deterioration
+in 1942, Nikola Tesla died at his room at
+
+606
+01:01:06,260 --> 01:01:12,799
+the Hotel New Yorker on the 7th of January
+1943, but was immortalized for his foundational
+
+607
+01:01:12,799 --> 01:01:15,930
+contributions to science.
+
+608
+01:01:15,930 --> 01:01:20,640
+Today one of the world’s most prominent
+and valuable companies is called Tesla Inc.
+
+609
+01:01:20,640 --> 01:01:25,859
+It is a company which seeks to revolutionize
+transport systems and how energy is delivered
+
+610
+01:01:25,859 --> 01:01:31,500
+across the world and while it has no direct
+connections to Nikola Tesla the man, it is
+
+611
+01:01:31,500 --> 01:01:37,530
+fitting that his life’s work has been remembered
+in this way. Tesla, an ethnic Serb, hailed
+
+612
+01:01:37,530 --> 01:01:42,680
+from Croatia in the mid-nineteenth century
+at a time when the Balkans was very far from
+
+613
+01:01:42,680 --> 01:01:48,510
+the centre of technological and industrial
+development and formed part of the Austro-Hungarian
+
+614
+01:01:48,510 --> 01:01:54,430
+Empire, a backwards power which did not contribute
+greatly to wider societal development at the
+
+615
+01:01:54,430 --> 01:01:59,819
+time. And yet, despite these impediments,
+he made enormous breakthroughs during his
+
+616
+01:01:59,819 --> 01:02:05,920
+lifetime in a wide range of different fields.
+It was Tesla who first pioneered alternating
+
+617
+01:02:05,920 --> 01:02:11,760
+current, who made major advances in radio
+technology and who first devised many of the
+
+618
+01:02:11,760 --> 01:02:17,460
+systems which are used today in renewable
+energy systems. Perhaps most impressively,
+
+619
+01:02:17,460 --> 01:02:23,700
+he devised the entire concept of wireless
+technology and communication. In this respect
+
+620
+01:02:23,700 --> 01:02:29,380
+he stands in a small line of individuals in
+modern history which includes Galileo Galilei,
+
+621
+01:02:29,380 --> 01:02:36,760
+Isaac Newton, Thomas Edison and Albert Einstein
+whose life’s work have transformed our understanding
+
+622
+01:02:36,760 --> 01:02:41,020
+of modern science and how society functions.
+
+623
+01:02:41,020 --> 01:02:45,920
+Given all of this, we might ask why Tesla
+was not credited as much as he should have
+
+624
+01:02:45,920 --> 01:02:51,539
+been in his own lifetime for his successes?
+The answer to this conundrum is relatively
+
+625
+01:02:51,539 --> 01:02:57,390
+clear. Tesla’s ideas and the systems he
+came up with, were simply ahead of their time
+
+626
+01:02:57,390 --> 01:03:01,970
+and he was overshadowed by the innovations
+introduced into western society by Thomas
+
+627
+01:03:01,970 --> 01:03:07,590
+Edison, a similar genius whose designs around
+electricity were more suitable for the level
+
+628
+01:03:07,590 --> 01:03:12,369
+of technological development which prevailed
+in Europe and North America in the second
+
+629
+01:03:12,369 --> 01:03:17,660
+half of the nineteenth century. But while
+many of Edison’s inventions and pioneering
+
+630
+01:03:17,660 --> 01:03:24,089
+work around electricity generation are now
+viewed as being somewhat archaic and inefficient,
+
+631
+01:03:24,089 --> 01:03:29,799
+Tesla’s designs and ideas are still widely
+praised. Perhaps in this respect it should
+
+632
+01:03:29,799 --> 01:03:35,160
+be left to Edison to have the last word on
+Tesla. While he dismissed the Serb’s idea
+
+633
+01:03:35,160 --> 01:03:40,700
+of alternating current as being impractical
+at the time, in the end Edison concluded that
+
+634
+01:03:40,700 --> 01:03:46,220
+Tesla was one of the truly great figures in
+the development of our electric world. Edison
+
+635
+01:03:46,220 --> 01:03:51,170
+was entirely correct in this assessment. While
+Edison won the contest to become the leading
+
+636
+01:03:51,170 --> 01:03:56,251
+figure in electrification in North America
+at the end of the nineteenth century, when
+
+637
+01:03:56,251 --> 01:04:01,940
+you boil a kettle or use many other electrical
+appliances today you are most likely using
+
+638
+01:04:01,940 --> 01:04:07,760
+an alternating current device rather than
+the direct current which Edison championed.
+
+639
+01:04:07,760 --> 01:04:13,000
+As such, while Tesla lost the current war
+in the nineteenth century, he was a prophet
+
+640
+01:04:13,000 --> 01:04:19,279
+of twentieth and even twenty-first-century
+technology and energy efficiency.
+
+641
+01:04:19,279 --> 01:04:25,010
+Although Nikola Tesla did not invent or rather
+discover AC power, his genius lies in his
+
+642
+01:04:25,010 --> 01:04:31,420
+ability to find far-reaching real-world applications
+to new discoveries and natural phenomena.
+
+643
+01:04:31,420 --> 01:04:37,300
+He possessed a vision which few of his contemporaries
+could match, even Thomas Edison, and there
+
+644
+01:04:37,300 --> 01:04:42,900
+is no doubt that he changed the world, just
+as much as his former employer, as the light
+
+645
+01:04:42,900 --> 01:04:48,589
+bulb would be next to useless without a reliable
+and safe means of power delivery over long
+
+646
+01:04:48,589 --> 01:04:54,849
+distances. Indeed, there are few people whose
+work has impacted more on modern day society
+
+647
+01:04:54,849 --> 01:04:59,859
+than Nikola Tesla, with electric power now
+being available to the majority of the human
+
+648
+01:04:59,859 --> 01:05:05,500
+race, largely thanks to his work. He even
+tried to work out a way in which, power could
+
+649
+01:05:05,500 --> 01:05:12,770
+be delivered freely to consumers, which perhaps
+both explains why he is today so highly regarded,
+
+650
+01:05:12,770 --> 01:05:17,750
+but also why, he never managed to monetise
+his work in the same manner as people like
+
+651
+01:05:17,750 --> 01:05:23,980
+Edison. Perhaps what most endears us to people
+like Nikola Tesla, Albert Einstein and the
+
+652
+01:05:23,980 --> 01:05:30,250
+breed of latter-day inventors and scientists
+who with little or no formal education revolutionised
+
+653
+01:05:30,250 --> 01:05:35,609
+their respective fields, is the image of the
+eccentric, mad scientist, working alone on
+
+654
+01:05:35,609 --> 01:05:41,809
+experiments and calculations. In an age in
+which the discoveries and achievements of
+
+655
+01:05:41,809 --> 01:05:47,330
+individual scientists are today subsumed by
+the multinational corporations they work for,
+
+656
+01:05:47,330 --> 01:05:50,710
+even the one that bears Tesla’s name, there
+is something romantic and inspiring about
+
+657
+01:05:50,710 --> 01:05:57,390
+one human being having such a positive impact
+on human civilization through their own endeavour.
+
+658
+01:05:57,390 --> 01:06:02,369
+Nikola Tesla is one of these people and despite
+the fact that he did not perhaps receive the
+
+659
+01:06:02,369 --> 01:06:09,140
+money or recognition he deserved in his lifetime,
+he has since his death been immortalised,
+
+660
+01:06:09,140 --> 01:06:15,539
+as one of the greatest and most important
+inventors to have ever lived.
+
+661
+01:06:15,539 --> 01:06:20,099
+What do you think of Nikola Tesla? Do you
+believe he was a more brilliant scientist
+
+662
+01:06:20,099 --> 01:06:26,059
+than Einstein? Please let us know in the comment
+section and in the meantime thank you very
+
+663
+01:06:26,059 --> 01:08:56,539
+much for watching.
+

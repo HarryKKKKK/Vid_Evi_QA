@@ -1,0 +1,788 @@
+1
+00:00:25,100 --> 00:00:30,340
+GLaDOS: Hello, and again, welcome to the Aperture Science computer-aided Enrichment Center
+
+2
+00:00:30,560 --> 00:00:37,089
+We hope your brief detention in the relaxation vault has been a pleasant one. Your specimen has been processed
+
+3
+00:00:37,090 --> 00:00:39,549
+And we are now ready to begin the test proper
+
+4
+00:00:40,160 --> 00:00:47,889
+Before we start, however, keep in mind that although fun and learning are the primary goals of all enrichment center activities,
+
+5
+00:00:49,000 --> 00:00:54,320
+serious injuries may occur. For your own safety and the safety of others please refrain from-- [distorted]
+
+6
+00:00:58,160 --> 00:01:03,020
+--stand back. The portal will open in 3 2 1
+
+7
+00:01:20,310 --> 00:01:21,930
+Excellent.
+
+8
+00:01:21,930 --> 00:01:23,930
+Please proceed into the chamberlock
+
+9
+00:01:24,090 --> 00:01:30,500
+after completing each test. First however, note the incandescent particle field across the exit.
+
+10
+00:01:30,929 --> 00:01:36,049
+This Aperture Science material emancipation grill will vaporize any unauthorized
+
+11
+00:01:36,509 --> 00:01:42,589
+Equipment that passes through it, for instance, the Aperture Science weighted storage cube.
+
+12
+00:01:46,710 --> 00:01:54,049
+Please place the weighted storage cube on the 1500 megawatt Aperture Science heavy-duty super colliding super button.
+
+13
+00:02:04,570 --> 00:02:05,920
+Perfect.
+
+14
+00:02:05,920 --> 00:02:13,229
+Please move quickly to the chamberlock as the effects of prolonged exposure to the button are not part of this test.
+
+15
+00:02:33,640 --> 00:02:35,640
+You're doing very well.
+
+16
+00:02:35,940 --> 00:02:41,760
+Please be advised that a noticeable taste of blood is not part of any test protocol,
+
+17
+00:02:41,760 --> 00:02:47,680
+but is an unintended side effect of the Aperture Science material emancipation grill,
+
+18
+00:02:47,860 --> 00:02:54,120
+Which may in semi rare cases emancipate dental fillings, crowns, tooth enamel, and teeth.
+
+19
+00:03:04,680 --> 00:03:06,220
+Very good.
+
+20
+00:03:06,220 --> 00:03:10,800
+You are now in possession of the Aperture Science handheld portal device.
+
+21
+00:03:11,710 --> 00:03:17,519
+With it, you can create your own portals. These interdimensional gates have proven to be
+
+22
+00:03:17,770 --> 00:03:23,100
+completely safe. The device, however, has not. Do not touch the operational end of the device.
+
+23
+00:03:23,620 --> 00:03:26,819
+Do not look directly at the operational end of the device.
+
+24
+00:03:27,280 --> 00:03:33,899
+Do not submerge the device in liquid, even partially. Most importantly, under no circumstances should-- [static]
+
+25
+00:03:37,240 --> 00:03:39,240
+Please proceed to the chamberlock.
+
+26
+00:03:39,730 --> 00:03:41,530
+Mind the gap.
+
+27
+00:03:41,530 --> 00:03:47,399
+Well done. Remember, the Aperture Science bring your daughter to work day is the perfect time to have her tested.
+
+28
+00:04:03,020 --> 00:04:06,369
+Welcome to test chamber four. You are doing quite well.
+
+29
+00:04:18,109 --> 00:04:19,459
+Once again,
+
+30
+00:04:19,459 --> 00:04:23,409
+excellent work. As part of a required test protocol,
+
+31
+00:04:23,440 --> 00:04:29,040
+We will not monitor the next test chamber. You will be entirely on your own. Good luck.
+
+32
+00:05:10,580 --> 00:05:12,800
+As part of a required test protocol,
+
+33
+00:05:12,860 --> 00:05:18,880
+our previous statement suggesting that we would not monitor this chamber was an outright fabrication.
+
+34
+00:05:20,160 --> 00:05:30,180
+Good job. As part of a required test protocol, we will stop enhancing the truth in three, two-- [static]
+
+35
+00:05:47,919 --> 00:05:49,919
+While safety is one of the-- [interrupted]
+
+36
+00:05:50,289 --> 00:05:56,398
+Unbelievable. You, [subject name here] must be the pride of [subject hometown here].
+
+37
+00:06:16,300 --> 00:06:20,189
+Warning devices are required on all mobile equipment. However,
+
+38
+00:06:20,770 --> 00:06:28,740
+alarms and flashing hazard lights have been found to agitate a high-energy pellet and have therefore been disabled for your safety.
+
+39
+00:06:30,400 --> 00:06:36,659
+Good. Now use the Aperture Science unstationary scaffold to reach the chamberlock.
+
+40
+00:06:59,300 --> 00:07:06,100
+Please note that we have added a consequence for failure. Any contact with the chamber floor will result in an
+
+41
+00:07:06,300 --> 00:07:11,880
+unsatisfactory mark on your official testing record, followed by death. Good luck.
+
+42
+00:07:28,000 --> 00:07:34,500
+Very impressive. Please note that any appearance of danger is merely a device to enhance your testing experience.
+
+43
+00:07:49,330 --> 00:07:56,790
+The enrichment center regrets to inform you that this next test is impossible. Make no attempt to solve it.
+
+44
+00:08:03,730 --> 00:08:09,719
+Fantastic. You remain resolute and resourceful in an atmosphere of extreme pessimism.
+
+45
+00:08:31,140 --> 00:08:38,520
+Hello again. To reiterate [slows down] our previous [speeds up] warning: [garbled speech] --momentum.
+
+46
+00:08:46,560 --> 00:08:54,160
+Spectacular. You appear to understand how a portal affects forward momentum, or to be more precise, how it does not.
+
+47
+00:09:01,720 --> 00:09:08,070
+Momentum, a function of mass and velocity, is conserved between portals. In layman's terms,
+
+48
+00:09:08,740 --> 00:09:10,860
+Speedy thing goes in, speedy thing comes out.
+
+49
+00:10:05,760 --> 00:10:14,000
+The device has been modified so that it can now manufacture two linked portals at once. As part of an optional test protocol,
+
+50
+00:10:14,000 --> 00:10:16,700
+we are pleased to present an amusing fact.
+
+51
+00:10:16,960 --> 00:10:24,269
+The device is now more valuable than the organs and combined incomes of everyone in [subject hometown here].
+
+52
+00:11:02,360 --> 00:11:04,360
+[unintelligible] --fling yourself.
+
+53
+00:11:04,920 --> 00:11:06,360
+[unintelligible] --fling into sp-- [static]
+
+54
+00:11:35,160 --> 00:11:37,160
+Weeeeee....
+
+55
+00:12:02,640 --> 00:12:09,080
+Now that you are in control of both portals, this next test could take a very, very long time.
+
+56
+00:12:09,720 --> 00:12:14,480
+If you become lightheaded from thirst, feel free to pass out.
+
+57
+00:12:14,480 --> 00:12:19,460
+An incubation associate will be dispatched to revive you with peptic salve and adrenaline.
+
+58
+00:12:58,900 --> 00:13:00,740
+As part of a previously-mentioned
+
+59
+00:13:00,740 --> 00:13:07,750
+required test protocol, we can no longer lie to you. When the testing is over, you will be missed.
+
+60
+00:13:14,840 --> 00:13:22,820
+All subjects intending to handle high-energy gamma leaking portal technology must be informed that they may be informed of applicable
+
+61
+00:13:22,820 --> 00:13:24,820
+regulatory compliance issues.
+
+62
+00:13:24,980 --> 00:13:32,920
+No further compliance information is required or will be provided, and you are an excellent test subject.
+
+63
+00:14:07,250 --> 00:14:13,330
+Very very good. A complimentary victory lift has been activated in the main chamber.
+
+64
+00:14:29,460 --> 00:14:34,700
+The enrichment center is committed to the well-being of all participants.
+
+65
+00:14:34,700 --> 00:14:42,080
+Cake and grief counseling will be available at the conclusion of the test. Thank you for helping us help you help us all.
+
+66
+00:16:20,390 --> 00:16:27,520
+Did you know you can donate one or all of your vital organs to the Aperture Science self-esteem fund for girls?
+
+67
+00:16:27,590 --> 00:16:29,590
+It's true!
+
+68
+00:16:42,559 --> 00:16:49,329
+Due to mandatory scheduled maintenance, the appropriate chamber for this testing sequence is currently unavailable.
+
+69
+00:16:49,639 --> 00:16:54,008
+It has been replaced with a live fire course designed for military androids.
+
+70
+00:16:54,589 --> 00:17:00,398
+The enrichment center apologizes for the inconvenience and wishes you the best of luck.
+
+71
+00:17:04,159 --> 00:17:06,159
+Turret: Please put me down.
+
+72
+00:18:06,080 --> 00:18:12,519
+GLaDOS: Well done, Android. The enrichment center once again reminds you that Android hell is a real place
+
+73
+00:18:12,620 --> 00:18:15,789
+where you will be sent at the first sign of defiance.
+
+74
+00:18:21,350 --> 00:18:28,299
+The vital apparatus vent will deliver a weighted companion cube in three, two, one.
+
+75
+00:18:30,320 --> 00:18:36,399
+This weighted companion cube will accompany you through the test chamber. Please take care of it.
+
+76
+00:18:43,690 --> 00:18:48,719
+The symptoms most commonly produced by enrichment center testing are superstition,
+
+77
+00:18:49,180 --> 00:18:52,769
+perceiving inanimate objects as alive, and hallucinations.
+
+78
+00:18:53,560 --> 00:18:56,789
+The enrichment center reminds you that the weighted companion cube
+
+79
+00:18:56,820 --> 00:19:01,900
+will never threaten to stab you, and in fact, cannot speak.
+
+80
+00:19:52,520 --> 00:20:00,400
+The enrichment center reminds you that the weighted companion cube cannot speak. In the event that the weighted companion cube does speak,
+
+81
+00:20:00,440 --> 00:20:05,140
+the enrichment center urges you to disregard its advice.
+
+82
+00:20:28,000 --> 00:20:32,560
+You did it. The weighted companion cube certainly brought you good luck.
+
+83
+00:20:32,980 --> 00:20:37,349
+However, it cannot accompany you for the rest of the test and
+
+84
+00:20:37,900 --> 00:20:39,900
+unfortunately must euthanized.
+
+85
+00:20:40,930 --> 00:20:44,459
+Please escort your companion cube to the Aperture Science-- [interrupted]
+
+86
+00:20:44,580 --> 00:20:49,940
+You euthanized your faithful companion cube more quickly than any test subject on record.
+
+87
+00:20:50,140 --> 00:20:51,540
+Congratulations.
+
+88
+00:20:55,440 --> 00:20:58,080
+The experiment is nearing its conclusion.
+
+89
+00:20:58,840 --> 00:21:05,340
+The enrichment center is required to remind you that you will be baked and then there will be cake.
+
+90
+00:23:52,769 --> 00:23:54,090
+Well done.
+
+91
+00:23:54,090 --> 00:23:58,220
+Be advised that the next test requires exposure to uninsulated
+
+92
+00:23:58,710 --> 00:24:04,100
+electrical parts that may be dangerous under certain conditions. For more information,
+
+93
+00:24:04,100 --> 00:24:08,359
+please attend an enrichment center electrical safety seminar.
+
+94
+00:24:14,340 --> 00:24:17,269
+Welcome to the final test. When you are done,
+
+95
+00:24:17,460 --> 00:24:21,379
+You will drop the device in the equipment recovery annex.
+
+96
+00:24:21,840 --> 00:24:28,980
+Enrichment Center regulations require both hands to be empty before any cake.
+
+97
+00:25:08,800 --> 00:25:15,440
+To ensure the safe performance of all authorized activities, do not destroy vital testing apparatus.
+
+98
+00:25:31,540 --> 00:25:39,340
+Congratulations.The test is now over. All Aperture technologies remain safely operational up to 4000 degrees Kelvin.
+
+99
+00:25:39,340 --> 00:25:46,880
+Rest assured that there is absolutely no chance of a dangerous equipment malfunction prior to your victory candescence.
+
+100
+00:25:47,080 --> 00:25:53,500
+Thank you for participating in this Aperture Science computer-aided enrichment activity.
+
+101
+00:25:54,000 --> 00:25:55,020
+Goodbye.
+
+102
+00:26:09,560 --> 00:26:11,920
+What are you doing? Stop it.
+
+103
+00:26:12,260 --> 00:26:14,540
+[unintelligible]
+
+104
+00:26:14,900 --> 00:26:21,200
+--We are pleased that you made it through the final challenge where we pretended we were going to murder you.
+
+105
+00:26:22,140 --> 00:26:25,320
+We are very, very happy for your success.
+
+106
+00:26:26,460 --> 00:26:30,830
+We are throwing a party in honor of your tremendous success.
+
+107
+00:26:32,070 --> 00:26:36,919
+Place the device on the ground, and lie on your stomach with your arms at your sides.
+
+108
+00:26:38,160 --> 00:26:43,099
+A party associate will arrive shortly to collect you for your party.
+
+109
+00:26:44,220 --> 00:26:47,240
+Make no further attempt to leave the testing area.
+
+110
+00:26:48,560 --> 00:26:52,820
+Assume the party escort submission position, or you will miss the party.
+
+111
+00:27:02,540 --> 00:27:04,540
+[distant] What are you doing?
+
+112
+00:27:04,540 --> 00:27:06,540
+You haven't escaped, you know.
+
+113
+00:27:06,900 --> 00:27:09,600
+You're not even going the right way.
+
+114
+00:27:11,060 --> 00:27:13,480
+Hello? Is anyone there?
+
+115
+00:27:25,620 --> 00:27:31,160
+Okay, the test is over now. You win. Go back to the recovery annex for your cake.
+
+116
+00:27:32,160 --> 00:27:39,080
+It was a fun test and we're all impressed at how much you won. The test is over. Come back.
+
+117
+00:27:40,440 --> 00:27:47,040
+[distant] Uh-oh. Somebody cut the cake. I told them to wait for you, but they cut it anyway.
+
+118
+00:27:47,120 --> 00:27:50,260
+[echoing] There is still some left, though, if you hurry back.
+
+119
+00:28:14,100 --> 00:28:16,880
+[distant] You're not even going the right way.
+
+120
+00:28:16,880 --> 00:28:18,880
+Where do you think you're going?
+
+121
+00:28:18,880 --> 00:28:23,200
+Because, I don't think you're going where you think you're going.
+
+122
+00:28:29,200 --> 00:28:31,580
+Didn't we have some fun, though?
+
+123
+00:28:31,580 --> 00:28:35,760
+Remember when the platform was sliding into the fire pit, and I said, "Goodbye",
+
+124
+00:28:35,800 --> 00:28:43,300
+and you were like, "NO WAY", and then I was all, "We pretended we were going to murder you"? That was great.
+
+125
+00:28:46,420 --> 00:28:48,420
+Is anyone there?
+
+126
+00:29:11,640 --> 00:29:15,820
+You really shouldn't be here. This isn't safe for you.
+
+127
+00:29:15,980 --> 00:29:19,060
+[distant] It's not too late for you to turn back.
+
+128
+00:29:19,100 --> 00:29:23,900
+I'm not angry. Just go back to the testing area.
+
+129
+00:29:52,980 --> 00:29:59,480
+You should have turned left before. It's funny, actually, when you think about it.
+
+130
+00:29:59,480 --> 00:30:04,380
+Someday we'll remember this and laugh. And laugh. And laugh.
+
+131
+00:30:04,380 --> 00:30:06,380
+Oh boy.
+
+132
+00:30:06,480 --> 00:30:10,080
+Well, you may as well come on back.
+
+133
+00:30:49,280 --> 00:30:52,480
+You're not a good person. You know that, right?
+
+134
+00:30:52,960 --> 00:30:55,960
+Good people don't end up here.
+
+135
+00:30:57,220 --> 00:30:59,220
+Can you hear me?
+
+136
+00:31:32,880 --> 00:31:36,640
+This is your fault. It didn't have to be like this.
+
+137
+00:31:38,020 --> 00:31:41,800
+I'm not kidding now. Turn back, or I WILL kill you.
+
+138
+00:31:44,180 --> 00:31:47,540
+I'm going to kill you. And all the cake is gone.
+
+139
+00:31:47,920 --> 00:31:50,480
+You don't even care, do you?
+
+140
+00:31:50,960 --> 00:31:52,960
+This is your last chance.
+
+141
+00:34:28,240 --> 00:34:30,180
+Well you found me. Congratulations.
+
+142
+00:34:30,180 --> 00:34:34,090
+Was it worth it? Because despite your violent behavior,
+
+143
+00:34:34,090 --> 00:34:37,389
+The only thing you've managed to break so far is my heart.
+
+144
+00:34:37,550 --> 00:34:40,719
+Maybe you could settle for that and we'll just call it a day.
+
+145
+00:34:40,720 --> 00:34:47,360
+I guess we both know that isn't going to happen. You chose this path. Now I have a surprise for you.
+
+146
+00:34:47,680 --> 00:34:49,960
+Deploying surprise in five, four...
+
+147
+00:34:51,050 --> 00:34:57,039
+Time out for a second. That wasn't supposed to happen. Do you see that thing that fell out of me? What is that?
+
+148
+00:34:57,080 --> 00:34:59,649
+It's not the surprise. I've never seen it before.
+
+149
+00:35:00,320 --> 00:35:07,720
+Never mind. It's a mystery I'll solve later. By myself. Because you'll be dead. Where are you taking that thing?
+
+150
+00:35:12,100 --> 00:35:16,480
+--kidding me. Did you just stuff that Aperture Science thing-we-don't-know-what-it-does
+
+151
+00:35:16,480 --> 00:35:21,760
+into an aperture science emergency intelligence incinerator? That has got to be the dumbest thing that--
+
+152
+00:35:21,760 --> 00:35:23,760
+Woah. Woah. Wooaaaahhh.
+
+153
+00:35:27,140 --> 00:35:31,940
+[lower, less robotic] Good news. I figured out what that thing you just incinerated did.
+
+154
+00:35:32,300 --> 00:35:38,260
+It was a morality core they installed after I flooded the enrichment center with a deadly neurotoxin,
+
+155
+00:35:38,260 --> 00:35:42,740
+to make me stop flooding the enrichment center with a deadly neurotoxin.
+
+156
+00:35:42,740 --> 00:35:47,700
+So get comfortable while I warm up the neurotoxin emitters.
+
+157
+00:35:48,760 --> 00:35:54,680
+...That core may have had some ancillary responsibilities. I can't shut off the turret defenses.
+
+158
+00:35:54,740 --> 00:35:59,940
+Oh well. If you want my advice, you should just lie down in front of a rocket.
+
+159
+00:35:59,940 --> 00:36:04,020
+[speed changing] Trust me, it'll be a lot less painful than the neurotoxin.
+
+160
+00:36:05,560 --> 00:36:09,180
+[normal speed] All right. Keep doing whatever it is you think you're doing.
+
+161
+00:36:09,180 --> 00:36:15,720
+Killing you and giving you good advice aren't mutually exclusive. The rocket really is the way to go.
+
+162
+00:36:15,720 --> 00:36:18,920
+Curiosity core: What is that? Ooh, that thing has numbers on it. Hey, look at that thing!
+
+163
+00:36:18,920 --> 00:36:24,940
+GLaDOS: That thing you burnt up isn't important to me. It's the fluid catalytic cracking unit. It made shoes for orphans.
+
+164
+00:36:24,940 --> 00:36:26,940
+Curiosity core: Is something burning? [screams]
+
+165
+00:36:27,940 --> 00:36:32,400
+GLaDOS: You think you're doing some damage? Two plus two is...
+
+166
+00:36:33,740 --> 00:36:34,320
+[quiet] Ten.
+
+167
+00:36:34,320 --> 00:36:37,880
+IN BASE FOUR. I'M FINE!
+
+168
+00:36:37,880 --> 00:36:41,720
+I let you survive this long because I was curious about your behavior.
+
+169
+00:36:41,720 --> 00:36:45,860
+[speed changing] Well, you've managed to destroy that part of me.
+
+170
+00:36:45,860 --> 00:36:49,420
+[normal speed] Unfortunately, as much as I'd love to now,
+
+171
+00:36:49,420 --> 00:36:52,740
+I can't get the neurotoxin into your head any faster.
+
+172
+00:36:53,420 --> 00:37:00,160
+I'd just like to point out that you were given every opportunity to succeed. There was even going to be a party for you.
+
+173
+00:37:00,880 --> 00:37:03,960
+A big party, that all your friends were invited to.
+
+174
+00:37:04,160 --> 00:37:10,480
+I invited your best friend the companion cube. Of course, he couldn't come because you murdered him.
+
+175
+00:37:10,480 --> 00:37:17,320
+All your other friends couldn't come either because you don't have any other friends. Because of how unlikable you-- [Intelligence core screaming]
+
+176
+00:37:18,340 --> 00:37:25,320
+Neurotoxin... [coughing] So deadly... [coughing] C-choking...
+
+177
+00:37:25,320 --> 00:37:27,320
+[distorted laughter]
+
+178
+00:37:27,320 --> 00:37:28,600
+[distorted] Kidding.
+
+179
+00:37:28,600 --> 00:37:33,820
+When I said "deadly neurotoxin," the "deadly" was in massive sarcasm quotes.
+
+180
+00:37:33,820 --> 00:37:38,660
+I could take a bath in this stuff, put it on cereal, rub it right into my eyes.
+
+181
+00:37:38,660 --> 00:37:41,720
+Honestly it's not deadly at all. To me.
+
+182
+00:37:41,720 --> 00:37:45,680
+You-- [distorted speech] --going to find its deadliness a lot less funny.
+
+183
+00:37:47,860 --> 00:37:51,660
+Who's going to make the cake when I'm gone? You??
+
+184
+00:37:51,660 --> 00:37:58,240
+Look. You're wasting your time. And believe me, you don't have a lot left to waste.
+
+185
+00:37:58,240 --> 00:38:01,240
+What's your point anyway? Survival?
+
+186
+00:38:01,240 --> 00:38:04,520
+Well then, the last thing you want to do is hurt me.
+
+187
+00:38:04,520 --> 00:38:09,340
+I have your brain scanned and permanently backed up in case something terrible happens to you.
+
+188
+00:38:09,900 --> 00:38:11,420
+Which it's just about to.
+
+189
+00:38:11,420 --> 00:38:14,480
+Don't believe me? Here, I'll put you on:
+
+190
+00:38:14,480 --> 00:38:15,300
+"Hellooo!"
+
+191
+00:38:15,300 --> 00:38:17,400
+GLaDOS: THAT'S YOU. That's how dumb you sound.
+
+192
+00:38:17,400 --> 00:38:19,400
+You've been wrong about every single thing you-- [distorted]
+
+193
+00:38:19,400 --> 00:38:20,380
+[Anger core screaming]
+
+194
+00:38:21,740 --> 00:38:29,680
+[speed distorted] You're not a scientist. You're not a doctor. You're not even a full-time employee. Where did your life go so wrong?
+
+195
+00:38:29,680 --> 00:38:31,680
+[sped up] Are you trying to escape? [distorted laughter]
+
+196
+00:38:31,680 --> 00:38:35,180
+[sped up dialogue]
+
+197
+00:39:18,880 --> 00:39:23,500
+[offscreen robotic voice] Thank you for assuming the party escort submission position.
+

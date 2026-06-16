@@ -159,6 +159,7 @@ for row in raw_data:
         answer_str = "; ".join(str(a) for a in answer_raw) if isinstance(answer_raw, list) else str(answer_raw)
         return {
             "video_id": video_uid,
+            "qid": row.get("qid"),          # ← 新增
             "source_dataset": "cgbench",
             "question": question,
             "choices": row.get("choices", row.get("options", None)),

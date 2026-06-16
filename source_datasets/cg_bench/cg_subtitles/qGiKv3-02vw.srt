@@ -1,0 +1,2436 @@
+1
+00:00:00,000 --> 00:00:05,819
+Hello, everyone today. I have another Matlab tutorial video for you guys and as usual. [I] am providing
+
+2
+00:00:06,430 --> 00:00:11,610
+Limited number of free coupons for the course you'll be able to find [a] link in the [description] or you can go to the course
+
+3
+00:00:11,610 --> 00:00:13,710
+page and enter in the coupon Code YouTube
+
+4
+00:00:13,960 --> 00:00:20,039
+free there also be a discounted link to the course in the description if all the free coupons run out and
+
+5
+00:00:20,140 --> 00:00:24,090
+Of course you can always get the complete Matlab course bundle on my website
+
+6
+00:00:24,090 --> 00:00:28,500
+And you will get this course and for others for only $19
+
+7
+00:00:28,500 --> 00:00:32,819
+So if you enjoy the video leave a thumbs up and if you want to see more content like this please subscribe
+
+8
+00:00:33,280 --> 00:00:38,219
+So let's get started welcome [to] the course Matlab tutorial [from] beginner to Pro
+
+9
+00:00:38,469 --> 00:00:45,899
+So let's see what we have in this course this course essentially contains [10] different parrots in the first class we will be looking at
+
+10
+00:00:46,210 --> 00:00:54,059
+Instructor and the course introduction in section 2 we will be looking at how [to] declare variables and create your own scripts using Matlab
+
+11
+00:00:54,430 --> 00:01:00,149
+In chapter 3. We will be looking at basic. Math functions. That is the addition subtraction multiplication
+
+12
+00:01:01,059 --> 00:01:06,539
+greatest common [Devisor] least common division set operations statistical operations and many others
+
+13
+00:01:07,420 --> 00:01:15,330
+in Captor 4 we will be looking at [different] operation on the matrices that includes finding unique elements inside the Matrix shifting of a
+
+14
+00:01:15,700 --> 00:01:23,100
+Shifting operation on the Matrix finding determinants inverse and many other functions that are usually performed on the matrices
+
+15
+00:01:23,680 --> 00:01:30,900
+In chapter number five we will be looking at advanced math functions using the symbolic data type such as the integration
+
+16
+00:01:31,210 --> 00:01:36,599
+Function and then solving equations, and so many other different [types] of math operations
+
+17
+00:01:37,420 --> 00:01:44,640
+In chapter six we will be looking at different input output options and the graphics of Matlab for plotting the Euler graphs
+
+18
+00:01:45,369 --> 00:01:51,569
+In chapter 7 we will be looking at how to import data from [excel] and other environments into the Matlab
+
+19
+00:01:52,450 --> 00:01:53,549
+in Chapter 8
+
+20
+00:01:53,549 --> 00:01:57,059
+We will be looking at the basic Matlab programming and the basic
+
+21
+00:01:57,280 --> 00:02:03,780
+Constructs that make up the Matlab programming such as the itself and then the four moves and so many others
+
+22
+00:02:04,450 --> 00:02:09,810
+In chapter [nine], we will be demonstrating how to deliver on customized functions and the different options
+
+23
+00:02:11,349 --> 00:02:18,128
+And in chapter number can we will be looking at how you can share you [will] [yield] [results] [to] your colleagues friends and other
+
+24
+00:02:18,560 --> 00:02:22,329
+other friends if you want to share your [Matlab] code and results
+
+25
+00:02:27,520 --> 00:02:35,049
+Hello students. [I] am dr.. Nam on other and I teach courses on the online platform that is view the
+
+26
+00:02:35,870 --> 00:02:38,109
+teachable and Disclosure platforms
+
+27
+00:02:38,960 --> 00:02:44,290
+With regards to Matlab I have courses they spend wide variety of different topics
+
+28
+00:02:44,750 --> 00:02:50,260
+from F designing to data analysis to Matlab programming to Data structures I
+
+29
+00:02:50,810 --> 00:02:54,519
+Was introduced to Matlab during my graduate studies where back in
+
+30
+00:02:55,250 --> 00:02:59,410
+2007 and I use Matlab for different purposes such as data
+
+31
+00:03:00,140 --> 00:03:01,310
+visualization
+
+32
+00:03:01,310 --> 00:03:07,360
+such as this one and this one and doing data processing and data analysis and
+
+33
+00:03:07,910 --> 00:03:11,950
+Stem today Matlab is my number one choice for doing the same task
+
+34
+00:03:12,830 --> 00:03:19,960
+The key benefit of using Matlab that makes it number one choice for the researchers is that it is very quick to put ideas
+
+35
+00:03:20,180 --> 00:03:22,180
+into working product
+
+36
+00:03:22,550 --> 00:03:27,640
+During my decade-long experience with the Matlab I came across its different
+
+37
+00:03:27,950 --> 00:03:28,450
+functionality
+
+38
+00:03:28,450 --> 00:03:32,619
+And I explored majority of its programming aspects
+
+39
+00:03:32,620 --> 00:03:38,860
+and I used it to board the [applications] of the test [and] email filtering recommender systems and
+
+40
+00:03:39,380 --> 00:03:44,140
+I called the critical notions such as Camp Uri eruptive and many others
+
+41
+00:03:45,470 --> 00:03:51,880
+So in these courses which I have developed I actually put all [of] my experience into it
+
+42
+00:03:51,880 --> 00:03:59,320
+And you will really enjoy these courses in learning math lab and implies it on to your careers so see you in the courses
+
+43
+00:04:04,660 --> 00:04:09,119
+Hello students welcome to the new segment of the course in this segment
+
+44
+00:04:09,120 --> 00:04:13,259
+We [will] be looking at the journal way out of the Matlab software
+
+45
+00:04:14,530 --> 00:04:20,339
+So the first thing you may not is the command window [and] spending the majority of our screen [here]
+
+46
+00:04:20,560 --> 00:04:23,399
+So this is the place where actually we?
+
+47
+00:04:24,010 --> 00:04:26,010
+interact with the Matlab software
+
+48
+00:04:26,080 --> 00:04:31,080
+That is we give this give the software some input and expect some output
+
+49
+00:04:31,300 --> 00:04:34,440
+after that after being processed on the Matlab software
+
+50
+00:04:35,440 --> 00:04:43,079
+So that's where we are going to include certain commands, so for instance. We may say 8 plus 8 or we may
+
+51
+00:04:43,750 --> 00:04:45,220
+Do some meaningful?
+
+52
+00:04:45,220 --> 00:04:50,519
+Calculations right so you may consider it in there as a part of big calculator
+
+53
+00:04:50,710 --> 00:04:57,840
+But it of course it is beyond. It's beyond the basic calculator like it can perform certain other
+
+54
+00:04:58,479 --> 00:05:00,479
+Complex tasks as well
+
+55
+00:05:00,970 --> 00:05:04,109
+So the first thing we [note] [it] is this command window
+
+56
+00:05:04,110 --> 00:05:08,760
+And it is the place where go we are going to interact with the Matlab software
+
+57
+00:05:09,400 --> 00:05:11,380
+so the other
+
+58
+00:05:11,380 --> 00:05:17,640
+Portions of this same screen we may not hear another window. Which is called the current window
+
+59
+00:05:17,919 --> 00:05:19,919
+It is a dedicated folder
+
+60
+00:05:20,350 --> 00:05:26,339
+For the programs that we will put the [programs] [and] scrape [the] people develop using the Matlab software
+
+61
+00:05:27,280 --> 00:05:30,030
+And by default it [has] to appear over here
+
+62
+00:05:30,370 --> 00:05:38,370
+So if you want to change the location of the default directory where the Matlab should find your newer programs that you want to execute?
+
+63
+00:05:38,770 --> 00:05:44,010
+So then you may change it from here manually right so you can click over [here] and then?
+
+64
+00:05:44,740 --> 00:05:47,820
+Select the appropriate directory where your files are?
+
+65
+00:05:48,789 --> 00:05:51,299
+Where your files or program are being stored?
+
+66
+00:05:52,150 --> 00:05:54,929
+You can also change it from here as well, right?
+
+67
+00:05:55,570 --> 00:05:58,409
+so if you want to go to that specific folder
+
+68
+00:05:58,479 --> 00:06:01,889
+But remember [that] you cannot go up in the directory from here
+
+69
+00:06:01,889 --> 00:06:08,369
+You need to actually select it from here, and then you have the option to select the lower level directories from here
+
+70
+00:06:08,889 --> 00:06:10,870
+like so that's
+
+71
+00:06:10,870 --> 00:06:14,849
+That's the current folder of windows, and then we have another
+
+72
+00:06:15,730 --> 00:06:17,730
+Another window which is called the workspace
+
+73
+00:06:18,850 --> 00:06:22,709
+So remember that when we get some [completion] over here something
+
+74
+00:06:22,990 --> 00:06:29,490
+Appears in the name of a s over here with the corresponding value, and so if we do some more calculations
+
+75
+00:06:30,040 --> 00:06:37,739
+For instance 8-10 so we note [that] all sudden a value change has been occurred over here
+
+76
+00:06:37,740 --> 00:06:38,110
+right
+
+77
+00:06:38,110 --> 00:06:45,869
+So this ans is basically a default variable which will hold the computation that you perform over the command window
+
+78
+00:06:46,060 --> 00:06:53,549
+If that computation is not being designed to a meaningful variable, so when we cover the variable part it will become more evident
+
+79
+00:06:54,190 --> 00:07:00,299
+The meanings of this workspace window as well some of the other options that you may not hear is
+
+80
+00:07:01,000 --> 00:07:03,000
+some of the conventional
+
+81
+00:07:03,610 --> 00:07:10,979
+Conventional buttons that are being there for example you want to create a new script or you want to open certain file as well
+
+82
+00:07:11,470 --> 00:07:17,700
+Right so similarly there are so many other options, so these are not present in the conventional tools
+
+83
+00:07:18,310 --> 00:07:19,840
+right, so
+
+84
+00:07:19,840 --> 00:07:26,160
+then will become more relevant as we progress along with the along with the course right, so
+
+85
+00:07:27,220 --> 00:07:29,050
+Similarly you may note that
+
+86
+00:07:29,050 --> 00:07:31,109
+There is another game over here
+
+87
+00:07:31,110 --> 00:07:32,050
+Which is the plot?
+
+88
+00:07:32,050 --> 00:07:37,740
+so we will be learning this part [will] [be] [toward] the plot section, so
+
+89
+00:07:38,200 --> 00:07:40,920
+You can choose from different plotting options
+
+90
+00:07:41,530 --> 00:07:45,780
+In order to plot the data that are contained [in] your variables
+
+91
+00:07:46,570 --> 00:07:53,429
+Similarly there is another cave. Which is called the abs so you may consider it. Just like an ape store
+
+92
+00:07:54,340 --> 00:07:58,739
+Where some of the popular aides they will appear here?
+
+93
+00:07:59,560 --> 00:08:06,959
+Within the first screen and when you hit this so more option, so then it will give you some specific
+
+94
+00:08:07,600 --> 00:08:09,749
+specific [aides] for the corresponding
+
+95
+00:08:10,330 --> 00:08:15,509
+for the corresponding knowledge base for it for instance from computational biology
+
+96
+00:08:15,510 --> 00:08:18,689
+We have some popular [aides] and then from
+
+97
+00:08:19,870 --> 00:08:25,920
+from databases we have some and then from tempe digital finance and so many others right, so
+
+98
+00:08:26,590 --> 00:08:32,189
+I would strongly recommend you to play around with these options in order to get the miller eyes, but now
+
+99
+00:08:33,130 --> 00:08:34,420
+and then
+
+100
+00:08:34,420 --> 00:08:40,529
+We will be [covering] and they will become more relevant as we progress along with [e] along the along the course
+
+101
+00:08:41,350 --> 00:08:46,379
+One more thing [that] is very useful is [that] when you press the up arrow button
+
+102
+00:08:46,900 --> 00:08:52,980
+Right so a list of commands will appear right so that shows the command history
+
+103
+00:08:53,770 --> 00:08:57,689
+Whatever we do on this command window it is going to be stored
+
+104
+00:08:58,690 --> 00:09:04,380
+It is not being lost and it is stored here in the Matlab history right and it also
+
+105
+00:09:04,660 --> 00:09:10,980
+Assigns a time cake to this so later on if we close it today and let's run it we open it tomorrow
+
+106
+00:09:10,980 --> 00:09:16,859
+So there will be another cake around with the corresponding command that we are going to execute
+
+107
+00:09:17,230 --> 00:09:21,959
+Right so these were some of the basic introduction in the end the other
+
+108
+00:09:23,050 --> 00:09:28,560
+Matlab versions you may find some more windows over here right let me back in majority of the case
+
+109
+00:09:29,140 --> 00:09:33,359
+The relevant window that we will be working in majority of the time [is] the command window
+
+110
+00:09:33,360 --> 00:09:41,310
+And then we will also look at the workspace is be progress along with the course right so standing on you in the next lecture
+
+111
+00:09:47,920 --> 00:09:51,629
+Hello students welcome again to the new segment in this segment
+
+112
+00:09:51,629 --> 00:09:56,938
+We will go a little bit further and explain some more key concepts in order to understand
+
+113
+00:09:57,250 --> 00:10:03,659
+Matlab right so in the last lecture we noticed that we can do some basic operations
+
+114
+00:10:04,389 --> 00:10:06,389
+within this command window
+
+115
+00:10:06,699 --> 00:10:13,349
+But please note that whenever we do some calculation. We are unable to actually store the result of this calculation
+
+116
+00:10:14,110 --> 00:10:17,339
+so if you want to store the result into some container
+
+117
+00:10:17,589 --> 00:10:23,609
+So the Matlab provides you with the with the ability to define variables which will either
+
+118
+00:10:24,129 --> 00:10:31,379
+Which you can initialize from some value, or it can store the result of some manipulation that you perform?
+
+119
+00:10:32,560 --> 00:10:34,799
+So in this case it will store the result
+
+120
+00:10:35,410 --> 00:10:39,719
+So similarly we can perform other operations on these on the variables for example
+
+121
+00:10:39,720 --> 00:10:47,670
+I want to [multiply] the content of this variable a with 16 by 8 so then the content of a will be
+
+122
+00:10:47,949 --> 00:10:50,039
+will be updated in this case to
+
+123
+00:10:50,589 --> 00:10:51,759
+128
+
+124
+00:10:51,759 --> 00:10:53,639
+And what important thing to note?
+
+125
+00:10:53,639 --> 00:11:00,149
+Is that when we update a value of a variable so its previous value is going to be lost?
+
+126
+00:11:00,490 --> 00:11:07,769
+So if you want to store its previous value as well, there are ways for example. You can define some other variable B
+
+127
+00:11:07,809 --> 00:11:11,129
+Which will contain its previous value, and then you can update
+
+128
+00:11:11,860 --> 00:11:13,860
+the variable a so
+
+129
+00:11:14,470 --> 00:11:19,529
+in that in that case you will not lose the previous value of a right, so
+
+130
+00:11:20,259 --> 00:11:27,179
+But in [general] whenever you update a single variable its value is going to be lost and the new value [is] going to [be] written
+
+131
+00:11:27,180 --> 00:11:28,870
+in place of that
+
+132
+00:11:28,870 --> 00:11:31,469
+Now one thing more [and] we also
+
+133
+00:11:32,860 --> 00:11:40,649
+discussed this workspace in the previous lectures so it's actually keeping track of all the variables that you are using and
+
+134
+00:11:40,720 --> 00:11:45,540
+Defining on this command windows right so variable a variable b
+
+135
+00:11:45,540 --> 00:11:50,099
+We just created them and it contains its corresponding values, right?
+
+136
+00:11:50,379 --> 00:11:56,069
+so when you double [click] it if this workspace is going to span the entire screen and
+
+137
+00:11:56,230 --> 00:11:59,009
+When you double click it [again] is going to be minimized
+
+138
+00:12:00,030 --> 00:12:07,040
+Similarly if you click it over here, right so you can get some more options over here and similarly when you click [here]
+
+139
+00:12:07,040 --> 00:12:11,990
+You can see some [of] the more statistics right so for example if you want to
+
+140
+00:12:12,750 --> 00:12:20,180
+Look at the very end or the standard deviation and so many other values right? So it will give you an
+
+141
+00:12:21,180 --> 00:12:23,180
+information about that
+
+142
+00:12:24,000 --> 00:12:30,440
+So they don't look people come back again and see what is the correct interpretation of these values when we cover?
+
+143
+00:12:31,380 --> 00:12:33,270
+Matrices and vectors
+
+144
+00:12:33,270 --> 00:12:35,270
+So stay tuned for that
+
+145
+00:12:37,920 --> 00:12:39,920
+Now let us look at some more
+
+146
+00:12:39,930 --> 00:12:45,169
+operations that we can perform for example if you want to clear up the command window, so
+
+147
+00:12:45,720 --> 00:12:48,439
+We do a lot [of] manipulation on this command window
+
+148
+00:12:48,440 --> 00:12:54,020
+And now we want to see a clear command [window] [super] [that] you need you need to use the command
+
+149
+00:12:54,750 --> 00:12:57,559
+ClC it will clear the [screen] for you, right?
+
+150
+00:12:58,200 --> 00:13:00,530
+similarly when you press the up arrow Key
+
+151
+00:13:00,630 --> 00:13:07,130
+it will give you the list of commands that you have been executing since the start of this session right, so
+
+152
+00:13:08,220 --> 00:13:11,449
+Whenever you come back again later on tomorrow or some [other] day
+
+153
+00:13:11,450 --> 00:13:18,259
+So there will be a new time cage and correspondingly the list of commands that will that you have executed based on day
+
+154
+00:13:19,470 --> 00:13:24,079
+Based on that particular day, right, so if you go a little bit app you will see that
+
+155
+00:13:24,480 --> 00:13:29,689
+There is a time. Take associated with this right, so if we
+
+156
+00:13:31,020 --> 00:13:33,740
+break it a little bit here right, so
+
+157
+00:13:36,360 --> 00:13:38,959
+Right so we can see that
+
+158
+00:13:40,530 --> 00:13:43,550
+The corresponding time cake is always there
+
+159
+00:13:43,550 --> 00:13:49,639
+And so it is the time [cake] that it is telling us that on 3rd of May
+
+160
+00:13:50,220 --> 00:13:56,809
+9:53 a.m.. Your session starts right and then these commands will be executed after that session
+
+161
+00:13:56,810 --> 00:14:01,910
+So later on if you can take tomorrow, you will see another time take responding to that
+
+162
+00:14:03,360 --> 00:14:09,919
+Ok what do you think more? Is that if you want to take rid of all the variables that are being currently being initialized?
+
+163
+00:14:09,920 --> 00:14:12,679
+So you need to use the clear commands, right?
+
+164
+00:14:12,680 --> 00:14:15,229
+So it will clear the command window
+
+165
+00:14:15,690 --> 00:14:20,690
+Right and it will clear the history so all the [word] [history] are going to be lost
+
+166
+00:14:21,030 --> 00:14:24,319
+so now if you if you click the up arrow Key
+
+167
+00:14:24,570 --> 00:14:26,040
+Nothing will show up over here
+
+168
+00:14:26,040 --> 00:14:31,580
+Right if you want to take rid of all these variables there is another command which is clear all right?
+
+169
+00:14:31,740 --> 00:14:35,299
+So I don't do it in awhile, but before that
+
+170
+00:14:35,300 --> 00:14:37,669
+I want to introduce you another command which is whose
+
+171
+00:14:37,740 --> 00:14:45,380
+So when you click [whose] it will display all the variables that are displayed over here and some more statistics about these variables
+
+172
+00:14:45,380 --> 00:14:52,969
+so [this] will become more clear as we progress along with the course that what exactly these different themes needs and
+
+173
+00:14:53,250 --> 00:14:55,140
+when you play
+
+174
+00:14:55,140 --> 00:15:01,039
+When you write clear also all the variables that you have defined are going to be lost?
+
+175
+00:15:02,190 --> 00:15:08,030
+and then you can see clc as well to clear the command window, so if you
+
+176
+00:15:08,700 --> 00:15:11,960
+Want to delete a specific variable, right?
+
+177
+00:15:12,420 --> 00:15:17,719
+So you can use the clear command and use its name so we can say clear a in this case
+
+178
+00:15:17,720 --> 00:15:24,830
+It will delete the variable a and the indication will be the instead it will be not showing up in the workspace anymore, right?
+
+179
+00:15:25,140 --> 00:15:29,059
+So now [n] [is] being deleted, so if you want to delete b as well
+
+180
+00:15:29,100 --> 00:15:34,550
+You can always do that and the other variant is clear all that will
+
+181
+00:15:35,430 --> 00:15:38,150
+That will clear all the variables that you have just defined
+
+182
+00:15:39,720 --> 00:15:44,990
+For a few more basic introductory notes. See you in the next segment
+
+183
+00:15:50,610 --> 00:15:54,500
+Hello students welcome again to the new segment in the last
+
+184
+00:15:54,780 --> 00:15:55,280
+segment
+
+185
+00:15:55,280 --> 00:15:59,629
+We introduced you to the concept of variables that is it contains?
+
+186
+00:16:00,120 --> 00:16:03,650
+useful and Meaningful data that you want to store in your
+
+187
+00:16:04,890 --> 00:16:08,059
+Data Mart's stored permanently in your programs
+
+188
+00:16:08,790 --> 00:16:11,270
+[so] now I'm going and building on top of that
+
+189
+00:16:11,370 --> 00:16:15,799
+I want you to introduce you to the very basic concept of Matlab
+
+190
+00:16:16,200 --> 00:16:19,939
+That from where its name originated that is Matrix
+
+191
+00:16:20,550 --> 00:16:22,969
+laboratory Right Matrix Lab
+
+192
+00:16:24,180 --> 00:16:29,390
+So that means laboratory and mass transfer Matrix right so Matrix laboratory
+
+193
+00:16:29,580 --> 00:16:32,929
+So this land has origins in the way that Matlab
+
+194
+00:16:34,170 --> 00:16:38,750
+Actually handles the variables so by default whatever variable you create
+
+195
+00:16:39,480 --> 00:16:41,480
+right and
+
+196
+00:16:41,580 --> 00:16:42,780
+then you
+
+197
+00:16:42,780 --> 00:16:47,419
+When you look at its side, so it will say 1 Cross 1 so by default
+
+198
+00:16:48,030 --> 00:16:53,569
+Each and every variable that you define in Matlab it is going to be a matrix
+
+199
+00:16:53,880 --> 00:17:01,099
+Right and in this case since the Matrix has only one entry so the size of that Matrix is 1 Cross 1
+
+200
+00:17:01,589 --> 00:17:04,669
+Right so it means the Matrix has only [1] entry
+
+201
+00:17:05,550 --> 00:17:11,899
+So now a very key question that arise is that we know that the Matrix can be of size 2 Cross 3
+
+202
+00:17:12,329 --> 00:17:19,129
+Or it can be [upside] 5+5 10 [cross-state] any size right so how we can actually create
+
+203
+00:17:19,589 --> 00:17:23,989
+Variables that corresponds to those mattresses right so let's do that
+
+204
+00:17:25,350 --> 00:17:28,310
+Suppose we want to create a matrix now
+
+205
+00:17:28,530 --> 00:17:32,660
+It is a variable and we know that it's by default it's a Matrix
+
+206
+00:17:32,660 --> 00:17:36,379
+So how we can actually include more than one item into their metrics
+
+207
+00:17:37,230 --> 00:17:39,680
+So actually when you want to
+
+208
+00:17:40,560 --> 00:17:41,700
+have
+
+209
+00:17:41,700 --> 00:17:49,490
+Individual values into that matrix so you need to separate them by a space and all those values need to be
+
+210
+00:17:49,890 --> 00:17:52,069
+enclosed using these square brackets and
+
+211
+00:17:53,160 --> 00:17:58,489
+After entering the value of a particular row if you want to add items for the next row
+
+212
+00:17:58,490 --> 00:18:01,429
+So then you need to have this semicolon, right?
+
+213
+00:18:01,980 --> 00:18:02,649
+as
+
+214
+00:18:02,649 --> 00:18:05,309
+the only restriction here instead, they're
+
+215
+00:18:05,860 --> 00:18:13,469
+The Metrics should have this the same number of columns right, so it is it contains three columns in this case
+
+216
+00:18:14,049 --> 00:18:20,339
+So the second row should also contain three column values otherwise it is going to give you some [subjects] errors, right?
+
+217
+00:18:20,799 --> 00:18:24,148
+So in this case I have created a 3 Cross 3 Matrix
+
+218
+00:18:24,880 --> 00:18:27,689
+If we look at the look at it again
+
+219
+00:18:27,690 --> 00:18:31,260
+It will see now the size is 3 Cross 3 right?
+
+220
+00:18:31,690 --> 00:18:39,389
+So now if you look at the workspace again and double click it so now some of the stuff will become more meaningful
+
+221
+00:18:39,730 --> 00:18:44,789
+right so now it will show you all the values [that] are contained within this variable a
+
+222
+00:18:45,669 --> 00:18:49,439
+Right and you can also have a look at some of the more
+
+223
+00:18:49,570 --> 00:18:53,760
+Step right for example the max value so the max value in this case is
+
+224
+00:18:54,850 --> 00:19:01,679
+Can similarly the minimum value in the entire Matrix is 7 the variance among the values are?
+
+225
+00:19:02,590 --> 00:19:03,789
+[0.77]
+
+226
+00:19:03,789 --> 00:19:08,158
+similarly some other statistics that [in] range be Median mode standard deviation
+
+227
+00:19:08,159 --> 00:19:14,999
+You can have [located] here as well, right so on the variable [that] you create a using this command window
+
+228
+00:19:15,000 --> 00:19:20,819
+We are going to appear over here, and then you can choose whichever statistics. You want to have a look at it
+
+229
+00:19:21,130 --> 00:19:28,319
+so that was a very key concept in understanding Matlab is that each and every variable is by default a
+
+230
+00:19:28,720 --> 00:19:35,730
+Matrix and then you can enter a multiple values in that Matrix using these square brackets notation
+
+231
+00:19:36,880 --> 00:19:43,499
+So finally as some more useful operations that you can do here in the workspace. Is that I can click this a
+
+232
+00:19:44,019 --> 00:19:46,019
+variable right so you can
+
+233
+00:19:46,539 --> 00:19:54,148
+Have access to some more operations for [example]. You can rename it and give it some other name for example. You can say variable
+
+234
+00:19:56,200 --> 00:19:59,189
+My variable right and you can always
+
+235
+00:20:00,159 --> 00:20:06,778
+Duplicate it as well right so now you have two copies of that variable, but remember that the variable name needs to be unique
+
+236
+00:20:07,330 --> 00:20:13,049
+So in this case. We should give it a more meaningful value. We can say to click it copy
+
+237
+00:20:15,900 --> 00:20:20,060
+[duplicates] of my variable
+
+238
+00:20:23,370 --> 00:20:31,070
+So also please note [that] the variable needs do not [continue] any [spaces]
+
+239
+00:20:34,140 --> 00:20:36,140
+duplicate my copy
+
+240
+00:20:38,250 --> 00:20:40,250
+my variable
+
+241
+00:20:40,920 --> 00:20:42,900
+and
+
+242
+00:20:42,900 --> 00:20:44,900
+Some more operations that are
+
+243
+00:20:45,600 --> 00:20:48,109
+there are the delete operation and
+
+244
+00:20:48,690 --> 00:20:54,559
+they did values if you want to edit some values in it you can have access to that and
+
+245
+00:20:55,290 --> 00:21:02,029
+Then finally one interesting operation is the safe [aids] operation right, so it will save it in the dotnet
+
+246
+00:21:04,050 --> 00:21:07,580
+extension with a dotnet extension that is a matrix extension and
+
+247
+00:21:08,190 --> 00:21:12,409
+When you heat it again in the math lab environments the Matlab knows this extension
+
+248
+00:21:12,410 --> 00:21:16,100
+So it can easily read in a date particular file as well
+
+249
+00:21:16,680 --> 00:21:18,680
+Let's save it
+
+250
+00:21:19,350 --> 00:21:22,100
+so now if when we save it we mess
+
+251
+00:21:23,130 --> 00:21:27,710
+We can access it under different working directory, and then you double click it, right
+
+252
+00:21:27,810 --> 00:21:32,899
+So it automatically loads that dead for you, right, so it is
+
+253
+00:21:33,510 --> 00:21:37,820
+It is here and it is being loaded into the method environment
+
+254
+00:21:37,820 --> 00:21:44,809
+And you can use it if we clear all the variables it will become more clear. That's how we can actually load that
+
+255
+00:21:46,350 --> 00:21:53,449
+So let me double click it. It's now been loaded and it has appropriate name right, so we leave it again
+
+256
+00:21:53,850 --> 00:22:00,589
+right and when we double click it you will suddenly note that it will appear in [that] my workspace as well, right, so
+
+257
+00:22:01,140 --> 00:22:04,670
+That's how you can actually load and save your files
+
+258
+00:22:05,400 --> 00:22:08,600
+For your mattresses MV. You were hard disk as well
+
+259
+00:22:10,410 --> 00:22:16,310
+So [that's] enough for this segment in the next segment. We'll be looking at some more operations that are
+
+260
+00:22:16,890 --> 00:22:21,440
+Available for you on and you can perform them on the Matrices so stay tuned
+
+261
+00:22:26,580 --> 00:22:33,199
+Hello students welcome again to the segment and inside that we will be looking at some [more] variable types
+
+262
+00:22:33,659 --> 00:22:37,248
+So the variable type that we have been working so [far] was numeric
+
+263
+00:22:37,559 --> 00:22:44,839
+so for instance when we say equals to 9 so that the type [of] this variable is automatically set and it is of
+
+264
+00:22:45,210 --> 00:22:46,590
+numeric type
+
+265
+00:22:46,590 --> 00:22:52,819
+So the other data types that we may be interested in is the [first] of all is the collector data type
+
+266
+00:22:55,230 --> 00:22:58,279
+So [then] we say press enter [now] a whole
+
+267
+00:22:59,309 --> 00:23:05,118
+non-numeric Data and this gate retractor some director values and if you look at its type
+
+268
+00:23:05,119 --> 00:23:11,059
+So it will say it is a character class character, right, so it is a character array
+
+269
+00:23:11,909 --> 00:23:19,368
+And by default since everything is a matrix so it's id is 1 plus 11 which means it has 11 characters in it
+
+270
+00:23:20,070 --> 00:23:24,889
+So please note that the space is also counted as one character in this case
+
+271
+00:23:24,889 --> 00:23:31,699
+So if we count the hello contains [5] Factors then followed by space which makes it 6 and then 6 more
+
+272
+00:23:32,429 --> 00:23:34,080
+right, so
+
+273
+00:23:34,080 --> 00:23:39,019
+It's sorry 5 more, so 6 plus 9 equals 11, so it has now
+
+274
+00:23:39,749 --> 00:23:40,889
+11
+
+275
+00:23:40,889 --> 00:23:45,889
+Characters in Total So if you want to make it of 2 Plus 11
+
+276
+00:23:45,889 --> 00:23:52,669
+so you can I mention it like this then you want to say that you want to insert the second row and
+
+277
+00:23:53,399 --> 00:23:57,919
+This column actually means that corresponding to [all] columns in this case
+
+278
+00:23:57,919 --> 00:24:04,008
+I want to assign it the values that are stored in a in a 1 and
+
+279
+00:24:04,769 --> 00:24:06,829
+All the Columns corresponding today
+
+280
+00:24:06,830 --> 00:24:11,779
+So the row 1 of a the 8th the second row of is will be
+
+281
+00:24:12,059 --> 00:24:15,018
+the exactly the same [in] the first rule of a
+
+282
+00:24:15,720 --> 00:24:18,559
+respond to all Columns when you press enter and
+
+283
+00:24:19,710 --> 00:24:25,369
+We'll get it again. So now a is 2 Rows corresponding to 11 columns
+
+284
+00:24:26,070 --> 00:24:28,070
+So one restriction on this
+
+285
+00:24:28,590 --> 00:24:30,590
+particular character array is that
+
+286
+00:24:31,559 --> 00:24:35,209
+Always you need always to have the same size for the rows
+
+287
+00:24:35,940 --> 00:24:40,379
+So if we want to let's say a of three corresponding to all
+
+288
+00:24:41,590 --> 00:24:46,319
+All Columns, we want to assign some other values for it for example. [we] say
+
+289
+00:24:46,990 --> 00:24:50,639
+All right, how are you? So it will give us an error, right?
+
+290
+00:24:50,639 --> 00:24:55,979
+And it's because it is not of the same size in the earlier
+
+291
+00:24:56,889 --> 00:25:00,869
+As the earlier rules are and because of that it returns an error
+
+292
+00:25:00,870 --> 00:25:08,639
+so if we make it exactly the same side, so we say [3] [4] [5] [6] [7] [8] [9] 10 and then LN
+
+293
+00:25:09,399 --> 00:25:11,399
+So it will not give us an error
+
+294
+00:25:11,950 --> 00:25:13,950
+so if we want to stir
+
+295
+00:25:15,399 --> 00:25:23,008
+my characters of having various sizes so for that purpose we need to create strings and
+
+296
+00:25:23,889 --> 00:25:26,429
+The string of Data type is actually
+
+297
+00:25:28,240 --> 00:25:30,240
+initialized using this
+
+298
+00:25:30,549 --> 00:25:37,229
+Reserve board string, so by [reservoir] [TV]. That Matlab is going to use it for its own purposes
+
+299
+00:25:37,230 --> 00:25:40,169
+so you cannot use it in your programs or
+
+300
+00:25:40,990 --> 00:25:45,719
+When you were writing some spread so you cannot use this word that is string, right?
+
+301
+00:25:45,720 --> 00:25:52,259
+It's reserved for Matlab manipulation so we can say equals to string and then you can define
+
+302
+00:25:52,450 --> 00:25:54,929
+the first element of that string and
+
+303
+00:25:55,750 --> 00:26:00,689
+Then let's say we want the first element to be this one. Hi, how are you?
+
+304
+00:26:01,600 --> 00:26:07,379
+Right so now it's st.. It is of type string and it's supposed element in this one
+
+305
+00:26:07,600 --> 00:26:10,319
+so if you want [to] store multiple elements into this
+
+306
+00:26:10,870 --> 00:26:12,250
+into this
+
+307
+00:26:12,250 --> 00:26:18,479
+right so we can enclose it within this square bracket now it means we are giving it multiple values and
+
+308
+00:26:18,909 --> 00:26:20,909
+they are going to depart of
+
+309
+00:26:21,519 --> 00:26:23,200
+of the same
+
+310
+00:26:23,200 --> 00:26:30,870
+Variable Matrix a and [we] can give it a variable length of the strings right so we can say hello world in this case
+
+311
+00:26:31,929 --> 00:26:33,340
+and
+
+312
+00:26:33,340 --> 00:26:41,100
+Then we can enclose it right so now it contains a 1 cross 2 string array which means that if we look at it it
+
+313
+00:26:41,710 --> 00:26:48,419
+Impose, so it means it is of size 1 Cross 2 and each of them is having a different size, right?
+
+314
+00:26:49,690 --> 00:26:53,909
+Similarly if we want to insert another row into it
+
+315
+00:26:54,549 --> 00:26:59,429
+Right so we can insert something else in the play control and we can say
+
+316
+00:27:00,369 --> 00:27:02,369
+My name into it
+
+317
+00:27:03,460 --> 00:27:09,269
+But remember that since it is a matrix so you need to insert two more strings over here
+
+318
+00:27:09,479 --> 00:27:11,489
+[and] of course they can be variable and
+
+319
+00:27:12,039 --> 00:27:18,748
+So now it will be a to process to string that the first value. [there's] [a] second value is 2/3 and the support value
+
+320
+00:27:19,869 --> 00:27:27,749
+Someone more important important topic [that] we miss is that how we can actually accept that individual elements of a Matrix?
+
+321
+00:27:28,450 --> 00:27:30,659
+So that purpose we need to use this
+
+322
+00:27:31,960 --> 00:27:36,840
+This round shade to break it and then we can mention that
+
+323
+00:27:37,659 --> 00:27:42,209
+[their] corresponding row element that [we] want to access and the corresponding column
+
+324
+00:27:42,549 --> 00:27:46,528
+right so 1 comma 1 is this particular element this is the
+
+325
+00:27:46,840 --> 00:27:54,449
+second element which is which has an index of 1 comma 2 we need the first row second column and then this is the
+
+326
+00:27:55,720 --> 00:28:02,009
+Second row first Column so 2 comma 1 and then this is 2 comma 2 which means second row second column
+
+327
+00:28:02,649 --> 00:28:08,969
+So you press enter it will return the first value and then if you want to access the second value
+
+328
+00:28:09,340 --> 00:28:15,359
+So you need to say 1 comma 2 which in this case is this one so in general the first argument here will
+
+329
+00:28:15,820 --> 00:28:23,070
+Correspond to the Rule and the second argument here it will correspond to the column so similarly if we have a matrix
+
+330
+00:28:24,429 --> 00:28:26,429
+inverse Matrix
+
+331
+00:28:27,729 --> 00:28:29,379
+and
+
+332
+00:28:29,379 --> 00:28:32,219
+if we want to access this element
+
+333
+00:28:32,220 --> 00:28:37,679
+so it is located in the second row and in the second column so you can say poutama -
+
+334
+00:28:38,320 --> 00:28:43,979
+sorry - drama - and it will return the first column element similarly for this one it is 1 comma 3
+
+335
+00:28:45,940 --> 00:28:51,210
+That's how you can actually access the individual Elements within [a] particular Matrix
+
+336
+00:28:51,549 --> 00:28:55,618
+and you can always do some operation on that you can say what comma 3
+
+337
+00:28:56,139 --> 00:28:57,639
+equals to
+
+338
+00:28:57,639 --> 00:28:58,749
+9 plus
+
+339
+00:28:58,749 --> 00:29:06,419
+1 so only that element is going to be up to is not right so we have performed a particular operation only on that particular
+
+340
+00:29:07,149 --> 00:29:09,149
+element of [Metrics]
+
+341
+00:29:10,149 --> 00:29:13,348
+When our final loan is that it is another Data type?
+
+342
+00:29:13,349 --> 00:29:15,449
+[it] is called the logical Data type
+
+343
+00:29:15,450 --> 00:29:22,499
+and it's very important in order to make some data selection or make some useful a
+
+344
+00:29:22,960 --> 00:29:27,749
+decision in within your program right so in order to Define a logical
+
+345
+00:29:28,359 --> 00:29:30,419
+Variable you need to say logical
+
+346
+00:29:30,940 --> 00:29:33,119
+And then you can first
+
+347
+00:29:34,299 --> 00:29:36,299
+Define the
+
+348
+00:29:36,489 --> 00:29:39,809
+Values that you want to take part in this logical
+
+349
+00:29:40,929 --> 00:29:42,519
+induced electrical
+
+350
+00:29:42,519 --> 00:29:45,748
+Matrix, so I want to define it as to
+
+351
+00:29:46,929 --> 00:29:48,929
+2004
+
+352
+00:29:49,960 --> 00:29:51,960
+So remember that this logical
+
+353
+00:29:52,389 --> 00:29:58,559
+Token will only return either 1 or 0 so when you define a variable is logical it can hold only
+
+354
+00:29:58,839 --> 00:30:01,109
+two values either 1 or 0
+
+355
+00:30:01,869 --> 00:30:06,478
+Actually if you might [see] state mention something greater than 1
+
+356
+00:30:06,479 --> 00:30:13,019
+So it will be automatically demoted to 1 right so now instead of this 8 we have a 1 over [here]
+
+357
+00:30:13,019 --> 00:30:16,348
+right let's corresponding to this element and
+
+358
+00:30:17,349 --> 00:30:19,769
+We will look at the logical very
+
+359
+00:30:20,349 --> 00:30:22,559
+Very soon in some of our next segment
+
+360
+00:30:22,559 --> 00:30:24,029
+but for now
+
+361
+00:30:24,029 --> 00:30:30,659
+just remember that a lot of variables into 10 two values 1 and 0 and they are used in order to select some data or
+
+362
+00:30:30,789 --> 00:30:33,299
+Make some useful decision within your program
+
+363
+00:30:34,359 --> 00:30:36,899
+[so] state the own even the next segment
+
+364
+00:30:42,380 --> 00:30:48,130
+Hello students welcome again to the new segment and this segment we will be looking at how to create scripts
+
+365
+00:30:48,680 --> 00:30:53,080
+and few more important notions and concepts, so
+
+366
+00:30:54,170 --> 00:30:55,220
+basically
+
+367
+00:30:55,220 --> 00:31:00,159
+Let me create some variables are meaningful variables, which we already did right
+
+368
+00:31:00,160 --> 00:31:04,540
+so we have created a to cross for what you can array in last segment and
+
+369
+00:31:04,730 --> 00:31:08,919
+let us say we [have] to create some more variables for example B, and
+
+370
+00:31:09,650 --> 00:31:13,480
+C equals to work a poly pipe and so on
+
+371
+00:31:14,540 --> 00:31:16,540
+[so] one thing is that
+
+372
+00:31:16,550 --> 00:31:19,539
+We may be interested in saving our work
+
+373
+00:31:20,060 --> 00:31:25,480
+in a separate file, so that later on the weekend tomorrow, we see ever work [a]
+
+374
+00:31:26,030 --> 00:31:28,810
+The whole thing that we performed in a [single] place
+
+375
+00:31:29,150 --> 00:31:33,610
+So one way to do that is to create scripts and write your code in here
+
+376
+00:31:34,160 --> 00:31:41,499
+Rather than executing them individually on the command window, so in order to create script one way is to
+
+377
+00:31:42,110 --> 00:31:46,989
+Press the up arrow Key and Select both commands music. You are interested in
+
+378
+00:31:47,540 --> 00:31:52,629
+And including it in your script, right so let's say [I'm] [pressing] on these two
+
+379
+00:31:53,660 --> 00:31:56,499
+So we right click on that?
+
+380
+00:31:57,140 --> 00:32:04,180
+So we will have an option [that] is saying create script you click that another window will appear over here
+
+381
+00:32:05,000 --> 00:32:12,700
+Right and you can actually use this window in order to write your programs now right similarly we can say
+
+382
+00:32:13,880 --> 00:32:15,650
+[B]
+
+383
+00:32:15,650 --> 00:32:16,730
+[Plus] C
+
+384
+00:32:16,730 --> 00:32:20,589
+like and we can enter as many commands as we want and
+
+385
+00:32:20,720 --> 00:32:25,360
+Then the next step is to save it in some proper place and by default
+
+386
+00:32:25,640 --> 00:32:32,590
+The default directory is going to appear right and you will give it a meaningful name to this file
+
+387
+00:32:32,900 --> 00:32:36,340
+For example we can say it's Subside [1]
+
+388
+00:32:37,700 --> 00:32:38,930
+and
+
+389
+00:32:38,930 --> 00:32:42,999
+remember that it's extension is going to be dot [m] file right and
+
+390
+00:32:43,580 --> 00:32:49,539
+Again, if it now so that file you can now find it over here in the current folder directory
+
+391
+00:32:50,330 --> 00:32:52,509
+If you save it in some other place
+
+392
+00:32:52,510 --> 00:33:00,170
+So make sure you can current directory today directly here the [ballot] increase and you can always change it like this, right?
+
+393
+00:33:00,900 --> 00:33:04,009
+Okay, so what we have written this [code]
+
+394
+00:33:04,200 --> 00:33:11,720
+We can and we want it and now remember [that] this code is not in the command window. So how we can run this code
+
+395
+00:33:12,330 --> 00:33:19,790
+So basically you can run it by pressing this run button over here, and it will run all the corresponding code for you
+
+396
+00:33:19,790 --> 00:33:24,619
+And if there is any output it is going to appear here in your command windows
+
+397
+00:33:25,020 --> 00:33:28,670
+And so when we press it and so first of all it
+
+398
+00:33:28,890 --> 00:33:35,270
+Actually executes this statement that is equal to 39 and then equals to 45 and then the corresponding result
+
+399
+00:33:36,330 --> 00:33:39,290
+[so] to note that you [should] not here is that?
+
+400
+00:33:40,590 --> 00:33:47,030
+Firstly, we actually do not want this output to be to be appearing on the command window
+
+401
+00:33:47,030 --> 00:33:48,600
+so if you want to
+
+402
+00:33:48,600 --> 00:33:55,520
+If you want in this case that this should not [clear] right you want only the result appear so you should put a semicolon
+
+403
+00:33:55,740 --> 00:34:01,010
+At the end of the [statement] and now it will not when you b execute this command
+
+404
+00:34:02,370 --> 00:34:10,070
+This program so these take these first two statements is not going to be part of your output and only this is going to appear
+
+405
+00:34:10,070 --> 00:34:12,070
+as an output right
+
+406
+00:34:13,230 --> 00:34:15,230
+Human wrote
+
+407
+00:34:15,240 --> 00:34:17,719
+the first thing [that] you should not here is that
+
+408
+00:34:18,330 --> 00:34:21,199
+When you open this script?
+
+409
+00:34:21,240 --> 00:34:26,990
+So you may notice [that] there are some additional options that are appearing here at the top?
+
+410
+00:34:27,330 --> 00:34:31,999
+So this is basically automatic in Matlab and the Matlab actually
+
+411
+00:34:32,370 --> 00:34:39,259
+Recognizes the current work or the current task that you are currently being performing and according to that it is going to update this
+
+412
+00:34:39,510 --> 00:34:41,510
+automatically, right
+
+413
+00:34:42,030 --> 00:34:44,149
+Similarly there are few more options
+
+414
+00:34:44,159 --> 00:34:51,888
+and we will look at it later on in this course and [they] become very much relevant in the next part of this course [a]
+
+415
+00:34:53,310 --> 00:34:55,169
+Final note is that
+
+416
+00:34:55,169 --> 00:35:02,329
+you may also be interested in writing some some explanation of the commands that you are entering so in order to
+
+417
+00:35:03,120 --> 00:35:06,229
+To do that you need to insert some comments
+
+418
+00:35:06,570 --> 00:35:13,759
+So the comments are part of your of your [scripts] which are not going to be executed as part of the program
+
+419
+00:35:14,160 --> 00:35:16,730
+so if I write that this is the
+
+420
+00:35:17,460 --> 00:35:19,460
+declaration
+
+421
+00:35:19,650 --> 00:35:22,639
+for the variable B, right and
+
+422
+00:35:23,280 --> 00:35:26,899
+Similarly I can add an additional statement over here. This is the
+
+423
+00:35:27,780 --> 00:35:29,130
+declaration
+
+424
+00:35:29,130 --> 00:35:36,320
+For the variable C. And I can add another comment over here, and I can say this is [your] final [result]
+
+425
+00:35:36,320 --> 00:35:39,259
+so [when] I execute this program
+
+426
+00:35:39,990 --> 00:35:46,550
+These statements are not going to be executed right so the Matlab automatically recognize that this
+
+427
+00:35:47,250 --> 00:35:49,489
+Anything that starts with with this?
+
+428
+00:35:50,099 --> 00:35:52,099
+Person time it is going to be
+
+429
+00:35:52,500 --> 00:36:00,020
+It is going to be a comment, and it is just explanation of the code so I do not need to execute this right
+
+430
+00:36:00,020 --> 00:36:06,050
+So that's how you can eat some extra explanation in order to understand you were called Meaningfully
+
+431
+00:36:07,830 --> 00:36:09,830
+when [journal] mode is that
+
+432
+00:36:10,140 --> 00:36:16,940
+Please to remember that there are all these multiple ways of doing the thinking when you are considering the Matlab environment
+
+433
+00:36:17,010 --> 00:36:21,439
+So the other way to create scripts is to go to this new file and say
+
+434
+00:36:22,109 --> 00:36:26,869
+Inspect right so it will appear over here, and then you can write the whole code over here again
+
+435
+00:36:28,080 --> 00:36:30,080
+right and you can say
+
+436
+00:36:31,410 --> 00:36:35,750
+And then you can have equals to C plus b
+
+437
+00:36:37,560 --> 00:36:45,169
+[right], so this is essentially the same and when you try to run it it is for you to save it first
+
+438
+00:36:45,440 --> 00:36:47,440
+so we can say exercise 1 1
+
+439
+00:36:50,730 --> 00:36:54,109
+And then it will run in execute that code as well
+
+440
+00:36:54,420 --> 00:37:00,409
+So two ways to create script is first of all [to] so you may select it from the [commandment]
+
+441
+00:37:00,410 --> 00:37:06,379
+Don't almost command that you are interested in and the second way [is] to just use this plus sign
+
+442
+00:37:06,390 --> 00:37:08,660
+And it will create a new script for you
+
+443
+00:37:09,240 --> 00:37:11,810
+So see you in the next segment hopefully during the course
+
+444
+00:37:17,000 --> 00:37:21,760
+Hello students welcome again to the new section and to the new segment of the course
+
+445
+00:37:22,340 --> 00:37:29,859
+[in] this segment we will be looking at some common math operations that you can perform in Matlab that is addition
+
+446
+00:37:30,140 --> 00:37:32,140
+subtraction [multiplication] and
+
+447
+00:37:32,570 --> 00:37:33,890
+others
+
+448
+00:37:33,890 --> 00:37:39,010
+[so] we know that from our basic knowledge that everything in in the Matlab is
+
+449
+00:37:39,920 --> 00:37:43,090
+Every variable in that life is treated in the form of a Matrix
+
+450
+00:37:43,820 --> 00:37:45,820
+Let us Define a Matrix
+
+451
+00:37:46,520 --> 00:37:48,520
+Let's say we have
+
+452
+00:37:48,680 --> 00:37:55,359
+a 2 cross 3 Matrix and then we Define another Matrix which is
+
+453
+00:37:56,119 --> 00:37:58,119
+obtained size
+
+454
+00:38:00,260 --> 00:38:03,790
+Right so in order to perform the subtraction
+
+455
+00:38:04,609 --> 00:38:08,919
+Operation so you just need to say a minus b. And it will do the matrix subtraction
+
+456
+00:38:09,619 --> 00:38:16,989
+operation that is the corresponding increase will be subtracted [from] each other that is 1 minus 5 is minus 4 2
+
+457
+00:38:17,390 --> 00:38:20,230
+Minus 8 is minus 6 and so on
+
+458
+00:38:21,470 --> 00:38:24,879
+Similarly you can perform the matrix multiplication operation
+
+459
+00:38:25,400 --> 00:38:27,430
+but in order to perform the multiplication
+
+460
+00:38:27,950 --> 00:38:30,520
+operation there is a restriction the
+
+461
+00:38:31,100 --> 00:38:35,289
+Columns of the first Matrix that is going to be part of that multiplication
+
+462
+00:38:35,930 --> 00:38:37,930
+should make the
+
+463
+00:38:38,030 --> 00:38:42,969
+Rows of the second Matrix that is going to be part of the multiplication
+
+464
+00:38:43,130 --> 00:38:46,930
+So in this case a cross [p] will give you an error
+
+465
+00:38:47,750 --> 00:38:49,609
+because the
+
+466
+00:38:49,609 --> 00:38:54,579
+Dimensions must agree, right, so that's the year so in order to make it happen
+
+467
+00:38:54,770 --> 00:39:00,249
+[we] can take transpose of the second Matrix so and other to take transpose of a Matrix
+
+468
+00:39:01,430 --> 00:39:05,590
+It is very simple. We just need to say B and this
+
+469
+00:39:06,320 --> 00:39:08,320
+this sign in
+
+470
+00:39:08,480 --> 00:39:14,709
+Along with b. That is very on my keyboard. It's very close to [the] to the inter button
+
+471
+00:39:15,380 --> 00:39:19,060
+And it also shows the double quotes on on top of that
+
+472
+00:39:19,060 --> 00:39:24,249
+So if you press it with a single code it is going to perform the Matrix transpose operation
+
+473
+00:39:24,859 --> 00:39:26,859
+so now we have
+
+474
+00:39:26,990 --> 00:39:28,990
+We have the corresponding
+
+475
+00:39:30,930 --> 00:39:35,960
+corresponding to metrics based on that we can perform the matrix multiplication operation and
+
+476
+00:39:36,510 --> 00:39:42,709
+Model to do that. We know that the columns here are making the rows here. [so] now we are ready to go and
+
+477
+00:39:44,099 --> 00:39:46,099
+We can perform the corresponding Matrix
+
+478
+00:39:46,680 --> 00:39:54,020
+Multiplication operation right similarly there is another variant and which is the element by element multiplication?
+
+479
+00:39:55,200 --> 00:40:00,409
+Operation so if you don't want to have a matrix multiplication [rather] you want
+
+480
+00:40:00,990 --> 00:40:02,990
+an Element by element multiplication
+
+481
+00:40:03,510 --> 00:40:05,510
+So that is also possible
+
+482
+00:40:06,030 --> 00:40:11,149
+[so] let's say we want to multiply each and every element of a with itself
+
+483
+00:40:12,570 --> 00:40:14,570
+So that is not possible
+
+484
+00:40:15,300 --> 00:40:20,570
+Actually this in text was not correct, so that's the actual syntax of that in this case
+
+485
+00:40:20,640 --> 00:40:23,839
+We don't need the Matrix to have
+
+486
+00:40:25,920 --> 00:40:29,930
+Like the restriction on the Matrix multiplication is [not] there rather
+
+487
+00:40:29,930 --> 00:40:34,609
+we just need the two matrix to be on the same side right so a dot a
+
+488
+00:40:34,980 --> 00:40:37,189
+similarly if we take the transpose of B again
+
+489
+00:40:38,849 --> 00:40:42,979
+Right so we can perform a dot star b as well
+
+490
+00:40:44,700 --> 00:40:47,419
+So in this case it [is] performing Matrix
+
+491
+00:40:48,720 --> 00:40:56,089
+Element by element multiplication, [so] this one is multiplied by this one right so we have the corresponding result over here
+
+492
+00:40:56,910 --> 00:41:00,619
+Right so similarly if we look at a right?
+
+493
+00:41:00,619 --> 00:41:05,659
+So this mind was being multiplied by the corresponding element here B
+
+494
+00:41:05,660 --> 00:41:13,250
+Which is 8 so 19 to 8 is 72 so that was the corresponding answer similarly this 8 was being multiplied by 10?
+
+495
+00:41:13,250 --> 00:41:15,250
+So [that] the corresponding answer over here
+
+496
+00:41:15,569 --> 00:41:17,899
+So that was how you can do
+
+497
+00:41:19,410 --> 00:41:21,530
+the Element by Element multiplication
+
+498
+00:41:22,170 --> 00:41:23,790
+within a Matrix
+
+499
+00:41:23,790 --> 00:41:27,859
+[ok] so in the same way you can always do the Matrix addition
+
+500
+00:41:28,410 --> 00:41:34,460
+Operation as well, so that will aid the corresponding Elements [NMDa] right So 5
+
+501
+00:41:35,819 --> 00:41:39,439
+So if we just play the [2] matrices, so this was Matrix B
+
+502
+00:41:39,440 --> 00:41:45,779
+This was Matrix a and this is the corresponding is also 5 plus 1 6 and then 8 plus 2 10 and so on
+
+503
+00:41:47,439 --> 00:41:50,819
+It's the variables that you are using [are] [not] matrices
+
+504
+00:41:50,819 --> 00:41:58,228
+They are single variables right so 1 cross 1 Matrices right so all these operations are still valid and they can be done, right?
+
+505
+00:41:58,229 --> 00:42:00,039
+So a minus b
+
+506
+00:42:00,039 --> 00:42:04,018
+it is a valid operation right similarly a plus B, and
+
+507
+00:42:05,229 --> 00:42:09,149
+Similarly a multiplied by B. Right so you can always do that?
+
+508
+00:42:13,180 --> 00:42:14,969
+Okay, [well] final operation
+
+509
+00:42:14,969 --> 00:42:22,619
+Is that if you want to take the power of a certain variable like so I want the second power of I want the square?
+
+510
+00:42:22,619 --> 00:42:27,358
+Of the of the a right, so this is designed for that, right?
+
+511
+00:42:27,359 --> 00:42:30,208
+So this will compute the square of the really
+
+512
+00:42:30,699 --> 00:42:36,599
+So it was initially having a value of [I] and now a multiplied by a is 81
+
+513
+00:42:36,599 --> 00:42:43,919
+So that's the corresponding operation. Similarly it can be a fraction number as well, right or it can be a whole number or
+
+514
+00:42:45,670 --> 00:42:48,689
+[it] can be anything, so if it is a complex
+
+515
+00:42:50,439 --> 00:42:57,629
+Equation like this you can still still it is still possible, right, so it is equivalent to
+
+516
+00:42:59,259 --> 00:43:05,129
+[1.5] power of a right, so if we say 1.5, so it's the same answer
+
+517
+00:43:06,640 --> 00:43:11,969
+One final note is that when you apply this matrix operation on to our Matrix
+
+518
+00:43:12,130 --> 00:43:17,939
+so it lands has to result which you should note then when we take the second power of a
+
+519
+00:43:18,489 --> 00:43:20,938
+So what does it mean in this case in this case?
+
+520
+00:43:20,939 --> 00:43:26,669
+It will multiply a with a right, so it will be returning the result of Matrix multiplication
+
+521
+00:43:27,459 --> 00:43:29,459
+right, so if you
+
+522
+00:43:31,209 --> 00:43:33,209
+Did you perform that oh?
+
+523
+00:43:35,019 --> 00:43:40,589
+Yes, it is giving us an error message because for the Metros multiplication and the two Matrix
+
+524
+00:43:41,410 --> 00:43:43,410
+Columns the first
+
+525
+00:43:43,449 --> 00:43:50,519
+The Columns of first Matrix must match the rows of the second Matrix and indicated in that case so a must be a square Matrix
+
+526
+00:43:50,619 --> 00:43:56,608
+So let's define a square matrix in this is and now we can perform a spirit
+
+527
+00:43:57,010 --> 00:44:01,979
+So a square in this case is a cross a result of matrix multiplication
+
+528
+00:44:02,619 --> 00:44:09,929
+Right so if you want and if you are interested in not a matrix multiplication, [but] rather you want to take
+
+529
+00:44:10,930 --> 00:44:15,690
+the per second power of a yard or the square of each and
+
+530
+00:44:16,000 --> 00:44:18,419
+Individual element right so in order to do that
+
+531
+00:44:18,420 --> 00:44:26,279
+We just need to put a dot over here and it will now compute the element right square of each Entry within this Matrix
+
+532
+00:44:26,650 --> 00:44:30,450
+So if you don't put the dot it is going to compute the Matrix
+
+533
+00:44:31,450 --> 00:44:38,189
+The Matrix operation there is a into a write the matrix result of that the matrix multiplication is about that
+
+534
+00:44:38,650 --> 00:44:46,440
+So there were a few notes, and of course there are other ways [to] compute the square as well so stay tuned
+
+535
+00:44:52,150 --> 00:44:57,329
+Hello students welcome again to the new segment in this segment we will be looking gate operation
+
+536
+00:44:58,000 --> 00:45:05,010
+[residents] what exactly we mean by that that suppose we have an expression such as this one
+
+537
+00:45:06,130 --> 00:45:09,930
+Right and [when] you press enter it will give you nine, right?
+
+538
+00:45:10,120 --> 00:45:14,040
+But you may note that there are two operations involved
+
+539
+00:45:14,040 --> 00:45:16,889
+What is the addition and the other one is a subtraction?
+
+540
+00:45:17,320 --> 00:45:24,449
+so which one was being executed first if you look at it it first compute [it] and then it the
+
+541
+00:45:24,640 --> 00:45:28,800
+Result is being added with ten right so in this case minus one plus. Ten is nine
+
+542
+00:45:29,530 --> 00:45:32,729
+however if you change the position of this a right
+
+543
+00:45:33,070 --> 00:45:37,799
+So initially we have 8 here in front if you put it here now
+
+544
+00:45:38,560 --> 00:45:40,799
+It will give you a different result, right?
+
+545
+00:45:41,470 --> 00:45:44,939
+So we have the same expression more or less and now
+
+546
+00:45:45,550 --> 00:45:52,499
+You have to change the order of each of the variables and that it gives you it gives you a completely different result
+
+547
+00:45:53,200 --> 00:45:55,409
+So [high] actually it works
+
+548
+00:45:56,740 --> 00:45:58,740
+right, so
+
+549
+00:45:58,960 --> 00:46:06,540
+When the Matlab is going to execute this first and very it's going to execute this first right so similarly if you have very complex
+
+550
+00:46:07,450 --> 00:46:09,899
+Complex expressions that is this one, right?
+
+551
+00:46:09,900 --> 00:46:14,940
+So then it becomes more harder to to do to look at like
+
+552
+00:46:14,940 --> 00:46:19,409
+What is what is actually the order in which it performs these different operations?
+
+553
+00:46:20,200 --> 00:46:22,200
+so the Matlab has a
+
+554
+00:46:22,690 --> 00:46:28,169
+Has the same systems that we usually do in math and that?
+
+555
+00:46:28,750 --> 00:46:31,199
+You can remember the formula both, mass
+
+556
+00:46:34,450 --> 00:46:35,620
+so
+
+557
+00:46:35,620 --> 00:46:37,440
+But do exactly read my days
+
+558
+00:46:37,440 --> 00:46:44,040
+is that first of all it will handle any brackets [if] they are being present within an expression and
+
+559
+00:46:44,680 --> 00:46:46,770
+Then it will do the division
+
+560
+00:46:47,830 --> 00:46:54,450
+If the division is there that it will do multiplication and then addition and finally subtraction
+
+561
+00:46:55,240 --> 00:47:01,290
+for the other operations that is the unary operations which we will look at later on and
+
+562
+00:47:02,200 --> 00:47:04,200
+similarly the
+
+563
+00:47:04,650 --> 00:47:10,400
+Operations such as the dot star operations and power operations, right?
+
+564
+00:47:10,620 --> 00:47:16,459
+So there are different [presidencies] right so in order to look at the complete the combination of that
+
+565
+00:47:18,090 --> 00:47:21,019
+There is that search tool that you can use
+
+566
+00:47:22,050 --> 00:47:28,310
+And this is actually the documentation of the math lab that comes with the copy of your mat lab, right?
+
+567
+00:47:28,310 --> 00:47:30,310
+so if you right here
+
+568
+00:47:31,170 --> 00:47:33,170
+operation residence
+
+569
+00:47:34,860 --> 00:47:36,860
+and then
+
+570
+00:47:37,320 --> 00:47:39,000
+this
+
+571
+00:47:39,000 --> 00:47:44,690
+House documentation will appear in [your] screen, and if you click here, so it will give you the complete
+
+572
+00:47:45,420 --> 00:47:47,280
+documentation and
+
+573
+00:47:47,280 --> 00:47:51,320
+The precedence in which these different operations are being performed
+
+574
+00:47:53,070 --> 00:48:00,140
+However the easiest way to ensure any precedence is just use these brackets, right?
+
+575
+00:48:00,140 --> 00:48:01,550
+so if we have this expression
+
+576
+00:48:01,550 --> 00:48:09,050
+And I want the multi-day subtraction to me to be performed first right so I can always put you break it
+
+577
+00:48:09,050 --> 00:48:15,200
+So it will ensure that this operation is going to be performed first and then I want to add up the results
+
+578
+00:48:15,540 --> 00:48:20,570
+With this stance so I can ensure it like this, so then it will be performed
+
+579
+00:48:21,330 --> 00:48:22,650
+at
+
+580
+00:48:22,650 --> 00:48:29,599
+The next level and finally all the result will be that will be multiplied [by] 8 so in this way I can ensure that
+
+581
+00:48:30,390 --> 00:48:31,400
+corresponding precedence
+
+582
+00:48:31,400 --> 00:48:37,129
+so this was the first computation in this case the innermost brackets 8 minus 9 is minus 1 and
+
+583
+00:48:37,590 --> 00:48:41,420
+Then this was the [second-level] brackets, so it was the second operation
+
+584
+00:48:41,490 --> 00:48:48,709
+So 10 minus 1 is 9 and then 9 into 8 is 72 which was the outermost?
+
+585
+00:48:49,860 --> 00:48:55,880
+Outermost to break it right, so that's how we can ensure presidents in simplest way I
+
+586
+00:48:56,640 --> 00:49:03,259
+prefer this way because it is very simple and easy to do right [now] however when the when the a
+
+587
+00:49:03,930 --> 00:49:11,839
+Venule expression grow bigger so you can always break it into pieces suppose if there is more complex
+
+588
+00:49:13,020 --> 00:49:15,499
+Operations that are being performed where here is
+
+589
+00:49:17,480 --> 00:49:18,650
+and
+
+590
+00:49:18,650 --> 00:49:24,099
+Now there are two parts of this expression and both [of] them are being multiplied together
+
+591
+00:49:24,410 --> 00:49:28,809
+So if I can break it into two I can assign it to variable B
+
+592
+00:49:29,600 --> 00:49:30,800
+and
+
+593
+00:49:30,800 --> 00:49:33,249
+then I will assign it to variable a
+
+594
+00:49:35,180 --> 00:49:36,320
+right
+
+595
+00:49:36,320 --> 00:49:41,080
+So there is an error it is because some brackets are being not
+
+596
+00:49:42,140 --> 00:49:48,129
+Properly assigned let's simplify it is okay, and now let's look at B
+
+597
+00:49:48,770 --> 00:49:51,699
+So b has some misplaced [parenthesis]
+
+598
+00:49:55,340 --> 00:50:03,189
+Yes, so one of the brackets were extra so and now we can multiply a into b in order to compute that complex
+
+599
+00:50:03,350 --> 00:50:04,670
+A
+
+600
+00:50:04,670 --> 00:50:06,670
+a complex expression
+
+601
+00:50:07,400 --> 00:50:12,819
+so the easiest way [to] ensure the pistons is to use the brackets and if the
+
+602
+00:50:13,580 --> 00:50:18,489
+Expression is growing very large, and you can make pieces out of that so you can
+
+603
+00:50:20,180 --> 00:50:23,230
+You can actually make parts of that and do [it]
+
+604
+00:50:23,840 --> 00:50:28,809
+In this fashion right so that's how operation pistons work in Matlab
+
+605
+00:50:29,750 --> 00:50:31,750
+[if] for some reason you do not
+
+606
+00:50:31,850 --> 00:50:34,719
+You do [not] like to include these brackets
+
+607
+00:50:34,720 --> 00:50:39,910
+Then you need to conserve this whole documentation in order to see in which order
+
+608
+00:50:40,220 --> 00:50:45,280
+Different operations are going to be performed however. I prefer this way in this way
+
+609
+00:50:46,250 --> 00:50:53,590
+It may [depends] on [you're] on your own tries, but I prefer this way. Hope you are enjoying the course using an excitement
+

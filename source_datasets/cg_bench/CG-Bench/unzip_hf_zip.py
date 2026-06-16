@@ -21,7 +21,7 @@ def get_chunk_number(filename):
 def unzip_hf_zip(pth):
 
     download_dir = pth
-    target_dir = "."
+    target_dir = "/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/source_datasets/cg_bench"
 
     if os.path.exists(f"{target_dir}/cg_videos_720p") and os.path.exists(f"{target_dir}/cg_subtitles")\
             and os.path.exists(f"{target_dir}/cg_clue_videos"):
@@ -116,6 +116,6 @@ if __name__ == "__main__":
         from modelscope import dataset_snapshot_download
         dataset_path = dataset_snapshot_download(dataset_id=repo_id)
     else:
-        dataset_path = snapshot_download(repo_id=repo_id, repo_type='dataset')
+        dataset_path = snapshot_download(repo_id=repo_id, repo_type='dataset', local_dir='/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/source_datasets/cg_bench/raw')
 
     unzip_hf_zip(dataset_path)
