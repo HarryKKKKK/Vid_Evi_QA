@@ -11,7 +11,7 @@ from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).parent
 FILTERED_JSON = SCRIPT_DIR / "cgbench_filtered.json"
-VIDEO_DIR = (SCRIPT_DIR / ".." / "source_datasets" / "cg_bench").resolve()
+VIDEO_DIR = (SCRIPT_DIR / ".." / "source_datasets" / "cg_bench" / "videos").resolve()
 OUTPUT_TXT = SCRIPT_DIR / "check_cgbench_videos_result.txt"
 
 with open(FILTERED_JSON, encoding="utf-8") as f:
