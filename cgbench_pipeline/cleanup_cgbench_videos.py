@@ -1,6 +1,6 @@
 """
-Delete videos from cg_videos_720p/ that are not referenced in cgbench_filtered.json.
-Run after unzip_hf_zip.py has extracted the full dataset.
+Delete videos from source_datasets/cg_bench/ that are not referenced
+in cgbench_filtered.json.
 
 Usage:
   python cleanup_cgbench_videos.py [--dry-run]
@@ -11,7 +11,7 @@ from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).parent
 FILTERED_JSON = SCRIPT_DIR / "cgbench_filtered.json"
-VIDEO_DIR = SCRIPT_DIR / ".." / "source_datasets" / "cg_bench" / "CG-Bench" / "cg_videos_720p"
+VIDEO_DIR = (SCRIPT_DIR / ".." / "source_datasets" / "cg_bench").resolve()
 
 
 def main():
@@ -26,18 +26,17 @@ def main():
     needed = {entry["video_id"] for entry in filtered}
     print(f"Videos needed by cgbench_filtered.json: {len(needed)}")
 
-    video_dir = VIDEO_DIR.resolve()
-    if not video_dir.exists():
-        print(f"ERROR: video directory not found: {video_dir}")
+    if not VIDEO_DIR.exists():
+        print(f"ERROR: video directory not found: {VIDEO_DIR}")
         return
 
-    all_videos = list(video_dir.iterdir())
-    print(f"Total videos found in {video_dir}: {len(all_videos)}")
+    all_videos = [f for f in VIDEO_DIR.iterdir() if f.is_file() and f.suffix == ".mp4"]
+    print(f"Total mp4 files found in {VIDEO_DIR}: {len(all_videos)}")
 
     to_delete = [f for f in all_videos if f.stem not in needed]
-    to_keep = [f for f in all_videos if f.stem in needed]
+    to_keep   = [f for f in all_videos if f.stem in needed]
 
-    print(f"To keep:  {len(to_keep)}")
+    print(f"To keep:   {len(to_keep)}")
     print(f"To delete: {len(to_delete)}")
 
     if args.dry_run:
@@ -55,9 +54,9 @@ def main():
 
     missing = needed - {f.stem for f in to_keep}
     if missing:
-        print(f"\nWARNING: {len(missing)} videos in filtered list were not found in video dir:")
-        for bv in sorted(missing):
-            print(f"  {bv}")
+        print(f"\nWARNING: {len(missing)} videos in filtered list were not found:")
+        for v in sorted(missing):
+            print(f"  {v}")
 
 
 if __name__ == "__main__":

@@ -1,7 +1,7 @@
 CG-Bench Filter Summary
 ============================================================
-Source:                   C:\Users\sun13\Desktop\dataset\source_datasets\cg_bench\CG-Bench\cgbench.json
-Output:                   C:\Users\sun13\Desktop\dataset\cgbench_pipeline\cgbench_filtered.json
+Source:                   /aifs4su/hansirui_2nd/harry/Vid_Evi_QA/source_datasets/cg_bench/CG-Bench/cgbench.json
+Output:                   /aifs4su/hansirui_2nd/harry/Vid_Evi_QA/cgbench_pipeline/cgbench_filtered.json
 
 总样本数（筛选前）:         12129
 通过筛选的样本数:           1596

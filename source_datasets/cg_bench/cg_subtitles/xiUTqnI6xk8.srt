@@ -1,0 +1,2145 @@
+1
+00:00:00,260 --> 00:00:03,600
+SQL. It's more than an
+injection outta here.
+
+2
+00:00:03,630 --> 00:00:05,920
+It's the love language of
+our databases. You know,
+
+3
+00:00:05,920 --> 00:00:08,000
+the massive Excel spreadsheets
+that run the world.
+
+4
+00:00:08,140 --> 00:00:10,600
+You need to learn SQL probably right now,
+
+5
+00:00:10,610 --> 00:00:13,240
+especially if you want
+this job or this job,
+
+6
+00:00:13,500 --> 00:00:15,760
+or this job are pretty much any job in it.
+
+7
+00:00:15,860 --> 00:00:19,640
+And it's a skill I've actually had to use
+a lot, almost too much, too much more.
+
+8
+00:00:19,640 --> 00:00:22,000
+My comfort. Cameron, have
+you had to use SQL? Yeah.
+
+9
+00:00:22,320 --> 00:00:25,480
+Whenever I was a AWS cloud engineer,
+I dealt with databases all the time.
+
+10
+00:00:25,660 --> 00:00:28,680
+So whether you're an aspiring hacker
+looking to do some SQL injections,
+
+11
+00:00:28,980 --> 00:00:29,620
+get outta here,
+
+12
+00:00:29,620 --> 00:00:32,640
+or you're a cloud engineer wanting
+to query all your qualms away.
+
+13
+00:00:33,020 --> 00:00:36,760
+See that 10 times fast query all your
+qualms away query. I can't do it one time,
+
+14
+00:00:36,780 --> 00:00:37,760
+two times. Oh my gosh.
+
+15
+00:00:37,950 --> 00:00:41,040
+This is definitely a skill you want
+to add to your toolbox right now.
+
+16
+00:00:41,100 --> 00:00:43,520
+Now before you freak out,
+we're not going too deep here.
+
+17
+00:00:43,620 --> 00:00:47,080
+You don't need to become a SQL expert
+unless you wanna become a DBA or
+
+18
+00:00:47,080 --> 00:00:50,920
+something. You pour brave, stupid soul,
+but you're making bank and you're rich.
+
+19
+00:00:51,020 --> 00:00:52,520
+But knowing the basics like, Hey,
+
+20
+00:00:52,630 --> 00:00:56,520
+what even is a database that goes a long
+way in pretty much every area of it.
+
+21
+00:00:56,900 --> 00:00:58,880
+So in this video, I'm
+going to teach you SQL,
+
+22
+00:00:59,300 --> 00:01:01,720
+not too much like a
+Goldilocks amount of sequel,
+
+23
+00:01:01,870 --> 00:01:04,040
+just enough to make you
+dangerous, but not too dangerous.
+
+24
+00:01:04,120 --> 00:01:07,000
+I don't want you dropping elbows
+on some poor unsuspecting tables.
+
+25
+00:01:07,100 --> 00:01:09,760
+So by the end of this video, you
+will know how to create your own,
+
+26
+00:01:10,100 --> 00:01:12,240
+my sequel or my SQL database.
+
+27
+00:01:12,660 --> 00:01:16,200
+And you're gonna add some stuff into it
+or remove some stuff, query some things.
+
+28
+00:01:16,580 --> 00:01:21,120
+So get your coffee ready. Mine is
+right here and let's learn some sequel.
+
+29
+00:01:23,380 --> 00:01:25,360
+Now while you're sipping that
+coffee, getting all fueled up,
+
+30
+00:01:25,360 --> 00:01:27,840
+ready to go to learn some sequel.
+Let me tell you a scary story.
+
+31
+00:01:27,940 --> 00:01:32,400
+Did you know that your usernames and your
+passwords they're often stored inside
+
+32
+00:01:32,560 --> 00:01:35,400
+a sequel database and sometimes
+these databases spring a leak,
+
+33
+00:01:35,600 --> 00:01:39,360
+spilling your username and password
+all over the dark web David Bumble.
+
+34
+00:01:39,380 --> 00:01:41,080
+I'm disappointed. You
+gotta protect yourself.
+
+35
+00:01:41,430 --> 00:01:44,160
+This is where our sponsor
+Dashlane comes in.
+
+36
+00:01:44,280 --> 00:01:48,240
+Dashlane does a great job at protecting
+you from yourself. Come on John Hammond.
+
+37
+00:01:48,400 --> 00:01:51,920
+I love their password health feature,
+which obviously I got some work to do.
+
+38
+00:01:52,080 --> 00:01:55,880
+I got 28 compromised passwords and
+two weak ones, no weakness allowed.
+
+39
+00:01:56,020 --> 00:01:57,800
+And I also love their dark web monitoring,
+
+40
+00:01:57,820 --> 00:02:01,000
+cuz I wasn't kidding these databases
+full of your passwords and emails and all
+
+41
+00:02:01,000 --> 00:02:03,480
+kinds of stuff. Get hacked and
+leaked all the time in the dark web.
+
+42
+00:02:03,750 --> 00:02:06,360
+They monitor that stuff for
+you. And they'll tell you, Hey,
+
+43
+00:02:06,360 --> 00:02:07,400
+change your day and password.
+
+44
+00:02:07,500 --> 00:02:09,720
+And then right here is my
+favorite feature of Dashlane.
+
+45
+00:02:09,750 --> 00:02:11,400
+It's got two factor built right into it.
+
+46
+00:02:11,400 --> 00:02:14,480
+So it'll log into network Chuck academy.
+I've got my security code right here.
+
+47
+00:02:14,580 --> 00:02:16,200
+Oh, don't copy that.
+Nah, it's gonna change.
+
+48
+00:02:16,200 --> 00:02:19,440
+So I pretty much use Dashlane for
+everything, including my business.
+
+49
+00:02:19,760 --> 00:02:22,960
+I force all of my employees to
+use Dashlane cuz they're crazy.
+
+50
+00:02:23,100 --> 00:02:25,640
+And they still write their passwords
+down on post-it notes. Come on.
+
+51
+00:02:25,660 --> 00:02:28,520
+So if you have a business use Dashlane,
+they've got a great admin section,
+
+52
+00:02:28,540 --> 00:02:32,240
+little admin console where you can manage
+all your passwords for your employees.
+
+53
+00:02:32,250 --> 00:02:35,000
+Gotta keep them suckers in line.
+And it's not just passwords.
+
+54
+00:02:35,060 --> 00:02:37,400
+You can put secure notes. You
+can put your payments in here.
+
+55
+00:02:37,680 --> 00:02:41,240
+I use this all the time. It makes
+paying for things so much easier.
+
+56
+00:02:41,500 --> 00:02:44,760
+So don't let someone else's
+bad database put you at risk.
+
+57
+00:02:45,100 --> 00:02:46,440
+Get yourself the password manager.
+
+58
+00:02:46,680 --> 00:02:50,520
+I recommend Dashlane go out to
+dashlane.com/network Chuck 50.
+
+59
+00:02:50,660 --> 00:02:54,520
+And you do get a discount. Let me double
+check what that is. I forgot. Oh sweet.
+
+60
+00:02:54,520 --> 00:02:56,720
+You get 50% off. So use that code.
+
+61
+00:02:56,820 --> 00:03:01,040
+You can use it on pretty much any device
+you have, which I do on every device.
+
+62
+00:03:01,050 --> 00:03:04,040
+Thank you to Dashlane for sponsoring
+this video. Now let's get back to SQL.
+
+63
+00:03:04,070 --> 00:03:07,440
+Here we go. So SQL or SQL,
+
+64
+00:03:07,740 --> 00:03:10,320
+it stands for structured query language.
+
+65
+00:03:10,490 --> 00:03:14,560
+Focus on that term language because it
+is kind of like a programming language,
+
+66
+00:03:14,560 --> 00:03:18,640
+similar to Python, except the primary
+use of SQL is to talk to databases.
+
+67
+00:03:18,880 --> 00:03:22,160
+I told you it's their love language.
+They love it. That's my database.
+
+68
+00:03:22,160 --> 00:03:25,000
+By the way, I'm gonna label
+it using this query language.
+
+69
+00:03:25,000 --> 00:03:28,120
+We'll talk to our database. We'll
+create things. We'll read things.
+
+70
+00:03:28,120 --> 00:03:31,320
+We'll update things. We'll delete
+things. Crud. You've heard a crud, right?
+
+71
+00:03:31,430 --> 00:03:34,960
+Well you just did. So here we go. We are
+gonna learn some sequel here in a bit.
+
+72
+00:03:35,540 --> 00:03:40,160
+But first let's talk about what's a
+database I joked earlier how it's just one
+
+73
+00:03:40,220 --> 00:03:42,720
+big giant Excel spreadsheet.
+That's kind of true.
+
+74
+00:03:42,780 --> 00:03:44,920
+You've probably seen an Excel
+spreadsheet before, right?
+
+75
+00:03:45,140 --> 00:03:47,360
+It has columns or fields.
+
+76
+00:03:47,900 --> 00:03:52,400
+It has rows or we might call those records
+and these rows or records contain our
+
+77
+00:03:52,400 --> 00:03:54,960
+data. And while Excel might work
+for carrying the accountant,
+
+78
+00:03:54,960 --> 00:03:55,800
+keeping track of your budget,
+
+79
+00:03:56,100 --> 00:03:59,160
+you bought 45 raspberry pies
+for bigger sets of data.
+
+80
+00:03:59,270 --> 00:04:02,280
+Like websites might have companies,
+even network Chuck coffee.
+
+81
+00:04:02,510 --> 00:04:03,880
+They won't store these in Excel.
+
+82
+00:04:03,880 --> 00:04:07,640
+They'll store them inside a database
+which will function very similarly to an
+
+83
+00:04:07,640 --> 00:04:11,040
+Excel spreadsheet. Cuz we're still working
+with this, which we'll call a table,
+
+84
+00:04:11,460 --> 00:04:14,280
+but we might need more than one
+and we might need a lot more data.
+
+85
+00:04:14,780 --> 00:04:16,600
+So in my network, Chuck coffee database,
+
+86
+00:04:16,720 --> 00:04:20,920
+I might have three Excel spreadsheets or
+three tables, one for all my customers,
+
+87
+00:04:20,930 --> 00:04:23,480
+which did you know that Marvel
+characters love my coffee.
+
+88
+00:04:23,830 --> 00:04:26,040
+Thor can't get enough of
+the help desk. He loves it.
+
+89
+00:04:26,300 --> 00:04:28,680
+And they don't have a table
+of all the coffees I offer.
+
+90
+00:04:28,780 --> 00:04:32,200
+And then of course an order table
+tracking all the orders that are placed.
+
+91
+00:04:32,660 --> 00:04:36,840
+And this is a very, very small abbreviated
+example of all the data. My network,
+
+92
+00:04:36,850 --> 00:04:39,360
+Chuck coffee database might
+have, which it does have.
+
+93
+00:04:39,700 --> 00:04:43,720
+So the takeaway here is that databases
+are used to store large amounts of data,
+
+94
+00:04:44,030 --> 00:04:47,240
+data that Karen and her spreadsheet
+in Excel couldn't even dream about.
+
+95
+00:04:47,380 --> 00:04:51,280
+Now these databases, they need a manager.
+They need someone to control them,
+
+96
+00:04:51,380 --> 00:04:54,200
+to get them in line cuz they can act
+pretty crazy if they don't have someone
+
+97
+00:04:54,480 --> 00:04:57,880
+watching him. That's why we have DBMS
+at David Bumble management system. No,
+
+98
+00:04:57,880 --> 00:05:00,360
+I'm just kidding. I pick out him
+a lot in this video. Love you.
+
+99
+00:05:00,360 --> 00:05:04,240
+David DBMS stands for database management
+system and actually you probably heard
+
+100
+00:05:04,240 --> 00:05:07,240
+of a few of them. Microsoft SQL
+server, my SQL or I'm sorry,
+
+101
+00:05:07,460 --> 00:05:11,920
+my SQL that post gray SQL. Am I saying
+that right? I don't know Oracle.
+
+102
+00:05:12,350 --> 00:05:15,600
+There's a lot out there, but just
+know that whatever DBMS you choose,
+
+103
+00:05:15,600 --> 00:05:17,680
+whether it be my SQL, SQL Oracle,
+
+104
+00:05:18,080 --> 00:05:21,640
+whatever their job is to manage your
+databases. They will have different ways.
+
+105
+00:05:21,640 --> 00:05:24,000
+They do that. But they're
+all going to use sequel.
+
+106
+00:05:24,300 --> 00:05:27,440
+The structured query Lang I can't
+even say it structured query language.
+
+107
+00:05:27,440 --> 00:05:28,960
+There we go. 10 times fast on that one.
+
+108
+00:05:28,960 --> 00:05:32,320
+This is actually a standard that's
+been ratified by the ISO ISO.
+
+109
+00:05:32,420 --> 00:05:33,480
+So if you learn SQL,
+
+110
+00:05:33,900 --> 00:05:37,080
+you can pretty much approach most
+databases with relative ease.
+
+111
+00:05:37,180 --> 00:05:38,480
+Now there are some nuances,
+
+112
+00:05:38,480 --> 00:05:40,920
+some differences going from
+like Microsoft SQL to my SQL,
+
+113
+00:05:41,140 --> 00:05:44,200
+but it's nothing you can't Google. As
+long as you understand the concepts. Now,
+
+114
+00:05:44,200 --> 00:05:47,160
+just so you know, we're going to
+create these three databases ourselves.
+
+115
+00:05:47,160 --> 00:05:49,520
+We're gonna install one and
+actually make it happen with my,
+
+116
+00:05:50,140 --> 00:05:52,760
+but before we do that, there
+are two database types.
+
+117
+00:05:52,760 --> 00:05:56,760
+You have to know about this one. We're
+talking about here. This is a relational.
+
+118
+00:05:57,120 --> 00:06:00,120
+Database. You might see
+it abbreviated as R D BMS.
+
+119
+00:06:00,460 --> 00:06:03,760
+And they by far are the most
+popular. It's what I drew out here.
+
+120
+00:06:04,060 --> 00:06:07,000
+And what makes it relational is these
+tables here are kind of like they're
+
+121
+00:06:07,000 --> 00:06:10,920
+related they're cousins or brothers.
+I don't know they're in the family.
+
+122
+00:06:11,420 --> 00:06:14,560
+And what I mean is like when in
+this table here on my orders table,
+
+123
+00:06:15,100 --> 00:06:19,360
+it says for order 0, 0 1, the coffee
+was one. And you're like, what is,
+
+124
+00:06:19,360 --> 00:06:22,920
+what does that mean? Well, it's actually
+tying back to the coffee database.
+
+125
+00:06:23,180 --> 00:06:26,280
+And then when it says customer
+is three, you probably guessed,
+
+126
+00:06:26,280 --> 00:06:28,080
+it's looking back at the
+customer database saying, Hey,
+
+127
+00:06:28,550 --> 00:06:33,120
+Tony stark ordered the default route.
+He loves that stuff. Now again,
+
+128
+00:06:33,120 --> 00:06:35,000
+we're gonna zero in on
+the relational database.
+
+129
+00:06:35,000 --> 00:06:38,080
+But the other type you wanna
+know about is the non relational.
+
+130
+00:06:38,110 --> 00:06:40,480
+This one doesn't have any family
+or any friends. He's very sad.
+
+131
+00:06:40,490 --> 00:06:41,760
+We're not gonna cover what it is here.
+
+132
+00:06:42,100 --> 00:06:45,360
+But one type or one DBMS you
+might hear about is no sequel,
+
+133
+00:06:45,650 --> 00:06:47,320
+which fire ship did a
+great joke on Twitter.
+
+134
+00:06:47,320 --> 00:06:50,880
+When I asked you guys if you know SQL
+well plate, sir, but a non relational.
+
+135
+00:06:50,990 --> 00:06:54,480
+It's not like this. It's not related.
+It's kind of unstructured data.
+
+136
+00:06:54,900 --> 00:06:56,720
+And it definitely has
+its use case and purpose,
+
+137
+00:06:56,740 --> 00:06:59,960
+but we're not gonna cover that right
+here. Okay. Enough about databases.
+
+138
+00:06:59,960 --> 00:07:04,000
+Let's actually make one right now. It's
+completely free and completely fun.
+
+139
+00:07:04,260 --> 00:07:06,080
+Now here's what you need.
+You won't need much,
+
+140
+00:07:06,180 --> 00:07:09,040
+pretty much any computer
+&lt;laugh&gt; that's it.
+
+141
+00:07:09,130 --> 00:07:11,680
+We're gonna be playing
+with my sequel or my SQL.
+
+142
+00:07:12,220 --> 00:07:15,360
+And you can pretty much install that
+anywhere for free, including windows.
+
+143
+00:07:15,860 --> 00:07:20,360
+Now I will be walking you through Linux
+because I love Linux and it's so easy.
+
+144
+00:07:20,420 --> 00:07:24,480
+So if you wanna follow along
+with me exactly from the
+beginning, from the start,
+
+145
+00:07:24,740 --> 00:07:28,400
+I'm gonna be running the latest version
+of a BTU desktop inside a virtual box
+
+146
+00:07:28,700 --> 00:07:30,800
+VM. If you're like, wait,
+what what's he doing?
+
+147
+00:07:31,030 --> 00:07:34,280
+I've got a video right here on how to
+set up virtual machines and what they are
+
+148
+00:07:34,280 --> 00:07:38,240
+and why they're incredible. You should
+go watch that if you haven't already.
+
+149
+00:07:38,500 --> 00:07:41,880
+And it's completely free to run
+this and yeah, that's it. Oh,
+
+150
+00:07:42,480 --> 00:07:45,720
+I forgot you need coffee
+because everything in it,
+
+151
+00:07:45,980 --> 00:07:50,080
+it requires coffee never checked
+out coffee. So here in new BTU,
+
+152
+00:07:50,080 --> 00:07:51,440
+we're going to launch our terminal first.
+
+153
+00:07:51,440 --> 00:07:53,440
+Like always we'll get
+our repositories updated,
+
+154
+00:07:54,020 --> 00:07:58,840
+pseudo PT update and quick sip of
+coffee while it does its thing.
+
+155
+00:07:59,110 --> 00:08:03,840
+Next we'll install SQL server with
+one command pseudo P T install.
+
+156
+00:08:04,580 --> 00:08:07,280
+My SQL dash server.
+
+157
+00:08:08,050 --> 00:08:11,040
+We'll do a tick Y at
+the end and that's it.
+
+158
+00:08:12,080 --> 00:08:15,630
+It'll take just a few moments and
+perfect time for a, a coffee break.
+
+159
+00:08:15,850 --> 00:08:17,830
+We can never have too
+much. Now at this point,
+
+160
+00:08:17,830 --> 00:08:21,030
+you're pretty much running my SQL.
+Let's verify it real quick though.
+
+161
+00:08:21,120 --> 00:08:23,950
+Let's make sure the service is up and
+running. We'll do a pseudo system,
+
+162
+00:08:24,290 --> 00:08:28,310
+CTL status. My SQL and fingers crossed.
+
+163
+00:08:28,330 --> 00:08:31,470
+You should see active and running.
+That means it's healthy. Good to go.
+
+164
+00:08:31,850 --> 00:08:35,150
+And just hit hu to get outta there. Now
+go ahead and play with your database.
+
+165
+00:08:35,150 --> 00:08:39,270
+Just go crazy. &lt;laugh&gt; you're like,
+wait, where is it? &lt;laugh&gt; to access it.
+
+166
+00:08:39,270 --> 00:08:42,990
+All you have to do is type
+in my sequel. That's it.
+
+167
+00:08:44,220 --> 00:08:46,590
+Well not it you're gonna
+have to do pseudo my SQL.
+
+168
+00:08:48,600 --> 00:08:50,950
+Let's try it now. Yeah. We're
+there. Look at, look at that.
+
+169
+00:08:51,370 --> 00:08:54,790
+We got a nice little, my SQL command
+prompt down here. Just waiting for us.
+
+170
+00:08:55,060 --> 00:08:57,400
+The cur is blinking. Ready
+to go. Now just so you know,
+
+171
+00:08:57,420 --> 00:09:02,040
+the command mind without any parameters
+at all worked for us because we're
+
+172
+00:09:02,040 --> 00:09:03,240
+connecting to our local host.
+
+173
+00:09:03,780 --> 00:09:06,520
+It also worked because we
+don't have a password set,
+
+174
+00:09:07,210 --> 00:09:09,080
+which is fine for us as
+we're just playing around.
+
+175
+00:09:09,460 --> 00:09:12,800
+But often you might see something
+like this, specifying a username,
+
+176
+00:09:12,960 --> 00:09:13,800
+a remote server.
+
+177
+00:09:13,800 --> 00:09:16,760
+You wanna connect to the port and
+then saying dash P for password.
+
+178
+00:09:17,020 --> 00:09:19,120
+But we don't have to do that here.
+So we're not gonna worry about it.
+
+179
+00:09:19,260 --> 00:09:22,320
+So here in SQL, let's get the lay of the
+land first. What's happening right now.
+
+180
+00:09:22,690 --> 00:09:25,800
+We're first do a show databases command.
+
+181
+00:09:25,900 --> 00:09:28,080
+Now just know every time you
+type a command at my SQL,
+
+182
+00:09:28,540 --> 00:09:31,280
+you have to end it with a
+semicolon. Otherwise it's like what?
+
+183
+00:09:31,280 --> 00:09:34,240
+You're not done yet. Come
+on. So do that and boom,
+
+184
+00:09:34,710 --> 00:09:37,720
+some good old default databases.
+What do you say? We create our own.
+
+185
+00:09:37,730 --> 00:09:40,840
+Let's do that right now. We'll create
+the database for a network. Chuck coffee.
+
+186
+00:09:41,990 --> 00:09:44,440
+This one's very hard. I'm just
+kidding. It's gonna be so easy.
+
+187
+00:09:44,780 --> 00:09:47,840
+Simply type in create database.
+
+188
+00:09:48,980 --> 00:09:49,880
+The name of your database,
+
+189
+00:09:49,880 --> 00:09:54,840
+which will name N C underscore coffee and
+
+190
+00:09:54,960 --> 00:09:59,000
+then semicolon. That's it done?
+&lt;laugh&gt; and how hard was that? Right?
+
+191
+00:09:59,140 --> 00:10:02,840
+You just created a database.
+That's awesome. If we do
+show databases once more,
+
+192
+00:10:05,290 --> 00:10:09,480
+there it is our very own database, but
+he's just sitting there doing nothing.
+
+193
+00:10:09,480 --> 00:10:12,280
+He's got nothing going on. Let's change
+that now to play with our database,
+
+194
+00:10:12,280 --> 00:10:14,280
+to do things with it, to use it.
+
+195
+00:10:14,450 --> 00:10:18,840
+We're gonna type in the command use and
+then the name of our database and see
+
+196
+00:10:18,840 --> 00:10:23,080
+underscore coffee semicolon.
+And that's it. Database change.
+
+197
+00:10:23,180 --> 00:10:26,160
+Now we're interacting with that guy
+right now. Now remember a database.
+
+198
+00:10:26,650 --> 00:10:29,760
+We'll have a bunch of tables
+assuming you created them,
+
+199
+00:10:30,020 --> 00:10:32,360
+but right now ours won't have
+any and I can prove it to you.
+
+200
+00:10:32,370 --> 00:10:36,720
+Let's type in the command
+show tables with a semicolon
+
+201
+00:10:37,050 --> 00:10:39,680
+empty set, nothing there.
+So let's change that.
+
+202
+00:10:39,680 --> 00:10:42,480
+Let's create our first table and this
+is so cool. This is gonna be fun.
+
+203
+00:10:42,620 --> 00:10:45,800
+The first table we'll create
+is our coffee table. But, um,
+
+204
+00:10:46,460 --> 00:10:49,880
+and right now I want you to just ignore
+the rose. Don't worry about the rose,
+
+205
+00:10:50,060 --> 00:10:54,960
+the, the data. All right here, all I
+want you to focus on are the columns ID,
+
+206
+00:10:54,960 --> 00:10:57,720
+name, and region and roast. We're
+gonna deal with that right now.
+
+207
+00:10:58,220 --> 00:11:02,920
+So to create a table, we're gonna
+type in create table crazy. Right?
+
+208
+00:11:03,700 --> 00:11:06,720
+And then right after that, we'll name
+our table. Of course we gotta name it.
+
+209
+00:11:06,720 --> 00:11:09,960
+Coffee table. Don't wanna
+miss that opportunity.
+
+210
+00:11:11,180 --> 00:11:12,000
+And then right after that,
+
+211
+00:11:12,000 --> 00:11:14,840
+we'll do an open parenthesis
+and go ahead and hit enter it.
+
+212
+00:11:14,840 --> 00:11:16,800
+It'll be fine because we
+didn't put a semicolon.
+
+213
+00:11:16,800 --> 00:11:20,240
+Semicolon means you're done doing
+anything else means like I'm not done yet.
+
+214
+00:11:20,240 --> 00:11:22,400
+That's that's what it means. Now
+here, inside these parentheses,
+
+215
+00:11:22,730 --> 00:11:27,400
+we'll be defining our columns. What we
+saw before ID name, blah, blah. You know,
+
+216
+00:11:27,400 --> 00:11:32,040
+you got it. So our first column will
+simply call ID. And then right after that,
+
+217
+00:11:32,220 --> 00:11:36,080
+I'm gonna type in I N T no. What
+is that? So here with our column,
+
+218
+00:11:36,090 --> 00:11:38,280
+we're defining the name of a
+column, that guy right there,
+
+219
+00:11:38,300 --> 00:11:42,440
+but then we also have to define what type
+of data is gonna be in that column or
+
+220
+00:11:42,460 --> 00:11:44,520
+in the rows that we're gonna
+have underneath it here.
+
+221
+00:11:44,520 --> 00:11:47,200
+We're saying we want it to
+be an integer or a number.
+
+222
+00:11:47,200 --> 00:11:48,960
+That's the type of data that
+we'll live in that column.
+
+223
+00:11:49,020 --> 00:11:50,200
+And that's pretty much all there is to it.
+
+224
+00:11:50,200 --> 00:11:51,880
+We'll type in a column
+to tell them that, Hey,
+
+225
+00:11:51,880 --> 00:11:54,760
+we're not done with our
+columns just yet hit enter.
+
+226
+00:11:55,180 --> 00:11:56,480
+Our next column will be name.
+
+227
+00:11:57,460 --> 00:12:01,520
+And then we'll define what type of
+data we want inside that column here.
+
+228
+00:12:01,540 --> 00:12:05,360
+I'm gonna type in V R C H
+a R or variable character,
+
+229
+00:12:05,410 --> 00:12:10,200
+which is an end determinant length
+string data type. &lt;laugh&gt; basically,
+
+230
+00:12:10,200 --> 00:12:13,520
+it's just letters &lt;laugh&gt;
+and stuff. It's a string.
+
+231
+00:12:13,760 --> 00:12:17,880
+I can also define how long I want that
+to be how many characters are allowed.
+
+232
+00:12:17,940 --> 00:12:22,840
+So I'll just say 255 and parentheses
+just like that. And let's keep going.
+
+233
+00:12:23,370 --> 00:12:27,360
+Comma, next thing or column it was region.
+
+234
+00:12:27,550 --> 00:12:29,560
+This will also be a string
+or variable character.
+
+235
+00:12:30,490 --> 00:12:33,800
+It'll keep going until we're done.
+Oh, we'll have one more roast.
+
+236
+00:12:35,340 --> 00:12:37,760
+Now my last column here, I'm
+not going to add a comma.
+
+237
+00:12:37,820 --> 00:12:40,360
+You only add a comma when you're
+saying, Hey, I have more to say,
+
+238
+00:12:40,460 --> 00:12:42,480
+we don't have more to say
+we're done. I'll hit enter.
+
+239
+00:12:42,790 --> 00:12:44,440
+I'll do a closing parenthesis.
+
+240
+00:12:44,540 --> 00:12:47,120
+And then to end our command
+like we do in all my SQL stuff,
+
+241
+00:12:47,290 --> 00:12:49,320
+we're gonna type in a
+semicolon. That's it.
+
+242
+00:12:49,320 --> 00:12:53,120
+We're about to create our first table
+and set our database. Ready? Set, enter,
+
+243
+00:12:53,220 --> 00:12:57,400
+go. Let's take a look at it. Show tables.
+There it is. There's our coffee table.
+
+244
+00:12:57,540 --> 00:12:59,520
+Now that's just the name
+of it. What do you say?
+
+245
+00:12:59,520 --> 00:13:01,920
+We look inside and see the
+actual columns we made.
+
+246
+00:13:01,980 --> 00:13:05,040
+We can type in and describe coffee
+
+247
+00:13:07,090 --> 00:13:11,160
+table. And that'll give us some more
+info. We got our field and our type,
+
+248
+00:13:11,260 --> 00:13:14,480
+and we'll cover more on this stuff
+here in a minute on, by the way,
+
+249
+00:13:14,480 --> 00:13:18,240
+when we're defining our table and
+defining that columns and everything,
+
+250
+00:13:18,240 --> 00:13:23,240
+the fields that's part of
+defining our schema or how our
+
+251
+00:13:23,400 --> 00:13:25,800
+databases are arranged and, and organized.
+
+252
+00:13:26,170 --> 00:13:28,760
+We're not gonna go too deep into that.
+Just know that when people say schema,
+
+253
+00:13:28,760 --> 00:13:31,560
+that's pretty much what they mean. Now
+there's nothing on our coffee table.
+
+254
+00:13:31,650 --> 00:13:34,560
+Let's ask some stuff to it,
+looking at our database,
+
+255
+00:13:34,570 --> 00:13:35,800
+let's add the default route.
+
+256
+00:13:36,290 --> 00:13:40,840
+Let's insert a row into our table
+and my sequel we'll type in insert
+
+257
+00:13:41,620 --> 00:13:45,560
+in two. And then we'll specify
+our table, which was coffee table.
+
+258
+00:13:46,070 --> 00:13:48,680
+Then we'll say, here are the
+values. We'll actually use the word,
+
+259
+00:13:48,860 --> 00:13:53,240
+the command values. And we'll define
+our values inside parentheses.
+
+260
+00:13:53,460 --> 00:13:56,280
+The first one's an en integer, and
+I'm just gonna put it in as one.
+
+261
+00:13:56,580 --> 00:13:59,240
+That's the first ID. Second one was name,
+
+262
+00:13:59,240 --> 00:14:03,680
+which will be a string
+default wrap. Then origin,
+
+263
+00:14:04,240 --> 00:14:08,680
+Ethiopia, also a string and
+finally roast, which was light.
+
+264
+00:14:09,620 --> 00:14:12,720
+So what's happening here. We
+have the insert into command.
+
+265
+00:14:12,940 --> 00:14:17,920
+So we're telling my sequel,
+we're inserting into &lt;laugh&gt;
+the coffee table table.
+
+266
+00:14:18,180 --> 00:14:22,600
+And it's like, what are you inserting?
+Well, here are our values, bam.
+
+267
+00:14:22,740 --> 00:14:26,520
+And notice we're going in order of
+our columns. And we have to do that.
+
+268
+00:14:26,940 --> 00:14:31,600
+Got the ID, the name, the region,
+and the roast. Then once we're done,
+
+269
+00:14:31,790 --> 00:14:32,623
+what do we do?
+
+270
+00:14:33,140 --> 00:14:36,840
+We type in semicolon to say
+we are done and awesome.
+
+271
+00:14:36,980 --> 00:14:41,360
+Now what I love about my SQL and most
+SQL things is, uh, it'll tell us, Hey,
+
+272
+00:14:41,380 --> 00:14:44,440
+the query it's okay.
+We got this. It's good.
+
+273
+00:14:44,980 --> 00:14:48,000
+And it tells us there was one
+row affected, which row? Well,
+
+274
+00:14:48,000 --> 00:14:49,080
+the one we just added now,
+
+275
+00:14:49,080 --> 00:14:52,480
+I know you want to see that data
+inside your database, but so far,
+
+276
+00:14:52,480 --> 00:14:53,480
+I haven't shown you how to do that.
+
+277
+00:14:53,480 --> 00:14:58,400
+Cause if we do show tables
+or describe coffee table,
+
+278
+00:15:00,300 --> 00:15:02,000
+it doesn't show us the data inside yet.
+
+279
+00:15:02,180 --> 00:15:06,760
+So I guess I can go ahead and show you
+your first select statement. Um, ah,
+
+280
+00:15:06,760 --> 00:15:09,720
+should I wait? Yeah, no, let's do
+it right now. I know you can't wait.
+
+281
+00:15:10,080 --> 00:15:12,400
+&lt;laugh&gt; so here's how we
+look inside of our table.
+
+282
+00:15:12,570 --> 00:15:15,160
+Let's pull some data out of
+there. We'll type in select.
+
+283
+00:15:16,410 --> 00:15:18,680
+We'll do an asterisk and I'll
+explain this here in a second.
+
+284
+00:15:19,020 --> 00:15:23,920
+And we'll say from our table
+coffee table semicolon.
+
+285
+00:15:23,920 --> 00:15:26,800
+Now what's happening here. We're telling
+my sequel, I wanna select some data.
+
+286
+00:15:26,820 --> 00:15:28,480
+And it's like, well, what
+data from what column?
+
+287
+00:15:28,540 --> 00:15:31,440
+And we're saying all of it
+&lt;laugh&gt; I want everything.
+
+288
+00:15:31,440 --> 00:15:34,760
+That's what the asterisk means. And then
+it's like, okay, fine. From what table?
+
+289
+00:15:34,850 --> 00:15:38,280
+Where are you getting this from? Well,
+we're getting it from our coffee table.
+
+290
+00:15:38,360 --> 00:15:40,400
+I wanna see my coffee stuff. And
+that's what we're doing here.
+
+291
+00:15:40,870 --> 00:15:43,400
+It's a very basic select statement.
+You'll see this one all the time.
+
+292
+00:15:43,620 --> 00:15:46,240
+But if you just wanna pull all the info
+from a table, that's how you do it.
+
+293
+00:15:46,240 --> 00:15:51,080
+Let's take a look. There it is. How
+cool is that? So if you just did this
+
+294
+00:15:53,350 --> 00:15:56,360
+clap, pat yourself on the back, that's
+a big deal. You created a database,
+
+295
+00:15:56,360 --> 00:15:59,440
+you created a table inside the database
+and you added some data to it, simple,
+
+296
+00:15:59,740 --> 00:16:01,920
+but killer. Now here's
+a challenge for you.
+
+297
+00:16:01,920 --> 00:16:04,320
+What I want you to do is fill
+out the rest of this database,
+
+298
+00:16:04,580 --> 00:16:09,040
+all the rest of our coffees. Go ahead
+and pause the video. Pause, UN pause.
+
+299
+00:16:09,050 --> 00:16:11,400
+Let's see how you did. Let's do
+our select statement once more,
+
+300
+00:16:13,100 --> 00:16:15,600
+select everything from coffee table
+
+301
+00:16:17,420 --> 00:16:21,000
+and we should see a lot more things.
+&lt;laugh&gt; yes, it's so nice and neat.
+
+302
+00:16:21,040 --> 00:16:24,960
+I love it. If yours looks like
+this, congrats, that's awesome. Now,
+
+303
+00:16:24,960 --> 00:16:25,880
+another challenge for you.
+
+304
+00:16:26,280 --> 00:16:29,840
+I want you to select only the names
+of the coffee from that table.
+
+305
+00:16:29,860 --> 00:16:33,600
+That's all I wanna see. Can you
+do that? Let's try it out. Select,
+
+306
+00:16:33,990 --> 00:16:35,440
+instead of saying everything,
+
+307
+00:16:35,440 --> 00:16:39,040
+let's just select the
+name from coffee table.
+
+308
+00:16:39,900 --> 00:16:41,640
+Bam just got the names
+of our coffee. That's it.
+
+309
+00:16:41,740 --> 00:16:43,080
+Now here's the next challenge for you.
+
+310
+00:16:43,600 --> 00:16:46,560
+I want you to create our next
+table and do this by yourself.
+
+311
+00:16:46,620 --> 00:16:47,420
+I'm not gonna show you,
+
+312
+00:16:47,420 --> 00:16:52,400
+create our customer table with all of
+our Marvel customers and also name your
+
+313
+00:16:52,400 --> 00:16:56,480
+table. Avengers, just like
+this. Okay? Pause the video. Go
+
+314
+00:16:58,150 --> 00:17:00,130
+and pause. Let's see
+how you did now. Again,
+
+315
+00:17:00,130 --> 00:17:03,290
+I wanted you to create this table and
+if you haven't already go ahead and fill
+
+316
+00:17:03,290 --> 00:17:06,450
+it out with all this information.
+It'll take about two minutes,
+
+317
+00:17:06,830 --> 00:17:09,530
+but it gives you practice. But if you
+did it right, it should look like this.
+
+318
+00:17:09,580 --> 00:17:11,250
+Let's go ahead and select
+everything from that table.
+
+319
+00:17:11,790 --> 00:17:15,130
+Select all columns from Avengers.
+
+320
+00:17:16,180 --> 00:17:20,370
+Let's see how it looks.
+&lt;laugh&gt; oh, nice. Clean,
+
+321
+00:17:20,800 --> 00:17:23,650
+tidy data. I love it. Now here
+with our Marvel characters,
+
+322
+00:17:23,750 --> 00:17:28,450
+let me show you some of the power &lt;laugh&gt;
+of SQL and how we can find or query
+
+323
+00:17:28,630 --> 00:17:31,650
+our data. So let's try this.
+Let's do a select statement,
+
+324
+00:17:31,650 --> 00:17:35,810
+just like we did before
+everything from Avengers.
+
+325
+00:17:36,030 --> 00:17:38,810
+But let's say we only wanna see
+the Avengers that are from earth.
+
+326
+00:17:38,910 --> 00:17:42,330
+That's all we wanna see. How
+do we do that with where? No,
+
+327
+00:17:42,390 --> 00:17:44,130
+I'm not losing my mind.
+&lt;laugh&gt; watch this.
+
+328
+00:17:44,410 --> 00:17:48,850
+I can add another filter saying
+where origin equals the string
+
+329
+00:17:49,530 --> 00:17:51,560
+earth semicolon. So let's break it down.
+
+330
+00:17:51,740 --> 00:17:54,480
+I'm selecting all columns
+from the table, Avengers,
+
+331
+00:17:54,620 --> 00:17:59,560
+but I only wanna see where the
+column origin equals earth.
+
+332
+00:17:59,560 --> 00:18:03,400
+That's it let's see what happens. Bam.
+I only got the earthlings, check it out.
+
+333
+00:18:03,720 --> 00:18:06,640
+&lt;laugh&gt; isn't that cool though.
+If you had a large amount of data,
+
+334
+00:18:06,650 --> 00:18:11,600
+being able to just select, pinpoint
+the data you want, like that is killer.
+
+335
+00:18:11,780 --> 00:18:14,680
+And that's just a basic SQL statement.
+Let me show you a few more quick ones.
+
+336
+00:18:14,730 --> 00:18:15,880
+Let's pull up that same statement.
+
+337
+00:18:15,930 --> 00:18:20,760
+Let's say we wanted to see all the
+Avengers from earth and Asguard how
+
+338
+00:18:20,780 --> 00:18:22,480
+we do that. It's pretty simple. Actually.
+
+339
+00:18:22,580 --> 00:18:25,760
+All I have to do is add one more
+filter to it. I'll just say, or, or,
+
+340
+00:18:26,140 --> 00:18:30,480
+or a G equals Asgard.
+So my filter says, Hey,
+
+341
+00:18:30,700 --> 00:18:35,400
+origin can be earth or,
+or origin can be Asgard.
+
+342
+00:18:36,010 --> 00:18:39,160
+Let's see what happens. Bam. Just
+add a Thor. Let's try this one.
+
+343
+00:18:39,160 --> 00:18:42,560
+Maybe I wanna see all the Avengers that
+are under the age of 30. Let's try that.
+
+344
+00:18:43,500 --> 00:18:47,440
+In fact, actually pause the video. See
+if you can do this pause, UN pause.
+
+345
+00:18:47,610 --> 00:18:52,080
+We'll select the alias
+column from a vendors where
+
+346
+00:18:52,820 --> 00:18:56,120
+age is less than 30.
+
+347
+00:18:56,900 --> 00:18:59,680
+We can do stuff like that.
+Bam. How cool is that?
+
+348
+00:18:59,960 --> 00:19:03,040
+I just got the aliases
+Spider-Man and well tree.
+
+349
+00:19:03,100 --> 00:19:05,560
+And that's pretty much an endless
+combination of how you can filter things.
+
+350
+00:19:05,880 --> 00:19:10,240
+I can say where not origin equals earth.
+
+351
+00:19:10,400 --> 00:19:13,480
+I wanna see everyone. That's not
+from earth using our not statement.
+
+352
+00:19:13,480 --> 00:19:15,240
+So you can go crazy with queries.
+
+353
+00:19:15,340 --> 00:19:18,640
+And often you may be typing in a terminal
+doing these queries, or it could be a,
+
+354
+00:19:18,840 --> 00:19:21,040
+a gooey application or it's programmatic.
+
+355
+00:19:21,260 --> 00:19:25,240
+You're programming things in Python to
+search for data with queries like this.
+
+356
+00:19:25,510 --> 00:19:29,880
+It's super powerful. Now so far, I've
+shown you how to add data to a table,
+
+357
+00:19:30,260 --> 00:19:33,720
+but what if you wanna remove stuff?
+Cuz did you notice this? Look at this.
+
+358
+00:19:35,550 --> 00:19:39,040
+Some dude named Jeff snuck into
+my table. He's not in Avenger.
+
+359
+00:19:39,040 --> 00:19:42,240
+How do you even get in there? So real
+quick, um, go ahead and add Jeff,
+
+360
+00:19:42,340 --> 00:19:45,040
+add this data to your table
+and then let's remove him.
+
+361
+00:19:45,060 --> 00:19:48,000
+So pause the video real quick,
+Adam, and then let's remove him.
+
+362
+00:19:49,470 --> 00:19:52,850
+We can remove the records from our
+tables, with the delete command.
+
+363
+00:19:53,020 --> 00:19:57,970
+We'll say delete from we'll specify
+our table Avengers and we'll tell them
+
+364
+00:19:57,970 --> 00:20:00,290
+what we're wanting to delete. We could
+delete a lot of things all at once.
+
+365
+00:20:00,290 --> 00:20:02,490
+Gotta be careful, but all
+we care about is Jeff.
+
+366
+00:20:02,490 --> 00:20:04,610
+So we'll say where we'll
+use our filtering again,
+
+367
+00:20:05,100 --> 00:20:09,530
+where we'll say first name equals Jeff.
+
+368
+00:20:10,160 --> 00:20:13,730
+That should do it. That should take
+out Jeff goodbye. Jeff. And he is gone.
+
+369
+00:20:13,930 --> 00:20:17,410
+I think let's do our select statement
+once more. Woo. Okay. Jeff is gone.
+
+370
+00:20:17,470 --> 00:20:20,250
+Now we can also update these
+stuff in our table. For example,
+
+371
+00:20:20,770 --> 00:20:25,250
+I was informed of this grot. Doesn't have
+a last name. Let's just Groot my bad.
+
+372
+00:20:25,470 --> 00:20:26,170
+So let's change that.
+
+373
+00:20:26,170 --> 00:20:30,450
+Let's delete that we can update entries
+in our table with the update command.
+
+374
+00:20:30,820 --> 00:20:35,770
+We're gonna update Avengers and
+we'll use the set command to set a
+
+375
+00:20:35,770 --> 00:20:38,850
+certain column equal to something.
+
+376
+00:20:38,950 --> 00:20:43,810
+So we'll set last name
+equal to null, to nothing.
+
+377
+00:20:43,870 --> 00:20:45,370
+That's how we do that empty.
+
+378
+00:20:45,370 --> 00:20:49,720
+And because we don't wanna set every last
+name to Noel will say where first name
+
+379
+00:20:50,420 --> 00:20:54,440
+equals group. That should do it. Let's
+try it out. Awesome. So actually I,
+
+380
+00:20:54,800 --> 00:20:58,080
+I didn't test this before. I wanna
+make sure it works. Excellent.
+
+381
+00:20:58,260 --> 00:21:00,800
+GT is now accurate and you guys
+can stop yelling at me. Now,
+
+382
+00:21:00,800 --> 00:21:02,360
+last thing on this before
+we get kind of crazy,
+
+383
+00:21:02,450 --> 00:21:04,480
+let's go ahead and select
+all the Avengers. Once more,
+
+384
+00:21:05,020 --> 00:21:08,360
+all the columns let's say we wanna
+see them in order of their age,
+
+385
+00:21:08,440 --> 00:21:12,120
+youngest to oldest, let's see that
+we can do that by typing in order,
+
+386
+00:21:13,140 --> 00:21:17,000
+by the column age. And we'll say, because
+we're going from younger to older,
+
+387
+00:21:17,000 --> 00:21:21,040
+it'll be ascending. So we'll do a S C
+let's try it out. Perfect. Look at that.
+
+388
+00:21:21,600 --> 00:21:24,360
+17, 18 35 to 42 5000. That's a
+big jump. Let's do it in reverse.
+
+389
+00:21:24,410 --> 00:21:28,360
+Let's do oldest to youngest. We'll
+change that to D S or &lt;laugh&gt; sorry.
+
+390
+00:21:28,880 --> 00:21:32,880
+D E S C descending. Awesome. Okay.
+Last thing I'm gonna show you.
+
+391
+00:21:33,290 --> 00:21:36,360
+Maybe I, I might get too excited and
+show you something else, but we'll see.
+
+392
+00:21:36,360 --> 00:21:39,200
+Okay. Let's try this right now.
+Our tables looking pretty amazing.
+
+393
+00:21:39,260 --> 00:21:41,400
+All the Avengers are here.
+Well, some of them, well,
+
+394
+00:21:41,400 --> 00:21:43,200
+let's say we wanna know
+one more thing about them.
+
+395
+00:21:43,320 --> 00:21:47,480
+I wanna know if they have a beard, so
+it'll be beard. It'll be yes or no.
+
+396
+00:21:47,480 --> 00:21:51,480
+We're actually true or false. Let's do
+that. So here in our database, our table,
+
+397
+00:21:51,570 --> 00:21:55,120
+we're gonna alter the table to have
+another column after it's already created.
+
+398
+00:21:55,250 --> 00:21:58,720
+Let's do it right now. Pretty simple.
+Actually the command is alter.
+
+399
+00:21:59,180 --> 00:22:01,760
+We wanna alter it. We gotta
+tell SQL what we wanna alter.
+
+400
+00:22:01,760 --> 00:22:05,160
+We're gonna alter a table,
+specifically the Avenger table.
+
+401
+00:22:05,450 --> 00:22:09,560
+We're going to add a new
+column. We'll name it, beard.
+
+402
+00:22:09,660 --> 00:22:12,960
+And then we'll tell it what type of data
+it's going to be now because I want it
+
+403
+00:22:12,960 --> 00:22:17,560
+to be true. False. I'm gonna type in
+bullion. Cuz bullion is true or false.
+
+404
+00:22:17,560 --> 00:22:18,560
+That's a special data type.
+
+405
+00:22:18,580 --> 00:22:21,760
+So here we're telling SQL we wanna alter
+the table of vendors and the way we're
+
+406
+00:22:21,760 --> 00:22:24,160
+altering it is by adding the column,
+
+407
+00:22:24,370 --> 00:22:28,760
+beard with the ion data
+type at enter done.
+
+408
+00:22:28,780 --> 00:22:30,440
+Now let's select and see
+what it looks like right now.
+
+409
+00:22:31,840 --> 00:22:35,560
+&lt;laugh&gt; look at that new
+information, new column.
+
+410
+00:22:35,620 --> 00:22:36,960
+Now here's a challenge for you.
+
+411
+00:22:37,440 --> 00:22:42,240
+I want you to go in and update the record
+for the beard column for each of these
+
+412
+00:22:42,240 --> 00:22:45,440
+Avengers, whether or not
+they have a beard, you should
+know that already. Right?
+
+413
+00:22:45,700 --> 00:22:48,880
+So go ahead and do it real
+quick. Pause the video on pause.
+
+414
+00:22:48,940 --> 00:22:51,680
+Here's how you would do that. Like we
+just covered with the update command.
+
+415
+00:22:51,680 --> 00:22:53,040
+We'll update the table of Avengers.
+
+416
+00:22:53,490 --> 00:22:58,440
+We'll set beard equal to
+true where let's just say
+
+417
+00:22:58,440 --> 00:23:03,400
+first name equals Thor. Cuz
+we know a Thor has a beard.
+
+418
+00:23:03,900 --> 00:23:07,440
+Bam. Let's see what happens. Perfect.
+And for group, he doesn't have a beard.
+
+419
+00:23:08,060 --> 00:23:11,760
+So we'll set beard to false
+where first name equals groups.
+
+420
+00:23:12,170 --> 00:23:16,080
+Let's see what happened.
+Noticing that one is true.
+
+421
+00:23:16,390 --> 00:23:19,480
+Zero is false. Okay, we're gonna
+stop here. I could keep going.
+
+422
+00:23:19,530 --> 00:23:22,200
+There are things I have not covered, but
+I don't wanna make this video too long.
+
+423
+00:23:22,500 --> 00:23:26,960
+But I hope in this video I gave you
+enough to make you like feel semi
+
+424
+00:23:27,340 --> 00:23:30,680
+CT. Like I know what a database is.
+I create one. I can select things,
+
+425
+00:23:31,020 --> 00:23:34,000
+but also I wanna give you that hunger
+that drive to learn just a bit more,
+
+426
+00:23:34,340 --> 00:23:37,760
+go beyond what I'm showing you here
+because there are things I didn't cover.
+
+427
+00:23:37,790 --> 00:23:41,120
+Like look here. We did build these
+two tables inside our database,
+
+428
+00:23:41,700 --> 00:23:44,880
+but we never built the orders table.
+And more importantly, we never.
+
+429
+00:23:45,120 --> 00:23:47,480
+Built the relationships
+between all these tables,
+
+430
+00:23:47,490 --> 00:23:51,000
+which would involve making the
+ID field of both our customers,
+
+431
+00:23:51,000 --> 00:23:53,720
+our Avengers and our
+coffee, the primary key.
+
+432
+00:23:53,940 --> 00:23:56,760
+And then when we reference
+those fields in our order table,
+
+433
+00:23:56,930 --> 00:23:58,200
+those will be foreign keys.
+
+434
+00:23:58,300 --> 00:24:01,400
+And that unlocks the full
+power of relational databases,
+
+435
+00:24:01,400 --> 00:24:04,640
+allowing us to do things like
+joins and creating views,
+
+436
+00:24:04,810 --> 00:24:08,400
+which basically is pulling data from
+all these tables and only seeing what we
+
+437
+00:24:08,400 --> 00:24:11,480
+want to see, like how many times
+does Spider-Man order the dark roast.
+
+438
+00:24:11,780 --> 00:24:13,840
+We could find stuff like that.
+So I'm not gonna cover that here.
+
+439
+00:24:13,840 --> 00:24:16,880
+If you want me to create a video on
+that, let me know below. But anyways,
+
+440
+00:24:16,880 --> 00:24:17,720
+that's all I got for today.
+
+441
+00:24:17,970 --> 00:24:22,160
+Thank you for taking some time to have
+some coffee with me and talk about SQL or
+
+442
+00:24:22,500 --> 00:24:22,990
+SQL. Well.
+

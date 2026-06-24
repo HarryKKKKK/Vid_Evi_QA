@@ -1,0 +1,13 @@
+CG-Bench Video Check Result
+============================================================
+cgbench_filtered.json:    /aifs4su/hansirui_2nd/harry/Vid_Evi_QA/cgbench_pipeline/cgbench_filtered.json
+Video directory:          /aifs4su/hansirui_2nd/harry/Vid_Evi_QA/source_datasets/cg_bench/videos
+
+Total entries:            1596
+Video files in directory: 618
+
+Found by video_id:        1596
+Found by qid:             0
+Missing:                  0
+
+All videos accounted for.

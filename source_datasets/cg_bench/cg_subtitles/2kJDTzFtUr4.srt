@@ -1,0 +1,5927 @@
+1
+00:00:01,750 --> 00:00:05,890
+ASML has a monopoly on the
+fabrication of EUV
+
+2
+00:00:05,890 --> 00:00:07,900
+lithography machines, the
+most advanced type of
+
+3
+00:00:07,900 --> 00:00:10,480
+lithography equipment
+that's needed to make every
+
+4
+00:00:10,480 --> 00:00:13,450
+single advanced processor
+chip that we use today.
+
+5
+00:00:13,450 --> 00:00:15,250
+And this company is one of
+the most extraordinary
+
+6
+00:00:15,250 --> 00:00:16,600
+organizations in the world.
+
+7
+00:00:16,600 --> 00:00:19,510
+We are the only provider on
+the planet of this critical
+
+8
+00:00:19,510 --> 00:00:20,290
+technology.
+
+9
+00:00:20,290 --> 00:00:24,220
+The most advanced technology
+manufactured in the United
+
+10
+00:00:24,220 --> 00:00:24,850
+States.
+
+11
+00:00:24,850 --> 00:00:28,090
+This vision that started 50
+years ago with bringing the
+
+12
+00:00:28,090 --> 00:00:30,720
+digital world onto a chip.
+
+13
+00:00:30,720 --> 00:00:34,300
+And that pace of technology
+innovation is unstoppable.
+
+14
+00:00:39,530 --> 00:00:41,870
+At the center of this big
+factory in the Netherlands,
+
+15
+00:00:41,870 --> 00:00:44,080
+in the midst of a months
+long assembly process,
+
+16
+00:00:44,080 --> 00:00:46,580
+there's a revolutionary
+machine that the whole world
+
+17
+00:00:46,580 --> 00:00:47,750
+has come to rely on.
+
+18
+00:00:48,050 --> 00:00:50,660
+You could see an EUV machine
+right behind me.
+
+19
+00:00:50,660 --> 00:00:53,600
+The size of a city bus but
+working with atomic level
+
+20
+00:00:53,600 --> 00:00:56,630
+precision, these EUV
+lithography machines are the
+
+21
+00:00:56,630 --> 00:00:59,120
+most expensive step in
+making every advanced
+
+22
+00:00:59,120 --> 00:01:01,500
+microchip that powers the
+modern digital age.
+
+23
+00:01:01,520 --> 00:01:04,180
+Data centers, cars, and
+every single iPhone.
+
+24
+00:01:04,190 --> 00:01:07,220
+We are the only provider on
+the planet of this critical
+
+25
+00:01:07,220 --> 00:01:08,030
+technology.
+
+26
+00:01:08,270 --> 00:01:10,790
+These machines are the only
+way to print minuscule
+
+27
+00:01:10,790 --> 00:01:11,970
+designs on these chips.
+
+28
+00:01:11,970 --> 00:01:15,050
+They cost up to $200
+million, and they're only
+
+29
+00:01:15,050 --> 00:01:17,840
+made by a single company,
+Advanced Semiconductor
+
+30
+00:01:17,840 --> 00:01:19,310
+Materials Lithography, or
+ASML.
+
+31
+00:01:20,360 --> 00:01:25,100
+Today, ASML has a monopoly
+on the fabrication of EUV
+
+32
+00:01:25,100 --> 00:01:27,110
+lithography machines, the
+most advanced type of
+
+33
+00:01:27,110 --> 00:01:29,690
+lithography equipment
+that's needed to make every
+
+34
+00:01:29,690 --> 00:01:32,660
+single advanced processor
+chip that we use today.
+
+35
+00:01:32,660 --> 00:01:34,460
+And this company is one of
+the most extraordinary
+
+36
+00:01:34,460 --> 00:01:35,960
+organizations in the world.
+
+37
+00:01:35,990 --> 00:01:38,090
+The machines that they
+produce, each one of them is
+
+38
+00:01:38,090 --> 00:01:40,970
+among the most complicated
+devices ever made.
+
+39
+00:01:41,150 --> 00:01:43,220
+In the midst of a chip
+shortage that's caused back
+
+40
+00:01:43,220 --> 00:01:46,550
+orders of everything from
+PS5s to Teslas, the need for
+
+41
+00:01:46,550 --> 00:01:47,660
+a ASML has never been
+higher.
+
+42
+00:01:48,230 --> 00:01:51,410
+Its stock has skyrocketed
+since 2018, while its three
+
+43
+00:01:51,410 --> 00:01:55,370
+main customers, chipmakers
+TSMC, Intel and Samsung vie
+
+44
+00:01:55,370 --> 00:01:57,680
+to be front of line for
+ASML's next breakthrough
+
+45
+00:01:57,680 --> 00:02:00,530
+technology. The price tag
+for this next machine, which
+
+46
+00:02:00,530 --> 00:02:02,960
+promises to push the
+boundaries of known physics,
+
+47
+00:02:02,960 --> 00:02:05,090
+is more than $300 million.
+
+48
+00:02:05,120 --> 00:02:09,890
+It's so expensive that most
+companies cannot afford it.
+
+49
+00:02:10,280 --> 00:02:13,040
+While the chip wars rage on,
+we wanted to find out what's
+
+50
+00:02:13,040 --> 00:02:15,350
+really going on inside the
+quiet company making the
+
+51
+00:02:15,350 --> 00:02:16,370
+machines that print them
+all.
+
+52
+00:02:16,850 --> 00:02:20,420
+This is the optical part of
+the machine that makes EUV
+
+53
+00:02:20,420 --> 00:02:21,200
+possible.
+
+54
+00:02:21,380 --> 00:02:24,260
+We got a rare tour inside
+ASML's clean rooms in
+
+55
+00:02:24,260 --> 00:02:26,570
+California and the
+Netherlands to see how these
+
+56
+00:02:26,570 --> 00:02:29,750
+machines use precision
+lasers, exploding molten tin
+
+57
+00:02:29,750 --> 00:02:31,970
+and the smoothest surface
+in the world to bring our
+
+58
+00:02:31,970 --> 00:02:33,320
+digital age to life.
+
+59
+00:02:41,840 --> 00:02:44,510
+ASML's crucial role on the
+chipmaking stage has brought
+
+60
+00:02:44,510 --> 00:02:47,180
+it wild success over the
+past few years, making it
+
+61
+00:02:47,180 --> 00:02:49,640
+even more valuable today
+than Intel, one of the
+
+62
+00:02:49,640 --> 00:02:50,600
+biggest chip makers it
+supplies.
+
+63
+00:02:51,710 --> 00:02:53,330
+It's double digit growth
+every year.
+
+64
+00:02:53,330 --> 00:02:54,380
+And we're not a startup.
+
+65
+00:02:54,470 --> 00:02:56,660
+You know, we have now
+32,000 people.
+
+66
+00:02:56,690 --> 00:02:59,780
+Peter Wennink has been CEO
+since 2013, but he joined
+
+67
+00:02:59,780 --> 00:03:03,140
+ASML back in 1999, just 15
+years after its humble
+
+68
+00:03:03,140 --> 00:03:05,810
+beginnings. It started as a
+subsidiary of Dutch
+
+69
+00:03:05,810 --> 00:03:09,290
+electronics giant Philips
+in 1984, conducting research
+
+70
+00:03:09,290 --> 00:03:11,990
+out of a leaky shed next to
+a Philips office building in
+
+71
+00:03:11,990 --> 00:03:12,590
+Eindhoven in the
+Netherlands.
+
+72
+00:03:13,700 --> 00:03:16,370
+They were in financial dire
+straits, so we had no money.
+
+73
+00:03:16,580 --> 00:03:19,790
+We were poor. And because
+the problems Philips had
+
+74
+00:03:19,790 --> 00:03:22,700
+were so big, nobody looked
+at this little outfit out
+
+75
+00:03:22,700 --> 00:03:24,950
+there that was trying to do
+something crazy, so they
+
+76
+00:03:24,950 --> 00:03:25,940
+neglected us.
+
+77
+00:03:26,030 --> 00:03:28,400
+Still, in its first year,
+the company successfully
+
+78
+00:03:28,400 --> 00:03:30,050
+launched a
+first-of-its-kind machine
+
+79
+00:03:30,050 --> 00:03:32,840
+that used precise rays of
+light to print tiny designs
+
+80
+00:03:32,840 --> 00:03:35,300
+on silicon to make
+microchips, a technology
+
+81
+00:03:35,300 --> 00:03:36,560
+known as lithography.
+
+82
+00:03:36,590 --> 00:03:39,170
+The first lithography tool
+really looked like a
+
+83
+00:03:39,170 --> 00:03:42,770
+projector. There is
+basically a reticle which
+
+84
+00:03:42,770 --> 00:03:45,020
+all the image that you want
+to project.
+
+85
+00:03:45,020 --> 00:03:48,020
+Then there is an optical
+system which is going to
+
+86
+00:03:48,290 --> 00:03:51,020
+take this image and project
+it on the wafer.
+
+87
+00:03:51,320 --> 00:03:53,780
+Semiconductor lithography
+was invented in a U.S.
+
+88
+00:03:53,780 --> 00:03:56,960
+military lab and for a long
+time up through the 1980s,
+
+89
+00:03:56,960 --> 00:04:00,530
+the key lithography firms
+were American, based in New
+
+90
+00:04:00,530 --> 00:04:01,080
+England.
+
+91
+00:04:01,100 --> 00:04:03,500
+Chris Miller of Tufts
+University is writing a book
+
+92
+00:04:03,500 --> 00:04:05,750
+called The Chip War: The
+Fight for the World's Most
+
+93
+00:04:05,750 --> 00:04:07,070
+Critical Technology.
+
+94
+00:04:07,160 --> 00:04:10,070
+When the industry was
+getting ready to jump into
+
+95
+00:04:10,070 --> 00:04:12,830
+the early stages of EUV
+research, none of the U.S.
+
+96
+00:04:12,830 --> 00:04:15,710
+firms were ready to take the
+plunge on what would be an
+
+97
+00:04:15,710 --> 00:04:18,380
+expensive and risky
+proposition, whereas ASML
+
+98
+00:04:18,380 --> 00:04:18,920
+was.
+
+99
+00:04:19,190 --> 00:04:21,780
+By 1988, ASML had five U.S.
+
+100
+00:04:21,780 --> 00:04:25,040
+offices with 84 employees
+and a new Dutch office that
+
+101
+00:04:25,040 --> 00:04:27,230
+eventually became its
+headquarters in Veldhoven,
+
+102
+00:04:27,230 --> 00:04:29,660
+where CNBC took a tour
+earlier this month.
+
+103
+00:04:29,810 --> 00:04:33,290
+We're walking through the
+EUV factory, which is about
+
+104
+00:04:33,290 --> 00:04:38,390
+50,000 square meters of
+space with 1500 employees
+
+105
+00:04:38,390 --> 00:04:42,530
+who are working in shifts
+seven by 24 to produce 100%
+
+106
+00:04:42,530 --> 00:04:45,770
+of the EUV machines shipped
+worldwide from this
+
+107
+00:04:45,770 --> 00:04:46,640
+facility.
+
+108
+00:04:47,150 --> 00:04:49,730
+With a breakthrough machine,
+ASML started turning a
+
+109
+00:04:49,730 --> 00:04:52,310
+profit and went public on
+the Amsterdam and New York
+
+110
+00:04:52,310 --> 00:04:54,120
+Stock Exchange in 1995.
+
+111
+00:04:54,140 --> 00:04:57,320
+By the 2000s, ASML was
+acquiring California tech
+
+112
+00:04:57,320 --> 00:04:59,900
+companies like Silicon
+Valley Group and various key
+
+113
+00:04:59,900 --> 00:05:02,960
+suppliers like Cymer in San
+Diego, where we also got an
+
+114
+00:05:02,960 --> 00:05:05,150
+inside look at the
+cleanroom where ASML's light
+
+115
+00:05:05,150 --> 00:05:06,230
+source is produced.
+
+116
+00:05:06,380 --> 00:05:09,500
+So this is actually a nozzle
+manufacturing area where we
+
+117
+00:05:09,500 --> 00:05:11,080
+actually build the nozzles.
+
+118
+00:05:11,090 --> 00:05:14,150
+This is actually the piece
+where the tin shoots out of,
+
+119
+00:05:14,330 --> 00:05:16,370
+that's what's going to
+create your EUV.
+
+120
+00:05:16,580 --> 00:05:19,730
+EUV refers to extreme
+ultraviolet, an incredibly
+
+121
+00:05:19,730 --> 00:05:22,370
+short wavelength of light
+that ASML uses to print
+
+122
+00:05:22,370 --> 00:05:23,600
+smaller, more complex
+chips.
+
+123
+00:05:24,200 --> 00:05:26,690
+But developing this
+revolutionary technology was
+
+124
+00:05:26,690 --> 00:05:28,100
+incredibly expensive.
+
+125
+00:05:28,130 --> 00:05:30,410
+We didn't have the money, so
+we went out and we found
+
+126
+00:05:30,410 --> 00:05:34,280
+partners, which actually
+was the basis of the way we
+
+127
+00:05:34,280 --> 00:05:37,370
+built the company. So we
+were forced to be a system
+
+128
+00:05:37,370 --> 00:05:38,480
+architect and a system
+integrator.
+
+129
+00:05:39,320 --> 00:05:42,320
+In 2012, ASML offered about
+a quarter of its shares to
+
+130
+00:05:42,320 --> 00:05:45,020
+its biggest three
+customers: Intel, Samsung
+
+131
+00:05:45,020 --> 00:05:48,380
+and Taiwan Semiconductor
+Manufacturing Co., or TSMC.
+
+132
+00:05:48,650 --> 00:05:53,180
+They had to accelerate the
+R&amp;D for EUV, and the only
+
+133
+00:05:53,180 --> 00:05:56,180
+way they could do this is
+to get their largest
+
+134
+00:05:56,180 --> 00:05:57,260
+customers involved.
+
+135
+00:05:57,260 --> 00:06:01,160
+And one way you can make
+your commitment real is to
+
+136
+00:06:01,160 --> 00:06:02,360
+make them a shareholder.
+
+137
+00:06:03,130 --> 00:06:06,290
+ASML is a Dutch company, but
+it's also a Dutch company
+
+138
+00:06:06,290 --> 00:06:07,910
+that relies very heavily on
+U.S.
+
+139
+00:06:08,270 --> 00:06:10,610
+components, in particular
+for its machines, and at
+
+140
+00:06:10,610 --> 00:06:13,370
+this point relies also very
+heavily on one Taiwanese
+
+141
+00:06:13,370 --> 00:06:14,690
+customer for its sales.
+
+142
+00:06:15,050 --> 00:06:18,710
+TSMC made up nearly 40% of
+ASML's sales last year.
+
+143
+00:06:18,740 --> 00:06:21,620
+In 2019, the Taiwanese
+chipmaker was the first to
+
+144
+00:06:21,620 --> 00:06:24,740
+deliver high volume chips
+made with EUV, a milestone
+
+145
+00:06:24,740 --> 00:06:27,110
+that's kept it at the head
+of the pack ever since, its
+
+146
+00:06:27,110 --> 00:06:29,780
+chip technology at least
+one node ahead of Samsung
+
+147
+00:06:29,780 --> 00:06:30,560
+and Intel.
+
+148
+00:06:30,860 --> 00:06:34,610
+And it has been TSMC's
+customers that have gained a
+
+149
+00:06:34,610 --> 00:06:38,840
+lot of benefit like AMD, 
+Nvidia and others.
+
+150
+00:06:38,840 --> 00:06:41,390
+And yeah, you can argue
+that this has come at the
+
+151
+00:06:41,390 --> 00:06:42,560
+expense of Intel not
+executing.
+
+152
+00:06:43,820 --> 00:06:46,610
+Intel is just now producing
+its first chips with EUV
+
+153
+00:06:46,610 --> 00:06:50,060
+this year, three years
+behind TSMC, but it's made a
+
+154
+00:06:50,090 --> 00:06:52,340
+bold move in hopes of
+catching up: an early
+
+155
+00:06:52,340 --> 00:06:55,010
+investment to secure the
+first prototype of ASML's
+
+156
+00:06:55,010 --> 00:06:57,350
+next machine: High
+Numerical Aperture.
+
+157
+00:07:00,770 --> 00:07:02,960
+To understand why the
+success of a giant like
+
+158
+00:07:02,960 --> 00:07:06,350
+Intel hinges on ASML, let's
+take a look at how EUV
+
+159
+00:07:06,350 --> 00:07:08,030
+lithography revolutionized
+chipmaking.
+
+160
+00:07:08,900 --> 00:07:10,880
+When you start breaking
+down, what does it take to
+
+161
+00:07:10,880 --> 00:07:11,900
+make an EUV lithography
+machine?
+
+162
+00:07:12,350 --> 00:07:14,900
+It's sort of Nobel Prize
+winning in terms of the
+
+163
+00:07:14,900 --> 00:07:16,340
+engineering involved.
+
+164
+00:07:16,520 --> 00:07:18,920
+Chips are made from
+silicon, an abundant element
+
+165
+00:07:18,920 --> 00:07:21,590
+found in rocks and sand
+that's purified, melted
+
+166
+00:07:21,590 --> 00:07:24,530
+down, then sliced into
+circular wafers, the surface
+
+167
+00:07:24,530 --> 00:07:26,750
+on which chips are built in
+a grid formation.
+
+168
+00:07:27,020 --> 00:07:29,720
+Each wafer can have dozens
+of thin layers, making up
+
+169
+00:07:29,720 --> 00:07:31,760
+billions of transistors
+that determine what the
+
+170
+00:07:31,760 --> 00:07:34,400
+chips can do. These layers
+are printed using
+
+171
+00:07:34,400 --> 00:07:37,070
+lithography. Extremely
+precise rays of light are
+
+172
+00:07:37,070 --> 00:07:39,320
+projected through a mask of
+the chip design.
+
+173
+00:07:39,320 --> 00:07:41,600
+When the light hits the
+surface of the wafers, which
+
+174
+00:07:41,600 --> 00:07:43,940
+have been coated with
+photoresist chemicals, it
+
+175
+00:07:43,940 --> 00:07:46,160
+prints the minuscule
+designs on each layer at
+
+176
+00:07:46,160 --> 00:07:47,700
+extremely high volumes.
+
+177
+00:07:47,720 --> 00:07:50,240
+If you think of a typical
+processor chip, in an
+
+178
+00:07:50,240 --> 00:07:52,940
+iPhone, for example, will
+have over 10 billion
+
+179
+00:07:52,940 --> 00:07:56,900
+transistors on a chip, and
+Apple will sell 100 million
+
+180
+00:07:56,900 --> 00:08:00,410
+or more iPhones for each
+model that's rolled out.
+
+181
+00:08:00,410 --> 00:08:03,410
+So you're already talking
+in numbers that are far
+
+182
+00:08:03,410 --> 00:08:05,750
+bigger than you or I
+remember how to pronounce.
+
+183
+00:08:06,440 --> 00:08:10,010
+As the wavelength of the
+light source in making chips
+
+184
+00:08:10,040 --> 00:08:14,210
+gets narrower and narrower,
+it gives us the ability to
+
+185
+00:08:14,210 --> 00:08:17,480
+make chips with smaller
+features, which means the
+
+186
+00:08:17,480 --> 00:08:20,480
+chip is faster, the chip
+can be smaller, the power
+
+187
+00:08:20,480 --> 00:08:23,030
+consumption of the chip can
+be lower.
+
+188
+00:08:23,060 --> 00:08:26,030
+The smallest transistors are
+more than 10,000 times
+
+189
+00:08:26,030 --> 00:08:27,290
+thinner than a human hair.
+
+190
+00:08:27,500 --> 00:08:30,440
+The designs have gotten so
+small, ASML had to develop
+
+191
+00:08:30,440 --> 00:08:32,810
+new methods of printing at
+the very edge of known
+
+192
+00:08:32,810 --> 00:08:35,900
+physics. With the help of
+customer investments and a
+
+193
+00:08:35,900 --> 00:08:38,960
+consortium of scientists,
+ASML figured out a way to
+
+194
+00:08:38,960 --> 00:08:41,570
+create large amounts of
+extreme ultraviolet light
+
+195
+00:08:41,570 --> 00:08:44,420
+with a wavelength so short 
+it's not only invisible to
+
+196
+00:08:44,420 --> 00:08:46,850
+the human eye, it's
+absorbed by all natural
+
+197
+00:08:46,850 --> 00:08:48,410
+substances, even air.
+
+198
+00:08:48,410 --> 00:08:51,130
+So the entire process has
+to happen in a vacuum, a
+
+199
+00:08:51,130 --> 00:08:52,880
+first for lithography.
+
+200
+00:08:52,880 --> 00:08:56,900
+At 13.5 nanometers, ASML's
+EUV wavelength is the size
+
+201
+00:08:56,900 --> 00:08:59,480
+of just five DNA strands
+laid side by side.
+
+202
+00:08:59,960 --> 00:09:02,060
+The previous generation
+machines used deep
+
+203
+00:09:02,060 --> 00:09:05,390
+ultraviolet light or DUV,
+with a wavelength of 193
+
+204
+00:09:05,390 --> 00:09:08,480
+nanometers. The vast
+majority of ASML's business,
+
+205
+00:09:08,480 --> 00:09:13,700
+268 of the 309 machines
+sold in 2021, still use DUV
+
+206
+00:09:13,700 --> 00:09:15,890
+technology, which is used
+to print the less advanced
+
+207
+00:09:15,890 --> 00:09:17,180
+chips which are in shortest
+supply.
+
+208
+00:09:17,990 --> 00:09:23,060
+DUV is for anything that is
+low technology, like a
+
+209
+00:09:23,060 --> 00:09:27,200
+toaster or refrigerator or
+even some of the electronics
+
+210
+00:09:27,200 --> 00:09:30,620
+in your car. Today's iPhone
+13 is EUV.
+
+211
+00:09:33,970 --> 00:09:37,630
+Both DUV and EUV lithography
+is so advanced it requires
+
+212
+00:09:37,630 --> 00:09:39,220
+precision down to the atom.
+
+213
+00:09:39,490 --> 00:09:42,880
+This is an EUV cabin of our
+clean room, which is 10,000
+
+214
+00:09:42,880 --> 00:09:44,980
+times cleaner than the
+outside air.
+
+215
+00:09:45,010 --> 00:09:48,280
+We're wearing these
+clothing not to protect
+
+216
+00:09:48,280 --> 00:09:49,900
+ourselves from the
+environment, but we're
+
+217
+00:09:49,900 --> 00:09:52,570
+protecting the machine from
+the contamination that's
+
+218
+00:09:52,570 --> 00:09:53,590
+created by us.
+
+219
+00:09:53,770 --> 00:09:55,810
+This tiny thread may look
+like the strand of a
+
+220
+00:09:55,810 --> 00:09:58,270
+spiderweb, but it's
+actually molten tin being
+
+221
+00:09:58,270 --> 00:10:00,930
+shot out at a pressure of
+4000 PSI.
+
+222
+00:10:00,940 --> 00:10:03,220
+And it's how the EUV light
+is created.
+
+223
+00:10:03,550 --> 00:10:05,260
+This is continuous tin.
+
+224
+00:10:05,860 --> 00:10:07,810
+It never, ever, ever stops.
+
+225
+00:10:07,930 --> 00:10:10,360
+The tin is streaming through
+a perfectly calibrated
+
+226
+00:10:10,360 --> 00:10:12,880
+nozzle which we saw being
+built in San Diego at a rate
+
+227
+00:10:12,880 --> 00:10:14,290
+of 50,000 droplets per
+second.
+
+228
+00:10:14,830 --> 00:10:17,470
+A 30 kilowatt carbon
+dioxide laser hits each
+
+229
+00:10:17,470 --> 00:10:20,800
+droplet twice per second,
+vaporizing them into plasma.
+
+230
+00:10:21,070 --> 00:10:24,130
+These tiny explosions are
+what emit photons of EUV
+
+231
+00:10:24,130 --> 00:10:26,830
+light. A huge number of
+explosions need to happen
+
+232
+00:10:26,830 --> 00:10:29,980
+because only about 5% of
+the photons reach the actual
+
+233
+00:10:29,980 --> 00:10:33,100
+wafer. The light particles
+are so short they get
+
+234
+00:10:33,100 --> 00:10:35,380
+absorbed by mirrors, the
+typical method used to
+
+235
+00:10:35,380 --> 00:10:37,150
+precisely aim light through
+a lens.
+
+236
+00:10:37,300 --> 00:10:40,360
+So ASML partnered with
+German optics company Zeiss,
+
+237
+00:10:40,360 --> 00:10:42,760
+which makes the flattest
+surface in the world.
+
+238
+00:10:43,060 --> 00:10:45,130
+The flatness is really just
+incredible.
+
+239
+00:10:45,880 --> 00:10:49,600
+If you took a mirror
+element that is maybe this
+
+240
+00:10:49,600 --> 00:10:52,660
+big and you blew it up to
+the size of the country that
+
+241
+00:10:52,660 --> 00:10:55,690
+we're in. The biggest bump
+would only be about one
+
+242
+00:10:55,690 --> 00:10:58,940
+millimeter across the
+entire surface of a mirror
+
+243
+00:10:58,990 --> 00:11:00,160
+the size of this country.
+
+244
+00:11:00,580 --> 00:11:03,400
+EUV light bounces off these
+groundbreaking Zeiss mirrors
+
+245
+00:11:03,400 --> 00:11:06,010
+until it hits photoresist
+chemicals on the surface of
+
+246
+00:11:06,010 --> 00:11:08,650
+the silicon wafer to print
+minuscule designs that make
+
+247
+00:11:08,650 --> 00:11:12,700
+up the chips. The aim needs
+to be so precise TSMC says
+
+248
+00:11:12,700 --> 00:11:15,340
+it's equivalent to shining
+a laser from the moon to hit
+
+249
+00:11:15,340 --> 00:11:16,680
+a coin on the earth.
+
+250
+00:11:16,690 --> 00:11:19,900
+So your tin is inside of
+reservoir here and then
+
+251
+00:11:19,900 --> 00:11:21,430
+you're firing out this way.
+
+252
+00:11:21,730 --> 00:11:23,980
+Pete Mayol has been running
+this clean room for six
+
+253
+00:11:23,980 --> 00:11:24,550
+years.
+
+254
+00:11:25,460 --> 00:11:28,780
+If any kind of defect
+particle whatsoever is even
+
+255
+00:11:28,780 --> 00:11:31,300
+on the tip of that
+capillary, it's a fail.
+
+256
+00:11:31,720 --> 00:11:33,610
+We'll move and start all
+over again.
+
+257
+00:11:33,820 --> 00:11:36,490
+And the speed and scale at
+which this has to happen is
+
+258
+00:11:36,490 --> 00:11:40,030
+staggering. ASML says an
+EUV machine churns out about
+
+259
+00:11:40,030 --> 00:11:41,710
+3000 wafers a day.
+
+260
+00:11:41,740 --> 00:11:44,200
+There can be hundreds of
+chips on a 300 millimeter
+
+261
+00:11:44,200 --> 00:11:47,410
+wafer and up to 10 billion
+transistors per chip.
+
+262
+00:11:47,800 --> 00:11:51,100
+They take extraordinary
+achievements of engineering
+
+263
+00:11:51,100 --> 00:11:54,280
+and physics, and they're
+able to replicate these on a
+
+264
+00:11:54,280 --> 00:11:57,310
+mass production scale and
+at a low enough cost where
+
+265
+00:11:57,310 --> 00:12:00,430
+these machines can be used
+in chip fabs to churn out
+
+266
+00:12:00,430 --> 00:12:02,830
+thousands and millions of
+chips for the companies that
+
+267
+00:12:02,830 --> 00:12:03,460
+buy them.
+
+268
+00:12:06,250 --> 00:12:08,890
+A completed EUV machine is
+actually made up of seven
+
+269
+00:12:08,890 --> 00:12:11,770
+different modules, each
+built at one of ASML's six
+
+270
+00:12:11,770 --> 00:12:14,470
+manufacturing sites among
+its 60 total locations
+
+271
+00:12:14,470 --> 00:12:16,930
+around the world, then
+shipped to and reassembled
+
+272
+00:12:16,930 --> 00:12:18,340
+in Veldhoven for testing.
+
+273
+00:12:18,460 --> 00:12:20,710
+Then it's disassembled
+again for shipment, which
+
+274
+00:12:20,710 --> 00:12:24,310
+takes 20 trucks and three
+fully loaded 747s.
+
+275
+00:12:24,610 --> 00:12:28,690
+In 2021, ASML sold 42 EUV
+machines, bringing the grand
+
+276
+00:12:28,690 --> 00:12:31,240
+total it's ever shipped to
+just about 140.
+
+277
+00:12:31,480 --> 00:12:34,780
+With each machine costing
+up to $200 million, only
+
+278
+00:12:34,780 --> 00:12:38,200
+five customers can afford
+to buy EUV systems: Micron,
+
+279
+00:12:38,290 --> 00:12:42,460
+SK Hynix, Samsung, Intel
+and TSMC, the last three
+
+280
+00:12:42,460 --> 00:12:45,640
+making up nearly 84% of
+ASML's business.
+
+281
+00:12:46,180 --> 00:12:49,750
+It certainly has eliminated
+a lot of players out of that
+
+282
+00:12:49,750 --> 00:12:54,580
+market. So we saw
+GlobalFoundries back five
+
+283
+00:12:54,580 --> 00:12:59,260
+years ago or more say that
+they weren't going to pursue
+
+284
+00:12:59,380 --> 00:13:01,120
+a seven nanometer chip.
+
+285
+00:13:01,270 --> 00:13:03,370
+The handful of huge
+customers it does have are
+
+286
+00:13:03,370 --> 00:13:05,890
+furiously adding capacity
+to try to ease the global
+
+287
+00:13:05,890 --> 00:13:08,440
+chip shortage, which is
+impacting ASML too.
+
+288
+00:13:08,470 --> 00:13:10,690
+We got a lot of messages
+from our suppliers that
+
+289
+00:13:10,690 --> 00:13:14,260
+said, Hey, we might be late
+in delivering our modules to
+
+290
+00:13:14,260 --> 00:13:16,630
+you guys because we cannot
+get the chips.
+
+291
+00:13:16,630 --> 00:13:18,580
+And we said, if we cannot
+get the chips, we cannot
+
+292
+00:13:18,580 --> 00:13:20,400
+make the machines to make
+more chips.
+
+293
+00:13:20,410 --> 00:13:22,090
+So there's a catch-22.
+
+294
+00:13:22,480 --> 00:13:25,990
+We're still managing, keep
+our fingers crossed, but
+
+295
+00:13:25,990 --> 00:13:27,190
+it's a daily struggle.
+
+296
+00:13:27,550 --> 00:13:30,070
+The question is, can ASML
+keep up with demand?
+
+297
+00:13:30,100 --> 00:13:32,600
+I think the answer is
+probably yes.
+
+298
+00:13:32,620 --> 00:13:34,990
+Maybe the growth will
+exceed even their targets,
+
+299
+00:13:34,990 --> 00:13:36,880
+that's possible, but
+they're certainly preparing
+
+300
+00:13:36,910 --> 00:13:38,260
+to ramp up their
+production, which is, I
+
+301
+00:13:38,260 --> 00:13:40,270
+think, good news if you're
+worried about a chip
+
+302
+00:13:40,270 --> 00:13:40,870
+shortage.
+
+303
+00:13:41,080 --> 00:13:43,570
+The world needs more chips,
+so we need to make more
+
+304
+00:13:43,570 --> 00:13:46,240
+machines, which, by the
+way, will keep growing an
+
+305
+00:13:46,240 --> 00:13:48,700
+average selling price as
+long as we can drive the
+
+306
+00:13:48,700 --> 00:13:51,160
+cost per transistor down,
+which is exactly what we've
+
+307
+00:13:51,160 --> 00:13:53,590
+been doing for the last 38
+years, and we will keep
+
+308
+00:13:53,590 --> 00:13:55,270
+doing for the next couple
+of decades.
+
+309
+00:13:55,270 --> 00:13:57,880
+Before, EUV chip makers had
+three companies they could
+
+310
+00:13:57,880 --> 00:14:00,010
+choose from for their
+photolithography tools:
+
+311
+00:14:00,040 --> 00:14:02,480
+ASML, Nikon and Canon.
+
+312
+00:14:02,480 --> 00:14:06,280
+Nikon in Japan is still a
+competitor for DUV, but ASML
+
+313
+00:14:06,280 --> 00:14:08,410
+is the only option for EUV.
+
+314
+00:14:08,590 --> 00:14:11,080
+Experts say it could take
+decades for any other
+
+315
+00:14:11,080 --> 00:14:13,540
+company to catch up, not
+only because of ASML's
+
+316
+00:14:13,540 --> 00:14:16,360
+proprietary tech, but
+because it's built complex,
+
+317
+00:14:16,360 --> 00:14:19,810
+often exclusive deals with
+nearly 800 suppliers.
+
+318
+00:14:19,960 --> 00:14:22,600
+And we're unique to our
+customers, like some of our
+
+319
+00:14:22,600 --> 00:14:25,780
+suppliers are unique to us,
+and those almost symbiotic
+
+320
+00:14:25,780 --> 00:14:28,360
+relationships some people
+say are worse than being
+
+321
+00:14:28,360 --> 00:14:29,230
+married because you cannot
+divorce.
+
+322
+00:14:30,250 --> 00:14:35,050
+It takes ten years to not
+only get the technology, but
+
+323
+00:14:35,050 --> 00:14:36,850
+then be accepted.
+
+324
+00:14:36,850 --> 00:14:41,110
+So the buyers for
+semiconductor manufacturing
+
+325
+00:14:41,110 --> 00:14:44,440
+fabs are very risk averse.
+
+326
+00:14:44,470 --> 00:14:47,200
+One of the ways ASML has
+insulated itself against
+
+327
+00:14:47,200 --> 00:14:49,480
+supply chain risks is by
+purchasing some of its
+
+328
+00:14:49,480 --> 00:14:52,300
+suppliers, like Berliner 
+Glas in 2020.
+
+329
+00:14:52,450 --> 00:14:55,300
+A fire broke out there in
+January, but Wennink says it
+
+330
+00:14:55,300 --> 00:14:58,300
+won't significantly impact
+system output in 2022.
+
+331
+00:14:58,390 --> 00:15:02,020
+Instead, ASML projects a
+20% sales growth this year
+
+332
+00:15:02,020 --> 00:15:04,840
+and an annual revenue
+growth rate of 11% until the
+
+333
+00:15:04,840 --> 00:15:05,740
+end of the decade.
+
+334
+00:15:06,250 --> 00:15:07,430
+It's actually driven by you.
+
+335
+00:15:07,450 --> 00:15:10,840
+You're asking for more
+solutions that will help you
+
+336
+00:15:10,840 --> 00:15:13,840
+to have a better life, to
+make your life easier or
+
+337
+00:15:13,840 --> 00:15:15,430
+your life more productive.
+
+338
+00:15:15,460 --> 00:15:17,720
+We're changing into a
+sensing world.
+
+339
+00:15:17,720 --> 00:15:19,450
+There are sensors
+everywhere: they're in your
+
+340
+00:15:19,450 --> 00:15:22,020
+car, they're in your
+fridge, they're in your PC,
+
+341
+00:15:22,030 --> 00:15:23,710
+they're everywhere.
+Sensors, they need
+
+342
+00:15:23,710 --> 00:15:24,610
+semiconductors.
+
+343
+00:15:28,050 --> 00:15:30,300
+All of the world's most
+advanced semiconductors are
+
+344
+00:15:30,300 --> 00:15:32,970
+made in Asia by two of
+ASML's biggest customers:
+
+345
+00:15:32,970 --> 00:15:34,460
+TSMC and Samsung.
+
+346
+00:15:34,470 --> 00:15:36,750
+But the chip shortage has
+raised concerns about
+
+347
+00:15:36,750 --> 00:15:38,160
+overseas dependency.
+
+348
+00:15:38,260 --> 00:15:40,050
+This is why you see all
+these initiatives around the
+
+349
+00:15:40,050 --> 00:15:43,500
+globe: the U.S. Chips Act,
+the EU Chips Act, the Korean
+
+350
+00:15:43,500 --> 00:15:46,440
+Chips Act, the Japanese
+Chips Act, the Chinese Chips
+
+351
+00:15:46,440 --> 00:15:49,140
+Act. It's now a very
+strategic commodity.
+
+352
+00:15:49,530 --> 00:15:52,710
+Intel just announced a $20
+Billion chip fab in Ohio,
+
+353
+00:15:52,710 --> 00:15:55,050
+and it's also building one
+in Arizona just down the
+
+354
+00:15:55,050 --> 00:15:57,780
+road from a massive new fab
+where TSMC will make
+
+355
+00:15:57,780 --> 00:15:59,220
+advanced chips in the U.S.
+
+356
+00:15:59,220 --> 00:16:01,830
+for the first time. And
+Samsung is building a $17
+
+357
+00:16:01,830 --> 00:16:03,420
+billion fab in Texas.
+
+358
+00:16:03,450 --> 00:16:05,910
+All this came after
+President Joe Biden proposed
+
+359
+00:16:05,910 --> 00:16:08,880
+the Chips Act with $52
+billion in subsidies for
+
+360
+00:16:08,880 --> 00:16:11,040
+chip companies to
+manufacture on U.S.
+
+361
+00:16:11,040 --> 00:16:11,540
+soil.
+
+362
+00:16:11,730 --> 00:16:14,910
+It means that we need to
+ship our machines sooner,
+
+363
+00:16:14,910 --> 00:16:16,740
+earlier and at higher
+volume.
+
+364
+00:16:17,370 --> 00:16:20,500
+So it means we need to hire
+more people in the U.S.
+
+365
+00:16:20,520 --> 00:16:22,200
+It's talent. It's people.
+
+366
+00:16:22,380 --> 00:16:24,720
+I think that's where the
+biggest challenge will be.
+
+367
+00:16:24,840 --> 00:16:26,940
+But this movement toward
+domestic production has
+
+368
+00:16:26,940 --> 00:16:29,370
+another side that poses a
+challenge for ASML.
+
+369
+00:16:29,400 --> 00:16:31,980
+A desire to stop sharing
+chipmaking technology with
+
+370
+00:16:31,980 --> 00:16:32,550
+China.
+
+371
+00:16:32,880 --> 00:16:38,250
+China has wanted to get into
+that race, but there's been
+
+372
+00:16:38,250 --> 00:16:42,690
+politically generated
+reasons why China has not
+
+373
+00:16:42,690 --> 00:16:48,060
+had access to the same type
+of technology as other
+
+374
+00:16:48,060 --> 00:16:49,060
+companies.
+
+375
+00:16:49,080 --> 00:16:51,750
+As far back as 2018, the
+Trump administration
+
+376
+00:16:51,750 --> 00:16:54,870
+reportedly pressed ASML not
+to sell EUV systems to
+
+377
+00:16:54,870 --> 00:16:58,680
+China. ASML still hasn't
+sold a single EUV machine to
+
+378
+00:16:58,680 --> 00:16:59,220
+China.
+
+379
+00:16:59,250 --> 00:17:03,870
+43, 42 countries around the
+globe have agreed to put
+
+380
+00:17:03,870 --> 00:17:06,360
+export control measures on
+it because it's so critical.
+
+381
+00:17:06,360 --> 00:17:08,580
+So it's not our choice, 
+it's the choice of
+
+382
+00:17:08,580 --> 00:17:09,360
+governments.
+
+383
+00:17:09,630 --> 00:17:12,690
+ASML also refurbishes older
+lithography systems and
+
+384
+00:17:12,690 --> 00:17:14,130
+sends many of those to
+China.
+
+385
+00:17:14,130 --> 00:17:16,770
+More recent DUV machines all
+the way back to its early
+
+386
+00:17:16,770 --> 00:17:18,180
+systems from the nineties.
+
+387
+00:17:18,210 --> 00:17:22,140
+96% of all the machines we
+ever sold, we ever shipped,
+
+388
+00:17:22,140 --> 00:17:23,130
+are still working.
+
+389
+00:17:23,400 --> 00:17:25,380
+There's a lot of debate
+about whether selling
+
+390
+00:17:25,380 --> 00:17:27,540
+additional DUV equipment to
+China is also a national
+
+391
+00:17:27,540 --> 00:17:30,480
+security risk by letting
+China increase its ability
+
+392
+00:17:30,480 --> 00:17:33,300
+to manufacture close to
+cutting edge semiconductors.
+
+393
+00:17:33,350 --> 00:17:35,070
+So I think there's some
+chance that in the coming
+
+394
+00:17:35,100 --> 00:17:36,840
+years there are new
+restrictions that are
+
+395
+00:17:36,840 --> 00:17:39,870
+imposed on ASML's ability
+to sell DUV equipment to
+
+396
+00:17:39,870 --> 00:17:41,310
+China as well.
+
+397
+00:17:42,030 --> 00:17:44,610
+If export controls were
+expanded to include DUV
+
+398
+00:17:44,610 --> 00:17:47,790
+machines, it could greatly
+impact ASML's bottom line.
+
+399
+00:17:47,880 --> 00:17:49,760
+This is where the biggest
+demand is.
+
+400
+00:17:49,770 --> 00:17:51,450
+This is where the
+exponential curve is.
+
+401
+00:17:51,480 --> 00:17:56,400
+So trust me, we need every
+manufacturing capability on
+
+402
+00:17:56,400 --> 00:18:00,090
+the planet, whether it's in
+Korea or in China, to just
+
+403
+00:18:00,090 --> 00:18:01,890
+keep adding capacity.
+
+404
+00:18:02,070 --> 00:18:03,000
+Let's go look at the big
+boy.
+
+405
+00:18:03,690 --> 00:18:05,490
+And then there's the
+question of whether demand
+
+406
+00:18:05,490 --> 00:18:07,980
+for the most advanced chips
+will remain high enough to
+
+407
+00:18:07,980 --> 00:18:10,350
+support continued
+development of ASML's next
+
+408
+00:18:10,350 --> 00:18:12,850
+generation EUV machine, 
+High-NA.
+
+409
+00:18:12,850 --> 00:18:15,120
+This is the machine Intel
+announced it'll have first
+
+410
+00:18:15,120 --> 00:18:18,360
+by 2025 and ASML has
+already sold four other
+
+411
+00:18:18,360 --> 00:18:19,050
+units.
+
+412
+00:18:19,260 --> 00:18:21,030
+This is the EXE:5000.
+
+413
+00:18:21,030 --> 00:18:24,120
+So this is what we'll be
+testing for High-NA.
+
+414
+00:18:24,300 --> 00:18:27,810
+This will be what makes our
+next generations even
+
+415
+00:18:27,810 --> 00:18:28,590
+better.
+
+416
+00:18:29,100 --> 00:18:31,680
+But even now, before the
+bigger, better machines, the
+
+417
+00:18:31,680 --> 00:18:34,440
+whole world's reliance on a
+ASML is only growing, no
+
+418
+00:18:34,440 --> 00:18:35,280
+matter what gets in the
+way.
+
+419
+00:18:35,910 --> 00:18:40,320
+What can really get in the
+way is the geopolitics, like
+
+420
+00:18:40,320 --> 00:18:44,040
+the Russia and the Ukraine
+war right now, those are big
+
+421
+00:18:44,040 --> 00:18:48,060
+geopolitical friction
+points that can, of course,
+
+422
+00:18:48,060 --> 00:18:51,260
+not only hurt us but hurt
+the world economy.
+
+423
+00:18:51,270 --> 00:18:54,450
+But apart from that, let's
+hope and let's pray that can
+
+424
+00:18:54,450 --> 00:18:56,960
+be controlled, then it's
+all about execution.
+
+425
+00:18:56,970 --> 00:19:00,210
+And we will keep shrinking
+the cost per transistor and
+
+426
+00:19:00,210 --> 00:19:02,670
+we will provide the world
+with ever more powerful
+
+427
+00:19:02,670 --> 00:19:04,890
+semiconductors. That's not
+going to stop.
+
+428
+00:19:17,140 --> 00:19:20,110
+Chips are in everything and
+they've been in short supply
+
+429
+00:19:20,110 --> 00:19:22,840
+since just a few months
+into the pandemic last year.
+
+430
+00:19:22,990 --> 00:19:25,870
+That's why it's been hard
+to buy everything from cars
+
+431
+00:19:25,870 --> 00:19:30,730
+to PS5s. Turns out one
+company makes 24% of all the
+
+432
+00:19:30,730 --> 00:19:33,940
+world's chips and more than
+90% of the most advanced
+
+433
+00:19:33,940 --> 00:19:37,150
+ones. The smallest, fastest
+chips used in today's
+
+434
+00:19:37,150 --> 00:19:38,920
+iPhones, supercomputers and
+automotive.
+
+435
+00:19:39,470 --> 00:19:44,440
+We even have product that's
+landed on the last Mars
+
+436
+00:19:44,440 --> 00:19:47,170
+launch that are taking
+pictures of Mars.
+
+437
+00:19:47,800 --> 00:19:50,320
+Taiwan Semiconductor
+Manufacturing Company, or
+
+438
+00:19:50,320 --> 00:19:54,100
+TSMC, is not a household
+name, but it's quietly
+
+439
+00:19:54,100 --> 00:19:56,470
+making chips for every new
+iPhone, U.S.
+
+440
+00:19:56,470 --> 00:19:59,610
+fighter jets, the highest
+end processors, you name it.
+
+441
+00:19:59,620 --> 00:20:03,640
+And now it's investing $100
+billion over three years to
+
+442
+00:20:03,640 --> 00:20:04,990
+ramp up production amid the
+shortage.
+
+443
+00:20:06,520 --> 00:20:11,230
+The combined output of what
+we're doing is in excess of
+
+444
+00:20:11,230 --> 00:20:13,840
+12 million wafers a year.
+
+445
+00:20:13,840 --> 00:20:17,140
+But the world's massive
+reliance on TSMC may also
+
+446
+00:20:17,140 --> 00:20:19,570
+leave the global chip
+supply vulnerable to
+
+447
+00:20:19,570 --> 00:20:22,120
+earthquakes, drought and
+geopolitical tensions with
+
+448
+00:20:22,120 --> 00:20:22,720
+China.
+
+449
+00:20:23,080 --> 00:20:25,900
+It's become almost a
+monopoly at the leading
+
+450
+00:20:25,900 --> 00:20:28,900
+edge, and all of those
+manufacturing operations,
+
+451
+00:20:28,900 --> 00:20:32,320
+for the most part, are out
+of Taiwan.
+
+452
+00:20:32,350 --> 00:20:37,270
+That becomes a matter of
+national importance for the
+
+453
+00:20:37,270 --> 00:20:39,550
+United States, but not only
+the United States, but the
+
+454
+00:20:39,550 --> 00:20:40,510
+Western world.
+
+455
+00:20:40,540 --> 00:20:44,200
+TSMC almost always keeps its
+production sites closed to
+
+456
+00:20:44,200 --> 00:20:45,370
+U.S. video crews.
+
+457
+00:20:45,370 --> 00:20:46,390
+Until now.
+
+458
+00:20:46,630 --> 00:20:50,800
+The total for space for this
+fab is around a 2.3 million
+
+459
+00:20:50,800 --> 00:20:51,670
+square foot.
+
+460
+00:20:52,180 --> 00:20:54,850
+The U.S. was the birthplace
+of advanced silicon, but for
+
+461
+00:20:54,850 --> 00:20:57,490
+decades now it's been
+losing market share to Asia,
+
+462
+00:20:57,490 --> 00:21:00,490
+where 75% of chip
+production happens now.
+
+463
+00:21:00,850 --> 00:21:04,120
+TSMC is now bringing the
+world's most advanced chip
+
+464
+00:21:04,120 --> 00:21:05,480
+making back to the U.S.
+
+465
+00:21:05,480 --> 00:21:08,560
+with a $12 billion
+fabrication plant, or fab,
+
+466
+00:21:08,560 --> 00:21:10,370
+in the middle of the
+Arizona desert.
+
+467
+00:21:10,390 --> 00:21:13,000
+It's going to be, when it
+gets introduced to
+
+468
+00:21:13,000 --> 00:21:17,050
+production in 2024, the
+most advanced technology
+
+469
+00:21:17,050 --> 00:21:18,970
+manufactured in the United
+States.
+
+470
+00:21:20,080 --> 00:21:22,960
+We got an exclusive tour of
+the fab site in northern
+
+471
+00:21:22,960 --> 00:21:25,030
+Phoenix to get the truth
+about the secretive
+
+472
+00:21:25,030 --> 00:21:28,060
+Taiwanese company and why
+the world's largest contract
+
+473
+00:21:28,060 --> 00:21:30,040
+chip maker is bringing
+bleeding edge chip
+
+474
+00:21:30,040 --> 00:21:31,770
+manufacturing back to U.S.
+
+475
+00:21:31,770 --> 00:21:32,270
+soil.
+
+476
+00:21:39,700 --> 00:21:42,670
+When Morris Chang first
+proposed the idea for TSMC
+
+477
+00:21:42,670 --> 00:21:45,250
+in the mid eighties,
+investors were skeptical.
+
+478
+00:21:45,280 --> 00:21:48,250
+Born in China and educated
+at Harvard, MIT and
+
+479
+00:21:48,250 --> 00:21:51,460
+Stanford, Chang moved to
+Taiwan after 25 years at
+
+480
+00:21:51,460 --> 00:21:52,570
+Texas Instruments.
+
+481
+00:21:52,720 --> 00:21:55,420
+There, the government asked
+him to create a Taiwanese
+
+482
+00:21:55,420 --> 00:21:58,240
+semiconductor company that
+would become a world leader.
+
+483
+00:21:58,270 --> 00:22:01,960
+His idea focus only on
+manufacturing, what's known
+
+484
+00:22:01,960 --> 00:22:03,640
+now as a pure play foundry.
+
+485
+00:22:03,640 --> 00:22:06,700
+When you're just focused on
+one thing, you do one thing
+
+486
+00:22:06,700 --> 00:22:07,570
+really well.
+
+487
+00:22:07,600 --> 00:22:10,990
+Rick Cassidy is TSMC's top
+executive in the U.S.
+
+488
+00:22:11,020 --> 00:22:13,490
+He's been with the company
+for 23 years.
+
+489
+00:22:13,510 --> 00:22:16,720
+The slice we spun out was
+foundry, and that's what we
+
+490
+00:22:16,720 --> 00:22:20,200
+do. And we put all of our
+resources into doing that
+
+491
+00:22:20,200 --> 00:22:21,160
+one thing.
+
+492
+00:22:21,190 --> 00:22:24,340
+Chang bet big on a need that
+didn't exist in the eighties
+
+493
+00:22:24,340 --> 00:22:28,570
+. When he founded TSMC in
+1987, giants like Intel and
+
+494
+00:22:28,570 --> 00:22:31,690
+Texas Instruments took
+pride in designing and
+
+495
+00:22:31,690 --> 00:22:33,220
+making their own chips.
+
+496
+00:22:33,250 --> 00:22:36,520
+A legendary saying in the
+industry back then was, Real
+
+497
+00:22:36,520 --> 00:22:37,840
+men have fabs.
+
+498
+00:22:38,080 --> 00:22:41,140
+When Morris went out to get
+funding, he went to many
+
+499
+00:22:41,140 --> 00:22:45,040
+named companies and they
+told him, Morris, your idea
+
+500
+00:22:45,040 --> 00:22:46,180
+won't get off the ground.
+
+501
+00:22:46,180 --> 00:22:48,520
+If you get it off the
+ground, it can't scale.
+
+502
+00:22:48,580 --> 00:22:51,400
+But as chips got more
+complex, making them became
+
+503
+00:22:51,400 --> 00:22:52,870
+an enormous undertaking.
+
+504
+00:22:52,900 --> 00:22:56,180
+Building a fab today takes
+at least two years and $10
+
+505
+00:22:56,180 --> 00:22:58,870
+billion. It's become nearly
+impossible for even the
+
+506
+00:22:58,870 --> 00:23:01,990
+biggest chip companies,
+Intel, Nvidia, Broadcom,
+
+507
+00:23:01,990 --> 00:23:05,620
+Qualcomm, AMD, to do it all
+and keep up with the most
+
+508
+00:23:05,620 --> 00:23:09,010
+advanced tech. Intel, for
+example, still designs and
+
+509
+00:23:09,010 --> 00:23:12,040
+makes its own chips, but
+it's fallen behind Samsung
+
+510
+00:23:12,040 --> 00:23:15,820
+and TSMC in recent years,
+even relying on TSMC to make
+
+511
+00:23:15,820 --> 00:23:16,870
+some of its chips.
+
+512
+00:23:17,320 --> 00:23:20,980
+So if you were a smart
+designer, you didn't have to
+
+513
+00:23:20,980 --> 00:23:24,820
+have billions of dollars in
+a fab behind you, for the
+
+514
+00:23:24,820 --> 00:23:27,970
+first time, with the
+emergence of TSM.
+
+515
+00:23:28,660 --> 00:23:32,260
+Now, each major step of chip
+making is often handled by a
+
+516
+00:23:32,260 --> 00:23:33,300
+separate company.
+
+517
+00:23:33,310 --> 00:23:36,460
+Some, like Arm and MIPS,
+focus on IP and
+
+518
+00:23:36,460 --> 00:23:38,800
+architecture, providing the
+core building blocks to
+
+519
+00:23:38,800 --> 00:23:41,470
+design chips. Then there's
+electronic design
+
+520
+00:23:41,470 --> 00:23:44,920
+automation, EDA companies,
+like Cadence and Synopsys,
+
+521
+00:23:44,920 --> 00:23:47,650
+that write the software
+used to design chips.
+
+522
+00:23:47,680 --> 00:23:51,800
+Only one company, ASML,
+makes the $180 million
+
+523
+00:23:51,940 --> 00:23:55,030
+extreme ultraviolet light
+machines required to etch
+
+524
+00:23:55,030 --> 00:23:57,370
+designs into the most
+advanced chips.
+
+525
+00:23:57,640 --> 00:24:00,070
+And then, of course, there
+are the wildly successful
+
+526
+00:24:00,070 --> 00:24:02,260
+fab-less companies
+designing the chips.
+
+527
+00:24:02,290 --> 00:24:05,470
+Think Apple, Qualcomm,
+Nvidia, and many more.
+
+528
+00:24:05,860 --> 00:24:09,280
+As these fab-less companies
+took off, TSMC found itself
+
+529
+00:24:09,280 --> 00:24:11,680
+on a flywheel, making more
+and more of the world's
+
+530
+00:24:11,680 --> 00:24:12,370
+chips.
+
+531
+00:24:12,850 --> 00:24:16,780
+And this has allowed TSMC
+not only catch up but, in my
+
+532
+00:24:16,780 --> 00:24:22,240
+opinion, surpass Intel to
+become the world's greatest
+
+533
+00:24:22,240 --> 00:24:26,320
+manufacturing technology on
+the planet and responsible
+
+534
+00:24:26,320 --> 00:24:30,670
+for becoming one of the top
+ten most valuable companies
+
+535
+00:24:30,670 --> 00:24:32,590
+in terms of market cap in
+the globe.
+
+536
+00:24:33,430 --> 00:24:36,670
+TSMC was first listed on the
+Taiwan Stock Exchange in
+
+537
+00:24:36,670 --> 00:24:41,140
+1994. In 1997, it became
+the first Taiwan company
+
+538
+00:24:41,140 --> 00:24:43,210
+listed on the New York
+Stock Exchange.
+
+539
+00:24:43,240 --> 00:24:45,940
+By the 2000's, it had
+caught up with the 20 or so
+
+540
+00:24:45,940 --> 00:24:48,130
+other companies making the
+most advanced chips at the
+
+541
+00:24:48,130 --> 00:24:51,190
+time. As the tech kept
+advancing, more and more
+
+542
+00:24:51,190 --> 00:24:54,580
+fell behind until today,
+only two manufacturers
+
+543
+00:24:54,580 --> 00:24:57,250
+remain that can make the
+most advanced five nanometer
+
+544
+00:24:57,250 --> 00:24:59,470
+chips: TSMC and Samsung.
+
+545
+00:24:59,830 --> 00:25:03,250
+In 2013, Apple started
+relying on TSMC to make its
+
+546
+00:25:03,250 --> 00:25:05,920
+A-series chips for the
+iPhone as it moved away from
+
+547
+00:25:05,920 --> 00:25:08,410
+reliance on Samsung, a
+direct competitor in mobile
+
+548
+00:25:08,410 --> 00:25:11,710
+phones. Today, there's a
+TSMC chip inside every
+
+549
+00:25:11,710 --> 00:25:14,380
+iPhone on the market, and
+Apple has moved away from
+
+550
+00:25:14,380 --> 00:25:17,980
+Intel too, now relying on
+TSMC to make the chips
+
+551
+00:25:17,980 --> 00:25:19,360
+inside most Macs.
+
+552
+00:25:19,510 --> 00:25:22,420
+But they remain sort of in
+the background.
+
+553
+00:25:22,420 --> 00:25:26,620
+So Apple gets all the
+accolades when a new phone
+
+554
+00:25:26,620 --> 00:25:27,430
+comes out.
+
+555
+00:25:27,460 --> 00:25:29,880
+We let our products speak
+for themselves.
+
+556
+00:25:29,920 --> 00:25:33,670
+Their success brings all
+the business that we could
+
+557
+00:25:33,670 --> 00:25:34,750
+ever hope for.
+
+558
+00:25:34,870 --> 00:25:37,180
+As to why TSMC hasn't
+allowed U.S.
+
+559
+00:25:37,180 --> 00:25:40,300
+media into its sites before
+now, does part of the
+
+560
+00:25:40,300 --> 00:25:43,300
+secrecy have to do with IP?
+
+561
+00:25:43,690 --> 00:25:47,800
+Sure, because this IP
+protection is very important
+
+562
+00:25:47,800 --> 00:25:52,060
+for in this industry, not
+only the TSMC but also for
+
+563
+00:25:52,060 --> 00:25:53,320
+the other company in the
+industry.
+
+564
+00:25:54,370 --> 00:25:58,930
+In 2018, at age 86, Chang
+retired as chairman of TSMC.
+
+565
+00:25:58,960 --> 00:26:01,900
+His radical, pure play
+foundry idea continues to
+
+566
+00:26:01,900 --> 00:26:04,870
+pay off. With the opening
+of a new fab in Taiwan next
+
+567
+00:26:04,870 --> 00:26:07,750
+year, TSMC is in a race
+with Samsung to make the
+
+568
+00:26:07,750 --> 00:26:10,570
+world's first three
+nanometer chips, with Intel
+
+569
+00:26:10,570 --> 00:26:15,460
+planning to get there by
+2025. Along with cutting
+
+570
+00:26:15,460 --> 00:26:18,490
+edge three and five
+nanometer, TSMC also makes
+
+571
+00:26:18,490 --> 00:26:20,950
+far larger chips for
+everything from cars to
+
+572
+00:26:20,950 --> 00:26:22,000
+coffee makers.
+
+573
+00:26:22,780 --> 00:26:25,120
+To understand the different
+kinds of chips and why
+
+574
+00:26:25,120 --> 00:26:27,730
+nanometers matter, let's
+look at how they're made.
+
+575
+00:26:27,850 --> 00:26:30,430
+Silicon, an abundant
+element found in rocks and
+
+576
+00:26:30,430 --> 00:26:33,430
+sand, is purified and
+melted down, then sliced
+
+577
+00:26:33,430 --> 00:26:34,850
+into circular wafers.
+
+578
+00:26:34,870 --> 00:26:37,210
+These wafers are the
+surface on which chips are
+
+579
+00:26:37,210 --> 00:26:38,770
+built in a grid formation.
+
+580
+00:26:39,010 --> 00:26:41,830
+Each chip on the wafer can
+have hundreds of tiny
+
+581
+00:26:41,830 --> 00:26:44,560
+layers, each made up of
+transistors and electrical
+
+582
+00:26:44,560 --> 00:26:47,110
+circuits which determine
+what the chip can do.
+
+583
+00:26:47,440 --> 00:26:50,500
+The minuscule circuitry is
+printed on each layer using
+
+584
+00:26:50,500 --> 00:26:53,480
+lithography, extremely
+precise rays of light.
+
+585
+00:26:53,500 --> 00:26:56,170
+The smaller the width of
+the transistor gate, five
+
+586
+00:26:56,170 --> 00:26:58,150
+nanometers, three
+nanometer, the more
+
+587
+00:26:58,150 --> 00:27:00,640
+processing power can fit in
+a given space with less
+
+588
+00:27:00,640 --> 00:27:03,790
+power needed. The smallest
+transistors are more than
+
+589
+00:27:03,790 --> 00:27:06,280
+10,000 times thinner than a
+human hair.
+
+590
+00:27:06,790 --> 00:27:09,850
+Most of the chips are
+probably about the size, a
+
+591
+00:27:09,850 --> 00:27:11,770
+large one, of my thumbnail
+.
+
+592
+00:27:11,940 --> 00:27:16,030
+On there you might have
+something like 50 billion
+
+593
+00:27:16,030 --> 00:27:19,540
+plus transistors and they
+all have to work.
+
+594
+00:27:20,110 --> 00:27:23,140
+These are parts that are
+going to be used in lots of
+
+595
+00:27:23,140 --> 00:27:26,890
+different places: CPUs,
+GPUs, IPUs, etc.
+
+596
+00:27:26,890 --> 00:27:27,730
+They'll be used in
+smartphones.
+
+597
+00:27:29,140 --> 00:27:31,870
+Bigger chips are used in
+most household devices,
+
+598
+00:27:31,870 --> 00:27:34,630
+things like a TV remote or
+electric toothbrush.
+
+599
+00:27:34,660 --> 00:27:38,080
+Cars often use less
+advanced 28 to 40 nanometer
+
+600
+00:27:38,080 --> 00:27:41,080
+chips, and all types of
+chips have been impacted by
+
+601
+00:27:41,080 --> 00:27:44,200
+the shortage. Carmakers
+like GM and Toyota have
+
+602
+00:27:44,200 --> 00:27:47,410
+paused production at some
+plants, and Apple is cutting
+
+603
+00:27:47,410 --> 00:27:50,830
+its 2021 production targets
+for the iPhone 13, with
+
+604
+00:27:50,830 --> 00:27:53,650
+orders for the 13 Pro Max
+delayed by more than a
+
+605
+00:27:53,650 --> 00:27:56,530
+month. Right now, no fab in
+the U.S.
+
+606
+00:27:56,530 --> 00:27:59,830
+can make five nanometer
+chips, but TSMC is changing
+
+607
+00:27:59,830 --> 00:28:00,330
+that.
+
+608
+00:28:00,340 --> 00:28:03,190
+The F-35 Strike Fighter to 
+these consumer products,
+
+609
+00:28:03,190 --> 00:28:04,630
+their customer base is
+wide.
+
+610
+00:28:05,410 --> 00:28:07,660
+500 plus companies are
+their customers in the
+
+611
+00:28:07,660 --> 00:28:10,240
+United States. And so as a
+byproduct of that, we knew
+
+612
+00:28:10,240 --> 00:28:11,650
+they were going to need to
+be in the United States at
+
+613
+00:28:11,650 --> 00:28:12,380
+some point.
+
+614
+00:28:12,400 --> 00:28:15,190
+Chris Camacho of the Greater
+Phoenix Economic Council got
+
+615
+00:28:15,190 --> 00:28:18,490
+to visit TSMC's fabs in
+Taiwan during the five years
+
+616
+00:28:18,490 --> 00:28:20,440
+he was helping negotiate
+the deal that brought the
+
+617
+00:28:20,440 --> 00:28:21,570
+project to Arizona.
+
+618
+00:28:21,580 --> 00:28:23,380
+The robotics, the
+automation, the
+
+619
+00:28:23,380 --> 00:28:25,540
+mechanization occurring
+before your eyes.
+
+620
+00:28:25,540 --> 00:28:27,490
+And so you can see how
+these things not only are so
+
+621
+00:28:27,490 --> 00:28:30,340
+capital intensive, but also
+their output is so
+
+622
+00:28:30,340 --> 00:28:31,330
+significant.
+
+623
+00:28:31,480 --> 00:28:34,930
+TSMC is six months into
+building this massive five
+
+624
+00:28:34,930 --> 00:28:37,480
+nanometer fab outside
+Phoenix that will pump out
+
+625
+00:28:37,480 --> 00:28:41,050
+20,000 wafers per month
+starting in 2024.
+
+626
+00:28:41,260 --> 00:28:43,960
+The chips from the wafers
+will end up in iPhones, high
+
+627
+00:28:43,960 --> 00:28:45,340
+end processors and much
+more.
+
+628
+00:28:46,150 --> 00:28:49,900
+Arizona project leader Tony
+Chen has led 17 other fab
+
+629
+00:28:49,900 --> 00:28:53,350
+construction projects in
+his 23 years with TSMC.
+
+630
+00:28:53,770 --> 00:28:56,830
+This approach is designed
+for five nanometers fab.
+
+631
+00:28:56,920 --> 00:29:00,520
+That's a copy from the fab
+we have in Taiwan.
+
+632
+00:29:00,580 --> 00:29:03,100
+Just down the road, Intel is
+in the midst of building two
+
+633
+00:29:03,100 --> 00:29:04,870
+new fabs, spending $20
+billion.
+
+634
+00:29:05,590 --> 00:29:08,350
+These massive buildings,
+used to make minuscule
+
+635
+00:29:08,350 --> 00:29:10,540
+chips, have brought some of
+the world's largest
+
+636
+00:29:10,540 --> 00:29:11,920
+equipment to Arizona.
+
+637
+00:29:12,070 --> 00:29:14,980
+This is the biggest crane
+that Manitowoc makes.
+
+638
+00:29:14,980 --> 00:29:18,700
+There's only two of them in
+existence, and it's a 2300
+
+639
+00:29:18,700 --> 00:29:22,690
+ton crane. Since we've
+started, our dirt contractor
+
+640
+00:29:22,690 --> 00:29:27,220
+has moved over 3,731,000
+cubic yards of dirt.
+
+641
+00:29:27,490 --> 00:29:31,120
+We've also used over 260
+million gallons of water.
+
+642
+00:29:31,600 --> 00:29:34,480
+Indeed, building a fab and
+making chips takes an
+
+643
+00:29:34,480 --> 00:29:37,330
+incredible amount of water,
+something that's not easy to
+
+644
+00:29:37,330 --> 00:29:40,090
+find in the middle of the
+desert. Arizona's biggest
+
+645
+00:29:40,090 --> 00:29:42,760
+water source is
+groundwater, but deep wells
+
+646
+00:29:42,760 --> 00:29:45,670
+at big farms are using up
+groundwater faster than it's
+
+647
+00:29:45,670 --> 00:29:46,930
+naturally replenished.
+
+648
+00:29:46,960 --> 00:29:52,210
+We do need around 4.7
+million gallons per day in
+
+649
+00:29:52,210 --> 00:29:53,660
+water to support the
+production.
+
+650
+00:29:54,400 --> 00:29:56,410
+TSMC is no stranger to water
+shortages.
+
+651
+00:29:57,190 --> 00:30:00,550
+Taiwan is facing its worst
+drought in 56 years,
+
+652
+00:30:00,550 --> 00:30:04,000
+something that TSMC says
+has not impacted production
+
+653
+00:30:04,300 --> 00:30:07,660
+. In Arizona, TSMC says an
+onsite water treatment
+
+654
+00:30:07,660 --> 00:30:10,510
+center will recycle up to
+90% of water used at the
+
+655
+00:30:10,510 --> 00:30:11,140
+fab.
+
+656
+00:30:11,200 --> 00:30:13,660
+And then ultimately that
+water will be re-injected
+
+657
+00:30:13,660 --> 00:30:15,370
+into the aquifer in
+partnership with City of
+
+658
+00:30:15,370 --> 00:30:17,740
+Phoenix after reverse
+osmosis and other technology
+
+659
+00:30:17,740 --> 00:30:19,000
+solutions are provided.
+
+660
+00:30:19,360 --> 00:30:21,460
+Another challenge of
+producing the most advanced
+
+661
+00:30:21,460 --> 00:30:22,580
+chips stateside?
+
+662
+00:30:22,580 --> 00:30:25,030
+The current specialists are
+all in Asia.
+
+663
+00:30:25,630 --> 00:30:29,040
+TSMC's best engineers right
+now are in Taiwan.
+
+664
+00:30:29,050 --> 00:30:31,420
+They're likely going to
+stay in Taiwan.
+
+665
+00:30:31,420 --> 00:30:34,390
+The most cutting edge R&amp;D
+is going to be done in
+
+666
+00:30:34,390 --> 00:30:35,290
+Taiwan.
+
+667
+00:30:35,320 --> 00:30:38,590
+To solve this, recruiter
+Roxanna Vega says TSMC is
+
+668
+00:30:38,590 --> 00:30:41,080
+bringing over some of its
+top experts from Taiwan.
+
+669
+00:30:41,260 --> 00:30:43,630
+They're seen as subject
+matter experts in what they
+
+670
+00:30:43,630 --> 00:30:45,250
+do in our fabs over there.
+
+671
+00:30:45,250 --> 00:30:47,430
+And so it'll be a temporary
+assignment depending.
+
+672
+00:30:47,430 --> 00:30:48,760
+Two maybe three years.
+
+673
+00:30:48,790 --> 00:30:51,990
+TSMC has already sent some
+300 new U.S.
+
+674
+00:30:51,990 --> 00:30:55,480
+hires to Taiwan for 12 to 18
+months to get up to speed.
+
+675
+00:30:55,480 --> 00:30:58,240
+And the opportunity to train
+in our five nanometer giga
+
+676
+00:30:58,240 --> 00:31:00,940
+fab in Taiwan is going to
+give them that insight of
+
+677
+00:31:00,940 --> 00:31:03,610
+how immense and how state
+of the art our tools,
+
+678
+00:31:03,610 --> 00:31:06,340
+machinery and everything is
+going to be here in Arizona.
+
+679
+00:31:06,610 --> 00:31:09,580
+Taiwan is not very good when
+it comes to analog
+
+680
+00:31:09,580 --> 00:31:13,150
+semiconductor design and by
+moving to the United
+
+681
+00:31:13,150 --> 00:31:17,180
+States, we'll be able to
+tap into a much larger
+
+682
+00:31:17,180 --> 00:31:19,880
+number of analog designers.
+
+683
+00:31:21,170 --> 00:31:24,770
+This diversification is a
+key reason for TSMC to bring
+
+684
+00:31:24,770 --> 00:31:26,990
+advanced manufacturing to
+the U.S.
+
+685
+00:31:27,140 --> 00:31:30,020
+And then there's proximity
+to its huge, fab-less
+
+686
+00:31:30,020 --> 00:31:31,580
+customers based in the U.S
+.
+
+687
+00:31:31,710 --> 00:31:33,110
+like Apple, Nvidia and
+Qualcomm.
+
+688
+00:31:33,920 --> 00:31:38,330
+If you want more capacity,
+you have to build more fabs.
+
+689
+00:31:38,330 --> 00:31:40,490
+And that's one of the
+reasons that we're moving to
+
+690
+00:31:40,490 --> 00:31:43,600
+the U.S. Our customers want
+us in the U.S.
+
+691
+00:31:43,610 --> 00:31:45,620
+The U.S. government wants
+us here.
+
+692
+00:31:46,070 --> 00:31:49,760
+Over 60% of their customer
+base is still U.S.
+
+693
+00:31:49,760 --> 00:31:53,750
+companies. So some of these
+companies, like Apple, had
+
+694
+00:31:53,750 --> 00:31:57,890
+hinted that they want their
+supplier to be closer to
+
+695
+00:31:57,890 --> 00:32:00,200
+home just in case.
+
+696
+00:32:00,230 --> 00:32:04,400
+TSMC has 12 fabs, almost all
+of them in Taiwan and China.
+
+697
+00:32:04,460 --> 00:32:08,150
+They account for nearly 54%
+of all global foundry
+
+698
+00:32:08,150 --> 00:32:11,960
+revenue. And this heavy
+reliance on TSMC in Taiwan
+
+699
+00:32:11,960 --> 00:32:15,230
+leaves the world vulnerable
+to potential slowdowns, from
+
+700
+00:32:15,230 --> 00:32:17,720
+earthquakes, the current
+drought there, or the
+
+701
+00:32:17,720 --> 00:32:20,540
+geopolitical tensions
+swirling around the U.S.,
+
+702
+00:32:20,540 --> 00:32:21,830
+China and Taiwan.
+
+703
+00:32:22,070 --> 00:32:25,670
+But some refer to TSMC as
+Taiwan's silicon shield.
+
+704
+00:32:25,820 --> 00:32:30,680
+The silicon shield, TSMC, is
+extremely, extremely
+
+705
+00:32:30,680 --> 00:32:33,750
+important. And I think
+people depend on us.
+
+706
+00:32:33,770 --> 00:32:37,580
+The media paints a very
+bleak picture of this
+
+707
+00:32:37,580 --> 00:32:41,240
+situation, but I'm actually
+much more optimistic in part
+
+708
+00:32:41,240 --> 00:32:44,800
+because of this idea, the
+semiconductor shield.
+
+709
+00:32:44,840 --> 00:32:49,250
+China, as of right now,
+needs them for their leading
+
+710
+00:32:49,250 --> 00:32:51,140
+edge manufacturing.
+
+711
+00:32:51,170 --> 00:32:53,690
+The U.S. also depends
+heavily on the chips coming
+
+712
+00:32:53,690 --> 00:32:56,420
+out of Taiwan. A key reason
+the government worked hard
+
+713
+00:32:56,420 --> 00:32:59,000
+to convince TSMC to bring
+its tech here.
+
+714
+00:32:59,030 --> 00:33:00,680
+We're not going to have to
+worry about geopolitical
+
+715
+00:33:00,680 --> 00:33:02,270
+conflict. We're not going
+to have to worry about
+
+716
+00:33:02,270 --> 00:33:03,440
+another major pandemic.
+
+717
+00:33:03,440 --> 00:33:06,680
+We will have these kind of
+manufacturing capacities on
+
+718
+00:33:06,680 --> 00:33:07,490
+U.S. soil.
+
+719
+00:33:09,170 --> 00:33:12,410
+Today, only 12% of the
+world's semiconductors are
+
+720
+00:33:12,410 --> 00:33:16,520
+made in the U.S. That's
+down from 37% in 1990.
+
+721
+00:33:16,670 --> 00:33:20,030
+Back in the days of Bell
+Labs, in the early days of
+
+722
+00:33:20,030 --> 00:33:22,920
+Silicon Valley, we were
+probably 100%.
+
+723
+00:33:22,940 --> 00:33:25,520
+Both state and federal
+officials are eager to
+
+724
+00:33:25,520 --> 00:33:28,700
+entice TSMC to bring
+advanced silicon back to the
+
+725
+00:33:28,700 --> 00:33:29,870
+country where it first took
+off.
+
+726
+00:33:30,860 --> 00:33:33,350
+The state of Arizona has a
+number of programs,
+
+727
+00:33:33,350 --> 00:33:35,690
+including the qualified
+facilities tax credit and
+
+728
+00:33:35,690 --> 00:33:37,550
+the quality jobs tax
+credit, that's really an
+
+729
+00:33:37,550 --> 00:33:39,860
+incentive to help lower the
+cost of operations.
+
+730
+00:33:39,890 --> 00:33:42,230
+In addition to that, the
+city of Phoenix put together
+
+731
+00:33:42,230 --> 00:33:44,390
+a $200 million
+infrastructure package that
+
+732
+00:33:44,390 --> 00:33:47,570
+helps TSMC access water and
+additional infrastructure
+
+733
+00:33:47,570 --> 00:33:48,210
+needed.
+
+734
+00:33:48,230 --> 00:33:51,830
+The Biden administration has
+proposed $52 billion in
+
+735
+00:33:51,830 --> 00:33:54,260
+subsidies for chip
+companies like TSMC to
+
+736
+00:33:54,260 --> 00:33:55,560
+manufacture on U.S.
+
+737
+00:33:55,560 --> 00:33:57,740
+soil. It's been nicknamed
+the Chips Act.
+
+738
+00:33:58,340 --> 00:33:59,630
+This is infrastructure.
+
+739
+00:34:00,860 --> 00:34:04,370
+So look, we need to build
+the infrastructure of today,
+
+740
+00:34:04,400 --> 00:34:06,080
+not repair the one of
+yesterday.
+
+741
+00:34:07,220 --> 00:34:09,800
+And things like the Chips
+Act are absolutely critical
+
+742
+00:34:09,800 --> 00:34:12,500
+for the success of our
+country, not only to compete
+
+743
+00:34:12,500 --> 00:34:14,810
+but to recruit these kind
+of firms to operate in the
+
+744
+00:34:14,810 --> 00:34:17,420
+U.S. Otherwise we're going
+to be importing chips for
+
+745
+00:34:17,420 --> 00:34:18,620
+the rest of our lifetime.
+
+746
+00:34:18,830 --> 00:34:22,070
+Over the last 20, 30, 40
+years, we've slowly slipped
+
+747
+00:34:22,070 --> 00:34:24,980
+in that manufacturing
+element, especially as we
+
+748
+00:34:24,980 --> 00:34:28,100
+have seen the decreasing
+cost in other countries.
+
+749
+00:34:28,100 --> 00:34:31,610
+It's somewhere between 20%
+to 25% cheaper for American
+
+750
+00:34:31,610 --> 00:34:34,340
+firms to produce their
+semiconductors outside of
+
+751
+00:34:34,340 --> 00:34:35,480
+the United States.
+
+752
+00:34:35,840 --> 00:34:38,810
+TSMC's Rick Cassidy took
+part in discussions that led
+
+753
+00:34:38,810 --> 00:34:39,770
+to the Chips Act.
+
+754
+00:34:39,800 --> 00:34:42,710
+We don't want anything more
+than to create a level
+
+755
+00:34:42,710 --> 00:34:46,130
+playing field so that it
+doesn't cost more to make
+
+756
+00:34:46,130 --> 00:34:49,010
+chips in the U.S. than it
+does in other locations.
+
+757
+00:34:49,160 --> 00:34:52,580
+Industry reports estimate a
+$50 billion investment from
+
+758
+00:34:52,580 --> 00:34:54,860
+the U.S. government would
+enable the construction of
+
+759
+00:34:54,860 --> 00:34:56,590
+19 new fabs in the U.S.
+
+760
+00:34:56,590 --> 00:34:59,360
+over the next ten years,
+more than doubling domestic
+
+761
+00:34:59,360 --> 00:35:01,550
+chip manufacturing
+capability.
+
+762
+00:35:01,550 --> 00:35:04,010
+As the shortage continues, 
+similar investments are
+
+763
+00:35:04,010 --> 00:35:05,450
+happening around the world.
+
+764
+00:35:05,480 --> 00:35:09,500
+Industry association SEMI
+projects 72 new fabs or
+
+765
+00:35:09,500 --> 00:35:12,920
+major expansions will come
+online by 2024, ten of them
+
+766
+00:35:12,920 --> 00:35:14,270
+located in North and South
+America.
+
+767
+00:35:15,320 --> 00:35:19,040
+I heard more announcements
+of investments in last two
+
+768
+00:35:19,040 --> 00:35:21,350
+or three years than my
+entire life.
+
+769
+00:35:21,620 --> 00:35:24,950
+Korea will invest $450
+billion in the next ten
+
+770
+00:35:24,950 --> 00:35:28,430
+years. EU has announced
+roughly $150 billion in
+
+771
+00:35:28,430 --> 00:35:30,920
+investments, and based on
+that, we feel that by the
+
+772
+00:35:30,920 --> 00:35:34,220
+end of next year, we should
+start seeing some relief on
+
+773
+00:35:34,220 --> 00:35:35,090
+the chip shortage.
+
+774
+00:35:35,240 --> 00:35:38,600
+But until then, as demand
+continues to soar, TSMC is
+
+775
+00:35:38,600 --> 00:35:42,290
+raising chip prices as much
+as 20%, a cost that could
+
+776
+00:35:42,290 --> 00:35:44,870
+trickle down to the price
+of consumer electronics.
+
+777
+00:35:45,320 --> 00:35:48,680
+TSMC has always been able to
+charge a premium if it was
+
+778
+00:35:48,680 --> 00:35:52,640
+necessary, and most of
+their customers recognize
+
+779
+00:35:52,640 --> 00:35:56,360
+that if there's a good
+reason, they're willing to
+
+780
+00:35:56,360 --> 00:35:57,230
+pay for it.
+
+781
+00:35:57,260 --> 00:36:00,200
+Meanwhile, TSMC will
+certainly continue investing
+
+782
+00:36:00,200 --> 00:36:02,960
+in ramping up production
+capacity, including in the
+
+783
+00:36:02,960 --> 00:36:06,350
+U.S., where the 1100 acre
+Arizona site certainly has
+
+784
+00:36:06,350 --> 00:36:08,030
+room for a second phase and
+more.
+
+785
+00:36:08,570 --> 00:36:12,680
+So we've got a lot of land
+and we have the ability to
+
+786
+00:36:12,680 --> 00:36:13,590
+do more there.
+
+787
+00:36:13,610 --> 00:36:15,890
+It will take time, but it's
+not just the chip in the
+
+788
+00:36:15,890 --> 00:36:17,990
+foundries. It's going to be
+the entirety of the supply
+
+789
+00:36:17,990 --> 00:36:19,370
+chain. So it's packaging
+companies.
+
+790
+00:36:19,910 --> 00:36:22,010
+It's companies that produce
+the chemicals and the gases
+
+791
+00:36:22,010 --> 00:36:24,140
+required that go into the
+manufacturing process.
+
+792
+00:36:24,140 --> 00:36:27,080
+So I see this as an
+entirety of a shift in the
+
+793
+00:36:27,080 --> 00:36:29,680
+semiconductor sector for
+the United States.
+
+794
+00:36:29,690 --> 00:36:32,870
+As you can see, we can get
+into a lot of trouble when
+
+795
+00:36:32,870 --> 00:36:34,910
+everything is in one area
+alone.
+
+796
+00:36:35,780 --> 00:36:39,170
+So I think it would be a
+great victory, in fact, to
+
+797
+00:36:39,170 --> 00:36:42,500
+see the United States
+reverse the declines that
+
+798
+00:36:42,500 --> 00:36:44,060
+we've had over the last few
+decades.
+
+799
+00:36:55,590 --> 00:36:58,320
+Intel was once synonymous
+with the world's most
+
+800
+00:36:58,320 --> 00:37:00,630
+advanced chips. It's
+responsible for inventing
+
+801
+00:37:00,630 --> 00:37:03,210
+the very building blocks of
+modern computing from memory
+
+802
+00:37:03,210 --> 00:37:04,840
+chips to microprocessors.
+
+803
+00:37:04,860 --> 00:37:08,100
+Business models that have
+come about, Internet being
+
+804
+00:37:08,100 --> 00:37:11,340
+one of them, is all as a
+result of this vision that
+
+805
+00:37:11,340 --> 00:37:14,820
+started 50 years ago with
+bringing the digital world
+
+806
+00:37:14,820 --> 00:37:18,750
+onto a chip and that pace
+of technology innovation is
+
+807
+00:37:18,750 --> 00:37:19,650
+unstoppable.
+
+808
+00:37:19,680 --> 00:37:22,680
+Chip technology is indeed
+advancing at roughly the
+
+809
+00:37:22,680 --> 00:37:26,550
+same relentless pace
+predicted in 1965 by Intel
+
+810
+00:37:26,550 --> 00:37:29,610
+co-founder Gordon Moore,
+doubling every two years.
+
+811
+00:37:29,610 --> 00:37:31,910
+But Intel has failed to
+keep up.
+
+812
+00:37:31,910 --> 00:37:34,680
+The chips being made inside
+Intel's massive fabrication
+
+813
+00:37:34,680 --> 00:37:37,920
+plants, or fabs, are no
+longer at the cutting edge.
+
+814
+00:37:38,130 --> 00:37:42,270
+Intel was the Moore's Law
+company and the undisputed
+
+815
+00:37:42,270 --> 00:37:45,240
+leader, and something that
+was supposed to take them
+
+816
+00:37:45,240 --> 00:37:48,330
+two years instead took them
+more than five.
+
+817
+00:37:48,330 --> 00:37:51,960
+And they still struggle to
+get back on Moore's Law
+
+818
+00:37:51,990 --> 00:37:52,590
+today.
+
+819
+00:37:52,620 --> 00:37:55,830
+Now, only two companies in
+Asia, Taiwan Semiconductor
+
+820
+00:37:55,830 --> 00:37:58,710
+Manufacturing Company and
+Samsung, make all of the
+
+821
+00:37:58,710 --> 00:38:01,560
+smallest, most advanced
+chips that power next-gen
+
+822
+00:38:01,560 --> 00:38:04,620
+iPhones, supercomputers and
+automotive AI.
+
+823
+00:38:05,010 --> 00:38:07,950
+The new Alder Lake CPUs
+just released are packed
+
+824
+00:38:07,950 --> 00:38:10,830
+with competitive features,
+but its chip technology is
+
+825
+00:38:10,830 --> 00:38:13,860
+behind the most advanced
+chips made by TSMC and
+
+826
+00:38:13,860 --> 00:38:14,580
+Samsung.
+
+827
+00:38:15,030 --> 00:38:17,370
+They got fat, dumb and happy
+and they took their eye off
+
+828
+00:38:17,370 --> 00:38:19,230
+the ball. Once you fall off
+the treadmill, it's really,
+
+829
+00:38:19,230 --> 00:38:20,500
+really difficult to get
+back on.
+
+830
+00:38:20,520 --> 00:38:23,130
+It's a very dynamic and
+fast moving industry.
+
+831
+00:38:23,130 --> 00:38:26,490
+But Intel's new CEO has a
+bold plan to catch up and
+
+832
+00:38:26,490 --> 00:38:27,300
+help the global chip
+shortage.
+
+833
+00:38:27,990 --> 00:38:31,140
+I think I have more concrete
+trucks working for me today
+
+834
+00:38:31,140 --> 00:38:32,430
+than any other human on the
+planet.
+
+835
+00:38:33,570 --> 00:38:36,540
+They have construction in
+Oregon, New Mexico, Arizona,
+
+836
+00:38:36,540 --> 00:38:39,630
+Ireland and Israel and we
+expect to plant our next
+
+837
+00:38:39,630 --> 00:38:41,440
+major fabs in the U.S.
+
+838
+00:38:41,440 --> 00:38:43,470
+and Europe before the end of
+this year.
+
+839
+00:38:43,500 --> 00:38:47,280
+CNBC got an exclusive tour
+of Intel's massive factory
+
+840
+00:38:47,280 --> 00:38:49,770
+site outside Portland,
+Oregon, where it's building
+
+841
+00:38:49,770 --> 00:38:52,510
+a huge new fab set to open
+early next year.
+
+842
+00:38:52,530 --> 00:38:54,480
+And so what's inside of here
+and what are we about to
+
+843
+00:38:54,480 --> 00:38:54,900
+see?
+
+844
+00:38:54,900 --> 00:38:57,750
+So what's inside of this
+truck here and what's just
+
+845
+00:38:57,750 --> 00:39:00,210
+been offloaded onto our
+dock is one of our next
+
+846
+00:39:00,210 --> 00:39:01,470
+generation tools.
+
+847
+00:39:01,470 --> 00:39:04,320
+It's going to be installed
+in our D1X-Mod3 factory.
+
+848
+00:39:04,320 --> 00:39:07,710
+And it's spending another
+$20 billion on two new fabs
+
+849
+00:39:07,710 --> 00:39:10,350
+in Arizona, where it will
+make not only its own chips,
+
+850
+00:39:10,350 --> 00:39:13,430
+but those designed by
+Amazon, Qualcomm and others.
+
+851
+00:39:13,440 --> 00:39:15,990
+And it also starts building
+up that base within the
+
+852
+00:39:15,990 --> 00:39:18,840
+United States so that the
+United States can become
+
+853
+00:39:18,840 --> 00:39:20,100
+more self-sufficient.
+
+854
+00:39:20,130 --> 00:39:23,070
+We asked Intel's top
+executives and semiconductor
+
+855
+00:39:23,070 --> 00:39:26,580
+analysts about how Intel
+fell behind and whether its
+
+856
+00:39:26,580 --> 00:39:27,990
+aggressive plans for more
+U.S.
+
+857
+00:39:28,380 --> 00:39:30,840
+manufacturing could
+catapult it back to the
+
+858
+00:39:30,840 --> 00:39:31,980
+front of the pack again by
+2025.
+
+859
+00:39:40,710 --> 00:39:43,410
+The story of Intel's
+founding is also the story
+
+860
+00:39:43,410 --> 00:39:45,240
+of how Silicon Valley got
+its name.
+
+861
+00:39:45,360 --> 00:39:47,810
+William Shockley, the
+inventor of the transistor,
+
+862
+00:39:47,810 --> 00:39:50,550
+the most basic building
+block of computing, moved to
+
+863
+00:39:50,550 --> 00:39:52,950
+Mountain View to start
+Shockley Semiconductor Labs
+
+864
+00:39:52,950 --> 00:39:54,420
+in 1956.
+
+865
+00:39:54,750 --> 00:39:57,690
+A year later, the so-called
+traitorous eight quit to
+
+866
+00:39:57,690 --> 00:40:00,030
+start Fairchild
+Semiconductor, which quickly
+
+867
+00:40:00,030 --> 00:40:02,040
+became the world's premiere
+chip company.
+
+868
+00:40:02,070 --> 00:40:04,530
+A decade later, two of
+these founding fathers of
+
+869
+00:40:04,530 --> 00:40:07,800
+Silicon Valley, Bob Noyce
+and Gordon Moore, left to
+
+870
+00:40:07,800 --> 00:40:09,040
+start their own company.
+
+871
+00:40:09,060 --> 00:40:10,470
+They first called it an N
+.M.
+
+872
+00:40:10,690 --> 00:40:13,500
+Electronics, then quickly
+switched to the name Intel
+
+873
+00:40:13,500 --> 00:40:15,420
+for Integrated Electronics
+.
+
+874
+00:40:15,570 --> 00:40:19,170
+At Intel's founding in
+1968, short term memory or
+
+875
+00:40:19,170 --> 00:40:20,640
+RAM didn't exist.
+
+876
+00:40:20,670 --> 00:40:24,450
+Neither did microprocessors
+or CPUs, today's brains of
+
+877
+00:40:24,450 --> 00:40:27,750
+every computer. Those are
+both Intel innovations.
+
+878
+00:40:27,780 --> 00:40:31,350
+These transistors are doing
+most advanced computational
+
+879
+00:40:31,350 --> 00:40:34,080
+capabilities, never thought
+possible, and it's also
+
+880
+00:40:34,080 --> 00:40:36,810
+enabled the ecosystem all
+around us.
+
+881
+00:40:36,840 --> 00:40:39,540
+A short three years after
+raising an initial funding
+
+882
+00:40:39,540 --> 00:40:43,140
+round of just 2.5 million,
+Intel went public with a
+
+883
+00:40:43,140 --> 00:40:45,120
+market cap of 58 million.
+
+884
+00:40:45,120 --> 00:40:47,940
+Making chips with memory
+capabilities was great
+
+885
+00:40:47,940 --> 00:40:51,420
+business. So much so that
+well established Japanese
+
+886
+00:40:51,420 --> 00:40:54,630
+electronics companies like
+Hitachi and Fujitsu wanted
+
+887
+00:40:54,630 --> 00:40:57,660
+in. A dozen years later,
+their massive factories,
+
+888
+00:40:57,660 --> 00:41:00,390
+which had been operating 30
+plus years longer than
+
+889
+00:41:00,390 --> 00:41:03,360
+Intel's, were making memory
+chips far faster and more
+
+890
+00:41:03,360 --> 00:41:06,510
+affordably than Intel
+could. In 1974, Intel's
+
+891
+00:41:06,510 --> 00:41:09,210
+global market share of the
+memory business was nearly
+
+892
+00:41:09,210 --> 00:41:14,650
+83%. But by 1984, it was
+down to just 1.3%.
+
+893
+00:41:14,700 --> 00:41:18,450
+So in 1985, Moore and
+then-president Andy Grove
+
+894
+00:41:18,450 --> 00:41:21,510
+famously fired themselves,
+walked out the door, then
+
+895
+00:41:21,510 --> 00:41:24,240
+walked back in and made a
+drastic pivot away from
+
+896
+00:41:24,240 --> 00:41:25,440
+memory chips and toward
+microprocessors.
+
+897
+00:41:26,610 --> 00:41:29,040
+This was just one year
+after the first Mac computer
+
+898
+00:41:29,040 --> 00:41:29,760
+came out.
+
+899
+00:41:29,790 --> 00:41:31,380
+They kind of made a
+decision, it was a huge
+
+900
+00:41:31,380 --> 00:41:34,230
+one, to get out of that
+business and to bet the
+
+901
+00:41:34,230 --> 00:41:36,210
+company effectively on this
+new market.
+
+902
+00:41:36,330 --> 00:41:38,280
+Remember, there was no PC
+industry, there was no
+
+903
+00:41:38,280 --> 00:41:40,050
+personal computer industry
+back then.
+
+904
+00:41:40,170 --> 00:41:42,810
+Last year, Intel announced
+it's selling most of what
+
+905
+00:41:42,810 --> 00:41:45,120
+remains of its memory
+business to South Korean
+
+906
+00:41:45,120 --> 00:41:47,210
+rival SK Hynix for $9
+billion.
+
+907
+00:41:48,820 --> 00:41:53,200
+In 1971, Intel released the
+4004, the world's first
+
+908
+00:41:53,200 --> 00:41:54,610
+central processing unit, or
+CPU.
+
+909
+00:41:55,390 --> 00:41:57,640
+For the first time,
+engineers could purchase
+
+910
+00:41:57,640 --> 00:41:59,500
+these building blocks to
+use in all kinds of
+
+911
+00:41:59,500 --> 00:42:00,640
+electronic devices.
+
+912
+00:42:00,670 --> 00:42:03,160
+Intel processors were in
+the world's first personal
+
+913
+00:42:03,160 --> 00:42:06,850
+computer in 1974, and its
+groundbreaking x86
+
+914
+00:42:06,850 --> 00:42:09,370
+architecture processors
+were in the first IBM
+
+915
+00:42:09,370 --> 00:42:11,590
+personal computers by 1981.
+
+916
+00:42:11,770 --> 00:42:14,650
+It revolutionized
+transistor density and speed
+
+917
+00:42:14,650 --> 00:42:18,040
+with the first 32 bit
+processor in 1985.
+
+918
+00:42:18,070 --> 00:42:21,610
+It took competitor AMD six
+years to reverse engineer a
+
+919
+00:42:21,610 --> 00:42:24,490
+similar product. Suddenly,
+personal computers had to
+
+920
+00:42:24,490 --> 00:42:26,860
+have an intel processor to
+be competitive.
+
+921
+00:42:27,070 --> 00:42:30,670
+Andy Grove took over from
+Moore as CEO in 1987, and
+
+922
+00:42:30,670 --> 00:42:34,120
+Time magazine named him Man
+of the Year in 1997.
+
+923
+00:42:34,150 --> 00:42:36,820
+The market for personal
+computers continued to grow
+
+924
+00:42:36,820 --> 00:42:39,820
+through the first decade of
+the 2000, and Intel reigned
+
+925
+00:42:39,820 --> 00:42:42,160
+supreme in making the chips
+that powered them.
+
+926
+00:42:44,440 --> 00:42:47,530
+In 2011, global shipments
+of smartphones started
+
+927
+00:42:47,530 --> 00:42:49,210
+sneaking past PCs.
+
+928
+00:42:49,210 --> 00:42:51,850
+And that's about the same
+time Intel turned down an
+
+929
+00:42:51,850 --> 00:42:54,820
+early offer from Apple to
+make crucial chips for its
+
+930
+00:42:54,820 --> 00:42:55,930
+first iPhones.
+
+931
+00:42:56,020 --> 00:42:58,390
+And that was a massive
+mistake because what they
+
+932
+00:42:58,390 --> 00:43:00,430
+actually missed, and that
+was the start of it, was the
+
+933
+00:43:00,430 --> 00:43:01,960
+entire shift from PC to
+Mobile.
+
+934
+00:43:02,770 --> 00:43:05,610
+The chip world was also in
+the midst of another trend.
+
+935
+00:43:05,610 --> 00:43:07,390
+Back when Intel was first
+shipping out its
+
+936
+00:43:07,390 --> 00:43:10,150
+revolutionary processors, 
+chip companies took great
+
+937
+00:43:10,150 --> 00:43:13,320
+pride in designing and
+making their own chips.
+
+938
+00:43:13,330 --> 00:43:16,740
+"Real men have fabs" was a
+common saying at the time.
+
+939
+00:43:16,740 --> 00:43:19,660
+But as Moore's Law proved
+true, decade after decade,
+
+940
+00:43:19,660 --> 00:43:22,360
+chips got so complex that
+making them became an
+
+941
+00:43:22,360 --> 00:43:23,560
+enormous undertaking.
+
+942
+00:43:23,590 --> 00:43:26,850
+Building a fab today takes
+at least two years and $10
+
+943
+00:43:26,850 --> 00:43:30,160
+billion. So huge companies
+like Apple, Qualcomm and
+
+944
+00:43:30,160 --> 00:43:33,070
+Nvidia decided not to build
+fabs, but rather to
+
+945
+00:43:33,070 --> 00:43:35,200
+outsource the expensive,
+highly specialized
+
+946
+00:43:35,200 --> 00:43:38,440
+manufacturing process to
+companies like TSMC, which
+
+947
+00:43:38,440 --> 00:43:41,230
+focuses only on its foundry
+business making chips for
+
+948
+00:43:41,230 --> 00:43:41,890
+others.
+
+949
+00:43:41,890 --> 00:43:45,820
+And this is allowed TSMC to 
+not only catch up, but in my
+
+950
+00:43:45,820 --> 00:43:51,160
+opinion surpass Intel to
+become the world's greatest
+
+951
+00:43:51,160 --> 00:43:53,920
+manufacturing technology on
+the planet.
+
+952
+00:43:54,070 --> 00:43:56,920
+Despite the wild success of
+companies that decided to
+
+953
+00:43:56,920 --> 00:44:00,100
+focus on designing chips,
+like Apple, or only making
+
+954
+00:44:00,100 --> 00:44:03,600
+chips, like TSMC, Intel
+still does it all.
+
+955
+00:44:03,600 --> 00:44:07,300
+That makes it an integrated
+device manufacturer or IDM.
+
+956
+00:44:07,510 --> 00:44:10,810
+Keyvan Esfarjani joined
+Intel in 1996.
+
+957
+00:44:10,810 --> 00:44:14,110
+Now he runs manufacturing
+and supply chain operations.
+
+958
+00:44:14,110 --> 00:44:16,330
+Advanced equipment
+capabilities are becoming
+
+959
+00:44:16,330 --> 00:44:17,380
+more expensive.
+
+960
+00:44:17,410 --> 00:44:20,140
+You got to get it right,
+otherwise it could be very,
+
+961
+00:44:20,140 --> 00:44:21,130
+very costly.
+
+962
+00:44:21,280 --> 00:44:24,610
+Since Andy Grove retired in
+1998, Intel has seen a
+
+963
+00:44:24,610 --> 00:44:27,250
+series of chief executives
+who have gone back and forth
+
+964
+00:44:27,250 --> 00:44:29,920
+about how much the company
+should focus on the costly
+
+965
+00:44:29,920 --> 00:44:31,810
+manufacturing end of the
+chip business.
+
+966
+00:44:31,810 --> 00:44:34,300
+The most recent turnover
+happened in February when
+
+967
+00:44:34,300 --> 00:44:37,090
+Bob Swan was replaced by
+Pat Gelsinger, who started
+
+968
+00:44:37,090 --> 00:44:39,370
+at Intel in the seventies
+at age 18.
+
+969
+00:44:39,370 --> 00:44:40,960
+30 years at the company.
+
+970
+00:44:41,080 --> 00:44:43,990
+I mean, I, you know, I joke
+I went through puberty I
+
+971
+00:44:43,990 --> 00:44:45,540
+started at Intel so young.
+
+972
+00:44:45,550 --> 00:44:49,120
+At age 25, Gelsinger led the
+architecture of the 486
+
+973
+00:44:49,120 --> 00:44:51,970
+processor, then rose to
+chief technology officer by
+
+974
+00:44:51,970 --> 00:44:56,800
+2001. He left in 2009, and
+after leading VMware as CEO
+
+975
+00:44:56,800 --> 00:44:59,500
+for nearly nine years,
+returned to run Intel this
+
+976
+00:44:59,500 --> 00:44:59,890
+year.
+
+977
+00:44:59,890 --> 00:45:03,670
+We needed a technology
+leader to help reestablish
+
+978
+00:45:03,670 --> 00:45:07,540
+the technology company,
+this company that
+
+979
+00:45:07,540 --> 00:45:10,570
+essentially put the Silicon
+in Silicon Valley.
+
+980
+00:45:12,800 --> 00:45:15,120
+Gelsinger's made some major
+moves since he took the
+
+981
+00:45:15,120 --> 00:45:18,060
+helm, most notably the
+decision to double down on
+
+982
+00:45:18,060 --> 00:45:21,420
+manufacturing. For decades,
+the markets have rewarded
+
+983
+00:45:21,420 --> 00:45:23,940
+giants like Apple and
+Qualcomm for being fab-less.
+
+984
+00:45:23,940 --> 00:45:26,610
+But the chip shortage has
+made manufacturing chips a
+
+985
+00:45:26,610 --> 00:45:29,610
+more attractive business,
+allowing TSMC, for example,
+
+986
+00:45:29,610 --> 00:45:32,040
+to raise chip prices as
+much as 20%.
+
+987
+00:45:32,070 --> 00:45:34,830
+It takes time to build this
+infrastructure, but the good
+
+988
+00:45:34,830 --> 00:45:38,340
+news is the world is
+rallying behind building
+
+989
+00:45:38,340 --> 00:45:40,290
+additional capacity.
+
+990
+00:45:40,320 --> 00:45:43,710
+Intel is adding capacity by
+building a huge new fab at
+
+991
+00:45:43,710 --> 00:45:46,200
+its massive campus outside
+Portland, Oregon.
+
+992
+00:45:46,230 --> 00:45:50,190
+D1X-Mod3 is about 250,000
+square foot per level of the
+
+993
+00:45:50,190 --> 00:45:50,790
+building.
+
+994
+00:45:51,000 --> 00:45:54,240
+We got an exclusive first
+look inside the expansion
+
+995
+00:45:54,240 --> 00:45:56,310
+called D1X-Mod3.
+
+996
+00:45:56,640 --> 00:45:57,540
+And what exactly are you
+manufacturing?
+
+997
+00:45:58,740 --> 00:46:01,440
+We're manufacturing the
+latest generation of
+
+998
+00:46:01,440 --> 00:46:04,980
+microprocessors for Intel
+and working to enable
+
+999
+00:46:04,980 --> 00:46:08,730
+Intel's accelerated process
+for IDM 2.0.
+
+1000
+00:46:09,210 --> 00:46:11,910
+At the company's Intel
+Accelerated event in July,
+
+1001
+00:46:11,940 --> 00:46:15,480
+Gelsinger laid out an
+aggressive IDM 2.0 roadmap
+
+1002
+00:46:15,480 --> 00:46:18,810
+for how it plans to ramp
+capacity and catch up with
+
+1003
+00:46:18,810 --> 00:46:21,330
+big leaps in processing
+technologies.
+
+1004
+00:46:21,330 --> 00:46:24,780
+By 2025, Intel says it will
+surpass the chipmaking
+
+1005
+00:46:24,780 --> 00:46:27,800
+capabilities of both TSMC
+and Samsung.
+
+1006
+00:46:27,810 --> 00:46:31,560
+We are on a march for yearly
+innovation, setting a pace
+
+1007
+00:46:31,560 --> 00:46:34,410
+for ourselves and the
+industry to not only get
+
+1008
+00:46:34,410 --> 00:46:35,850
+back but to get ahead
+again.
+
+1009
+00:46:36,720 --> 00:46:40,980
+Why should anyone trust
+Intel again?
+
+1010
+00:46:40,980 --> 00:46:44,880
+And so Intel will have to
+make a bunch of promises,
+
+1011
+00:46:44,880 --> 00:46:48,630
+both verbally and
+financially, in my opinion
+
+1012
+00:46:48,630 --> 00:46:50,760
+at least, to get anyone to
+listen.
+
+1013
+00:46:51,840 --> 00:46:55,650
+Intel has 15 fabs all over
+the world: China, Israel,
+
+1014
+00:46:55,650 --> 00:46:57,170
+Ireland and the U.S.
+
+1015
+00:46:57,170 --> 00:47:00,420
+in Oregon, Arizona, New
+Mexico and Massachusetts.
+
+1016
+00:47:00,450 --> 00:47:03,660
+It has assembly and test
+sites in Vietnam, Malaysia,
+
+1017
+00:47:03,660 --> 00:47:06,030
+Costa Rica and China and
+the U.S.
+
+1018
+00:47:06,060 --> 00:47:09,390
+It says it makes 8000
+products, outputting 2
+
+1019
+00:47:09,390 --> 00:47:12,220
+billion units a year for
+some 2000 customers.
+
+1020
+00:47:12,240 --> 00:47:14,970
+Now it's expanding that
+production, specifically in
+
+1021
+00:47:14,970 --> 00:47:16,150
+the U.S. and Europe.
+
+1022
+00:47:16,170 --> 00:47:18,300
+It's got a major fab
+expansion underway in
+
+1023
+00:47:18,300 --> 00:47:21,240
+Ireland and is reportedly
+in talks for projects in
+
+1024
+00:47:21,240 --> 00:47:22,470
+Italy and Germany.
+
+1025
+00:47:22,500 --> 00:47:25,020
+Doubling down in its
+capacity requirement to
+
+1026
+00:47:25,020 --> 00:47:27,330
+support the growing needs
+of their customers around
+
+1027
+00:47:27,330 --> 00:47:30,840
+the world is absolutely a
+significant responsibility
+
+1028
+00:47:30,840 --> 00:47:32,040
+of what Intel has got to go
+drive.
+
+1029
+00:47:32,700 --> 00:47:35,390
+And in March, Intel
+announced it's spending $20
+
+1030
+00:47:35,390 --> 00:47:38,370
+billion to build two huge
+new fabs in Chandler,
+
+1031
+00:47:38,370 --> 00:47:41,220
+Arizona. It broke ground in
+September this year with
+
+1032
+00:47:41,220 --> 00:47:44,250
+plans to output chips for
+PCs and data centers by
+
+1033
+00:47:44,250 --> 00:47:45,240
+2024.
+
+1034
+00:47:45,270 --> 00:47:48,870
+It's a very long time to
+build the concrete, the
+
+1035
+00:47:48,870 --> 00:47:51,330
+chemical delivery, the
+electrical systems.
+
+1036
+00:47:51,330 --> 00:47:55,770
+All of this needs to be
+perfect for a fab to run for
+
+1037
+00:47:55,770 --> 00:47:58,950
+something that's creating
+lines and dimensions that
+
+1038
+00:47:58,950 --> 00:48:01,830
+are 10,000 times smaller
+than your hair.
+
+1039
+00:48:02,160 --> 00:48:04,290
+When we toured the fab
+project in Oregon,
+
+1040
+00:48:04,290 --> 00:48:07,710
+semi-trucks were dropping
+off some of the 1200 massive
+
+1041
+00:48:07,740 --> 00:48:08,850
+tools used to make the
+chips.
+
+1042
+00:48:09,420 --> 00:48:12,000
+All of our tools tend to be
+in the millions of dollars,
+
+1043
+00:48:12,000 --> 00:48:14,370
+tens of millions of
+dollars. They weigh anywhere
+
+1044
+00:48:14,370 --> 00:48:18,180
+from 10000 pounds to
+100000 pounds.
+
+1045
+00:48:18,720 --> 00:48:21,870
+We also got a rare look
+inside the fabs bustling
+
+1046
+00:48:21,870 --> 00:48:24,900
+clean rooms, donning bunny
+suits that help keep dust
+
+1047
+00:48:24,900 --> 00:48:27,480
+and other particles away
+from the minuscule circuitry
+
+1048
+00:48:27,480 --> 00:48:28,260
+on the chips.
+
+1049
+00:48:28,290 --> 00:48:32,280
+We're talking about clean
+room that is 10,000 times
+
+1050
+00:48:32,280 --> 00:48:34,890
+cleaner than a heart
+surgery room.
+
+1051
+00:48:34,920 --> 00:48:38,400
+It's about the equivalent of
+about 20 American football
+
+1052
+00:48:38,400 --> 00:48:40,890
+fields is the amount of
+space we have here, which is
+
+1053
+00:48:40,890 --> 00:48:41,940
+clean room space.
+
+1054
+00:48:42,150 --> 00:48:44,460
+It's filled with yellow
+light to prevent exposing
+
+1055
+00:48:44,460 --> 00:48:46,530
+the chips to shorter
+wavelengths of light than
+
+1056
+00:48:46,530 --> 00:48:49,230
+the lithography machines
+use to print designs on the
+
+1057
+00:48:49,230 --> 00:48:49,740
+chips.
+
+1058
+00:48:49,770 --> 00:48:51,690
+We have different
+chemistries and gases that
+
+1059
+00:48:51,690 --> 00:48:53,670
+we use to make our chips
+here at Intel, and we
+
+1060
+00:48:53,700 --> 00:48:56,490
+segregate those exhaust
+streams into these ducts you
+
+1061
+00:48:56,490 --> 00:48:59,460
+see here and are
+subsequently treated so that
+
+1062
+00:48:59,460 --> 00:49:01,980
+we're environmentally
+responsible in providing
+
+1063
+00:49:02,070 --> 00:49:03,330
+clean air coming out of our
+factories.
+
+1064
+00:49:04,260 --> 00:49:07,680
+Making chips also takes a
+massive amount of water, not
+
+1065
+00:49:07,680 --> 00:49:09,750
+a plentiful resource in the
+Arizona desert.
+
+1066
+00:49:09,780 --> 00:49:13,020
+We're currently out at the
+Ronler Acres water treatment
+
+1067
+00:49:13,020 --> 00:49:16,530
+facility, where today we've
+reclaimed over 2 billion
+
+1068
+00:49:16,530 --> 00:49:20,010
+gallons of water and reuse
+back into our manufacturing
+
+1069
+00:49:20,010 --> 00:49:21,390
+systems and process.
+
+1070
+00:49:21,540 --> 00:49:25,200
+We utilize approximately 9
+million gallons a day and we
+
+1071
+00:49:25,200 --> 00:49:27,180
+can serve about 95% of
+that.
+
+1072
+00:49:28,050 --> 00:49:30,810
+The chips being made here
+are ten nanometer, used in
+
+1073
+00:49:30,810 --> 00:49:32,340
+PCs and data centers.
+
+1074
+00:49:32,370 --> 00:49:35,460
+Only TSMC and Samsung can
+currently make five
+
+1075
+00:49:35,460 --> 00:49:38,330
+nanometer chips, the most
+advanced node on the market.
+
+1076
+00:49:38,340 --> 00:49:41,640
+In fact, Intel relies on
+TSMC to make a good number
+
+1077
+00:49:41,640 --> 00:49:42,570
+of its chips.
+
+1078
+00:49:42,600 --> 00:49:45,390
+We are one of their key
+customers and that
+
+1079
+00:49:45,390 --> 00:49:47,100
+collaboration continues.
+
+1080
+00:49:48,880 --> 00:49:52,090
+To understand why Intel has
+chips made by one of its
+
+1081
+00:49:52,090 --> 00:49:54,880
+competitors it's trying to
+catch, let's talk about the
+
+1082
+00:49:54,880 --> 00:49:57,280
+different types of chips
+and the supply chain.
+
+1083
+00:49:57,310 --> 00:49:59,770
+Different sized chips are
+found in different types of
+
+1084
+00:49:59,770 --> 00:50:03,280
+electronics. Intel makes a
+lot of ten and 14 nanometer
+
+1085
+00:50:03,280 --> 00:50:05,710
+server chips that function
+as the brains of computers,
+
+1086
+00:50:05,710 --> 00:50:10,090
+CPUs and powerful chips
+used in data centers, GPUs.
+
+1087
+00:50:10,090 --> 00:50:13,330
+Less advanced 28 to 40
+nanometer chips are used
+
+1088
+00:50:13,330 --> 00:50:16,330
+most in the auto industry
+in components like anti-lock
+
+1089
+00:50:16,330 --> 00:50:17,740
+brakes and airbags.
+
+1090
+00:50:17,950 --> 00:50:21,010
+Bigger chips are also used
+in household devices like
+
+1091
+00:50:21,010 --> 00:50:22,300
+coffee makers or electric
+toothbrushes.
+
+1092
+00:50:23,410 --> 00:50:26,140
+Five nanometer chips, the
+most advanced chips
+
+1093
+00:50:26,140 --> 00:50:28,780
+currently made, are highly
+sought after for data
+
+1094
+00:50:28,780 --> 00:50:31,300
+handling and artificial
+intelligence processing,
+
+1095
+00:50:31,300 --> 00:50:33,730
+used in leading edge
+technologies like the latest
+
+1096
+00:50:33,730 --> 00:50:37,210
+iPhones, NASA rovers and
+F-35 fighter jets.
+
+1097
+00:50:37,510 --> 00:50:40,540
+Making five nanometer chips
+requires an extreme
+
+1098
+00:50:40,540 --> 00:50:43,840
+ultraviolet lithography
+machine that uses very small
+
+1099
+00:50:43,840 --> 00:50:46,510
+rays of light to etch the
+tiniest designs onto the
+
+1100
+00:50:46,510 --> 00:50:50,230
+chips. Only one company,
+ASML, makes these EUV
+
+1101
+00:50:50,230 --> 00:50:54,040
+machines and they cost
+upwards of $180 million.
+
+1102
+00:50:54,550 --> 00:50:55,990
+Costs are going to go
+through the roof.
+
+1103
+00:50:56,110 --> 00:50:58,990
+But if you can't yield the
+process without it, like,
+
+1104
+00:50:58,990 --> 00:51:00,220
+you have no choice.
+
+1105
+00:51:00,940 --> 00:51:03,550
+Intel didn't buy EUV
+machines until a couple of
+
+1106
+00:51:03,550 --> 00:51:07,480
+years after TSMC, which
+explains why TSMC was able
+
+1107
+00:51:07,480 --> 00:51:08,560
+to reach five nanometer
+firs.
+
+1108
+00:51:09,090 --> 00:51:12,280
+And now TSMC will be the
+first to make five nanometer
+
+1109
+00:51:12,280 --> 00:51:15,790
+chips in the U.S., building
+a $12 billion fab just down
+
+1110
+00:51:15,790 --> 00:51:18,310
+the road from Intel's new
+Arizona fabs.
+
+1111
+00:51:18,430 --> 00:51:20,470
+So where does all this
+leave Intel?
+
+1112
+00:51:20,470 --> 00:51:23,200
+It's currently in high
+volume production of ten
+
+1113
+00:51:23,200 --> 00:51:25,810
+nanometer chips after years
+of delays.
+
+1114
+00:51:25,840 --> 00:51:27,460
+Ten was supposed to be here
+in 2015.
+
+1115
+00:51:27,460 --> 00:51:28,990
+We still don't even know
+the reasons.
+
+1116
+00:51:28,990 --> 00:51:32,050
+Their rationale for why ten
+failed was that they just
+
+1117
+00:51:32,050 --> 00:51:33,160
+tried to do too much.
+
+1118
+00:51:33,760 --> 00:51:37,090
+In July, Intel rebranded to
+avoid the nanometer based
+
+1119
+00:51:37,120 --> 00:51:39,490
+nomenclature used by other
+chip giants.
+
+1120
+00:51:39,490 --> 00:51:42,580
+Its seven nanometer chip,
+which it now calls Intel 4
+
+1121
+00:51:42,580 --> 00:51:45,310
+or Meteor Lake, has been
+pushed back about a year.
+
+1122
+00:51:45,340 --> 00:51:47,740
+This recent delay, the
+first setback under
+
+1123
+00:51:47,740 --> 00:51:50,260
+Gelsinger, has seven
+nanometer in production for
+
+1124
+00:51:50,260 --> 00:51:53,500
+the second half of 2022, 
+around the same time both
+
+1125
+00:51:53,500 --> 00:51:56,080
+TSMC and Samsung have
+committed to start
+
+1126
+00:51:56,080 --> 00:51:58,450
+production on their three
+nanometer nodes.
+
+1127
+00:51:58,480 --> 00:52:00,700
+They've been having process
+issues for ten years.
+
+1128
+00:52:00,700 --> 00:52:03,560
+14 nanometers was delayed,
+10 nanometers was delayed,
+
+1129
+00:52:03,560 --> 00:52:04,990
+seven nanometers is
+delayed, it's not like it's
+
+1130
+00:52:04,990 --> 00:52:06,970
+new. I still don't
+understand how you could let
+
+1131
+00:52:06,970 --> 00:52:09,490
+something slip as much as
+they have.
+
+1132
+00:52:09,490 --> 00:52:10,720
+Like, it's shocking.
+
+1133
+00:52:11,140 --> 00:52:12,820
+We had some missteps.
+
+1134
+00:52:13,270 --> 00:52:17,920
+The strategy had become a
+little bit confused on the
+
+1135
+00:52:17,920 --> 00:52:20,080
+role that we're going to
+play in manufacturing for
+
+1136
+00:52:20,080 --> 00:52:22,840
+the long term. And now
+we're leaning back into that
+
+1137
+00:52:22,840 --> 00:52:25,060
+with clarity, with clear
+urgency.
+
+1138
+00:52:26,020 --> 00:52:28,720
+The competition between chip
+giants and subsequent ramp
+
+1139
+00:52:28,720 --> 00:52:31,450
+in production is a positive
+for the chip shortage, which
+
+1140
+00:52:31,450 --> 00:52:32,770
+has impacted all types of
+chips.
+
+1141
+00:52:33,370 --> 00:52:36,430
+Apple is cutting its 2021
+production targets for the
+
+1142
+00:52:36,430 --> 00:52:39,820
+iPhone 13. Carmakers like
+GM and Toyota have paused
+
+1143
+00:52:39,820 --> 00:52:41,290
+production at some plants.
+
+1144
+00:52:41,530 --> 00:52:43,900
+When the personal computer
+market skyrocketed during
+
+1145
+00:52:43,900 --> 00:52:47,980
+the pandemic, it drew down
+supplies of CPUs and GPUs.
+
+1146
+00:52:47,980 --> 00:52:50,890
+Intel blamed this component
+shortage for its PC chip
+
+1147
+00:52:50,890 --> 00:52:55,510
+business shrinking 2% in Q3
+2021, causing shares to fall
+
+1148
+00:52:55,510 --> 00:52:57,730
+more than 10% after
+earnings were announced in
+
+1149
+00:52:57,730 --> 00:53:02,350
+October. Intel stands alone
+as the only U.S.-based
+
+1150
+00:53:02,350 --> 00:53:05,470
+company that designs and
+manufactures advanced chips
+
+1151
+00:53:05,470 --> 00:53:08,830
+at scale. Traditionally, it
+only manufactures its own
+
+1152
+00:53:08,830 --> 00:53:11,530
+designs. But now, in the
+face of the shortage, it's
+
+1153
+00:53:11,530 --> 00:53:12,340
+changing that.
+
+1154
+00:53:12,340 --> 00:53:14,740
+You're going to not only
+make our own wafers, you're
+
+1155
+00:53:14,740 --> 00:53:17,680
+also going to use those
+fabrication facilities to be
+
+1156
+00:53:17,680 --> 00:53:21,520
+producing wafers for
+customers that they want us
+
+1157
+00:53:21,520 --> 00:53:23,140
+to use their design.
+
+1158
+00:53:23,410 --> 00:53:25,390
+It's totally a right hand
+turn.
+
+1159
+00:53:25,990 --> 00:53:28,720
+We have always had much
+debate about it.
+
+1160
+00:53:28,810 --> 00:53:31,420
+Intel is calling the new
+stand alone business Intel
+
+1161
+00:53:31,420 --> 00:53:32,710
+Foundry Services.
+
+1162
+00:53:32,710 --> 00:53:36,310
+We already have our first
+revenue with the Amazon
+
+1163
+00:53:36,310 --> 00:53:39,940
+packaging deal. Our next
+big customers like Qualcomm
+
+1164
+00:53:39,940 --> 00:53:41,550
+and the U.S.
+
+1165
+00:53:41,550 --> 00:53:42,130
+government.
+
+1166
+00:53:42,130 --> 00:53:44,740
+Foundry has been wildly
+successful for the other two
+
+1167
+00:53:44,740 --> 00:53:47,260
+at the leading edge,
+Samsung and TSMC, but
+
+1168
+00:53:47,260 --> 00:53:49,510
+analysts are not sure it'll
+work for Intel.
+
+1169
+00:53:49,610 --> 00:53:51,490
+Amazon presumably is going
+to be data center parts.
+
+1170
+00:53:51,680 --> 00:53:53,980
+It's going to be that many
+units, right?
+
+1171
+00:53:54,100 --> 00:53:56,230
+Tiny, right? It's like five
+years away.
+
+1172
+00:53:56,800 --> 00:53:59,170
+And if it turns out that
+Intel is a viable founding
+
+1173
+00:53:59,170 --> 00:54:01,390
+partner, great. But if
+they're not, it's no skin
+
+1174
+00:54:01,390 --> 00:54:03,700
+off their nose.
+
+1175
+00:54:03,700 --> 00:54:07,090
+The only benefit I would see
+to using Intel is if you
+
+1176
+00:54:07,090 --> 00:54:09,820
+wanted something to be
+created onshore in the
+
+1177
+00:54:09,820 --> 00:54:10,630
+United States.
+
+1178
+00:54:10,630 --> 00:54:12,850
+And the government is
+greasing the rails with the
+
+1179
+00:54:12,850 --> 00:54:16,570
+Chips Act, a proposed $52
+billion in subsidies for
+
+1180
+00:54:16,570 --> 00:54:19,210
+chip companies committed to
+making them in the U.S.
+
+1181
+00:54:19,240 --> 00:54:20,470
+This is infrastructure.
+
+1182
+00:54:20,770 --> 00:54:24,400
+In 1990, 37% of the world's
+semiconductors were made in
+
+1183
+00:54:24,400 --> 00:54:28,030
+the U.S., but last year
+that was down to just 12%.
+
+1184
+00:54:28,060 --> 00:54:29,740
+A moonshot would be that the
+U.S.
+
+1185
+00:54:30,240 --> 00:54:34,360
+is at 30% of manufacturing
+in a decade or so in the
+
+1186
+00:54:34,360 --> 00:54:37,480
+future. And I think the
+Chips Act as it's structured
+
+1187
+00:54:37,480 --> 00:54:41,350
+today is a great step to
+start to turn that in a
+
+1188
+00:54:41,350 --> 00:54:42,760
+positive direction.
+
+1189
+00:54:42,790 --> 00:54:46,180
+As I like to joke, God
+decided where the oil
+
+1190
+00:54:46,180 --> 00:54:47,200
+reserves are.
+
+1191
+00:54:47,380 --> 00:54:49,360
+We could decide where the
+fabs are.
+
+1192
+00:54:49,600 --> 00:54:52,570
+But analysts say much more
+is needed to help the U.S.
+
+1193
+00:54:52,570 --> 00:54:53,380
+bounce back.
+
+1194
+00:54:53,410 --> 00:54:56,470
+If the goal of that money is
+to bring significantly more
+
+1195
+00:54:56,470 --> 00:55:00,370
+capacity onshore, it's not
+anywhere near enough.
+
+1196
+00:55:00,400 --> 00:55:02,140
+They need ten times that
+amount more.
+
+1197
+00:55:02,290 --> 00:55:05,980
+Because 92% of the world's
+five nanometer chips are
+
+1198
+00:55:05,980 --> 00:55:08,800
+currently made in Taiwan, 
+the entire global chip
+
+1199
+00:55:08,800 --> 00:55:11,890
+supply is vulnerable to
+natural disasters common
+
+1200
+00:55:11,890 --> 00:55:14,650
+there, like earthquakes and
+its current drought and
+
+1201
+00:55:14,650 --> 00:55:17,380
+escalating geopolitical
+tensions between China and
+
+1202
+00:55:17,380 --> 00:55:20,530
+Taiwan, and subsequently
+the U.S.-China trade war.
+
+1203
+00:55:20,740 --> 00:55:24,340
+Every aspect of defense,
+intelligence and government
+
+1204
+00:55:24,340 --> 00:55:28,360
+operations is becoming more
+digital, and do we want to
+
+1205
+00:55:28,360 --> 00:55:32,620
+rely on foreign technology
+for those critical aspects
+
+1206
+00:55:32,620 --> 00:55:34,820
+of our defense and national
+security?
+
+1207
+00:55:34,820 --> 00:55:35,710
+I don't think so.
+
+1208
+00:55:36,070 --> 00:55:40,750
+It's critically important
+for not just the global
+
+1209
+00:55:40,750 --> 00:55:44,230
+supply chain, but for the
+national security that we
+
+1210
+00:55:44,230 --> 00:55:47,060
+must maintain this journey.
+
+1211
+00:55:47,080 --> 00:55:50,680
+However, it is going to
+require Intel to put its
+
+1212
+00:55:50,680 --> 00:55:51,940
+playbook into work.
+
+1213
+00:55:52,300 --> 00:55:54,850
+The next steps in this
+playbook include a chip so
+
+1214
+00:55:54,850 --> 00:55:57,520
+efficient Intel's named it
+not with nanometers, but
+
+1215
+00:55:57,520 --> 00:55:59,680
+with an even smaller unit
+of measurement, the
+
+1216
+00:55:59,680 --> 00:56:03,340
+angstrom. Intel says the
+18A, which is in development
+
+1217
+00:56:03,340 --> 00:56:07,030
+for 2025, will accelerate
+it past its competitors.
+
+1218
+00:56:07,030 --> 00:56:11,560
+We will be the world's
+largest integrated design
+
+1219
+00:56:11,560 --> 00:56:15,640
+and manufacturer of silicon
+for the long term.
+
+1220
+00:56:15,640 --> 00:56:18,730
+It is a tall order and it is
+not my expectation that he
+
+1221
+00:56:18,730 --> 00:56:22,360
+will hit that. But if he
+could hit that timetable, it
+
+1222
+00:56:22,360 --> 00:56:26,300
+would put them back, in my
+opinion, on par with TSM
+
+1223
+00:56:26,300 --> 00:56:27,280
+head to head.
+
