@@ -45,3 +45,4 @@ logs/
 *.webm
 *.zip
 source_datasets/cg_bench/raw/
+source_datasets/cg_bench/cg_subtitles/
