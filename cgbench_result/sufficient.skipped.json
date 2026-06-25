@@ -1,0 +1,22 @@
+[
+  {
+    "video_id": "aTV3damvdZs",
+    "qid": 12,
+    "reason": "Error code: 400 - {'error': {'message': 'The decoder prompt (length 84867) is longer than the maximum model length of 32768. Make sure that `max_model_len` is no smaller than the number of text tokens plus multimodal tokens. For image inputs, the number of image tokens depends on the number of images, and possibly their aspect ratios as well.', 'type': 'BadRequestError', 'param': None, 'code': 400}}"
+  },
+  {
+    "video_id": "BV1Xh411W7WL",
+    "qid": 45,
+    "reason": "Error code: 400 - {'error': {'message': 'The decoder prompt (length 84780) is longer than the maximum model length of 32768. Make sure that `max_model_len` is no smaller than the number of text tokens plus multimodal tokens. For image inputs, the number of image tokens depends on the number of images, and possibly their aspect ratios as well.', 'type': 'BadRequestError', 'param': None, 'code': 400}}"
+  },
+  {
+    "video_id": "BV1yG411C7Xi",
+    "qid": 66,
+    "reason": "Error code: 400 - {'error': {'message': 'The decoder prompt (length 39178) is longer than the maximum model length of 32768. Make sure that `max_model_len` is no smaller than the number of text tokens plus multimodal tokens. For image inputs, the number of image tokens depends on the number of images, and possibly their aspect ratios as well.', 'type': 'BadRequestError', 'param': None, 'code': 400}}"
+  },
+  {
+    "video_id": "BV1rj411j7mx",
+    "qid": 74,
+    "reason": "Error code: 400 - {'error': {'message': 'The decoder prompt (length 84759) is longer than the maximum model length of 32768. Make sure that `max_model_len` is no smaller than the number of text tokens plus multimodal tokens. For image inputs, the number of image tokens depends on the number of images, and possibly their aspect ratios as well.', 'type': 'BadRequestError', 'param': None, 'code': 400}}"
+  }
+]
