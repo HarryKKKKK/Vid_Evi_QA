@@ -10,11 +10,17 @@
 
 set -uo pipefail
 
+unset http_proxy
+unset https_proxy
+unset HTTP_PROXY
+unset HTTPS_PROXY
+export NO_PROXY="localhost,127.0.0.1"
+export no_proxy="localhost,127.0.0.1"
+
 MODEL_PATH="/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/models/Qwen3-VL"
 PORT=8000
 TP=2
 
-export HF_HUB_OFFLINE=1
 export VLLM_ATTENTION_BACKEND=TORCH_SDPA
 export VLLM_MM_ATTENTION_BACKEND=TORCH_SDPA
 
@@ -33,8 +39,9 @@ vllm serve "${MODEL_PATH}" \
     --served-model-name qwen3-vl \
     --tensor-parallel-size ${TP} \
     --max-model-len 32768 \
-    --limit-mm-per-prompt '{"image": 100}' \
+    --limit-mm-per-prompt '{"image": 130}' \
     --mm-processor-kwargs '{"max_pixels": 75264}' \
+    --mm-processor-cache-gb 0 \
     --enforce-eager \
     --port ${PORT} --host 0.0.0.0 &
 SERVER_PID=$!
@@ -57,6 +64,7 @@ if [ "$READY" -ne 1 ]; then
     echo "ERROR: vLLM not ready after 20 min, aborting."; exit 1
 fi
 
-python cgbench_pipeline/evaluate.py --mode sufficient --limit 5 --num-frames 96
+# python cgbench_pipeline/evaluate.py --mode sufficient --limit 200 --num-frames 32 --sampling evidence --frame-width 560 --workers 8
+python cgbench_pipeline/evaluate.py --mode sufficient --limit 200 --num-frames 128 --frame-width 336 --workers 2
 
 echo "Eval finished."
