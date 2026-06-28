@@ -32,39 +32,61 @@ conda activate /aifs4su/hansirui_2nd/harry/envs_qwen3vl
 
 cd /aifs4su/hansirui_2nd/harry/Vid_Evi_QA
 
+mkdir -p logs
+
 echo "Job on node: $(hostname)"
 nvidia-smi
 
+echo "Starting vLLM server..."
+
 vllm serve "${MODEL_PATH}" \
     --served-model-name qwen3-vl \
-    --tensor-parallel-size ${TP} \
+    --tensor-parallel-size "${TP}" \
     --max-model-len 32768 \
     --limit-mm-per-prompt '{"image": 130}' \
     --mm-processor-kwargs '{"max_pixels": 75264}' \
     --mm-processor-cache-gb 0 \
     --enforce-eager \
-    --port ${PORT} --host 0.0.0.0 &
+    --port "${PORT}" \
+    --host 0.0.0.0 &
+
 SERVER_PID=$!
 
-cleanup() { kill $SERVER_PID 2>/dev/null || true; }
+cleanup() {
+    echo "Stopping vLLM server..."
+    kill "${SERVER_PID}" 2>/dev/null || true
+}
 trap cleanup EXIT
 
 echo "Waiting for vLLM to be ready..."
 READY=0
+
 for i in $(seq 1 120); do
-    if ! kill -0 $SERVER_PID 2>/dev/null; then
-        echo "ERROR: vLLM process died during startup. See log above."; exit 1
+    if ! kill -0 "${SERVER_PID}" 2>/dev/null; then
+        echo "ERROR: vLLM process died during startup. See err log above."
+        exit 1
     fi
-    if curl -s "http://localhost:${PORT}/health" > /dev/null; then
-        echo "vLLM ready after ~$((i*10))s"; READY=1; break
+
+    if curl -s "http://localhost:${PORT}/v1/models" | grep -q "qwen3-vl"; then
+        echo "vLLM ready after ~$((i * 10))s"
+        READY=1
+        break
     fi
+
+    echo "Still waiting... $((i * 10))s"
     sleep 10
 done
-if [ "$READY" -ne 1 ]; then
-    echo "ERROR: vLLM not ready after 20 min, aborting."; exit 1
+
+if [ "${READY}" -ne 1 ]; then
+    echo "ERROR: vLLM not ready after 20 min, aborting."
+    echo "Last /v1/models response:"
+    curl -s "http://localhost:${PORT}/v1/models" || true
+    exit 1
 fi
 
-# python cgbench_pipeline/evaluate.py --mode sufficient --limit 200 --num-frames 32 --sampling evidence --frame-width 560 --workers 8
-python cgbench_pipeline/evaluate.py --mode sufficient --limit 200 --num-frames 128 --frame-width 336 --workers 2
+echo "Starting evaluation..."
+
+# python scripts/evaluate.py --mode sufficient --task qa --limit 200 --num-frames 128 --frame-width 336 --workers 8 --sampling uniform
+python scripts/evaluate.py --mode sufficient --task qa --num-frames 128 --frame-width 336 --workers 8 --sampling uniform
 
 echo "Eval finished."
