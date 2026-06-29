@@ -87,6 +87,7 @@ fi
 echo "Starting evaluation..."
 
 # python scripts/evaluate.py --mode sufficient --task qa --limit 200 --num-frames 128 --frame-width 336 --workers 8 --sampling uniform
-python scripts/evaluate.py --mode sufficient --task qa --num-frames 128 --frame-width 336 --workers 8 --sampling uniform
+# python scripts/evaluate.py --mode sufficient --task qa --num-frames 128 --frame-width 336 --workers 8 --sampling uniform
+python scripts/evaluate.py --mode sufficient --task classify --num-frames 128 --frame-width 336 --workers 8 --sampling uniform
 
 echo "Eval finished."
