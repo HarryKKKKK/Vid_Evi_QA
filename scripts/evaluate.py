@@ -42,7 +42,7 @@ WORKERS = 8
 BASE_DIR = Path("/aifs4su/hansirui_2nd/harry/Vid_Evi_QA")
 FILTERED_JSON = BASE_DIR / "cgbench_pipeline" / "cgbench_filtered.json"
 VIDEOS_DIR = BASE_DIR / "source_datasets" / "cg_bench" / "videos"
-INSUFFICIENT_DIR = BASE_DIR / "source_datasets" / "cg_bench" / "insufficient_videos"
+INSUFFICIENT_DIR = BASE_DIR / "source_datasets" / "cg_bench" / "freeze_videos"
 RESULTS_DIR = BASE_DIR / "cgbench_result"
 
 
@@ -350,7 +350,7 @@ def process_entry(
     qid = entry["qid"]
 
     if insufficient:
-        video_file = video_dir / f"{video_id}_q{qid}_insufficient.mp4"
+        video_file = video_dir / f"{video_id}_q{qid}_freeze.mp4"
     else:
         video_file = video_dir / f"{video_id}.mp4"
 
