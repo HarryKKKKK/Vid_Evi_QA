@@ -1,24 +1,28 @@
 #!/usr/bin/env python3
 """
-Build "insufficient evidence" videos by blacking out the video frames AND
-silencing the audio inside each question's evidence_intervals, while keeping
+Build "insufficient evidence" videos by FREEZING a single frame over each
+question's evidence_intervals (instead of blacking them out), while keeping
 everything else (duration, non-evidence frames/audio) unchanged.
+
+帧冻结策略（与遮黑版几乎同构）：
+  * 对每个（合并后的）evidence 区间，先用一次轻量 ffmpeg 抽出一张"冻结帧"：
+      - --freeze-source pre   : evidence 开始前的一帧（默认）
+      - --freeze-source first : evidence 区间的第一帧
+    存成临时 PNG。
+  * 主编码时把这张 PNG 用 overlay=...:enable='between(t,s,e)' 叠在该区间上，
+    等价于把区间内画面替换为这一张静止帧。
+  * 时长精确保留：单输入流、单遍编码、时间戳不动；区间外画面逐帧不变。
+  * 音频默认在区间内静音（volume=0），与遮黑版一致；--keep-audio 可保留原音。
 
 One output video is produced PER QUESTION (per qid), because the same video_id
 can map to multiple questions with different evidence intervals.
 
 Schema: video_id, qid, evidence_intervals[ {start, end, description} ]
 
-Encoding strategy: single-pass full re-encode + drawbox (black) + volume=0 on
-the evidence intervals. Duration is preserved exactly (single stream, single
-pass). Non-evidence regions are visually identical but re-compressed.
-
-Parallelism:
-  * --jobs N      run N ffmpeg encodes concurrently in THIS process (thread pool;
-                  ffmpeg runs as a subprocess so the GIL is released while waiting)
+Parallelism / sharding / resume：与遮黑版完全一致
+  * --jobs N      run N ffmpeg encodes concurrently in THIS process
   * --threads T   libx264 threads per ffmpeg; keep jobs*threads <= cpus-per-task
-  * --num-shards / --shard   split entries across slurm array tasks
-                  (shard from --shard or SLURM_ARRAY_TASK_ID; round-robin)
+  * --num-shards / --shard   split entries across slurm array tasks (round-robin)
 Resumable: existing outputs are skipped unless --overwrite.
 """
 
@@ -27,16 +31,23 @@ import json
 import os
 import subprocess
 import sys
+import tempfile
+import shutil
 import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
 DEFAULT_JSON = "cgbench_pipeline/cgbench_filtered.json"
 DEFAULT_VIDEO_DIR = "source_datasets/cg_bench/videos"
-DEFAULT_OUTPUT_DIR = "source_datasets/cg_bench/insufficient_videos"
+DEFAULT_OUTPUT_DIR = "source_datasets/cg_bench/freeze_videos"
 OUTPUT_EXT = ".mp4"
 
 _print_lock = threading.Lock()
+
+# 缓存每个视频的 fps / 是否有音频，避免同一 video_id 多个 qid 重复 ffprobe。
+_probe_lock = threading.Lock()
+_fps_cache = {}
+_audio_cache = {}
 
 
 def log(msg):
@@ -93,16 +104,48 @@ def resolve_input(stem_index, video_id):
 
 
 def has_audio_stream(path, ffprobe="ffprobe"):
+    with _probe_lock:
+        if path in _audio_cache:
+            return _audio_cache[path]
     out = subprocess.run(
         [ffprobe, "-v", "error", "-select_streams", "a",
          "-show_entries", "stream=index", "-of", "csv=p=0", path],
         capture_output=True, text=True,
     )
-    return out.returncode == 0 and out.stdout.strip() != ""
+    val = out.returncode == 0 and out.stdout.strip() != ""
+    with _probe_lock:
+        _audio_cache[path] = val
+    return val
+
+
+def probe_fps(path, ffprobe="ffprobe"):
+    """Return avg fps as float, or None if it can't be determined."""
+    with _probe_lock:
+        if path in _fps_cache:
+            return _fps_cache[path]
+    out = subprocess.run(
+        [ffprobe, "-v", "error", "-select_streams", "v:0",
+         "-show_entries", "stream=r_frame_rate", "-of", "csv=p=0", path],
+        capture_output=True, text=True,
+    )
+    fps = None
+    s = out.stdout.strip()
+    try:
+        if "/" in s:
+            num, den = s.split("/")
+            num, den = float(num), float(den)
+            if den != 0:
+                fps = num / den
+        elif s:
+            fps = float(s)
+    except ValueError:
+        fps = None
+    with _probe_lock:
+        _fps_cache[path] = fps
+    return fps
 
 
 def check_binaries(args):
-    import shutil
     for name, val in (("ffmpeg", args.ffmpeg), ("ffprobe", args.ffprobe)):
         if shutil.which(val) is None and not os.path.isfile(val):
             raise SystemExit(
@@ -118,13 +161,58 @@ def check_binaries(args):
                 "        Drop --gpu to use CPU (libx264).")
 
 
-def build_ffmpeg_cmd(inp, out, enable_expr, audio, args):
-    vf = f"drawbox=x=0:y=0:w=iw:h=ih:color=black:t=fill:enable='{enable_expr}'"
-    af = f"volume=volume=0:enable='{enable_expr}'"
+def freeze_timestamp(start, fps, args):
+    """要抽取的冻结帧时间戳。"""
+    if args.freeze_source == "first":
+        return max(0.0, start)
+    # pre: evidence 开始前的一帧
+    dt = (1.0 / fps) if (fps and fps > 0) else (1.0 / 30.0)
+    return max(0.0, start - dt)
 
-    cmd = [args.ffmpeg, "-y", "-i", inp, "-vf", vf]
+
+def extract_freeze_frame(inp, ts, out_png, args):
+    """抽一张静止帧到 PNG。-ss 放在 -i 前：从最近关键帧解到 ts，快且足够准。"""
+    cmd = [args.ffmpeg, "-y", "-ss", fmt_num(ts), "-i", inp,
+           "-frames:v", "1", "-an", "-update", "1", out_png]
+    proc = subprocess.run(cmd, capture_output=True, text=True)
+    ok = proc.returncode == 0 and os.path.isfile(out_png) \
+        and os.path.getsize(out_png) > 0
+    return ok, proc.stderr[-400:]
+
+
+def build_ffmpeg_cmd(inp, out, merged, freeze_pngs, audio, args):
+    """
+    inputs : 0 = 原视频；1..N = 每个区间对应的冻结帧 PNG（-loop 1 无限单帧）。
+    filter : 链式 overlay，每个区间用自己的 enable 窗口把 PNG 叠上去；
+             音频用 volume=0 在所有区间静音（除非 --keep-audio）。
+    """
+    cmd = [args.ffmpeg, "-y", "-i", inp]
+    for png in freeze_pngs:
+        cmd += ["-loop", "1", "-i", png]
+
+    chains = []
+    cur = "0:v"
+    for k, (s, e) in enumerate(merged):
+        in_idx = k + 1                      # PNG 输入序号
+        label = f"v{k+1}"
+        # shortest=1 是关键：-loop 1 的 PNG 是无限流，不加它 overlay 不会在
+        # 主视频结束时停止，会跟着无限图像流一直生成、永不收尾（实测 5s 源
+        # 被滚成 596s+ 仍未结束），最终被 SLURM 超时杀掉。
+        chains.append(
+            f"[{cur}][{in_idx}:v]overlay=x=0:y=0:shortest=1:"
+            f"enable='between(t,{fmt_num(s)},{fmt_num(e)})'[{label}]"
+        )
+        cur = label
+    fc = ";".join(chains)
+
+    do_audio = audio and not args.keep_audio
+    if do_audio:
+        enable_expr = build_enable_expr(merged)
+        fc += f";[0:a]volume=volume=0:enable='{enable_expr}'[aout]"
+
+    cmd += ["-filter_complex", fc, "-map", f"[{cur}]"]
     if audio:
-        cmd += ["-af", af]
+        cmd += ["-map", "[aout]"] if do_audio else ["-map", "0:a"]
 
     if args.gpu:
         cmd += ["-c:v", "h264_nvenc", "-preset", args.nvenc_preset,
@@ -135,7 +223,10 @@ def build_ffmpeg_cmd(inp, out, enable_expr, audio, args):
     cmd += ["-pix_fmt", "yuv420p"]
 
     if audio:
-        cmd += ["-c:a", "aac", "-b:a", args.audio_bitrate]
+        if do_audio:
+            cmd += ["-c:a", "aac", "-b:a", args.audio_bitrate]
+        else:
+            cmd += ["-c:a", "copy"]   # --keep-audio：原音直拷
     else:
         cmd += ["-an"]
 
@@ -175,7 +266,7 @@ def select_indices(n, args):
 
 
 def out_name(video_id, qid):
-    return f"{video_id}_q{qid}_insufficient{OUTPUT_EXT}"
+    return f"{video_id}_q{qid}_freeze{OUTPUT_EXT}"
 
 
 def process_entry(i, entries, stem_index, args):
@@ -184,7 +275,8 @@ def process_entry(i, entries, stem_index, args):
     vid = e["video_id"]
     qid = e["qid"]
     intervals = e.get("evidence_intervals", [])
-    rec = {"index": i, "video_id": vid, "qid": qid, "status": None}
+    rec = {"index": i, "video_id": vid, "qid": qid,
+           "freeze_source": args.freeze_source, "status": None}
 
     if not intervals:
         rec["status"] = "skip_no_intervals"
@@ -205,17 +297,39 @@ def process_entry(i, entries, stem_index, args):
         return rec
 
     merged = merge_intervals(intervals)
-    expr = build_enable_expr(merged)
     audio = has_audio_stream(inp, args.ffprobe)
+    fps = probe_fps(inp, args.ffprobe)
     rec["has_audio"] = audio
 
-    cmd = build_ffmpeg_cmd(inp, out, expr, audio, args)
-    proc = subprocess.run(cmd, capture_output=True, text=True)
-    if proc.returncode == 0 and os.path.isfile(out):
-        rec["status"] = "ok"; rec["output"] = out
-    else:
-        rec["status"] = "ffmpeg_error"
-        rec["stderr_tail"] = proc.stderr[-800:]
+    # ---- 抽冻结帧（每个区间一张），放到一个临时目录里 ----
+    tmpdir = tempfile.mkdtemp(prefix=f"freeze_{qid}_", dir=args.tmp_dir)
+    try:
+        freeze_pngs = []
+        for k, (s, _e) in enumerate(merged):
+            ts = freeze_timestamp(s, fps, args)
+            png = os.path.join(tmpdir, f"frz_{k}.png")
+            ok, err = extract_freeze_frame(inp, ts, png, args)
+            if not ok:
+                rec["status"] = "freeze_extract_error"
+                rec["stderr_tail"] = err
+                return rec
+            freeze_pngs.append(png)
+
+        cmd = build_ffmpeg_cmd(inp, out, merged, freeze_pngs, audio, args)
+        proc = subprocess.run(cmd, capture_output=True, text=True)
+        if proc.returncode == 0 and os.path.isfile(out):
+            rec["status"] = "ok"; rec["output"] = out
+        else:
+            rec["status"] = "ffmpeg_error"
+            rec["stderr_tail"] = proc.stderr[-800:]
+            # 失败时清掉半成品，便于断点续跑
+            if os.path.isfile(out):
+                try:
+                    os.remove(out)
+                except OSError:
+                    pass
+    finally:
+        shutil.rmtree(tmpdir, ignore_errors=True)
     return rec
 
 
@@ -248,6 +362,14 @@ def main():
     ap.add_argument("--json", default=DEFAULT_JSON)
     ap.add_argument("--video-dir", default=DEFAULT_VIDEO_DIR)
     ap.add_argument("--output-dir", default=DEFAULT_OUTPUT_DIR)
+    # ---- 帧冻结特有 ----
+    ap.add_argument("--freeze-source", choices=["pre", "first"], default="pre",
+                    help="pre=evidence 前一帧（默认）；first=区间第一帧。")
+    ap.add_argument("--keep-audio", action="store_true",
+                    help="区间内保留原音（默认与遮黑版一致：静音）。")
+    ap.add_argument("--tmp-dir", default=None,
+                    help="冻结帧 PNG 的临时目录（默认系统 temp）。")
+    # ---- 编码 ----
     ap.add_argument("--gpu", action="store_true")
     ap.add_argument("--cq", type=int, default=19)
     ap.add_argument("--nvenc-preset", default="p5")
@@ -272,7 +394,7 @@ def main():
                     help="Cap entries processed (after sharding); for tests.")
     ap.add_argument("--preflight", action="store_true")
     ap.add_argument("--print-count", action="store_true")
-    ap.add_argument("--report", default="insufficient_build_report.jsonl")
+    ap.add_argument("--report", default="freeze_build_report.jsonl")
     ap.add_argument("--ffmpeg", default="ffmpeg")
     ap.add_argument("--ffprobe", default="ffprobe")
     args = ap.parse_args()
@@ -294,7 +416,7 @@ def main():
 
     log(f"[START] entries={len(entries)} this_task={len(indices)} "
         f"jobs={args.jobs} threads={args.threads} shard={shard} "
-        f"num_shards={args.num_shards}")
+        f"num_shards={args.num_shards} freeze_source={args.freeze_source}")
 
     report = []
     total = len(indices)
