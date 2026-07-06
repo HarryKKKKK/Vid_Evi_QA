@@ -17,6 +17,11 @@ unset HTTPS_PROXY
 export NO_PROXY="localhost,127.0.0.1"
 export no_proxy="localhost,127.0.0.1"
 
+echo "CUDA_VISIBLE_DEVICES=[${CUDA_VISIBLE_DEVICES:-<unset>}]"
+echo "SLURM_JOB_ID=[${SLURM_JOB_ID:-<unset>}]"
+echo "SLURM_JOB_GPUS=[${SLURM_JOB_GPUS:-<unset>}]"
+echo "SLURM_STEP_GPUS=[${SLURM_STEP_GPUS:-<unset>}]"
+
 MODEL_PATH="/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/models/Qwen3-VL"
 PORT=8000
 TP=2

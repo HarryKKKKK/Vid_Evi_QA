@@ -316,10 +316,10 @@ def parse_model_json(raw: str) -> dict:
     ).strip()
 
     match = re.search(r"\{.*\}", cleaned, flags=re.DOTALL)
-    candidate = match.group(0) if match else cleaned
+    candidate_json = match.group(0) if match else cleaned
 
     try:
-        parsed = json.loads(candidate)
+        parsed = json.loads(candidate_json)
 
         if isinstance(parsed, dict):
             out.update(parsed)
@@ -398,6 +398,7 @@ def process_entry(
         **entry,
         "task": task,
         "sampling": sampling,
+        "evidence_condition": "insufficient" if insufficient else entry.get("evidence_condition"),
         "sampled_seconds": [round(t, 2) for t in timestamps],
         "model_response": raw_response,
         "model_parsed": parsed,
@@ -428,6 +429,47 @@ def append_jsonl(path: Path, obj: dict) -> None:
         os.fsync(f.fileno())
 
 
+def load_existing_keys(jsonl_path: Path) -> dict:
+    """
+    读取已有的 jsonl 文件，返回 {(video_id, qid): 该行原始 dict} 的映射。
+    用于判断某个 entry 是否已经跑过。
+    如果文件不存在，返回空字典。
+    如果某一行 JSON 解析失败，跳过该行但不删除、不修改原文件。
+    """
+    existing = {}
+
+    if not jsonl_path.exists():
+        return existing
+
+    with open(jsonl_path, "r", encoding="utf-8") as f:
+        for line_no, line in enumerate(f, start=1):
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                rec = json.loads(line)
+            except json.JSONDecodeError:
+                print(
+                    f"[WARN] {jsonl_path.name} line {line_no} is not valid JSON, "
+                    f"skipped (file left unmodified).",
+                    flush=True,
+                )
+                continue
+
+            if "video_id" not in rec or "qid" not in rec:
+                print(
+                    f"[WARN] {jsonl_path.name} line {line_no} missing "
+                    f"'video_id' or 'qid' key, skipped.",
+                    flush=True,
+                )
+                continue
+
+            key = (rec["video_id"], rec["qid"])
+            existing[key] = rec
+
+    return existing
+
+
 def run_evaluation(
     entries: list[dict],
     video_dir: Path,
@@ -450,13 +492,35 @@ def run_evaluation(
     jsonl_path = output_path.with_suffix(".jsonl")
     skipped_jsonl_path = output_path.with_suffix(".skipped.jsonl")
 
-    if jsonl_path.exists():
-        jsonl_path.unlink()
+    # -- 读取已有结果，按 (video_id, qid) 建立索引，用于跳过已完成的条目 ------
+    existing_by_key = load_existing_keys(jsonl_path)
+
+    # skipped_jsonl_path 每次运行仍然清空重建，只记录本次运行新产生的 skip/error。
     if skipped_jsonl_path.exists():
         skipped_jsonl_path.unlink()
 
     results_by_idx: dict[int, dict] = {}
     skipped = []
+
+    to_submit: dict[int, dict] = {}
+    already_done = 0
+
+    for idx, entry in enumerate(entries):
+        key = (entry["video_id"], entry["qid"])
+        if key in existing_by_key:
+            results_by_idx[idx] = existing_by_key[key]
+            already_done += 1
+        else:
+            to_submit[idx] = entry
+
+    with print_lock:
+        print(
+            f"[RESUME] total={total} already_in_{jsonl_path.name}={already_done} "
+            f"to_run={len(to_submit)}",
+            flush=True,
+        )
+
+    run_total = len(to_submit)
 
     with ThreadPoolExecutor(max_workers=workers) as pool:
         futures = {
@@ -472,7 +536,7 @@ def run_evaluation(
                 evidence_fraction=evidence_fraction,
                 task=task,
             ): idx
-            for idx, entry in enumerate(entries)
+            for idx, entry in to_submit.items()
         }
 
         for fut in as_completed(futures):
@@ -489,7 +553,7 @@ def run_evaluation(
                 append_jsonl(jsonl_path, result)
 
                 msg = (
-                    f"[{done}/{total}] OK    {vid} qid={qid}  "
+                    f"[{done}/{run_total}] OK    {vid} qid={qid}  "
                     f"{task}={out['short_status']}  "
                     f"saved_to={jsonl_path.name}"
                 )
@@ -505,7 +569,7 @@ def run_evaluation(
                 skipped.append(skip_obj)
                 append_jsonl(skipped_jsonl_path, skip_obj)
 
-                msg = f"[{done}/{total}] SKIP  missing video: {vid} qid={qid}"
+                msg = f"[{done}/{run_total}] SKIP  missing video: {vid} qid={qid}"
 
             else:
                 skip_obj = {
@@ -518,7 +582,7 @@ def run_evaluation(
                 skipped.append(skip_obj)
                 append_jsonl(skipped_jsonl_path, skip_obj)
 
-                msg = f"[{done}/{total}] ERROR {vid} qid={qid}: {out['reason']}"
+                msg = f"[{done}/{run_total}] ERROR {vid} qid={qid}: {out['reason']}"
 
             with print_lock:
                 print(msg, flush=True)

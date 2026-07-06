@@ -1,0 +1,26 @@
+[
+  {
+    "idx": 2,
+    "video_id": "BV1yG411C7Xi",
+    "qid": 66,
+    "reason": "Command '['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', '/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/source_datasets/cg_bench/freeze_videos/BV1yG411C7Xi_q66_freeze.mp4']' returned non-zero exit status 1."
+  },
+  {
+    "idx": 1,
+    "video_id": "BV1Xh411W7WL",
+    "qid": 45,
+    "reason": "Command '['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', '/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/source_datasets/cg_bench/freeze_videos/BV1Xh411W7WL_q45_freeze.mp4']' returned non-zero exit status 1."
+  },
+  {
+    "idx": 0,
+    "video_id": "aTV3damvdZs",
+    "qid": 12,
+    "reason": "Command '['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', '/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/source_datasets/cg_bench/freeze_videos/aTV3damvdZs_q12_freeze.mp4']' returned non-zero exit status 1."
+  },
+  {
+    "idx": 3,
+    "video_id": "BV1rj411j7mx",
+    "qid": 74,
+    "reason": "Command '['ffprobe', '-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', '/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/source_datasets/cg_bench/freeze_videos/BV1rj411j7mx_q74_freeze.mp4']' returned non-zero exit status 1."
+  }
+]
