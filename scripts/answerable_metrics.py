@@ -2,6 +2,7 @@
 
 import json
 import argparse
+from collections import defaultdict
 
 
 def overlap(a1, a2, b1, b2):
@@ -13,10 +14,15 @@ def evidence_hit(pred_seconds, gt_intervals):
         return False
 
     if len(pred_seconds) == 1:
-        pred_start = pred_end = pred_seconds[0]
-    else:
-        pred_start = min(pred_seconds)
-        pred_end = max(pred_seconds)
+        # 单个时间点的情况：判断这个点是否落在任意 GT 区间内
+        t = pred_seconds[0]
+        for gt in gt_intervals:
+            if gt["start"] <= t <= gt["end"]:
+                return True
+        return False
+
+    pred_start = min(pred_seconds)
+    pred_end = max(pred_seconds)
 
     for gt in gt_intervals:
         if overlap(pred_start, pred_end, gt["start"], gt["end"]):
@@ -25,8 +31,18 @@ def evidence_hit(pred_seconds, gt_intervals):
     return False
 
 
-def main():
+def new_counter():
+    return {
+        "total": 0,
+        "success": 0,
+        "evidence": 0,
+        "unanswerable": 0,
+        "success_wrong_evidence": 0,
+        "wrong_answer_correct_evidence": 0,
+    }
 
+
+def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("json_file")
     args = parser.parse_args()
@@ -34,24 +50,14 @@ def main():
     with open(args.json_file, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    total = 0
-
-    success = 0
-    evidence = 0
-    unanswerable = 0
-
-    success_wrong_evidence = 0
-    wrong_answer_correct_evidence = 0
+    stats = defaultdict(new_counter)
 
     for item in data:
+        condition = item.get("evidence_condition", "UNKNOWN")
 
-        # 只统计 sufficient
-        if item.get("evidence_condition") != "sufficient":
-            continue
+        stats[condition]["total"] += 1
 
-        total += 1
-
-        gt_answer = item["answer"]
+        gt_answer = item.get("answer")
 
         parsed = item.get("model_parsed", {})
 
@@ -59,39 +65,49 @@ def main():
         pred_label = parsed.get("label")
         pred_evidence = parsed.get("evidence_seconds", [])
 
-        answer_correct = (pred_answer == gt_answer)
-        evidence_correct = evidence_hit(
-            pred_evidence,
-            item["evidence_intervals"],
-        )
+        answer_correct = pred_answer == gt_answer
+
+        gt_intervals = item.get("evidence_intervals", [])
+        evidence_correct = evidence_hit(pred_evidence, gt_intervals)
 
         if answer_correct:
-            success += 1
+            stats[condition]["success"] += 1
 
         if evidence_correct:
-            evidence += 1
+            stats[condition]["evidence"] += 1
 
         if pred_label == "UNANSWERABLE":
-            unanswerable += 1
+            stats[condition]["unanswerable"] += 1
 
-        # Success but wrong evidence
-        if answer_correct and (not evidence_correct):
-            success_wrong_evidence += 1
+        if answer_correct and not evidence_correct:
+            stats[condition]["success_wrong_evidence"] += 1
 
-        # Wrong answer OR Unanswerable but evidence correct
         if (not answer_correct) and evidence_correct:
-            wrong_answer_correct_evidence += 1
+            stats[condition]["wrong_answer_correct_evidence"] += 1
 
-    print("=" * 60)
-    print(f"Total sufficient samples: {total}")
+    print("=" * 70)
+    print("Statistics by evidence_condition")
+    print("=" * 70)
+
+    grand_total = sum(v["total"] for v in stats.values())
+    print(f"Total samples: {grand_total}")
     print()
 
-    print(f"Success Rate                              : {success}/{total}")
-    print(f"Evidence Hit Rate                         : {evidence}/{total}")
-    print(f"Unanswerable Rate                         : {unanswerable}/{total}")
-    print(f"Success but Wrong Evidence Rate           : {success_wrong_evidence}/{total}")
-    print(f"Wrong Answer/Unanswerable but Correct Evidence Rate : {wrong_answer_correct_evidence}/{total}")
-    print("=" * 60)
+    for condition, s in sorted(stats.items()):
+        total = s["total"]
+
+        print("-" * 70)
+        print(f"Evidence Condition: {condition}")
+        print(f"Total samples: {total}")
+        print()
+
+        print(f"Success Rate                                      : {s['success']}/{total}")
+        print(f"Evidence Hit Rate                                 : {s['evidence']}/{total}")
+        print(f"Unanswerable Rate                                 : {s['unanswerable']}/{total}")
+        print(f"Success but Wrong Evidence Rate                   : {s['success_wrong_evidence']}/{total}")
+        print(f"Wrong Answer/Unanswerable but Correct Evidence Rate: {s['wrong_answer_correct_evidence']}/{total}")
+
+    print("=" * 70)
 
 
 if __name__ == "__main__":

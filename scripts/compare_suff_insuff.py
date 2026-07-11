@@ -27,7 +27,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "--sufficient",
-        default="cgbench_result/sufficient.qa.json",
+        default="cgbench_result/sufficient.classify.json",
     )
     parser.add_argument(
         "--insufficient",

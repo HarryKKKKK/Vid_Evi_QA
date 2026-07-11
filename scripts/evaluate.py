@@ -10,6 +10,40 @@ Task modes:
       Answerability classification:
       ANSWERABLE / PARTIALLY_ANSWERABLE / UNANSWERABLE.
 
+Evidence-condition modes (--mode):
+  sufficient      C1 anchors, full video.
+  hallucination   CG-Bench Hallucination split, full video.
+  insufficient    C3, masked/frozen-evidence video (*_freeze.mp4).
+  partial         C2, temporal-ablation dose-response videos
+                   (*_c2_<mode>_a<NNN>.mp4), one task per (anchor, alpha).
+  all             sufficient + hallucination + insufficient + partial.
+                   NOTE: partial multiplies its candidate set by
+                   len(--alphas) (default 7) LLM calls per anchor, so
+                   `--mode all` is now substantially more calls than
+                   before partial was added. Use --limit while testing.
+
+Partial (C2) construction:
+  Candidate anchors come from --partial-candidates (default:
+  cgbench_result/suff_correct_insuff_wrong.json), a list of
+  {"video_id": ..., "qid": ...} pairs. These are joined against
+  FILTERED_JSON by (video_id, qid) -- the same join pattern used in
+  build_partial.py's join_entries() -- to recover question/choices/answer/
+  evidence_intervals. Each joined anchor is then expanded into one task per
+  alpha in --alphas (default: 0.0,0.05,0.1,0.15,0.2,0.3,0.5), and the video
+  path for each task is built as:
+      partial_videos/{video_id}_q{qid}_c2_{partial_mode}_{alpha_tag}.mp4
+  where alpha_tag / condition_for_alpha are copied verbatim from
+  build_partial.py (f"a{round(alpha*100):03d}"; C1 if alpha>=1, C3 if
+  alpha<=0, else C2) so the naming/condition logic stays identical between
+  the two scripts.
+
+Resume / dedup key:
+  sufficient/hallucination/insufficient results are still deduplicated by
+  (video_id, qid). Partial results are deduplicated by
+  (video_id, qid, alpha) instead -- a plain (video_id, qid) key would
+  collapse all alpha levels of the same anchor onto a single jsonl line
+  and silently drop the rest of the dose-response curve.
+
 Incremental saving:
   Each finished result is immediately appended to a .jsonl file.
   At the end, an ordered .json file is also written for compatibility.
@@ -35,6 +69,8 @@ NUM_FRAMES = 32
 FRAME_WIDTH = 560
 EVIDENCE_FRACTION = 0.25
 WORKERS = 8
+DEFAULT_ALPHAS = "0.0,0.05,0.1,0.15,0.2,0.3,0.5"
+DEFAULT_PARTIAL_MODE = "noise"
 
 
 # -- Paths --------------------------------------------------------------------
@@ -43,6 +79,8 @@ BASE_DIR = Path("/aifs4su/hansirui_2nd/harry/Vid_Evi_QA")
 FILTERED_JSON = BASE_DIR / "cgbench_pipeline" / "cgbench_filtered.json"
 VIDEOS_DIR = BASE_DIR / "source_datasets" / "cg_bench" / "videos"
 INSUFFICIENT_DIR = BASE_DIR / "source_datasets" / "cg_bench" / "freeze_videos"
+PARTIAL_VIDEOS_DIR = BASE_DIR / "source_datasets" / "cg_bench" / "partial_videos"
+PARTIAL_CANDIDATES_JSON = BASE_DIR / "cgbench_result" / "suff_correct_insuff_wrong.json"
 RESULTS_DIR = BASE_DIR / "cgbench_result"
 
 
@@ -57,6 +95,87 @@ _client = OpenAI(
     max_retries=0,
     timeout=120.0,
 )
+
+
+# -- Partial (C2) helpers -- copied verbatim from build_partial.py's
+#    alpha_tag()/condition_for_alpha() so naming/condition logic can never
+#    drift between the two scripts. -------------------------------------------
+
+def alpha_tag(alpha: float) -> str:
+    return f"a{round(alpha * 100):03d}"
+
+
+def condition_for_alpha(alpha: float) -> str:
+    if alpha >= 1.0:
+        return "C1"
+    if alpha <= 0.0:
+        return "C3"
+    return "C2"
+
+
+def parse_alphas(spec: str) -> list[float]:
+    out = []
+    for tok in spec.split(","):
+        tok = tok.strip()
+        if tok == "":
+            continue
+        out.append(float(tok))
+    if not out:
+        raise SystemExit(f"[FATAL] --alphas produced an empty list from {spec!r}")
+    return out
+
+
+def load_partial_entries(filtered_json_path: Path, candidates_path: Path) -> list[dict]:
+    """
+    Join --partial-candidates ({"video_id","qid"} pairs) against
+    FILTERED_JSON by (video_id, qid). Same join pattern as
+    build_partial.py's join_entries(): unresolved pairs are reported and
+    dropped, not silently substituted or guessed.
+    """
+    if not filtered_json_path.is_file():
+        raise SystemExit(f"[FATAL] filtered meta json not found: {filtered_json_path}")
+    if not candidates_path.is_file():
+        raise SystemExit(f"[FATAL] partial candidates json not found: {candidates_path}")
+
+    with open(filtered_json_path, encoding="utf-8") as f:
+        meta_all = json.load(f)
+    meta_by_key = {(e["video_id"], e["qid"]): e for e in meta_all}
+
+    with open(candidates_path, encoding="utf-8") as f:
+        candidates = json.load(f)
+
+    entries, missing = [], []
+    for c in candidates:
+        key = (c["video_id"], c["qid"])
+        e = meta_by_key.get(key)
+        if e is None:
+            missing.append(key)
+        else:
+            entries.append(e)
+
+    if missing:
+        print(
+            f"[WARN] {len(missing)} pairs from {candidates_path.name} not found "
+            f"in {filtered_json_path.name} (showing up to 10): {missing[:10]}",
+            flush=True,
+        )
+    return entries
+
+
+def expand_with_alphas(entries: list[dict], alphas: list[float], partial_mode: str) -> list[dict]:
+    """One task dict per (entry, alpha). Each task is a shallow copy of the
+    meta entry plus "alpha" and "partial_mode" -- process_entry() branches
+    on entry.get("alpha") to pick the partial_videos/ naming scheme, and
+    these two keys ride along into the final saved result via {**entry, ...}.
+    """
+    expanded = []
+    for e in entries:
+        for a in alphas:
+            e2 = dict(e)
+            e2["alpha"] = a
+            e2["partial_mode"] = partial_mode
+            expanded.append(e2)
+    return expanded
 
 
 # -- Timestamp planning -------------------------------------------------------
@@ -348,8 +467,12 @@ def process_entry(
 ) -> dict:
     video_id = entry["video_id"]
     qid = entry["qid"]
+    alpha = entry.get("alpha")  # only present on partial(C2) expanded entries
 
-    if insufficient:
+    if alpha is not None:
+        partial_mode = entry.get("partial_mode", DEFAULT_PARTIAL_MODE)
+        video_file = video_dir / f"{video_id}_q{qid}_c2_{partial_mode}_{alpha_tag(alpha)}.mp4"
+    elif insufficient:
         video_file = video_dir / f"{video_id}_q{qid}_freeze.mp4"
     else:
         video_file = video_dir / f"{video_id}.mp4"
@@ -360,6 +483,7 @@ def process_entry(
             "status": "skip",
             "video_id": video_id,
             "qid": qid,
+            "alpha": alpha,
             "reason": "missing_video",
         }
 
@@ -389,16 +513,29 @@ def process_entry(
             "status": "error",
             "video_id": video_id,
             "qid": qid,
+            "alpha": alpha,
             "reason": str(e),
         }
 
     parsed = parse_model_json(raw_response)
 
+    if alpha is not None:
+        # constant "partial" label per user's instruction, mirroring the
+        # constant "insufficient" label below. The finer C1/C2/C3 tag for
+        # a given alpha is still recoverable via condition_for_alpha(alpha)
+        # if ever needed downstream -- it is deliberately NOT duplicated
+        # into evidence_condition since alpha is already stored separately.
+        evidence_condition = "partial"
+    elif insufficient:
+        evidence_condition = "insufficient"
+    else:
+        evidence_condition = entry.get("evidence_condition")
+
     result = {
         **entry,
         "task": task,
         "sampling": sampling,
-        "evidence_condition": "insufficient" if insufficient else entry.get("evidence_condition"),
+        "evidence_condition": evidence_condition,
         "sampled_seconds": [round(t, 2) for t in timestamps],
         "model_response": raw_response,
         "model_parsed": parsed,
@@ -414,6 +551,7 @@ def process_entry(
         "status": "ok",
         "video_id": video_id,
         "qid": qid,
+        "alpha": alpha,
         "result": result,
         "short_status": short_status,
     }
@@ -429,10 +567,22 @@ def append_jsonl(path: Path, obj: dict) -> None:
         os.fsync(f.fileno())
 
 
+def _record_key(rec: dict):
+    """(video_id, qid) for sufficient/hallucination/insufficient records;
+    (video_id, qid, alpha) for partial(C2) records. A plain (video_id, qid)
+    key would collapse every alpha level of the same anchor onto one jsonl
+    line and silently drop the rest of the dose-response curve.
+    """
+    if rec.get("alpha") is not None:
+        return (rec["video_id"], rec["qid"], rec["alpha"])
+    return (rec["video_id"], rec["qid"])
+
+
 def load_existing_keys(jsonl_path: Path) -> dict:
     """
-    读取已有的 jsonl 文件，返回 {(video_id, qid): 该行原始 dict} 的映射。
-    用于判断某个 entry 是否已经跑过。
+    读取已有的 jsonl 文件，返回 {key: 该行原始 dict} 的映射，key 见
+    _record_key()（非 partial 为 (video_id, qid)，partial 为
+    (video_id, qid, alpha)）。用于判断某个 entry 是否已经跑过。
     如果文件不存在，返回空字典。
     如果某一行 JSON 解析失败，跳过该行但不删除、不修改原文件。
     """
@@ -464,8 +614,7 @@ def load_existing_keys(jsonl_path: Path) -> dict:
                 )
                 continue
 
-            key = (rec["video_id"], rec["qid"])
-            existing[key] = rec
+            existing[_record_key(rec)] = rec
 
     return existing
 
@@ -492,7 +641,7 @@ def run_evaluation(
     jsonl_path = output_path.with_suffix(".jsonl")
     skipped_jsonl_path = output_path.with_suffix(".skipped.jsonl")
 
-    # -- 读取已有结果，按 (video_id, qid) 建立索引，用于跳过已完成的条目 ------
+    # -- 读取已有结果，按 key 建立索引，用于跳过已完成的条目 ------------------
     existing_by_key = load_existing_keys(jsonl_path)
 
     # skipped_jsonl_path 每次运行仍然清空重建，只记录本次运行新产生的 skip/error。
@@ -506,7 +655,7 @@ def run_evaluation(
     already_done = 0
 
     for idx, entry in enumerate(entries):
-        key = (entry["video_id"], entry["qid"])
+        key = _record_key(entry)
         if key in existing_by_key:
             results_by_idx[idx] = existing_by_key[key]
             already_done += 1
@@ -545,6 +694,8 @@ def run_evaluation(
 
             vid = out["video_id"]
             qid = out["qid"]
+            alpha = out.get("alpha")
+            alpha_suffix = f" alpha={alpha}" if alpha is not None else ""
 
             if out["status"] == "ok":
                 result = out["result"]
@@ -553,7 +704,7 @@ def run_evaluation(
                 append_jsonl(jsonl_path, result)
 
                 msg = (
-                    f"[{done}/{run_total}] OK    {vid} qid={qid}  "
+                    f"[{done}/{run_total}] OK    {vid} qid={qid}{alpha_suffix}  "
                     f"{task}={out['short_status']}  "
                     f"saved_to={jsonl_path.name}"
                 )
@@ -563,26 +714,28 @@ def run_evaluation(
                     "idx": out["idx"],
                     "video_id": vid,
                     "qid": qid,
+                    "alpha": alpha,
                     "reason": out["reason"],
                 }
 
                 skipped.append(skip_obj)
                 append_jsonl(skipped_jsonl_path, skip_obj)
 
-                msg = f"[{done}/{run_total}] SKIP  missing video: {vid} qid={qid}"
+                msg = f"[{done}/{run_total}] SKIP  missing video: {vid} qid={qid}{alpha_suffix}"
 
             else:
                 skip_obj = {
                     "idx": out["idx"],
                     "video_id": vid,
                     "qid": qid,
+                    "alpha": alpha,
                     "reason": out["reason"],
                 }
 
                 skipped.append(skip_obj)
                 append_jsonl(skipped_jsonl_path, skip_obj)
 
-                msg = f"[{done}/{run_total}] ERROR {vid} qid={qid}: {out['reason']}"
+                msg = f"[{done}/{run_total}] ERROR {vid} qid={qid}{alpha_suffix}: {out['reason']}"
 
             with print_lock:
                 print(msg, flush=True)
@@ -607,7 +760,7 @@ def run_evaluation(
 
 # -- Entry point --------------------------------------------------------------
 
-MODES = ("sufficient", "hallucination", "insufficient", "all")
+MODES = ("sufficient", "hallucination", "insufficient", "partial", "all")
 TASKS = ("qa", "classify")
 
 
@@ -645,6 +798,29 @@ def main():
 
     parser.add_argument("--workers", type=int, default=WORKERS)
     parser.add_argument("--limit", type=int, default=None)
+
+    parser.add_argument(
+        "--alphas",
+        default=DEFAULT_ALPHAS,
+        help=(
+            "Comma-separated alpha levels for --mode partial. "
+            f"Default: {DEFAULT_ALPHAS}"
+        ),
+    )
+    parser.add_argument(
+        "--partial-mode",
+        choices=("noise", "blur"),
+        default=DEFAULT_PARTIAL_MODE,
+        help="Degradation operator used when the partial videos were built "
+             "(must match how build_partial.py named the files).",
+    )
+    parser.add_argument(
+        "--partial-candidates",
+        type=Path,
+        default=PARTIAL_CANDIDATES_JSON,
+        help="JSON array of {video_id, qid} pairs selecting which anchors "
+             "to evaluate under --mode partial.",
+    )
 
     args = parser.parse_args()
 
@@ -727,6 +903,34 @@ def main():
             INSUFFICIENT_DIR,
             RESULTS_DIR / f"insufficient{suffix}",
             insufficient=True,
+            num_frames=args.num_frames,
+            frame_width=args.frame_width,
+            sampling=args.sampling,
+            evidence_fraction=args.evidence_fraction,
+            workers=args.workers,
+            task=args.task,
+        )
+
+    if args.mode in ("partial", "all"):
+        print("\n=== partial (C2) ===")
+        alphas = parse_alphas(args.alphas)
+        partial_entries = load_partial_entries(FILTERED_JSON, args.partial_candidates)
+
+        if args.limit is not None:
+            partial_entries = partial_entries[:args.limit]
+            print(f"*** DEBUG MODE: first {args.limit} partial anchors ***")
+
+        partial_tasks = expand_with_alphas(partial_entries, alphas, args.partial_mode)
+
+        print(
+            f"partial anchors={len(partial_entries)} alphas={alphas} "
+            f"partial_mode={args.partial_mode} -> total_tasks={len(partial_tasks)}"
+        )
+
+        run_evaluation(
+            partial_tasks,
+            PARTIAL_VIDEOS_DIR,
+            RESULTS_DIR / f"partial{suffix}",
             num_frames=args.num_frames,
             frame_width=args.frame_width,
             sampling=args.sampling,

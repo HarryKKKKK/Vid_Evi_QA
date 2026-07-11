@@ -5,11 +5,25 @@ or Gaussian blur INSIDE each question's evidence_intervals only, at a discrete
 series of retained-evidence fractions alpha, while keeping everything else
 (duration, audio, non-evidence frames) unchanged.
 
-This implements the evidence-degradation operator A_alpha of Section 5.2 (eq. 3-4,
-8-9) restricted to the signal-quality family:
+CHANGED (this version): the "noise" mode no longer uses ffmpeg's additive
+`noise=alls=` filter (which lets underlying structure bleed through even at
+max strength). Instead it BLENDS the original frame with a per-pixel fully
+random noise frame, with blend opacity = (1 - alpha):
 
-    noise:  alls(alpha) = noise_max * (1 - alpha)   (ffmpeg `noise` filter)
-    blur:   sigma(alpha) = blur_max * (1 - alpha)    (ffmpeg `gblur` filter)
+    alpha=1.0 (C1) -> opacity=0   -> pixel-identical to original
+    alpha=0.0 (C3) -> opacity=1   -> evidence region is 100% random noise,
+                                     original content fully unrecoverable
+    0 < alpha < 1  -> linear blend, still a smooth dose-response
+
+This guarantees the "alpha=0 must be completely unrecognizable" requirement
+regardless of how bright/dark/high-contrast the original footage is (additive
+noise strength that "looks enough" on one clip can fail on another; this
+blend approach is content-independent by construction).
+
+"blur" mode is unchanged (gblur inside the interval); if you also need blur
+to guarantee full unrecognizability at alpha=0, the same blend-based pattern
+can be applied there (blend original with a very-heavily-blurred copy) --
+ask and it can be added the same way.
 
 U(alpha) = C1 if alpha==1, C3 if alpha==0, else C2 (eq. 4).
 
@@ -45,7 +59,7 @@ DEFAULT_VIDEO_DIR = "source_datasets/cg_bench/videos"
 DEFAULT_OUTPUT_DIR = "source_datasets/cg_bench/partial_videos"
 DEFAULT_MANIFEST = "cgbench_result/partial.manifest.jsonl"
 OUTPUT_EXT = ".mp4"
-DEFAULT_LEVELS = [1.0, 0.75, 0.5, 0.25, 0.0]
+DEFAULT_LEVELS = [0.0, 0.05, 0.1, 0.15, 0.2, 0.3, 0.5]
 
 _print_lock = threading.Lock()
 
@@ -112,6 +126,24 @@ def has_audio_stream(path, ffprobe="ffprobe"):
     return out.returncode == 0 and out.stdout.strip() != ""
 
 
+def get_video_dims(path, ffprobe="ffprobe"):
+    """Return (width, height, fps_str) for the first video stream.
+    fps_str is kept as-is (e.g. '24000/1001') since ffmpeg lavfi 'rate='
+    accepts fractional rate strings directly.
+    """
+    out = subprocess.run(
+        [ffprobe, "-v", "error", "-select_streams", "v:0",
+         "-show_entries", "stream=width,height,r_frame_rate",
+         "-of", "csv=p=0", path],
+        capture_output=True, text=True,
+    )
+    parts = out.stdout.strip().split(",")
+    if len(parts) < 3:
+        raise RuntimeError(f"could not probe dimensions for {path}: {out.stdout!r} {out.stderr!r}")
+    width, height, fps = int(parts[0]), int(parts[1]), parts[2]
+    return width, height, fps
+
+
 def check_binaries(args):
     import shutil
     for name, val in (("ffmpeg", args.ffmpeg), ("ffprobe", args.ffprobe)):
@@ -165,24 +197,59 @@ def condition_for_alpha(alpha):
     return "C2"
 
 
-def build_filter_expr(mode, alpha, args, enable_expr):
+def build_blur_vf(alpha, args, enable_expr):
+    """Unchanged: additive gblur inside the interval."""
+    sigma = args.blur_max * (1.0 - alpha)
+    if sigma <= 0:
+        return None
+    return f"gblur=sigma={sigma:g}:enable='{enable_expr}'"
+
+
+def build_noise_filter_complex(alpha, enable_expr, width, height, fps):
+    """
+    Blend the main video with a fully random per-pixel noise frame, only
+    inside the evidence interval(s), with opacity = 1 - alpha.
+
+    alpha=0  -> opacity=1 -> evidence region is pure random noise (unrecoverable)
+    alpha=1  -> opacity=0 -> pixel-identical to original (filter is a no-op there)
+
+    Returns a filter_complex string producing an output pad named [vout].
+    """
+    # NOTE: ffmpeg's blend filter `all_opacity` is the weight of the FIRST
+    # input (the original video), not the second (the noise). Verified
+    # empirically: opacity=1 -> 100% original, opacity=0 -> 100% noise.
+    # So opacity must equal alpha directly (not 1 - alpha).
+    opacity = round(alpha, 4)
+    # NOTE: previously used `geq=random(...)`. geq evaluates a per-pixel
+    # expression every frame and is extremely slow for long videos (can be
+    # much slower than realtime). Using the native `noise` filter on a flat
+    # gray source is C-implemented and fast, and at max strength on a flat
+    # base it still saturates into full television-static-like noise.
+    return (
+        f"color=size={width}x{height}:rate={fps}:color=gray,"
+        f"format=yuv420p,"
+        f"noise=alls=100:allf=t+u[noise];"
+        f"[0:v][noise]blend=all_mode='normal':all_opacity={opacity}:"
+        f"enable='{enable_expr}':shortest=1[vout]"
+    )
+
+
+def build_ffmpeg_cmd(inp, out, audio, args, mode, filter_complex=None, vf=None):
+    """
+    Two paths:
+      - mode == "noise": use -filter_complex (the noise source is generated
+        in-graph via lavfi 'color'+'geq', no extra -i needed) and map [vout].
+      - mode == "blur": use the simple -vf path, unchanged.
+    """
     if mode == "noise":
-        strength = args.noise_max * (1.0 - alpha)
-        if strength <= 0:
-            return None
-        return f"noise=alls={strength:g}:allf=t:enable='{enable_expr}'"
-    if mode == "blur":
-        sigma = args.blur_max * (1.0 - alpha)
-        if sigma <= 0:
-            return None
-        return f"gblur=sigma={sigma:g}:enable='{enable_expr}'"
-    raise ValueError(mode)
-
-
-def build_ffmpeg_cmd(inp, out, vf, audio, args):
-    cmd = [args.ffmpeg, "-y", "-i", inp]
-    if vf:
-        cmd += ["-vf", vf]
+        cmd = [args.ffmpeg, "-y", "-i", inp,
+               "-filter_complex", filter_complex, "-map", "[vout]"]
+        if audio:
+            cmd += ["-map", "0:a"]
+    else:
+        cmd = [args.ffmpeg, "-y", "-i", inp]
+        if vf:
+            cmd += ["-vf", vf]
 
     if args.gpu:
         cmd += ["-c:v", "h264_nvenc", "-preset", args.nvenc_preset,
@@ -251,11 +318,22 @@ def process_level(entry, alpha, stem_index, args):
 
     merged = merge_intervals(intervals)
     expr = build_enable_expr(merged)
-    vf = build_filter_expr(args.mode, alpha, args, expr)
     audio = has_audio_stream(inp, args.ffprobe)
     rec["has_audio"] = audio
 
-    cmd = build_ffmpeg_cmd(inp, out, vf, audio, args)
+    if args.mode == "noise":
+        try:
+            width, height, fps = get_video_dims(inp, args.ffprobe)
+        except RuntimeError as e:
+            rec["status"] = "probe_error"
+            rec["stderr_tail"] = str(e)
+            return rec
+        fc = build_noise_filter_complex(alpha, expr, width, height, fps)
+        cmd = build_ffmpeg_cmd(inp, out, audio, args, "noise", filter_complex=fc)
+    else:
+        vf = build_blur_vf(alpha, args, expr)
+        cmd = build_ffmpeg_cmd(inp, out, audio, args, "blur", vf=vf)
+
     if args.dry_run:
         rec["status"] = "dry_run"; rec["cmd"] = " ".join(cmd)
         return rec
@@ -308,10 +386,8 @@ def main():
     ap.add_argument("--mode", choices=["noise", "blur"], default="noise")
     ap.add_argument("--levels", default=",".join(str(a) for a in DEFAULT_LEVELS),
                     help="Comma-separated retained-evidence fractions alpha in [0,1].")
-    ap.add_argument("--noise-max", type=float, default=60.0,
-                    help="ffmpeg `noise` alls strength at alpha=0 (0-100 scale).")
     ap.add_argument("--blur-max", type=float, default=18.0,
-                    help="ffmpeg `gblur` sigma at alpha=0.")
+                    help="ffmpeg `gblur` sigma at alpha=0 (blur mode only).")
     ap.add_argument("--gpu", action="store_true")
     ap.add_argument("--cq", type=int, default=19)
     ap.add_argument("--nvenc-preset", default="p5")
@@ -333,7 +409,15 @@ def main():
     ap.add_argument("--index", type=int, default=None,
                     help="Process only this single candidate (all its levels).")
     ap.add_argument("--limit", type=int, default=None,
-                    help="Cap candidates processed (after sharding); for tests.")
+                    help="Only process the first N candidates (after sharding, "
+                         "if any). Use this for a quick timing/sanity test, "
+                         "e.g. --limit 3. Mutually exclusive with --full.")
+    ap.add_argument("--full", action="store_true",
+                    help="Explicitly process the full candidate list (no "
+                         "--limit). This is the default behavior when "
+                         "--limit is omitted; the flag exists so call sites "
+                         "(e.g. sbatch scripts) can state their intent "
+                         "clearly instead of relying on an implicit default.")
     ap.add_argument("--preflight", action="store_true")
     ap.add_argument("--print-count", action="store_true")
     ap.add_argument("--dry-run", action="store_true",
@@ -342,6 +426,11 @@ def main():
     ap.add_argument("--ffmpeg", default="ffmpeg")
     ap.add_argument("--ffprobe", default="ffprobe")
     args = ap.parse_args()
+
+    if args.limit is not None and args.full:
+        raise SystemExit("[FATAL] --limit and --full are mutually exclusive; "
+                          "pass --limit N for a quick test on the first N "
+                          "candidates, or --full to process everything.")
 
     levels = [float(x) for x in args.levels.split(",") if x != ""]
     entries = join_entries(args.candidates, args.meta)
@@ -360,7 +449,8 @@ def main():
     indices = select_indices(len(entries), args)
     shard = get_shard(args)
 
-    log(f"[START] candidates={len(entries)} this_task={len(indices)} "
+    mode_desc = f"LIMIT={args.limit}" if args.limit is not None else "FULL"
+    log(f"[START] candidates={len(entries)} this_task={len(indices)} run_mode={mode_desc} "
         f"levels={levels} mode={args.mode} jobs={args.jobs} threads={args.threads} "
         f"shard={shard} num_shards={args.num_shards}")
 

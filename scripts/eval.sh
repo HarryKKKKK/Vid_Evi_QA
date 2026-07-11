@@ -4,7 +4,7 @@
 #SBATCH --gres=gpu:2
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=128G
-#SBATCH --time=04:00:00
+#SBATCH --time=10:00:00
 #SBATCH --output=logs/eval_%j.out
 #SBATCH --error=logs/eval_%j.err
 
@@ -94,6 +94,8 @@ echo "Starting evaluation..."
 # python scripts/evaluate.py --mode sufficient --task qa --limit 200 --num-frames 128 --frame-width 336 --workers 8 --sampling uniform
 # python scripts/evaluate.py --mode sufficient --task qa --num-frames 128 --frame-width 336 --workers 8 --sampling uniform
 # python scripts/evaluate.py --mode sufficient --task classify --num-frames 128 --frame-width 336 --workers 8 --sampling uniform
-python scripts/evaluate.py --mode insufficient --task classify --num-frames 128 --frame-width 336 --workers 8 --sampling uniform
+# python scripts/evaluate.py --mode insufficient --task classify --num-frames 128 --frame-width 336 --workers 8 --sampling uniform
+
+python scripts/evaluate.py --mode partial --task classify --num-frames 128 --frame-width 336 --workers 8 --sampling uniform
 
 echo "Eval finished."
