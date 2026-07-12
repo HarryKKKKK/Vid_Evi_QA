@@ -1,0 +1,69 @@
+{
+  "filter_configuration": {
+    "interval_duration_filter_enabled": false,
+    "evidence_coverage_filter_enabled": false
+  },
+  "sampling": {
+    "frame_counts": [
+      32,
+      64
+    ],
+    "sampling_mode": "bin_center",
+    "frame_hit_policy": "all",
+    "interval_hit_policy": "any",
+    "per_frame_count_pass_counts_before_combined_policy": {
+      "32": 5538,
+      "64": 5549
+    },
+    "per_frame_count_fail_counts_before_combined_policy": {
+      "32": 15,
+      "64": 4
+    },
+    "failed_frame_count_patterns": {
+      "64": 1,
+      "32": 12,
+      "32,64": 3
+    }
+  },
+  "counters": {
+    "raw_csv_rows": 5553,
+    "after_duplicate_removal": 5553,
+    "after_question_valid": 5553,
+    "after_options_valid": 5553,
+    "after_grounding_matched": 5553,
+    "after_mapping_matched": 5553,
+    "after_duration_valid": 5553,
+    "after_valid_interval_filter": 5553,
+    "after_frame_sampling_hit_filter": 5537,
+    "final_retained": 5537
+  },
+  "question_type_distribution": {
+    "TN": 1350,
+    "TC": 849,
+    "CW": 2450,
+    "CH": 795,
+    "TP": 93
+  },
+  "rejection_reason_counts": {
+    "frame_sampling_misses_evidence": 16
+  },
+  "answer_conversion_issue_count": 1,
+  "answer_conversion_issues": [
+    {
+      "video_id": "3842638015",
+      "qid": "4",
+      "raw_answer": "happy",
+      "options": [
+        "embarrassed",
+        "happy to see the baby walking",
+        "calmer and happier",
+        "happy",
+        "happy"
+      ]
+    }
+  ],
+  "csv_source": "source_datasets/next_gqa/NExT-GQA/datasets/nextgqa/test.csv",
+  "grounding_source": "source_datasets/next_gqa/NExT-GQA/datasets/nextgqa/gsub_test.json",
+  "mapping_source": "source_datasets/next_gqa/NExT-GQA/datasets/nextgqa/map_vid_vidorID.json",
+  "output": "nextgqa_pipeline/nextgqa_filtered.json"
+}
