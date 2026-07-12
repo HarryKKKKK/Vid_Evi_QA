@@ -96,6 +96,6 @@ echo "Starting evaluation..."
 # python scripts/evaluate.py --mode sufficient --task classify --num-frames 128 --frame-width 336 --workers 8 --sampling uniform
 # python scripts/evaluate.py --mode insufficient --task classify --num-frames 128 --frame-width 336 --workers 8 --sampling uniform
 
-python scripts/evaluate.py --mode partial --task classify --num-frames 128 --frame-width 336 --workers 8 --sampling uniform
+python scripts/evaluate.py --mode partial --task classify --num-frames 128 --frame-width 336 --workers 8 --sampling uniform --alphas "0.6,0.7,0.8,0.9,1.0"
 
 echo "Eval finished."

@@ -20,12 +20,21 @@ cd /aifs4su/hansirui_2nd/harry/Vid_Evi_QA
 NUM_SHARDS=${NUM_SHARDS:-8}
 
 # CPU 编码(libx264)，不用 GPU；jobs 4 × threads 4 = 16 = cpus-per-task。
+# python -u cgbench_pipeline/build_partial.py \
+#     --num-shards "${NUM_SHARDS}" \
+#     --jobs 4 \
+#     --threads 4 \
+#     --mode noise \
+#     --levels 0.0,0.05,0.1,0.15,0.2,0.3,0.5 \
+#     --x264-preset veryfast \
+#     --crf 18
+
 python -u cgbench_pipeline/build_partial.py \
     --num-shards "${NUM_SHARDS}" \
     --jobs 4 \
     --threads 4 \
     --mode noise \
-    --levels 0.0,0.05,0.1,0.15,0.2,0.3,0.5 \
+    --levels 0.6,0.7,0.8,0.9,1.0 \
     --x264-preset veryfast \
     --crf 18
 
