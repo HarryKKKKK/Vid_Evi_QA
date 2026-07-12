@@ -36,3 +36,16 @@ desktop.ini
 # Logs
 *.log
 logs/
+
+# Videos
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+*.zip
+source_datasets/cg_bench/raw/
+source_datasets/cg_bench/cg_subtitles/
+
+models/
+tmp/
