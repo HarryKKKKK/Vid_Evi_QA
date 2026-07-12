@@ -1,0 +1,8 @@
+NExT-GQA Video Check Result
+============================================================
+Filtered JSON:  nextgqa_pipeline/nextgqa_filtered.json
+Video dir:      source_datasets/next_gqa/videos
+ffprobe:        enabled
+
+Total videos checked: 989
+  found: 989
