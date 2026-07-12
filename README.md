@@ -194,9 +194,10 @@ nextgqa_pipeline/
 要点：
 
 - Annotation 已在仓库中：`source_datasets/next_gqa/NExT-GQA/datasets/nextgqa/`
-  （`test.csv` + `gsub_test.json` + `map_vid_vidorID.json`）；原始视频需要按官方
-  Google Drive 链接手动下载（无法脚本化直链），准备好后放到
-  `source_datasets/next_gqa/videos/`。
+  （`test.csv` + `gsub_test.json` + `map_vid_vidorID.json`）；原始视频唯一的官方来源
+  是一个 Google Drive 文件，`download_nextgqa_videos.py --fetch-official-archive`
+  可以用 `gdown` 包自动下载+解压（尽力而为，非稳定 API，失败时需要手动下载后用
+  `--source-video-dir` 整理），准备好后放到 `source_datasets/next_gqa/videos/`。
 - 输出 `nextgqa_pipeline/nextgqa_filtered.json` 的字段集合与
   `cgbench_pipeline/cgbench_filtered.json` 严格一致（脚本内建 schema 校验），
   `question_type` 保留 NExT-GQA 原始值 `TN/TC/TP/CW/CH`，本阶段所有样本

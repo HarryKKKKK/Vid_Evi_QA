@@ -47,7 +47,7 @@ source_datasets/next_gqa/NExT-GQA/datasets/nextgqa/
 并不存在；所有脚本的 `--annotation-dir` 默认值改为指向上面这个真实存在的路径。
 如果你想使用建议的目录名，可以自己建一个 symlink/copy，再用 `--annotation-dir` 覆盖。
 
-视频原始文件本仓库中**不存在**，需要你按第 9-11 节手动准备到：
+视频原始文件本仓库中**不存在**，需要你按第 7 节（视频准备）手动准备到：
 
 ```
 source_datasets/next_gqa/videos/          # 目标目录（脚本会自动创建）
@@ -238,25 +238,86 @@ python nextgqa_pipeline/filter_download_check/build_nextgqa_video_manifest.py \
 ```
 
 `expected_relative_path` 直接来自 `map_vid_vidorID.json`，**不是**下载 URL——NExT-GQA
-官方没有发布逐视频的下载链接（见第 9 节），这个字段只描述"文件应该放在哪个相对路径"。
+官方没有发布逐视频的下载链接（见第 7 节），这个字段只描述"文件应该放在哪个相对路径"。
 
 ## 7. 视频准备：`download_nextgqa_videos.py`
 
-### 7.1 为什么没有自动下载脚本
+### 7.1 官方视频来源只有一个 Google Drive 文件
 
 `source_datasets/next_gqa/NExT-GQA/README.md`（官方仓库自带）里 "Preparation" 一节
-只给出了一个 **Google Drive 网页链接**（`raw videos`），Google Drive 对大文件不提供
-稳定、可脚本化的直链，NExT-GQA 也没有发布逐视频 URL 列表。因此本脚本：
+只给出了一个 **Google Drive 文件链接**（"raw videos"，
+`https://drive.google.com/file/d/1jTcRCrVHS66ckOUfWRb-rXdzJ52XAWQH/view`），NExT-GQA
+没有发布逐视频的 URL 列表。脚本**不**内置任何自己编造的下载 URL，**不**做非官方爬虫
+或从 YouTube/第三方站点下载——脚本里唯一出现的 URL/文件 ID，就是这一个官方仓库自己
+公开链接出来的 Google Drive 文件。
 
-* **不**内置任何下载 URL；
-* **不**做非官方爬虫或从 YouTube/第三方站点下载；
-* 只支持两种路径：(a) 你已经手动下载好一份完整/部分视频目录，脚本帮你 copy/symlink/
-  hardlink 出 filtered 需要的子集；(b) 你自己准备了一份合法获取的 URL 列表
-  （比如你自己转存后的直链），脚本按这份列表做断点续传下载。
+脚本支持三种路径，按优先级：
 
-两种都不提供时，脚本只打印说明，不做任何事。
+* **方式 A（推荐，见 7.2）**：`--fetch-official-archive`，用 `gdown` 包自动下载上面
+  这个官方 Drive 文件、解压，然后走正常的 copy/symlink/hardlink 流程整理出 filtered
+  子集。需要 `pip install gdown`，需要能连到 Google Drive。
+* **方式 B（见 7.3）**：`--source-video-dir`，你已经手动下载好一份完整/部分视频目录
+  （不管是自己在浏览器里下载解压的，还是已有的 VidOR 数据集拷贝），脚本帮你整理出
+  filtered 需要的子集。
+* **方式 C（见 7.4）**：`--url-manifest`，你自己准备了一份合法获取的 URL 列表（比如
+  你自己转存后的直链），脚本按这份列表做断点续传下载。
 
-### 7.2 方式 A：从已有完整视频目录整理 filtered 子集（推荐）
+三种都不提供时，脚本只打印说明，不做任何事（见 7.5）。
+
+> **`--fetch-official-archive` 的稳定性说明**：Google Drive 对大文件下载有"无法扫描
+> 病毒，是否继续"的确认页机制（`gdown` 负责处理这个确认 token），以及未公开的下载
+> 配额限制。这条路径是"尽力而为"的便利选项，**不是**稳定保证的 API——如果 Google
+> 改了确认流程，或者这个文件的下载配额被用完/权限被官方改掉，`gdown.download()`
+> 就会失败（脚本会给出清晰的报错和后续建议），这时候需要退回方式 B：你自己在能打开
+> 浏览器的机器上手动下载，传到服务器，再用 `--source-video-dir` 指过去。
+
+### 7.2 方式 A：`--fetch-official-archive`（用 gdown 自动下载官方 Drive 文件）
+
+前提：服务器上要能 `pip install gdown`，并且网络能连 Google Drive。
+
+```bash
+pip install gdown
+```
+
+先 dry-run（**不会**真的下载，只打印会做什么）：
+
+```bash
+python nextgqa_pipeline/filter_download_check/download_nextgqa_videos.py \
+  --manifest nextgqa_pipeline/nextgqa_video_manifest.json \
+  --video-dir source_datasets/next_gqa/videos \
+  --fetch-official-archive \
+  --dry-run
+```
+
+确认无误后正式跑（会真正下载一个较大的官方压缩包到
+`source_datasets/next_gqa/raw_download/`，解压到
+`source_datasets/next_gqa/raw_extracted/`，然后从解压结果里 copy/symlink 出
+filtered 需要的子集到 `--video-dir`）：
+
+```bash
+python nextgqa_pipeline/filter_download_check/download_nextgqa_videos.py \
+  --manifest nextgqa_pipeline/nextgqa_video_manifest.json \
+  --video-dir source_datasets/next_gqa/videos \
+  --fetch-official-archive \
+  --copy-mode symlink \
+  --workers 8
+```
+
+可选参数：
+- `--gdrive-file-id`：覆盖默认的官方文件 ID（正常不需要改，除非官方链接换了）
+- `--archive-cache-dir` / `--archive-extract-dir`：改下载/解压的缓存位置
+- `--overwrite`：即使 `raw_extracted/` 里已经有内容，也重新解压一次
+
+注意事项：
+- 这一步会下载**一个完整的官方压缩包**（不是按需只下 filtered 需要的那几个视频），
+  下载和解压都可能占用较大的磁盘空间和时间；
+- 解压格式脚本用 `shutil.unpack_archive` 自动识别（支持 zip/tar/tar.gz 等常见格式）；
+  如果格式无法识别，脚本会报清晰的错误，提示你手动解压后改用 `--source-video-dir`；
+- 如果 `--dry-run` 和 `--fetch-official-archive` 一起用，脚本只打印意图、不下载、
+  不解压、也不会进入后面 copy/symlink 那一步的 dry-run 展示（因为还没有源文件可供
+  展示会 copy 到哪）。
+
+### 7.3 方式 B：从已有完整视频目录整理 filtered 子集
 
 如果你已经有一份 NExT-GQA/VidOR 原始视频（无论是通过 Google Drive 手动下载解压，
 还是已有的 VidOR 数据集拷贝）：
@@ -282,7 +343,7 @@ python nextgqa_pipeline/filter_download_check/download_nextgqa_videos.py \
   --workers 8
 ```
 
-### 7.3 方式 B：按你自己提供的 URL 列表下载（支持断点续传）
+### 7.4 方式 C：按你自己提供的 URL 列表下载（支持断点续传）
 
 ```bash
 python nextgqa_pipeline/filter_download_check/download_nextgqa_videos.py \
@@ -299,7 +360,7 @@ python nextgqa_pipeline/filter_download_check/download_nextgqa_videos.py \
 `nextgqa_pipeline/nextgqa_download_report.json` 里，可重跑同一条命令（默认
 `--resume`）继续断点续传，不会重复下载已完成的视频。
 
-### 7.4 什么都不提供时
+### 7.5 什么都不提供时
 
 ```bash
 python nextgqa_pipeline/filter_download_check/download_nextgqa_videos.py \
@@ -307,9 +368,8 @@ python nextgqa_pipeline/filter_download_check/download_nextgqa_videos.py \
   --video-dir source_datasets/next_gqa/videos
 ```
 
-脚本会打印提示，说明需要先手动准备官方视频（Google Drive 链接见
-`source_datasets/next_gqa/NExT-GQA/README.md`），然后用 `--source-video-dir` 或
-`--url-manifest` 重新运行。不会下载任何东西。
+脚本会打印提示，说明需要三选一：`--fetch-official-archive`（方式 A）、
+`--source-video-dir`（方式 B）、或 `--url-manifest`（方式 C）。不会下载任何东西。
 
 ## 8. 阶段 0e：`check_nextgqa_videos.py`（本地视频检查）
 

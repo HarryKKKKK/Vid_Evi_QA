@@ -1,38 +1,45 @@
 """Prepare local NExT-GQA raw video files for the filtered manifest.
 
-IMPORTANT — no scriptable official download endpoint exists.
-
 The upstream NExT-GQA repository (``source_datasets/next_gqa/NExT-GQA/README.md``)
-only links a Google Drive folder for "raw videos"
-(https://drive.google.com/file/d/1jTcRCrVHS66ckOUfWRb-rXdzJ52XAWQH/view), which
-is a manual, browser-gated download (Google Drive does not expose a stable,
-scriptable direct-download URL for large files, and NExT-GQA does not publish
-per-video URLs). This script therefore does NOT contain any hard-coded
-download URL and does NOT scrape or guess one.
+distributes "raw videos" as a single Google Drive file
+(https://drive.google.com/file/d/1jTcRCrVHS66ckOUfWRb-rXdzJ52XAWQH/view) —
+there is no per-video URL list published anywhere. This script never invents
+or scrapes a download URL of its own; the only URL it ever touches is that
+one official, publicly-linked Google Drive file id.
 
 Supported ways to populate videos, in order of preference:
 
-1. ``--source-video-dir``: you already have a complete (or partial) local copy
+1. ``--fetch-official-archive``: download the official archive above via the
+   ``gdown`` package (handles Google Drive's large-file confirmation flow),
+   extract it, then use the extracted directory as the source for the
+   copy/symlink/hardlink step below. Requires ``pip install gdown`` and
+   network access to Google Drive from wherever this script runs. This is a
+   best-effort convenience path, not a guaranteed-stable API: Drive's
+   confirmation flow and per-file quota can change or throttle at any time.
+   If it fails, fall back to downloading the file manually in a browser and
+   using ``--source-video-dir`` (option 2) instead.
+
+2. ``--source-video-dir``: you already have a complete (or partial) local copy
    of the NExT-GQA / VidOR raw videos (e.g. after manually downloading the
    Google Drive archive and extracting it, or from an existing VidOR copy).
    This script copies/symlinks/hardlinks just the videos referenced in the
    manifest from that directory into ``--video-dir``, preserving the
    ``expected_relative_path`` layout from ``map_vid_vidorID.json``.
 
-2. ``--url-manifest``: a JSON file YOU provide, mapping video_id (or
+3. ``--url-manifest``: a JSON file YOU provide, mapping video_id (or
    mapped_video_id) to a URL you have legally obtained (e.g. a presigned URL
    to your own re-hosted copy). This script will download over HTTP(S) with
    resume/retry support. This script does not populate this file for you.
 
-If neither is given, the script prints what is missing and exits without
-downloading anything.
+If none of the three is given, the script prints what is missing and exits
+without downloading anything. ``--fetch-official-archive`` is mutually
+exclusive with ``--source-video-dir`` and ``--url-manifest``.
 
 Usage (see nextgqa_pipeline/README.md for full examples):
   python nextgqa_pipeline/filter_download_check/download_nextgqa_videos.py \
     --manifest nextgqa_pipeline/nextgqa_video_manifest.json \
     --video-dir source_datasets/next_gqa/videos \
-    --source-video-dir /path/to/existing/nextgqa_or_vidor_videos \
-    --copy-mode symlink \
+    --fetch-official-archive \
     --dry-run
 """
 
@@ -53,6 +60,12 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_MANIFEST = REPO_ROOT / "nextgqa_pipeline" / "nextgqa_video_manifest.json"
 DEFAULT_VIDEO_DIR = REPO_ROOT / "source_datasets" / "next_gqa" / "videos"
 DEFAULT_REPORT_JSON = REPO_ROOT / "nextgqa_pipeline" / "nextgqa_download_report.json"
+
+# The single official "raw videos" Google Drive file id, as published in
+# source_datasets/next_gqa/NExT-GQA/README.md ("Preparation" section).
+OFFICIAL_GDRIVE_FILE_ID = "1jTcRCrVHS66ckOUfWRb-rXdzJ52XAWQH"
+DEFAULT_ARCHIVE_CACHE_DIR = REPO_ROOT / "source_datasets" / "next_gqa" / "raw_download"
+DEFAULT_ARCHIVE_EXTRACT_DIR = REPO_ROOT / "source_datasets" / "next_gqa" / "raw_extracted"
 
 COPY_MODES = ("copy", "symlink", "hardlink")
 
@@ -79,6 +92,60 @@ def load_url_manifest(path: Path | None) -> dict[str, str]:
     if not isinstance(data, dict):
         raise ValueError(f"Expected a JSON object (video_id -> url) in {path}, got {type(data)}")
     return data
+
+
+def fetch_official_archive(
+    gdrive_file_id: str, cache_dir: Path, extract_dir: Path, resume: bool, overwrite: bool
+) -> Path:
+    """Download the official NExT-GQA raw-video archive from Google Drive via gdown, then extract it.
+
+    Returns the directory the archive was extracted into, meant to be used
+    as the source directory for the normal copy/symlink/hardlink placement
+    step below (same role as a user-supplied --source-video-dir).
+
+    This is a best-effort convenience path, not a guaranteed-stable API:
+    Google Drive's large-file confirmation flow and per-file quota can change
+    or throttle at any time. If it fails, download the file manually via the
+    link in source_datasets/next_gqa/NExT-GQA/README.md and pass the
+    extracted directory via --source-video-dir instead.
+    """
+    try:
+        import gdown
+    except ImportError as e:
+        raise RuntimeError(
+            "--fetch-official-archive requires the 'gdown' package (pip install gdown), "
+            "which is not installed in this environment."
+        ) from e
+
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    print(f"Downloading official NExT-GQA raw-video archive (Google Drive id={gdrive_file_id}) to {cache_dir} ...")
+    output = gdown.download(id=gdrive_file_id, output=str(cache_dir) + os.sep, quiet=False, resume=resume)
+    if output is None:
+        raise RuntimeError(
+            "gdown.download() returned None, meaning the download did not complete "
+            "(possible causes: Google Drive per-file download quota exceeded, the file's "
+            "sharing permissions changed, or a network error). See the gdown output above "
+            "for details, or download the file manually and use --source-video-dir instead."
+        )
+    archive_path = Path(output)
+    print(f"Downloaded archive to {archive_path}")
+
+    extract_dir.mkdir(parents=True, exist_ok=True)
+    if any(extract_dir.iterdir()) and not overwrite:
+        print(f"{extract_dir} already has content and --overwrite was not given; skipping extraction.")
+        return extract_dir
+
+    print(f"Extracting {archive_path} to {extract_dir} ...")
+    try:
+        shutil.unpack_archive(str(archive_path), str(extract_dir))
+    except (shutil.ReadError, ValueError) as e:
+        raise RuntimeError(
+            f"Could not auto-extract {archive_path} (unrecognized archive format: {e}). "
+            "Please extract it manually and re-run with --source-video-dir pointing at the "
+            "extracted folder."
+        ) from e
+
+    return extract_dir
 
 
 def find_in_source_dir(source_dir: Path, relative_path: str, mapped_video_id: str | None) -> Path | None:
@@ -164,6 +231,18 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--manifest", type=Path, default=DEFAULT_MANIFEST)
     parser.add_argument("--video-dir", type=Path, default=DEFAULT_VIDEO_DIR)
+    parser.add_argument("--fetch-official-archive", action="store_true",
+                         help="Download the official raw-video archive from Google Drive via gdown "
+                              "(pip install gdown) and use it as the source directory. Mutually "
+                              "exclusive with --source-video-dir / --url-manifest.")
+    parser.add_argument("--gdrive-file-id", default=OFFICIAL_GDRIVE_FILE_ID,
+                         help="Google Drive file id for the official raw-video archive "
+                              f"(default: {OFFICIAL_GDRIVE_FILE_ID}, as published in "
+                              "source_datasets/next_gqa/NExT-GQA/README.md)")
+    parser.add_argument("--archive-cache-dir", type=Path, default=DEFAULT_ARCHIVE_CACHE_DIR,
+                         help="Where the downloaded archive file is cached")
+    parser.add_argument("--archive-extract-dir", type=Path, default=DEFAULT_ARCHIVE_EXTRACT_DIR,
+                         help="Where the downloaded archive is extracted")
     parser.add_argument("--source-video-dir", type=Path, default=None,
                          help="Existing local directory containing already-downloaded NExT-GQA/VidOR videos")
     parser.add_argument("--url-manifest", type=Path, default=None,
@@ -184,15 +263,36 @@ def main() -> None:
     if args.limit is not None:
         manifest = manifest[: args.limit]
 
+    if args.fetch_official_archive:
+        if args.source_video_dir is not None or args.url_manifest is not None:
+            raise SystemExit(
+                "--fetch-official-archive cannot be combined with --source-video-dir or "
+                "--url-manifest; pick a single video source."
+            )
+        if args.dry_run:
+            print(
+                f"[DRY RUN] Would download the official archive (Google Drive id="
+                f"{args.gdrive_file_id}) to {args.archive_cache_dir}, extract it to "
+                f"{args.archive_extract_dir}, then use that directory as the source for "
+                "copy/symlink/hardlink placement. Nothing was downloaded."
+            )
+            return
+        args.source_video_dir = fetch_official_archive(
+            args.gdrive_file_id, args.archive_cache_dir, args.archive_extract_dir,
+            resume=args.resume, overwrite=args.overwrite,
+        )
+
     if args.source_video_dir is None and args.url_manifest is None:
         print(
-            "No --source-video-dir and no --url-manifest given.\n"
-            "NExT-GQA raw videos are distributed only via a manual Google Drive link "
-            "(see source_datasets/next_gqa/NExT-GQA/README.md, section 'Preparation').\n"
+            "No --fetch-official-archive, --source-video-dir, or --url-manifest given.\n"
+            "NExT-GQA raw videos are distributed only via a single official Google Drive "
+            "file (see source_datasets/next_gqa/NExT-GQA/README.md, section 'Preparation').\n"
             "Please either:\n"
-            "  1) manually download+extract the official archive and pass its path via "
+            "  1) pass --fetch-official-archive to download+extract it automatically via "
+            "gdown (pip install gdown), or\n"
+            "  2) manually download+extract it yourself and pass its path via "
             "--source-video-dir, or\n"
-            "  2) provide --url-manifest pointing at a JSON file of video_id -> URL you "
+            "  3) provide --url-manifest pointing at a JSON file of video_id -> URL you "
             "have legally obtained.\n"
             "Nothing was downloaded."
         )
