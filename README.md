@@ -174,3 +174,32 @@ dataset/
 | `suff_correct_insuff_wrong.json` | 245 条 C2 候选集 |
 | `partial.classify.json(l)` / `partial.classify_0.json` | C2 分类任务结果（`_0` 大概率是某次未完整跑完/被覆盖前的快照，建议跑分析前确认用哪份） |
 | `uniform_coverage_report.txt` | 128 帧 uniform 采样踩不中 evidence 区间的 (video_id, qid) 列表，共 315 条（占 1596 条的 19.74%）。由 `scripts/uniform_coverage_check.py` 生成，见第 5 节 NOTE 和第 6 节。旧的 `uniform_coverage_report.json` 及其生成脚本已不在仓库里，这份 `.txt` 是重新生成的替代版本。 |
+
+## 8. NExT-GQA Data Preparation（阶段0：数据筛选 + 原始视频准备）
+
+与 `cgbench_pipeline/` 平行的第二个数据源，目前只实现了阶段0（sufficient anchor
+筛选 + 视频准备），C2/C3/freeze/inference/evaluation 等后续阶段尚未开始。完整说明、
+字段含义、筛选规则、每个脚本的输入输出和运行顺序见 **[nextgqa_pipeline/README.md](nextgqa_pipeline/README.md)**。
+
+```
+nextgqa_pipeline/
+└── filter_download_check/
+    ├── inspect_nextgqa.py              # 只读检查 annotation schema
+    ├── filter_nextgqa.py               # 筛选 sufficient anchors，输出 schema 对齐 cgbench_filtered.json
+    ├── build_nextgqa_video_manifest.py # 按 video_id 去重生成视频 manifest
+    ├── download_nextgqa_videos.py      # 从已有视频目录整理 / 按自备 URL 列表下载
+    └── check_nextgqa_videos.py         # 检查本地视频是否存在、是否损坏
+```
+
+要点：
+
+- Annotation 已在仓库中：`source_datasets/next_gqa/NExT-GQA/datasets/nextgqa/`
+  （`test.csv` + `gsub_test.json` + `map_vid_vidorID.json`）；原始视频需要按官方
+  Google Drive 链接手动下载（无法脚本化直链），准备好后放到
+  `source_datasets/next_gqa/videos/`。
+- 输出 `nextgqa_pipeline/nextgqa_filtered.json` 的字段集合与
+  `cgbench_pipeline/cgbench_filtered.json` 严格一致（脚本内建 schema 校验），
+  `question_type` 保留 NExT-GQA 原始值 `TN/TC/TP/CW/CH`，本阶段所有样本
+  `evidence_condition` 固定为 `"sufficient"`。
+- 视频存在性检查（`check_nextgqa_videos.py`）与 annotation 筛选结果彼此独立：
+  视频缺失不会从 `nextgqa_filtered.json` 里删除样本。
