@@ -37,8 +37,8 @@ import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
-# DEFAULT_JSON = "cgbench_pipeline/cgbench_filtered.json"
-DEFAULT_JSON = "cgbench_pipeline/cgbench_filtered.broken_subset.json"
+DEFAULT_JSON = "cgbench_pipeline/cgbench_filtered.json"
+# DEFAULT_JSON = "cgbench_pipeline/cgbench_filtered.broken_subset.json"
 DEFAULT_VIDEO_DIR = "source_datasets/cg_bench/videos"
 DEFAULT_OUTPUT_DIR = "source_datasets/cg_bench/freeze_videos"
 OUTPUT_EXT = ".mp4"
