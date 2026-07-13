@@ -7,7 +7,7 @@
 #SBATCH --output=logs/partial_%A_%a.out
 #SBATCH --error=logs/partial_%A_%a.err
 
-#NUM_SHARDS=8 sbatch --array=0-7%8 cgbench_pipeline/build_partial_cgbench.sh
+#NUM_SHARDS=8 sbatch --array=0-7%8 scripts/vqa/build_partial_cgbench.sh
 set -uo pipefail
 mkdir -p logs
 unset http_proxy; unset https_proxy
@@ -20,7 +20,7 @@ cd /aifs4su/hansirui_2nd/harry/Vid_Evi_QA
 NUM_SHARDS=${NUM_SHARDS:-8}
 
 # CPU 编码(libx264)，不用 GPU；jobs 4 × threads 4 = 16 = cpus-per-task。
-# python -u cgbench_pipeline/build_partial.py \
+# python -u scripts/vqa/build_partial.py \
 #     --num-shards "${NUM_SHARDS}" \
 #     --jobs 4 \
 #     --threads 4 \
@@ -29,7 +29,7 @@ NUM_SHARDS=${NUM_SHARDS:-8}
 #     --x264-preset veryfast \
 #     --crf 18
 
-python -u cgbench_pipeline/build_partial.py \
+python -u scripts/vqa/build_partial.py \
     --num-shards "${NUM_SHARDS}" \
     --jobs 4 \
     --threads 4 \
@@ -40,7 +40,7 @@ python -u cgbench_pipeline/build_partial.py \
 
 # --------------------------------------------------------------------------
 # 提交（NUM_SHARDS 要和 --array 的 0-(N-1) 对齐）：
-#   NUM_SHARDS=8 sbatch --array=0-7%8 scripts/tmp/run_partial.sbatch
+#   NUM_SHARDS=8 sbatch --array=0-7%8 scripts/vqa/build_partial_cgbench.sh
 #
 # 8 shard × 4 jobs = 32 路 CPU 并发。断点续跑：不加 --overwrite，已存在自动跳过。
 # report 按 shard 写成 partial_build_report.<shard>.jsonl
@@ -50,6 +50,6 @@ python -u cgbench_pipeline/build_partial.py \
 #   给命令加 --gpu，并把 --array 的 %N 调小（如 %2）避免一次占满整台卡。
 #
 # 单条 / 小批量测试（不走 sbatch，直接本机跑）：
-#   python cgbench_pipeline/build_partial.py --index 0 --mode noise --levels 0.0,0.5
-#   python cgbench_pipeline/build_partial.py --all --limit 5 --jobs 2 --mode noise
+#   python scripts/vqa/build_partial.py --index 0 --mode noise --levels 0.0,0.5
+#   python scripts/vqa/build_partial.py --all --limit 5 --jobs 2 --mode noise
 # --------------------------------------------------------------------------

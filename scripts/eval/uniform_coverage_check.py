@@ -10,7 +10,7 @@ since the model literally never sees the evidence frames.
 Uses the "video_duration" field already present in cgbench_filtered.json
 entries, so it does not need the actual video files or ffprobe.
 
-Uniform-sampling formula copied verbatim from scripts/evaluate.py's
+Uniform-sampling formula copied verbatim from scripts/eval/evaluate.py's
 plan_timestamps() uniform branch, to stay in sync:
     timestamps = [(i + 0.5) * duration / num_frames for i in range(num_frames)]
 """

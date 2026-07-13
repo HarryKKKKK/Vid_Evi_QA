@@ -24,7 +24,7 @@ MAD = 两帧灰度平均绝对差(0-255)。没装 PIL 时退化用 ffmpeg freeze
 """
 import argparse, json, os, subprocess, tempfile, sys
 
-SCRIPT = "cgbench_pipeline/build_freeze.py"
+SCRIPT = "scripts/vqa/build_freeze.py"
 JSON   = "cgbench_pipeline/cgbench_filtered.json"
 VDIR   = "source_datasets/cg_bench/videos"
 

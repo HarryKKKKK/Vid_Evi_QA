@@ -17,7 +17,7 @@ source /home/hansirui_2nd/anaconda3/etc/profile.d/conda.sh
 conda activate /aifs4su/hansirui_2nd/harry/envs
 cd /aifs4su/hansirui_2nd/harry/Vid_Evi_QA
 
-SCRIPT=cgbench_pipeline/build_insufficient.py
+SCRIPT=scripts/vqa/build_insufficient.py
 JSON=cgbench_pipeline/cgbench_filtered.json
 VIDEO_DIR=source_datasets/cg_bench/videos
 SAMPLE=10

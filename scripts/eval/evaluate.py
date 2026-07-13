@@ -65,7 +65,7 @@ Other datasets (e.g. NExT-GQA):
   --mode sufficient for NExT-GQA runs.
 
   Example:
-    python scripts/evaluate.py --mode sufficient --task qa \
+    python scripts/eval/evaluate.py --mode sufficient --task qa \
       --filtered-json nextgqa_pipeline/nextgqa_filtered.json \
       --video-dir source_datasets/next_gqa/videos \
       --results-dir nextgqa_result \

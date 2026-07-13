@@ -100,7 +100,7 @@ LIMIT_ARGS=""
 # captured and reported here, instead of -e killing the script before this
 # point is ever reached.
 set +e
-python scripts/evaluate.py \
+python scripts/eval/evaluate.py \
     --mode sufficient --task qa \
     --filtered-json nextgqa_pipeline/nextgqa_filtered.json \
     --video-dir source_datasets/next_gqa/videos \

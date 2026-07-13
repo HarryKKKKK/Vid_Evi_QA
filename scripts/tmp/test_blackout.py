@@ -13,7 +13,7 @@
 """
 import argparse, json, os, subprocess, tempfile, sys
 
-SCRIPT = "cgbench_pipeline/build_insufficient.py"
+SCRIPT = "scripts/vqa/build_insufficient.py"
 JSON   = "cgbench_pipeline/cgbench_filtered.json"
 VDIR   = "source_datasets/cg_bench/videos"
 

@@ -24,6 +24,24 @@ Parallelism / sharding / resume：与遮黑版完全一致
   * --threads T   libx264 threads per ffmpeg; keep jobs*threads <= cpus-per-task
   * --num-shards / --shard   split entries across slurm array tasks (round-robin)
 Resumable: existing outputs are skipped unless --overwrite.
+
+Other datasets (e.g. NExT-GQA):
+  --json/--video-dir/--output-dir already override the CG-Bench defaults
+  below, so this script can build freeze videos for
+  nextgqa_pipeline/nextgqa_filtered.json too. Video lookup is dataset-aware
+  via each entry's `source_dataset` field: "cgbench" entries keep the
+  existing flat-directory stem lookup (build_stem_index() + os.listdir);
+  "nextgqa" entries are resolved through --video-id-mapping (defaults to
+  NExT-GQA's own map_vid_vidorID.json) because NExT-GQA videos live under a
+  {folder}/{vidorID}.mp4 layout, not flat {video_id}.mp4 (see
+  nextgqa_pipeline/README.md).
+
+  Example:
+    python scripts/vqa/build_freeze.py \
+      --json nextgqa_pipeline/nextgqa_filtered.json \
+      --video-dir source_datasets/next_gqa/videos \
+      --output-dir source_datasets/next_gqa/freeze_videos \
+      --preflight
 """
 
 import argparse
@@ -42,6 +60,10 @@ DEFAULT_JSON = "cgbench_pipeline/cgbench_filtered.json"
 DEFAULT_VIDEO_DIR = "source_datasets/cg_bench/videos"
 DEFAULT_OUTPUT_DIR = "source_datasets/cg_bench/freeze_videos"
 OUTPUT_EXT = ".mp4"
+
+# Only consulted for entries whose source_dataset == "nextgqa" (see
+# resolve_input()); CG-Bench entries never touch this file.
+DEFAULT_NEXTGQA_MAPPING = "source_datasets/next_gqa/NExT-GQA/datasets/nextgqa/map_vid_vidorID.json"
 
 _print_lock = threading.Lock()
 
@@ -95,7 +117,19 @@ def build_stem_index(video_dir):
     return index
 
 
-def resolve_input(stem_index, video_id):
+def resolve_input(stem_index, video_id, *, source_dataset=None, video_id_mapping=None, video_dir=None):
+    if source_dataset == "nextgqa":
+        # NExT-GQA videos live under {folder}/{vidorID}.mp4, not flat in
+        # video_dir, so the stem_index built by build_stem_index() (a plain
+        # os.listdir(), non-recursive) would never find them.
+        mapped = (video_id_mapping or {}).get(str(video_id))
+        if mapped is None:
+            return "missing_mapping", None
+        p = os.path.join(video_dir, f"{mapped}.mp4")
+        if os.path.isfile(p):
+            return "ok", p
+        return "missing", None
+
     paths = stem_index.get(video_id, [])
     if len(paths) == 1:
         return "ok", paths[0]
@@ -270,7 +304,7 @@ def out_name(video_id, qid):
     return f"{video_id}_q{qid}_freeze{OUTPUT_EXT}"
 
 
-def process_entry(i, entries, stem_index, args):
+def process_entry(i, entries, stem_index, args, video_id_mapping=None):
     """Pure worker -> report record. Safe to run in a thread pool."""
     e = entries[i]
     vid = e["video_id"]
@@ -283,9 +317,17 @@ def process_entry(i, entries, stem_index, args):
         rec["status"] = "skip_no_intervals"
         return rec
 
-    status, val = resolve_input(stem_index, vid)
+    status, val = resolve_input(
+        stem_index, vid,
+        source_dataset=e.get("source_dataset"),
+        video_id_mapping=video_id_mapping,
+        video_dir=args.video_dir,
+    )
     if status == "missing":
         rec["status"] = "missing_video"
+        return rec
+    if status == "missing_mapping":
+        rec["status"] = "missing_video_id_mapping"
         return rec
     if status == "ambiguous":
         rec["status"] = "ambiguous_video"; rec["matches"] = val
@@ -334,26 +376,37 @@ def process_entry(i, entries, stem_index, args):
     return rec
 
 
-def run_preflight(entries, args):
+def run_preflight(entries, args, video_id_mapping=None):
     stem_index = build_stem_index(args.video_dir)
-    missing, ambiguous, found, seen = [], [], 0, set()
+    missing, ambiguous, missing_mapping, found, seen = [], [], [], 0, set()
     for e in entries:
         vid = e["video_id"]
-        if vid in seen:
+        key = (e.get("source_dataset"), vid)
+        if key in seen:
             continue
-        seen.add(vid)
-        status, val = resolve_input(stem_index, vid)
+        seen.add(key)
+        status, val = resolve_input(
+            stem_index, vid,
+            source_dataset=e.get("source_dataset"),
+            video_id_mapping=video_id_mapping,
+            video_dir=args.video_dir,
+        )
         if status == "ok":
             found += 1
         elif status == "missing":
             missing.append(vid)
+        elif status == "missing_mapping":
+            missing_mapping.append(vid)
         else:
             ambiguous.append((vid, val))
     print(f"[PREFLIGHT] video dir: {args.video_dir}")
     print(f"[PREFLIGHT] unique video_ids: {len(seen)} | resolved: {found} | "
-          f"missing: {len(missing)} | ambiguous: {len(ambiguous)}")
+          f"missing: {len(missing)} | missing_mapping: {len(missing_mapping)} | "
+          f"ambiguous: {len(ambiguous)}")
     for vid in missing[:20]:
         print(f"  MISSING: {vid}")
+    for vid in missing_mapping[:20]:
+        print(f"  MISSING_MAPPING: {vid}")
     for vid, paths in ambiguous[:20]:
         print(f"  AMBIGUOUS: {vid} -> {paths}")
 
@@ -363,6 +416,10 @@ def main():
     ap.add_argument("--json", default=DEFAULT_JSON)
     ap.add_argument("--video-dir", default=DEFAULT_VIDEO_DIR)
     ap.add_argument("--output-dir", default=DEFAULT_OUTPUT_DIR)
+    ap.add_argument("--video-id-mapping", default=DEFAULT_NEXTGQA_MAPPING,
+                    help="video_id -> relative-path mapping, only consulted for "
+                         "entries with source_dataset == 'nextgqa'. Irrelevant "
+                         "for CG-Bench runs.")
     # ---- 帧冻结特有 ----
     ap.add_argument("--freeze-source", choices=["pre", "first"], default="pre",
                     help="pre=evidence 前一帧（默认）；first=区间第一帧。")
@@ -402,11 +459,16 @@ def main():
 
     entries = load_entries(args.json)
 
+    video_id_mapping = {}
+    if os.path.isfile(args.video_id_mapping):
+        with open(args.video_id_mapping, "r", encoding="utf-8") as f:
+            video_id_mapping = json.load(f)
+
     if args.print_count:
         print(len(entries))
         return
     if args.preflight:
-        run_preflight(entries, args)
+        run_preflight(entries, args, video_id_mapping)
         return
 
     os.makedirs(args.output_dir, exist_ok=True)
@@ -431,11 +493,11 @@ def main():
 
     if args.jobs <= 1:
         for i in indices:
-            rec = process_entry(i, entries, stem_index, args)
+            rec = process_entry(i, entries, stem_index, args, video_id_mapping)
             report.append(rec); emit(rec)
     else:
         with ThreadPoolExecutor(max_workers=args.jobs) as ex:
-            futs = {ex.submit(process_entry, i, entries, stem_index, args): i
+            futs = {ex.submit(process_entry, i, entries, stem_index, args, video_id_mapping): i
                     for i in indices}
             for fut in as_completed(futs):
                 rec = fut.result()
