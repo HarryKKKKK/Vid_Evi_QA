@@ -122,13 +122,23 @@ dataset/
   条目单独存 `.skipped.json(l)`。
 - `eval.sh`：起 2 卡 tensor-parallel 的 vLLM server（`models/Qwen3-VL`，即
   **Qwen3-VL-32B**，`--max-model-len 32768`），等 server ready 后跑
-  `evaluate.py`。**当前脚本里实际执行的命令只有一行**
-  `--mode partial --task classify ... --alphas "0.6,0.7,0.8,0.9,1.0"`，其余
-  三行（sufficient qa/classify、insufficient classify）都被注释掉留作参考，
-  不是脚本没写全。
+  `evaluate.py`。**当前脚本里实际执行的命令**是 NExT-GQA sufficient/qa 测试跑
+  （`--filtered-json nextgqa_pipeline/nextgqa_filtered.json --video-dir
+  source_datasets/next_gqa/videos --results-dir nextgqa_result`），不再是早期
+  CG-Bench 的 `--mode partial --task classify` 那一行——`evaluate.py` 通过
+  `--filtered-json`/`--video-dir`/`--results-dir`/`--video-id-mapping` 四个
+  CLI 参数支持切换数据集（不传时默认值就是 CG-Bench 的路径，`eval.sh` 不改
+  这几个参数就还是跑 CG-Bench）；脚本里 `LIMIT_ARGS` 变量留了一个空位，方便
+  跑全量前先设成 `"--limit 5"` 做小范围验证。
+- `evaluate.py` 的视频路径解析按每条样本的 `source_dataset` 字段区分：
+  `"cgbench"` 走原来的扁平 `{video_id}.mp4`，`"nextgqa"` 走
+  `--video-id-mapping`（默认指向 `map_vid_vidorID.json`）解析出的
+  `{folder}/{vidorID}.mp4` 嵌套路径。
 
-结果落盘规则：`cgbench_result/{sufficient|hallucination|insufficient|partial}.
-{qa|classify}.json`（同名 `.jsonl` 是增量版本，`.skipped.json(l)` 是跳过/报错记录）。
+结果落盘规则：`{results-dir}/{sufficient|hallucination|insufficient|partial}.
+{qa|classify}.json`（同名 `.jsonl` 是增量版本，`.skipped.json(l)` 是跳过/报错记录）；
+`--results-dir` 默认是 `cgbench_result/`，NExT-GQA 跑的是 `nextgqa_result/`，两边
+不会互相覆盖。
 
 > **NOTE（数据质量注意点）**：`--sampling uniform`（当前 `eval.sh` 实际用的
 > 默认值）是在整段视频时长上均匀取 `--num-frames` 个时间戳，**不保证**每个

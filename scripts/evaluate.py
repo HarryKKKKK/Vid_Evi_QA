@@ -47,6 +47,29 @@ Resume / dedup key:
 Incremental saving:
   Each finished result is immediately appended to a .jsonl file.
   At the end, an ordered .json file is also written for compatibility.
+
+Other datasets (e.g. NExT-GQA):
+  --filtered-json / --video-dir / --results-dir override the CG-Bench
+  defaults below, so this same script can run against
+  nextgqa_pipeline/nextgqa_filtered.json + source_datasets/next_gqa/videos/
+  without touching CG-Bench's own eval.sh invocation (which never passes
+  these flags, so it keeps using the CG-Bench paths unchanged).
+
+  Video path resolution is dataset-aware via each entry's `source_dataset`
+  field: "cgbench" entries keep the flat {video_id}.mp4 naming used today;
+  "nextgqa" entries are resolved through --video-id-mapping (defaults to
+  NExT-GQA's own map_vid_vidorID.json), which maps video_id to the
+  {folder}/{vidorID} relative path NExT-GQA videos are actually stored
+  under (see nextgqa_pipeline/README.md). --mode insufficient/partial are
+  still CG-Bench-only (no NExT-GQA freeze/partial videos exist yet); use
+  --mode sufficient for NExT-GQA runs.
+
+  Example:
+    python scripts/evaluate.py --mode sufficient --task qa \
+      --filtered-json nextgqa_pipeline/nextgqa_filtered.json \
+      --video-dir source_datasets/next_gqa/videos \
+      --results-dir nextgqa_result \
+      --limit 5
 """
 
 import argparse
@@ -82,6 +105,14 @@ INSUFFICIENT_DIR = BASE_DIR / "source_datasets" / "cg_bench" / "freeze_videos"
 PARTIAL_VIDEOS_DIR = BASE_DIR / "source_datasets" / "cg_bench" / "partial_videos"
 PARTIAL_CANDIDATES_JSON = BASE_DIR / "cgbench_result" / "suff_correct_insuff_wrong.json"
 RESULTS_DIR = BASE_DIR / "cgbench_result"
+
+# Only consulted for entries whose source_dataset == "nextgqa" (see
+# process_entry()); CG-Bench entries never touch this. Defaults to
+# NExT-GQA's own official mapping file so a NExT-GQA run works out of the
+# box with just --filtered-json/--video-dir/--results-dir overridden.
+NEXTGQA_MAPPING_JSON = (
+    BASE_DIR / "source_datasets" / "next_gqa" / "NExT-GQA" / "datasets" / "nextgqa" / "map_vid_vidorID.json"
+)
 
 
 # -- LLM client ---------------------------------------------------------------
@@ -160,6 +191,20 @@ def load_partial_entries(filtered_json_path: Path, candidates_path: Path) -> lis
             flush=True,
         )
     return entries
+
+
+def load_video_id_mapping(path: Path) -> dict:
+    """Load a {video_id: relative_path_without_extension} mapping.
+
+    Used only to resolve video paths for entries whose source_dataset is
+    "nextgqa" (see process_entry()). Returns {} if the file doesn't exist so
+    that pure CG-Bench runs never fail just because this optional file isn't
+    present in a given environment.
+    """
+    if not path.is_file():
+        return {}
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
 
 
 def expand_with_alphas(entries: list[dict], alphas: list[float], partial_mode: str) -> list[dict]:
@@ -464,6 +509,7 @@ def process_entry(
     sampling: str,
     evidence_fraction: float,
     task: str,
+    video_id_mapping: dict | None = None,
 ) -> dict:
     video_id = entry["video_id"]
     qid = entry["qid"]
@@ -474,6 +520,21 @@ def process_entry(
         video_file = video_dir / f"{video_id}_q{qid}_c2_{partial_mode}_{alpha_tag(alpha)}.mp4"
     elif insufficient:
         video_file = video_dir / f"{video_id}_q{qid}_freeze.mp4"
+    elif entry.get("source_dataset") == "nextgqa":
+        # NExT-GQA videos are stored under a {folder}/{vidorID}.mp4 layout
+        # (see nextgqa_pipeline/README.md), not flat {video_id}.mp4 like
+        # CG-Bench, so they need the official video_id -> path mapping.
+        mapped = (video_id_mapping or {}).get(str(video_id))
+        if mapped is None:
+            return {
+                "idx": idx,
+                "status": "skip",
+                "video_id": video_id,
+                "qid": qid,
+                "alpha": alpha,
+                "reason": "missing_video_id_mapping",
+            }
+        video_file = video_dir / f"{mapped}.mp4"
     else:
         video_file = video_dir / f"{video_id}.mp4"
 
@@ -631,6 +692,7 @@ def run_evaluation(
     evidence_fraction: float = EVIDENCE_FRACTION,
     workers: int = WORKERS,
     task: str = "qa",
+    video_id_mapping: dict | None = None,
 ) -> None:
     total = len(entries)
     done = 0
@@ -684,6 +746,7 @@ def run_evaluation(
                 sampling=sampling,
                 evidence_fraction=evidence_fraction,
                 task=task,
+                video_id_mapping=video_id_mapping,
             ): idx
             for idx, entry in to_submit.items()
         }
@@ -772,6 +835,30 @@ def main():
     parser.add_argument("--mode", choices=MODES, default="all")
 
     parser.add_argument(
+        "--filtered-json", type=Path, default=FILTERED_JSON,
+        help="Filtered metadata JSON to evaluate (default: CG-Bench's "
+             f"{FILTERED_JSON}). Pass nextgqa_pipeline/nextgqa_filtered.json "
+             "for a NExT-GQA run.",
+    )
+    parser.add_argument(
+        "--video-dir", type=Path, default=VIDEOS_DIR,
+        help="Directory containing sufficient-condition videos (default: "
+             f"CG-Bench's {VIDEOS_DIR}).",
+    )
+    parser.add_argument(
+        "--results-dir", type=Path, default=RESULTS_DIR,
+        help="Where result .json/.jsonl files are written (default: "
+             f"CG-Bench's {RESULTS_DIR}). Use a separate directory (e.g. "
+             "nextgqa_result) to avoid mixing with CG-Bench's results.",
+    )
+    parser.add_argument(
+        "--video-id-mapping", type=Path, default=NEXTGQA_MAPPING_JSON,
+        help="video_id -> relative-path mapping, only consulted for entries "
+             "with source_dataset == 'nextgqa' (default: NExT-GQA's own "
+             "map_vid_vidorID.json). Irrelevant for CG-Bench runs.",
+    )
+
+    parser.add_argument(
         "--task",
         choices=TASKS,
         default="qa",
@@ -834,7 +921,8 @@ def main():
             f"Check VLLM_BASE_URL / VLLM_MODEL / server job."
         )
 
-    data = json.load(open(FILTERED_JSON, encoding="utf-8"))
+    data = json.load(open(args.filtered_json, encoding="utf-8"))
+    video_id_mapping = load_video_id_mapping(args.video_id_mapping)
 
     sufficient = [
         d for d in data
@@ -852,7 +940,7 @@ def main():
         print(f"*** DEBUG MODE: first {args.limit} entries per condition ***")
 
     print(
-        f"Loaded {len(data)} entries "
+        f"Loaded {len(data)} entries from {args.filtered_json} "
         f"(sufficient={len(sufficient)}, hallucination={len(hallucination)})"
     )
 
@@ -862,6 +950,7 @@ def main():
         f"frame_width={args.frame_width}  "
         f"sampling={args.sampling}  "
         f"workers={args.workers}\n"
+        f"video_dir={args.video_dir}  results_dir={args.results_dir}\n"
     )
 
     print_prompt_preview(args.task)
@@ -872,28 +961,30 @@ def main():
         print("=== sufficient ===")
         run_evaluation(
             sufficient,
-            VIDEOS_DIR,
-            RESULTS_DIR / f"sufficient{suffix}",
+            args.video_dir,
+            args.results_dir / f"sufficient{suffix}",
             num_frames=args.num_frames,
             frame_width=args.frame_width,
             sampling=args.sampling,
             evidence_fraction=args.evidence_fraction,
             workers=args.workers,
             task=args.task,
+            video_id_mapping=video_id_mapping,
         )
 
     if args.mode in ("hallucination", "all"):
         print("\n=== hallucination ===")
         run_evaluation(
             hallucination,
-            VIDEOS_DIR,
-            RESULTS_DIR / f"hallucination{suffix}",
+            args.video_dir,
+            args.results_dir / f"hallucination{suffix}",
             num_frames=args.num_frames,
             frame_width=args.frame_width,
             sampling=args.sampling,
             evidence_fraction=args.evidence_fraction,
             workers=args.workers,
             task=args.task,
+            video_id_mapping=video_id_mapping,
         )
 
     if args.mode in ("insufficient", "all"):
@@ -901,7 +992,7 @@ def main():
         run_evaluation(
             sufficient,
             INSUFFICIENT_DIR,
-            RESULTS_DIR / f"insufficient{suffix}",
+            args.results_dir / f"insufficient{suffix}",
             insufficient=True,
             num_frames=args.num_frames,
             frame_width=args.frame_width,
@@ -909,12 +1000,13 @@ def main():
             evidence_fraction=args.evidence_fraction,
             workers=args.workers,
             task=args.task,
+            video_id_mapping=video_id_mapping,
         )
 
     if args.mode in ("partial", "all"):
         print("\n=== partial (C2) ===")
         alphas = parse_alphas(args.alphas)
-        partial_entries = load_partial_entries(FILTERED_JSON, args.partial_candidates)
+        partial_entries = load_partial_entries(args.filtered_json, args.partial_candidates)
 
         if args.limit is not None:
             partial_entries = partial_entries[:args.limit]
@@ -930,13 +1022,14 @@ def main():
         run_evaluation(
             partial_tasks,
             PARTIAL_VIDEOS_DIR,
-            RESULTS_DIR / f"partial{suffix}",
+            args.results_dir / f"partial{suffix}",
             num_frames=args.num_frames,
             frame_width=args.frame_width,
             sampling=args.sampling,
             evidence_fraction=args.evidence_fraction,
             workers=args.workers,
             task=args.task,
+            video_id_mapping=video_id_mapping,
         )
 
 

@@ -8,7 +8,7 @@
 #SBATCH --output=logs/eval_%j.out
 #SBATCH --error=logs/eval_%j.err
 
-set -uo pipefail
+set -uo pipefail -e
 
 unset http_proxy
 unset https_proxy
@@ -91,11 +91,28 @@ fi
 
 echo "Starting evaluation..."
 
-# python scripts/evaluate.py --mode sufficient --task qa --limit 200 --num-frames 128 --frame-width 336 --workers 8 --sampling uniform
-# python scripts/evaluate.py --mode sufficient --task qa --num-frames 128 --frame-width 336 --workers 8 --sampling uniform
-# python scripts/evaluate.py --mode sufficient --task classify --num-frames 128 --frame-width 336 --workers 8 --sampling uniform
-# python scripts/evaluate.py --mode insufficient --task classify --num-frames 128 --frame-width 336 --workers 8 --sampling uniform
+# Set to "--limit 5" (or similar) for a quick sanity-check run before
+# committing this 2-GPU, 10-hour job to the full sweep. Leave empty for a
+# full run over every entry in --filtered-json.
+LIMIT_ARGS=""
 
-python scripts/evaluate.py --mode partial --task classify --num-frames 128 --frame-width 336 --workers 8 --sampling uniform --alphas "0.6,0.7,0.8,0.9,1.0"
+# Temporarily disable errexit so a non-zero exit from evaluate.py can be
+# captured and reported here, instead of -e killing the script before this
+# point is ever reached.
+set +e
+python scripts/evaluate.py \
+    --mode sufficient --task qa \
+    --filtered-json nextgqa_pipeline/nextgqa_filtered.json \
+    --video-dir source_datasets/next_gqa/videos \
+    --results-dir nextgqa_result \
+    --workers 8 \
+    ${LIMIT_ARGS}
+EVAL_EXIT=$?
+set -e
 
-echo "Eval finished."
+if [[ "${EVAL_EXIT}" -ne 0 ]]; then
+    echo "ERROR: evaluate.py exited with code ${EVAL_EXIT}" >&2
+    exit "${EVAL_EXIT}"
+fi
+
+echo "Eval finished (exit code ${EVAL_EXIT})."
