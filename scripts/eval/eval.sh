@@ -96,14 +96,34 @@ echo "Starting evaluation..."
 # full run over every entry in --filtered-json.
 LIMIT_ARGS=""
 
+# Already ran: sufficient/qa (results in nextgqa_result/sufficient.qa.json).
+# python scripts/eval/evaluate.py \
+#     --mode sufficient --task qa \
+#     --filtered-json nextgqa_pipeline/nextgqa_filtered.json \
+#     --video-dir source_datasets/next_gqa/videos \
+#     --results-dir nextgqa_result \
+#     --workers 8 \
+#     ${LIMIT_ARGS}
+
+# Now: insufficient/qa, against the NExT-GQA freeze videos built by
+# scripts/vqa/build_freeze_nextgqa.sh. --insufficient-video-dir's
+# {video_id}_q{qid}_freeze.mp4 naming is flat regardless of dataset, so no
+# --video-id-mapping is needed here (--video-dir is irrelevant for this
+# mode and is omitted). evaluate.py's process_entry() always writes the
+# literal string "insufficient" into the output record's evidence_condition
+# field when insufficient=True (see evidence_condition assignment near
+# process_entry()), overriding whatever the source anchor's own
+# evidence_condition was -- so nextgqa_result/insufficient.qa.json will have
+# evidence_condition == "insufficient" for every record, no extra flag needed.
+
 # Temporarily disable errexit so a non-zero exit from evaluate.py can be
 # captured and reported here, instead of -e killing the script before this
 # point is ever reached.
 set +e
 python scripts/eval/evaluate.py \
-    --mode sufficient --task qa \
+    --mode insufficient --task qa \
     --filtered-json nextgqa_pipeline/nextgqa_filtered.json \
-    --video-dir source_datasets/next_gqa/videos \
+    --insufficient-video-dir source_datasets/next_gqa/freeze_videos \
     --results-dir nextgqa_result \
     --workers 8 \
     ${LIMIT_ARGS}

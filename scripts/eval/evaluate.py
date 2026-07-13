@@ -55,19 +55,33 @@ Other datasets (e.g. NExT-GQA):
   without touching CG-Bench's own eval.sh invocation (which never passes
   these flags, so it keeps using the CG-Bench paths unchanged).
 
-  Video path resolution is dataset-aware via each entry's `source_dataset`
-  field: "cgbench" entries keep the flat {video_id}.mp4 naming used today;
-  "nextgqa" entries are resolved through --video-id-mapping (defaults to
-  NExT-GQA's own map_vid_vidorID.json), which maps video_id to the
-  {folder}/{vidorID} relative path NExT-GQA videos are actually stored
-  under (see nextgqa_pipeline/README.md). --mode insufficient/partial are
-  still CG-Bench-only (no NExT-GQA freeze/partial videos exist yet); use
-  --mode sufficient for NExT-GQA runs.
+  Video path resolution for --mode sufficient/hallucination is dataset-aware
+  via each entry's `source_dataset` field: "cgbench" entries keep the flat
+  {video_id}.mp4 naming used today; "nextgqa" entries are resolved through
+  --video-id-mapping (defaults to NExT-GQA's own map_vid_vidorID.json),
+  which maps video_id to the {folder}/{vidorID} relative path NExT-GQA
+  videos are actually stored under (see nextgqa_pipeline/README.md).
 
-  Example:
+  --mode insufficient uses --insufficient-video-dir instead (default:
+  CG-Bench's freeze_videos/); its {video_id}_q{qid}_freeze.mp4 naming (from
+  build_freeze.py) is flat for both datasets, so no --video-id-mapping
+  lookup is needed there -- just point --insufficient-video-dir at
+  source_datasets/next_gqa/freeze_videos for a NExT-GQA run.
+
+  --mode partial is still CG-Bench-only (no NExT-GQA partial/C2 videos
+  exist yet).
+
+  Example (sufficient):
     python scripts/eval/evaluate.py --mode sufficient --task qa \
       --filtered-json nextgqa_pipeline/nextgqa_filtered.json \
       --video-dir source_datasets/next_gqa/videos \
+      --results-dir nextgqa_result \
+      --limit 5
+
+  Example (insufficient):
+    python scripts/eval/evaluate.py --mode insufficient --task qa \
+      --filtered-json nextgqa_pipeline/nextgqa_filtered.json \
+      --insufficient-video-dir source_datasets/next_gqa/freeze_videos \
       --results-dir nextgqa_result \
       --limit 5
 """
@@ -846,6 +860,15 @@ def main():
              f"CG-Bench's {VIDEOS_DIR}).",
     )
     parser.add_argument(
+        "--insufficient-video-dir", type=Path, default=INSUFFICIENT_DIR,
+        help="Directory containing insufficient/freeze-condition videos, "
+             "i.e. {video_id}_q{qid}_freeze.mp4 files built by build_freeze.py "
+             f"(default: CG-Bench's {INSUFFICIENT_DIR}). Pass "
+             "source_datasets/next_gqa/freeze_videos for a NExT-GQA run. "
+             "This naming is flat regardless of source_dataset, so no "
+             "--video-id-mapping lookup is needed here.",
+    )
+    parser.add_argument(
         "--results-dir", type=Path, default=RESULTS_DIR,
         help="Where result .json/.jsonl files are written (default: "
              f"CG-Bench's {RESULTS_DIR}). Use a separate directory (e.g. "
@@ -991,7 +1014,7 @@ def main():
         print("\n=== insufficient ===")
         run_evaluation(
             sufficient,
-            INSUFFICIENT_DIR,
+            args.insufficient_video_dir,
             args.results_dir / f"insufficient{suffix}",
             insufficient=True,
             num_frames=args.num_frames,
