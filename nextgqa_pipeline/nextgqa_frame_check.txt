@@ -1,0 +1,18 @@
+NExT-GQA Frame Extraction Check
+============================================================
+mode: insufficient
+entries checked: 5537
+full_scan: True
+
+  missing_file: 244
+  ok: 5253
+  unparseable: 40
+
+unique video_ids with >=1 unparseable timestamp: 7
+  10437686463
+  11672562206
+  2792202513
+  2924847675
+  2983727948
+  3042965654
+  3079724515
