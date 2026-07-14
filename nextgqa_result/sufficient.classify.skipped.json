@@ -1,0 +1,212 @@
+[
+  {
+    "idx": 66,
+    "video_id": "2924847675",
+    "qid": "3",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '17.62228125', '-i', 'source_datasets/next_gqa/videos/1122/2924847675.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpq47dkqmp/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 1099,
+    "video_id": "3006009155",
+    "qid": "5",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '12.504515625', '-i', 'source_datasets/next_gqa/videos/1100/3006009155.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmposqax6an/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 1354,
+    "video_id": "2889738670",
+    "qid": "0",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '11.03878125', '-i', 'source_datasets/next_gqa/videos/1202/2889738670.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmp8fqdfunk/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 1539,
+    "video_id": "2889738670",
+    "qid": "5",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '11.03878125', '-i', 'source_datasets/next_gqa/videos/1202/2889738670.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpz3czz5jh/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 1580,
+    "video_id": "3006009155",
+    "qid": "7",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '12.504515625', '-i', 'source_datasets/next_gqa/videos/1100/3006009155.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpcr9p50c6/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 1730,
+    "video_id": "2935869403",
+    "qid": "6",
+    "alpha": null,
+    "reason": "Connection error."
+  },
+  {
+    "idx": 2003,
+    "video_id": "2924847675",
+    "qid": "4",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '17.62228125', '-i', 'source_datasets/next_gqa/videos/1122/2924847675.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpdgrob4xe/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 2085,
+    "video_id": "10437686463",
+    "qid": "9",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.484241265625', '-i', 'source_datasets/next_gqa/videos/0062/10437686463.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmp4bus53au/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 2186,
+    "video_id": "3006009155",
+    "qid": "6",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '12.504515625', '-i', 'source_datasets/next_gqa/videos/1100/3006009155.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpq7fgyta6/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 2336,
+    "video_id": "10437686463",
+    "qid": "5",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.484241265625', '-i', 'source_datasets/next_gqa/videos/0062/10437686463.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmphudgxh1u/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 2381,
+    "video_id": "10437686463",
+    "qid": "10",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.484241265625', '-i', 'source_datasets/next_gqa/videos/0062/10437686463.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpouuo5am8/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 2442,
+    "video_id": "2889738670",
+    "qid": "3",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '11.03878125', '-i', 'source_datasets/next_gqa/videos/1202/2889738670.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpzlkupily/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 2570,
+    "video_id": "3006009155",
+    "qid": "4",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '12.504515625', '-i', 'source_datasets/next_gqa/videos/1100/3006009155.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpbri62uhd/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 2688,
+    "video_id": "10437686463",
+    "qid": "2",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.484241265625', '-i', 'source_datasets/next_gqa/videos/0062/10437686463.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpbz_ug8vx/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 2810,
+    "video_id": "10437686463",
+    "qid": "12",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.484241265625', '-i', 'source_datasets/next_gqa/videos/0062/10437686463.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpb0_pojfl/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 2921,
+    "video_id": "10437686463",
+    "qid": "11",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.484241265625', '-i', 'source_datasets/next_gqa/videos/0062/10437686463.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpncye06lu/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 3064,
+    "video_id": "10437686463",
+    "qid": "7",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.484241265625', '-i', 'source_datasets/next_gqa/videos/0062/10437686463.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmp5v3sp88q/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 3503,
+    "video_id": "10437686463",
+    "qid": "6",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.484241265625', '-i', 'source_datasets/next_gqa/videos/0062/10437686463.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpqxrvo0oo/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 3754,
+    "video_id": "10437686463",
+    "qid": "1",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.484241265625', '-i', 'source_datasets/next_gqa/videos/0062/10437686463.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpac1gevaq/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 3831,
+    "video_id": "3006009155",
+    "qid": "1",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '12.504515625', '-i', 'source_datasets/next_gqa/videos/1100/3006009155.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpujdlpb2a/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 4104,
+    "video_id": "2889738670",
+    "qid": "2",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '11.03878125', '-i', 'source_datasets/next_gqa/videos/1202/2889738670.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpyi29cymt/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 4222,
+    "video_id": "3006009155",
+    "qid": "2",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '12.504515625', '-i', 'source_datasets/next_gqa/videos/1100/3006009155.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmp270d7s42/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 4223,
+    "video_id": "2889738670",
+    "qid": "1",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '11.03878125', '-i', 'source_datasets/next_gqa/videos/1202/2889738670.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpxnmmnfjv/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 4255,
+    "video_id": "3006009155",
+    "qid": "0",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '12.504515625', '-i', 'source_datasets/next_gqa/videos/1100/3006009155.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpfgdn58zb/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 4532,
+    "video_id": "2924847675",
+    "qid": "1",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '17.62228125', '-i', 'source_datasets/next_gqa/videos/1122/2924847675.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpq5z8qim2/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 4850,
+    "video_id": "10437686463",
+    "qid": "4",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.484241265625', '-i', 'source_datasets/next_gqa/videos/0062/10437686463.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpgrnnp0j_/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 4927,
+    "video_id": "2924847675",
+    "qid": "7",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '17.62228125', '-i', 'source_datasets/next_gqa/videos/1122/2924847675.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpacl_d2h6/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 5037,
+    "video_id": "2924847675",
+    "qid": "6",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '17.62228125', '-i', 'source_datasets/next_gqa/videos/1122/2924847675.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpk1joniz5/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 5231,
+    "video_id": "3006009155",
+    "qid": "3",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '12.504515625', '-i', 'source_datasets/next_gqa/videos/1100/3006009155.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmp403y6l12/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 5477,
+    "video_id": "10437686463",
+    "qid": "8",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.484241265625', '-i', 'source_datasets/next_gqa/videos/0062/10437686463.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpvqa9koie/frame_0031.jpg']' returned non-zero exit status 234."
+  }
+]

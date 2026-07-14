@@ -105,6 +105,14 @@ LIMIT_ARGS=""
 #     --workers 8 \
 #     ${LIMIT_ARGS}
 
+# python scripts/eval/evaluate.py \
+#     --mode insufficient --task classify \
+#     --filtered-json nextgqa_pipeline/nextgqa_filtered.json \
+#     --insufficient-video-dir source_datasets/next_gqa/freeze_videos \
+#     --results-dir nextgqa_result \
+#     --workers 8 \
+#     ${LIMIT_ARGS}
+
 # Now: insufficient/qa, against the NExT-GQA freeze videos built by
 # scripts/vqa/build_freeze_nextgqa.sh. --insufficient-video-dir's
 # {video_id}_q{qid}_freeze.mp4 naming is flat regardless of dataset, so no
@@ -121,9 +129,9 @@ LIMIT_ARGS=""
 # point is ever reached.
 set +e
 python scripts/eval/evaluate.py \
-    --mode insufficient --task qa \
+    --mode sufficient --task classify \
     --filtered-json nextgqa_pipeline/nextgqa_filtered.json \
-    --insufficient-video-dir source_datasets/next_gqa/freeze_videos \
+    --video-dir source_datasets/next_gqa/videos \
     --results-dir nextgqa_result \
     --workers 8 \
     ${LIMIT_ARGS}
