@@ -37,6 +37,29 @@ evaluate.py re-run, since evaluate.py's resume logic only remembers
 successes (see run_evaluation()/load_existing_keys()) and will otherwise
 retry every currently-skipped entry, including these, forever.
 
+Deleting unparseable files (--delete-unparseable):
+  Off by default. When passed, every file with status == "unparseable" is
+  removed from disk after the scan completes (add --dry-run to only print
+  what would be deleted). This is safe and recoverable for --mode
+  insufficient: freeze videos are derived, rebuildable output
+  (build_freeze.py --overwrite regenerates them from the raw video).
+
+  It is NOT safe/recoverable the same way for --mode sufficient: those are
+  the raw NExT-GQA videos, whose only source is the one-time official
+  archive download (see nextgqa_pipeline/README.md) -- there is no
+  "rebuild" step, only re-downloading/re-extracting the archive. Deleting
+  in --mode sufficient therefore additionally requires
+  --i-understand-this-deletes-raw-source-videos, so it can't happen by
+  accident just because --mode defaults or copy-paste went wrong.
+
+  Note: for insufficient/freeze videos, the failure is usually inherited
+  unchanged from the raw video (build_freeze.py preserves duration/
+  timestamps exactly), so deleting+rebuilding the freeze video will very
+  likely reproduce the identical failure rather than fix it. Deleting here
+  mainly turns a confusing "file exists but is broken" state into a clean
+  "missing_video" (which evaluate.py already skips gracefully), it does not
+  by itself repair anything.
+
 Usage:
   python scripts/eval/check_video_frame_extraction.py \
     --filtered-json nextgqa_pipeline/nextgqa_filtered.json \
@@ -201,6 +224,32 @@ def check_entry(entry: dict[str, Any], args: argparse.Namespace, mapping: dict[s
     return rec
 
 
+def delete_unparseable_files(results: list[dict[str, Any]], dry_run: bool) -> list[dict[str, Any]]:
+    """Delete (or, if dry_run, just report) every result with status == 'unparseable'.
+
+    Returns a list of {"video_id", "qid", "path", "action"} rows, where
+    action is one of "deleted" / "dry_run_would_delete" / "delete_failed".
+    """
+    outcomes = []
+    for r in results:
+        if r["status"] != "unparseable":
+            continue
+        path = Path(r["path"])
+        row = {"video_id": r["video_id"], "qid": r["qid"], "path": str(path)}
+        if dry_run:
+            row["action"] = "dry_run_would_delete"
+        else:
+            try:
+                path.unlink()
+                row["action"] = "deleted"
+            except OSError as e:
+                row["action"] = "delete_failed"
+                row["error"] = str(e)
+        outcomes.append(row)
+        log(f"[DELETE] {row['action']:22s} {path}")
+    return outcomes
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--filtered-json", type=Path, default=DEFAULT_FILTERED_JSON)
@@ -226,7 +275,28 @@ def main() -> None:
     parser.add_argument("--output-txt", type=Path, default=DEFAULT_OUTPUT_TXT)
     parser.add_argument("--retry-json", type=Path, default=DEFAULT_RETRY_JSON,
                          help="{video_id, qid} pairs with status == 'unparseable', for downstream use.")
+    parser.add_argument("--delete-unparseable", action="store_true",
+                         help="Delete every file with status == 'unparseable' after the scan. "
+                              "Safe/recoverable for --mode insufficient (rebuildable via "
+                              "build_freeze.py --overwrite); for --mode sufficient also requires "
+                              "--i-understand-this-deletes-raw-source-videos.")
+    parser.add_argument("--i-understand-this-deletes-raw-source-videos", action="store_true",
+                         dest="confirm_delete_raw",
+                         help="Required in addition to --delete-unparseable when --mode sufficient, "
+                              "since raw videos have no rebuild step (only re-downloading the "
+                              "official archive).")
+    parser.add_argument("--dry-run", action="store_true",
+                         help="With --delete-unparseable, only print what would be deleted; "
+                              "delete nothing.")
     args = parser.parse_args()
+
+    if args.delete_unparseable and args.mode == "sufficient" and not args.confirm_delete_raw and not args.dry_run:
+        raise SystemExit(
+            "[FATAL] --delete-unparseable --mode sufficient would delete raw source videos, "
+            "which cannot be rebuilt (only re-downloaded from the official archive). Re-run "
+            "with --i-understand-this-deletes-raw-source-videos to confirm, or add --dry-run "
+            "to preview first."
+        )
 
     entries = load_entries(args.filtered_json)
     if args.limit is not None:
@@ -265,6 +335,15 @@ def main() -> None:
 
     unique_bad_videos = sorted({r["video_id"] for r in results if r["status"] == "unparseable"})
 
+    delete_outcomes: list[dict[str, Any]] = []
+    if args.delete_unparseable:
+        log(f"[DELETE] {'[DRY RUN] ' if args.dry_run else ''}"
+            f"processing {len(unparseable)} unparseable file(s)...")
+        delete_outcomes = delete_unparseable_files(results, args.dry_run)
+        delete_report_path = args.output_json.with_name(args.output_json.stem + "_deleted.json")
+        with delete_report_path.open("w", encoding="utf-8") as f:
+            json.dump(delete_outcomes, f, ensure_ascii=False, indent=2)
+
     lines = [
         "NExT-GQA Frame Extraction Check",
         "=" * 60,
@@ -280,6 +359,18 @@ def main() -> None:
         f"unique video_ids with >=1 unparseable timestamp: {len(unique_bad_videos)}",
     ]
     lines += [f"  {vid}" for vid in unique_bad_videos]
+
+    if args.delete_unparseable:
+        action_counts: dict[str, int] = {}
+        for row in delete_outcomes:
+            action_counts[row["action"]] = action_counts.get(row["action"], 0) + 1
+        lines += [
+            "",
+            f"--delete-unparseable {'(dry run)' if args.dry_run else ''}:",
+        ]
+        for action, count in sorted(action_counts.items()):
+            lines.append(f"  {action}: {count}")
+
     text = "\n".join(lines)
 
     args.output_txt.parent.mkdir(parents=True, exist_ok=True)
@@ -289,6 +380,9 @@ def main() -> None:
     print("\n" + text)
     print(f"\nFull report      -> {args.output_json}")
     print(f"Unparseable list -> {args.retry_json} ({len(unparseable)} (video_id, qid) pairs)")
+    if args.delete_unparseable:
+        delete_report_path = args.output_json.with_name(args.output_json.stem + "_deleted.json")
+        print(f"Delete outcomes  -> {delete_report_path}")
 
 
 if __name__ == "__main__":
