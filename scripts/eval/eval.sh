@@ -105,13 +105,7 @@ LIMIT_ARGS=""
 #     --workers 8 \
 #     ${LIMIT_ARGS}
 
-# python scripts/eval/evaluate.py \
-#     --mode insufficient --task classify \
-#     --filtered-json nextgqa_pipeline/nextgqa_filtered.json \
-#     --insufficient-video-dir source_datasets/next_gqa/freeze_videos \
-#     --results-dir nextgqa_result \
-#     --workers 8 \
-#     ${LIMIT_ARGS}
+
 
 # Now: insufficient/qa, against the NExT-GQA freeze videos built by
 # scripts/vqa/build_freeze_nextgqa.sh. --insufficient-video-dir's
@@ -128,10 +122,18 @@ LIMIT_ARGS=""
 # captured and reported here, instead of -e killing the script before this
 # point is ever reached.
 set +e
+# python scripts/eval/evaluate.py \
+#     --mode sufficient --task classify \
+#     --filtered-json nextgqa_pipeline/nextgqa_filtered.json \
+#     --video-dir source_datasets/next_gqa/videos \
+#     --results-dir nextgqa_result \
+#     --workers 8 \
+#     ${LIMIT_ARGS}
+
 python scripts/eval/evaluate.py \
-    --mode sufficient --task classify \
+    --mode insufficient --task classify \
     --filtered-json nextgqa_pipeline/nextgqa_filtered.json \
-    --video-dir source_datasets/next_gqa/videos \
+    --insufficient-video-dir source_datasets/next_gqa/freeze_videos \
     --results-dir nextgqa_result \
     --workers 8 \
     ${LIMIT_ARGS}

@@ -1,22 +1,8 @@
 [
   {
-    "idx": 31,
-    "video_id": "2925959064",
-    "qid": "0",
-    "alpha": null,
-    "reason": "missing_video"
-  },
-  {
-    "idx": 34,
-    "video_id": "2676529856",
-    "qid": "3",
-    "alpha": null,
-    "reason": "missing_video"
-  },
-  {
-    "idx": 53,
-    "video_id": "2669597217",
-    "qid": "5",
+    "idx": 198,
+    "video_id": "2500623285",
+    "qid": "6",
     "alpha": null,
     "reason": "missing_video"
   },
@@ -28,58 +14,30 @@
     "reason": "missing_video"
   },
   {
-    "idx": 66,
-    "video_id": "2924847675",
+    "idx": 53,
+    "video_id": "2669597217",
+    "qid": "5",
+    "alpha": null,
+    "reason": "missing_video"
+  },
+  {
+    "idx": 34,
+    "video_id": "2676529856",
     "qid": "3",
     "alpha": null,
-    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '17.646874875', '-i', 'source_datasets/next_gqa/freeze_videos/2924847675_q3_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpqy1lxbf1/frame_0031.jpg']' returned non-zero exit status 234."
+    "reason": "missing_video"
   },
   {
-    "idx": 97,
-    "video_id": "2739709393",
+    "idx": 31,
+    "video_id": "2925959064",
     "qid": "0",
     "alpha": null,
     "reason": "missing_video"
   },
   {
-    "idx": 100,
-    "video_id": "2399811629",
-    "qid": "0",
-    "alpha": null,
-    "reason": "missing_video"
-  },
-  {
-    "idx": 122,
-    "video_id": "2703151976",
-    "qid": "4",
-    "alpha": null,
-    "reason": "missing_video"
-  },
-  {
-    "idx": 164,
-    "video_id": "2500623285",
-    "qid": "8",
-    "alpha": null,
-    "reason": "missing_video"
-  },
-  {
-    "idx": 194,
-    "video_id": "2399811629",
-    "qid": "1",
-    "alpha": null,
-    "reason": "missing_video"
-  },
-  {
-    "idx": 198,
-    "video_id": "2500623285",
-    "qid": "6",
-    "alpha": null,
-    "reason": "missing_video"
-  },
-  {
-    "idx": 208,
-    "video_id": "2406887888",
-    "qid": "0",
+    "idx": 251,
+    "video_id": "2676529856",
+    "qid": "9",
     "alpha": null,
     "reason": "missing_video"
   },
@@ -87,6 +45,13 @@
     "idx": 224,
     "video_id": "2836465095",
     "qid": "3",
+    "alpha": null,
+    "reason": "missing_video"
+  },
+  {
+    "idx": 100,
+    "video_id": "2399811629",
+    "qid": "0",
     "alpha": null,
     "reason": "missing_video"
   },
@@ -105,9 +70,37 @@
     "reason": "missing_video"
   },
   {
-    "idx": 251,
-    "video_id": "2676529856",
-    "qid": "9",
+    "idx": 194,
+    "video_id": "2399811629",
+    "qid": "1",
+    "alpha": null,
+    "reason": "missing_video"
+  },
+  {
+    "idx": 164,
+    "video_id": "2500623285",
+    "qid": "8",
+    "alpha": null,
+    "reason": "missing_video"
+  },
+  {
+    "idx": 208,
+    "video_id": "2406887888",
+    "qid": "0",
+    "alpha": null,
+    "reason": "missing_video"
+  },
+  {
+    "idx": 97,
+    "video_id": "2739709393",
+    "qid": "0",
+    "alpha": null,
+    "reason": "missing_video"
+  },
+  {
+    "idx": 122,
+    "video_id": "2703151976",
+    "qid": "4",
     "alpha": null,
     "reason": "missing_video"
   },
@@ -140,11 +133,11 @@
     "reason": "missing_video"
   },
   {
-    "idx": 432,
-    "video_id": "4903593284",
-    "qid": "6",
+    "idx": 464,
+    "video_id": "2925959064",
+    "qid": "5",
     "alpha": null,
-    "reason": "Connection error."
+    "reason": "missing_video"
   },
   {
     "idx": 438,
@@ -161,16 +154,16 @@
     "reason": "missing_video"
   },
   {
-    "idx": 464,
-    "video_id": "2925959064",
-    "qid": "5",
+    "idx": 674,
+    "video_id": "3050287321",
+    "qid": "4",
     "alpha": null,
     "reason": "missing_video"
   },
   {
-    "idx": 470,
-    "video_id": "2962278896",
-    "qid": "1",
+    "idx": 658,
+    "video_id": "2669597217",
+    "qid": "8",
     "alpha": null,
     "reason": "missing_video"
   },
@@ -189,25 +182,11 @@
     "reason": "missing_video"
   },
   {
-    "idx": 658,
-    "video_id": "2669597217",
-    "qid": "8",
-    "alpha": null,
-    "reason": "missing_video"
-  },
-  {
-    "idx": 674,
-    "video_id": "3050287321",
-    "qid": "4",
-    "alpha": null,
-    "reason": "missing_video"
-  },
-  {
-    "idx": 718,
-    "video_id": "11672562206",
+    "idx": 755,
+    "video_id": "2794873229",
     "qid": "1",
     "alpha": null,
-    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '24.662522390625', '-i', 'source_datasets/next_gqa/freeze_videos/11672562206_q1_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpeaelihbn/frame_0031.jpg']' returned non-zero exit status 234."
+    "reason": "missing_video"
   },
   {
     "idx": 722,
@@ -224,16 +203,16 @@
     "reason": "missing_video"
   },
   {
-    "idx": 755,
-    "video_id": "2794873229",
-    "qid": "1",
+    "idx": 787,
+    "video_id": "2836465095",
+    "qid": "2",
     "alpha": null,
     "reason": "missing_video"
   },
   {
-    "idx": 787,
-    "video_id": "2836465095",
-    "qid": "2",
+    "idx": 807,
+    "video_id": "2876084443",
+    "qid": "0",
     "alpha": null,
     "reason": "missing_video"
   },
@@ -245,23 +224,16 @@
     "reason": "missing_video"
   },
   {
-    "idx": 799,
-    "video_id": "3042965654",
-    "qid": "9",
-    "alpha": null,
-    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '15.126674062500001', '-i', 'source_datasets/next_gqa/freeze_videos/3042965654_q9_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmp9m9fwbjb/frame_0031.jpg']' returned non-zero exit status 234."
-  },
-  {
-    "idx": 807,
-    "video_id": "2876084443",
-    "qid": "0",
+    "idx": 828,
+    "video_id": "2794873229",
+    "qid": "2",
     "alpha": null,
     "reason": "missing_video"
   },
   {
-    "idx": 828,
-    "video_id": "2794873229",
-    "qid": "2",
+    "idx": 470,
+    "video_id": "2962278896",
+    "qid": "1",
     "alpha": null,
     "reason": "missing_video"
   },
@@ -280,18 +252,18 @@
     "reason": "missing_video"
   },
   {
+    "idx": 1047,
+    "video_id": "2685930614",
+    "qid": "4",
+    "alpha": null,
+    "reason": "missing_video"
+  },
+  {
     "idx": 979,
     "video_id": "2739709393",
     "qid": "2",
     "alpha": null,
     "reason": "missing_video"
-  },
-  {
-    "idx": 1011,
-    "video_id": "3042965654",
-    "qid": "4",
-    "alpha": null,
-    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '15.126674062500001', '-i', 'source_datasets/next_gqa/freeze_videos/3042965654_q4_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpqxkxuz6w/frame_0031.jpg']' returned non-zero exit status 234."
   },
   {
     "idx": 1041,
@@ -301,22 +273,15 @@
     "reason": "missing_video"
   },
   {
-    "idx": 1047,
-    "video_id": "2685930614",
-    "qid": "4",
-    "alpha": null,
-    "reason": "missing_video"
-  },
-  {
-    "idx": 1083,
-    "video_id": "2836465095",
-    "qid": "5",
-    "alpha": null,
-    "reason": "missing_video"
-  },
-  {
     "idx": 1087,
     "video_id": "2685930614",
+    "qid": "2",
+    "alpha": null,
+    "reason": "missing_video"
+  },
+  {
+    "idx": 1111,
+    "video_id": "2399811629",
     "qid": "2",
     "alpha": null,
     "reason": "missing_video"
@@ -329,16 +294,16 @@
     "reason": "missing_video"
   },
   {
-    "idx": 1111,
-    "video_id": "2399811629",
-    "qid": "2",
+    "idx": 1114,
+    "video_id": "2517097455",
+    "qid": "3",
     "alpha": null,
     "reason": "missing_video"
   },
   {
-    "idx": 1114,
-    "video_id": "2517097455",
-    "qid": "3",
+    "idx": 1083,
+    "video_id": "2836465095",
+    "qid": "5",
     "alpha": null,
     "reason": "missing_video"
   },
@@ -357,16 +322,16 @@
     "reason": "missing_video"
   },
   {
-    "idx": 1166,
-    "video_id": "2704509130",
-    "qid": "5",
+    "idx": 1169,
+    "video_id": "2822110402",
+    "qid": "0",
     "alpha": null,
     "reason": "missing_video"
   },
   {
-    "idx": 1169,
-    "video_id": "2822110402",
-    "qid": "0",
+    "idx": 1166,
+    "video_id": "2704509130",
+    "qid": "5",
     "alpha": null,
     "reason": "missing_video"
   },
@@ -546,13 +511,6 @@
     "reason": "missing_video"
   },
   {
-    "idx": 1652,
-    "video_id": "3386797396",
-    "qid": "5",
-    "alpha": null,
-    "reason": "Connection error."
-  },
-  {
     "idx": 1671,
     "video_id": "2493035685",
     "qid": "6",
@@ -563,13 +521,6 @@
     "idx": 1729,
     "video_id": "2703151976",
     "qid": "2",
-    "alpha": null,
-    "reason": "missing_video"
-  },
-  {
-    "idx": 1730,
-    "video_id": "2935869403",
-    "qid": "6",
     "alpha": null,
     "reason": "missing_video"
   },
@@ -591,6 +542,13 @@
     "idx": 1744,
     "video_id": "2794873229",
     "qid": "3",
+    "alpha": null,
+    "reason": "missing_video"
+  },
+  {
+    "idx": 1730,
+    "video_id": "2935869403",
+    "qid": "6",
     "alpha": null,
     "reason": "missing_video"
   },
@@ -658,13 +616,6 @@
     "reason": "missing_video"
   },
   {
-    "idx": 2003,
-    "video_id": "2924847675",
-    "qid": "4",
-    "alpha": null,
-    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '17.646874875', '-i', 'source_datasets/next_gqa/freeze_videos/2924847675_q4_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpg9fe9wdn/frame_0031.jpg']' returned non-zero exit status 234."
-  },
-  {
     "idx": 2024,
     "video_id": "2440996945",
     "qid": "3",
@@ -679,11 +630,11 @@
     "reason": "missing_video"
   },
   {
-    "idx": 2085,
-    "video_id": "10437686463",
-    "qid": "9",
+    "idx": 66,
+    "video_id": "2924847675",
+    "qid": "3",
     "alpha": null,
-    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.493102609374997', '-i', 'source_datasets/next_gqa/freeze_videos/10437686463_q9_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpf_bubr7_/frame_0031.jpg']' returned non-zero exit status 234."
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '17.646874875', '-i', 'source_datasets/next_gqa/freeze_videos/2924847675_q3_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpaimj3ff0/frame_0031.jpg']' returned non-zero exit status 234."
   },
   {
     "idx": 2110,
@@ -784,18 +735,18 @@
     "reason": "missing_video"
   },
   {
+    "idx": 2003,
+    "video_id": "2924847675",
+    "qid": "4",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '17.646874875', '-i', 'source_datasets/next_gqa/freeze_videos/2924847675_q4_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpum6515hb/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
     "idx": 2337,
     "video_id": "2414043078",
     "qid": "1",
     "alpha": null,
     "reason": "missing_video"
-  },
-  {
-    "idx": 2336,
-    "video_id": "10437686463",
-    "qid": "5",
-    "alpha": null,
-    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.493102609374997', '-i', 'source_datasets/next_gqa/freeze_videos/10437686463_q5_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmp00evj04d/frame_0031.jpg']' returned non-zero exit status 234."
   },
   {
     "idx": 2373,
@@ -805,11 +756,11 @@
     "reason": "missing_video"
   },
   {
-    "idx": 2381,
-    "video_id": "10437686463",
-    "qid": "10",
+    "idx": 799,
+    "video_id": "3042965654",
+    "qid": "9",
     "alpha": null,
-    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.493102609374997', '-i', 'source_datasets/next_gqa/freeze_videos/10437686463_q10_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmprtcfcfuc/frame_0031.jpg']' returned non-zero exit status 234."
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '15.126674062500001', '-i', 'source_datasets/next_gqa/freeze_videos/3042965654_q9_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmp8tcjw1re/frame_0031.jpg']' returned non-zero exit status 234."
   },
   {
     "idx": 2387,
@@ -924,11 +875,11 @@
     "reason": "missing_video"
   },
   {
-    "idx": 2688,
-    "video_id": "10437686463",
-    "qid": "2",
+    "idx": 1011,
+    "video_id": "3042965654",
+    "qid": "4",
     "alpha": null,
-    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.493102609374997', '-i', 'source_datasets/next_gqa/freeze_videos/10437686463_q2_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpetnmoigt/frame_0031.jpg']' returned non-zero exit status 234."
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '15.126674062500001', '-i', 'source_datasets/next_gqa/freeze_videos/3042965654_q4_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmp81n5r1tt/frame_0031.jpg']' returned non-zero exit status 234."
   },
   {
     "idx": 2716,
@@ -959,11 +910,11 @@
     "reason": "missing_video"
   },
   {
-    "idx": 2810,
-    "video_id": "10437686463",
-    "qid": "12",
+    "idx": 718,
+    "video_id": "11672562206",
+    "qid": "1",
     "alpha": null,
-    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.493102609374997', '-i', 'source_datasets/next_gqa/freeze_videos/10437686463_q12_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpw_7et2vm/frame_0031.jpg']' returned non-zero exit status 234."
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '24.662522390625', '-i', 'source_datasets/next_gqa/freeze_videos/11672562206_q1_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpubitnm4j/frame_0031.jpg']' returned non-zero exit status 234."
   },
   {
     "idx": 2835,
@@ -987,11 +938,11 @@
     "reason": "missing_video"
   },
   {
-    "idx": 2921,
+    "idx": 2085,
     "video_id": "10437686463",
-    "qid": "11",
+    "qid": "9",
     "alpha": null,
-    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.493102609374997', '-i', 'source_datasets/next_gqa/freeze_videos/10437686463_q11_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmp6k2wgfcb/frame_0031.jpg']' returned non-zero exit status 234."
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.493102609374997', '-i', 'source_datasets/next_gqa/freeze_videos/10437686463_q9_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmp_jz9cebz/frame_0031.jpg']' returned non-zero exit status 234."
   },
   {
     "idx": 2933,
@@ -1043,18 +994,18 @@
     "reason": "missing_video"
   },
   {
-    "idx": 3064,
+    "idx": 2336,
     "video_id": "10437686463",
-    "qid": "7",
+    "qid": "5",
     "alpha": null,
-    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.493102609374997', '-i', 'source_datasets/next_gqa/freeze_videos/10437686463_q7_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpeswz3j5f/frame_0031.jpg']' returned non-zero exit status 234."
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.493102609374997', '-i', 'source_datasets/next_gqa/freeze_videos/10437686463_q5_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpuil96k0r/frame_0031.jpg']' returned non-zero exit status 234."
   },
   {
-    "idx": 3089,
-    "video_id": "11672562206",
-    "qid": "6",
+    "idx": 2381,
+    "video_id": "10437686463",
+    "qid": "10",
     "alpha": null,
-    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '24.662522390625', '-i', 'source_datasets/next_gqa/freeze_videos/11672562206_q6_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmps3y_l835/frame_0031.jpg']' returned non-zero exit status 234."
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.493102609374997', '-i', 'source_datasets/next_gqa/freeze_videos/10437686463_q10_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmplvmn_iwu/frame_0031.jpg']' returned non-zero exit status 234."
   },
   {
     "idx": 3107,
@@ -1134,11 +1085,11 @@
     "reason": "missing_video"
   },
   {
-    "idx": 3274,
-    "video_id": "3042965654",
-    "qid": "7",
+    "idx": 2688,
+    "video_id": "10437686463",
+    "qid": "2",
     "alpha": null,
-    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '15.126674062500001', '-i', 'source_datasets/next_gqa/freeze_videos/3042965654_q7_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpv82jcuhx/frame_0031.jpg']' returned non-zero exit status 234."
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.493102609374997', '-i', 'source_datasets/next_gqa/freeze_videos/10437686463_q2_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmp9hiwmot7/frame_0031.jpg']' returned non-zero exit status 234."
   },
   {
     "idx": 3305,
@@ -1197,11 +1148,11 @@
     "reason": "missing_video"
   },
   {
-    "idx": 3503,
+    "idx": 2810,
     "video_id": "10437686463",
-    "qid": "6",
+    "qid": "12",
     "alpha": null,
-    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.493102609374997', '-i', 'source_datasets/next_gqa/freeze_videos/10437686463_q6_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpf6mbpu83/frame_0031.jpg']' returned non-zero exit status 234."
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.493102609374997', '-i', 'source_datasets/next_gqa/freeze_videos/10437686463_q12_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpxsts_zg7/frame_0031.jpg']' returned non-zero exit status 234."
   },
   {
     "idx": 3519,
@@ -1267,18 +1218,18 @@
     "reason": "missing_video"
   },
   {
-    "idx": 3754,
+    "idx": 2921,
     "video_id": "10437686463",
-    "qid": "1",
+    "qid": "11",
     "alpha": null,
-    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.493102609374997', '-i', 'source_datasets/next_gqa/freeze_videos/10437686463_q1_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpea26jacc/frame_0031.jpg']' returned non-zero exit status 234."
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.493102609374997', '-i', 'source_datasets/next_gqa/freeze_videos/10437686463_q11_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmp5npfl4mo/frame_0031.jpg']' returned non-zero exit status 234."
   },
   {
-    "idx": 3810,
-    "video_id": "3042965654",
-    "qid": "8",
+    "idx": 3064,
+    "video_id": "10437686463",
+    "qid": "7",
     "alpha": null,
-    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '15.126674062500001', '-i', 'source_datasets/next_gqa/freeze_videos/3042965654_q8_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpbgfhr6x4/frame_0031.jpg']' returned non-zero exit status 234."
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.493102609374997', '-i', 'source_datasets/next_gqa/freeze_videos/10437686463_q7_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpgi4e7vc7/frame_0031.jpg']' returned non-zero exit status 234."
   },
   {
     "idx": 3825,
@@ -1344,13 +1295,6 @@
     "reason": "missing_video"
   },
   {
-    "idx": 4043,
-    "video_id": "11672562206",
-    "qid": "3",
-    "alpha": null,
-    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '24.662522390625', '-i', 'source_datasets/next_gqa/freeze_videos/11672562206_q3_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmp1axesd5d/frame_0031.jpg']' returned non-zero exit status 234."
-  },
-  {
     "idx": 4063,
     "video_id": "2876084443",
     "qid": "4",
@@ -1377,13 +1321,6 @@
     "qid": "5",
     "alpha": null,
     "reason": "missing_video"
-  },
-  {
-    "idx": 4159,
-    "video_id": "3042965654",
-    "qid": "6",
-    "alpha": null,
-    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '15.126674062500001', '-i', 'source_datasets/next_gqa/freeze_videos/3042965654_q6_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmppadscphz/frame_0031.jpg']' returned non-zero exit status 234."
   },
   {
     "idx": 4161,
@@ -1540,11 +1477,11 @@
     "reason": "missing_video"
   },
   {
-    "idx": 4532,
-    "video_id": "2924847675",
-    "qid": "1",
+    "idx": 3089,
+    "video_id": "11672562206",
+    "qid": "6",
     "alpha": null,
-    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '17.646874875', '-i', 'source_datasets/next_gqa/freeze_videos/2924847675_q1_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpzd0i9jb2/frame_0031.jpg']' returned non-zero exit status 234."
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '24.662522390625', '-i', 'source_datasets/next_gqa/freeze_videos/11672562206_q6_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmp_12zck4p/frame_0031.jpg']' returned non-zero exit status 234."
   },
   {
     "idx": 4543,
@@ -1673,11 +1610,11 @@
     "reason": "missing_video"
   },
   {
-    "idx": 4850,
-    "video_id": "10437686463",
-    "qid": "4",
+    "idx": 3274,
+    "video_id": "3042965654",
+    "qid": "7",
     "alpha": null,
-    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.493102609374997', '-i', 'source_datasets/next_gqa/freeze_videos/10437686463_q4_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmphge247u1/frame_0031.jpg']' returned non-zero exit status 234."
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '15.126674062500001', '-i', 'source_datasets/next_gqa/freeze_videos/3042965654_q7_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpjz13lk2g/frame_0031.jpg']' returned non-zero exit status 234."
   },
   {
     "idx": 4865,
@@ -1687,11 +1624,11 @@
     "reason": "missing_video"
   },
   {
-    "idx": 4873,
-    "video_id": "11672562206",
-    "qid": "4",
+    "idx": 3810,
+    "video_id": "3042965654",
+    "qid": "8",
     "alpha": null,
-    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '24.662522390625', '-i', 'source_datasets/next_gqa/freeze_videos/11672562206_q4_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpjh4yivrh/frame_0031.jpg']' returned non-zero exit status 234."
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '15.126674062500001', '-i', 'source_datasets/next_gqa/freeze_videos/3042965654_q8_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmp2qy0iwim/frame_0031.jpg']' returned non-zero exit status 234."
   },
   {
     "idx": 4879,
@@ -1722,11 +1659,11 @@
     "reason": "missing_video"
   },
   {
-    "idx": 4927,
-    "video_id": "2924847675",
-    "qid": "7",
+    "idx": 3754,
+    "video_id": "10437686463",
+    "qid": "1",
     "alpha": null,
-    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '17.646874875', '-i', 'source_datasets/next_gqa/freeze_videos/2924847675_q7_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpmnmwra81/frame_0031.jpg']' returned non-zero exit status 234."
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.493102609374997', '-i', 'source_datasets/next_gqa/freeze_videos/10437686463_q1_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmphyyqfaje/frame_0031.jpg']' returned non-zero exit status 234."
   },
   {
     "idx": 4930,
@@ -1771,11 +1708,11 @@
     "reason": "missing_video"
   },
   {
-    "idx": 5037,
-    "video_id": "2924847675",
+    "idx": 3503,
+    "video_id": "10437686463",
     "qid": "6",
     "alpha": null,
-    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '17.646874875', '-i', 'source_datasets/next_gqa/freeze_videos/2924847675_q6_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpyo89h05x/frame_0031.jpg']' returned non-zero exit status 234."
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.493102609374997', '-i', 'source_datasets/next_gqa/freeze_videos/10437686463_q6_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmp74bkx2_b/frame_0031.jpg']' returned non-zero exit status 234."
   },
   {
     "idx": 5066,
@@ -1869,11 +1806,11 @@
     "reason": "missing_video"
   },
   {
-    "idx": 5477,
-    "video_id": "10437686463",
-    "qid": "8",
+    "idx": 4043,
+    "video_id": "11672562206",
+    "qid": "3",
     "alpha": null,
-    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.493102609374997', '-i', 'source_datasets/next_gqa/freeze_videos/10437686463_q8_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmp29j2hf9r/frame_0031.jpg']' returned non-zero exit status 234."
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '24.662522390625', '-i', 'source_datasets/next_gqa/freeze_videos/11672562206_q3_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpy61k427z/frame_0031.jpg']' returned non-zero exit status 234."
   },
   {
     "idx": 5511,
@@ -1895,5 +1832,54 @@
     "qid": "10",
     "alpha": null,
     "reason": "missing_video"
+  },
+  {
+    "idx": 4159,
+    "video_id": "3042965654",
+    "qid": "6",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '15.126674062500001', '-i', 'source_datasets/next_gqa/freeze_videos/3042965654_q6_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmp4w3p63zk/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 4532,
+    "video_id": "2924847675",
+    "qid": "1",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '17.646874875', '-i', 'source_datasets/next_gqa/freeze_videos/2924847675_q1_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmp43sx3lpx/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 4927,
+    "video_id": "2924847675",
+    "qid": "7",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '17.646874875', '-i', 'source_datasets/next_gqa/freeze_videos/2924847675_q7_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpdlrp0ili/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 4873,
+    "video_id": "11672562206",
+    "qid": "4",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '24.662522390625', '-i', 'source_datasets/next_gqa/freeze_videos/11672562206_q4_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmposv0_von/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 5037,
+    "video_id": "2924847675",
+    "qid": "6",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '17.646874875', '-i', 'source_datasets/next_gqa/freeze_videos/2924847675_q6_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmp_fw62fmd/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 4850,
+    "video_id": "10437686463",
+    "qid": "4",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.493102609374997', '-i', 'source_datasets/next_gqa/freeze_videos/10437686463_q4_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmp1fdd8rk1/frame_0031.jpg']' returned non-zero exit status 234."
+  },
+  {
+    "idx": 5477,
+    "video_id": "10437686463",
+    "qid": "8",
+    "alpha": null,
+    "reason": "Command '['ffmpeg', '-nostdin', '-y', '-ss', '23.493102609374997', '-i', 'source_datasets/next_gqa/freeze_videos/10437686463_q8_freeze.mp4', '-frames:v', '1', '-vf', 'scale=560:-2', '-q:v', '3', '/tmp/tmpggmij636/frame_0031.jpg']' returned non-zero exit status 234."
   }
 ]
