@@ -48,6 +48,20 @@ Incremental saving:
   Each finished result is immediately appended to a .jsonl file.
   At the end, an ordered .json file is also written for compatibility.
 
+Multi-model tagging (--model-tag, required):
+  Every output record carries a "model_tag" field (e.g. "qwen3vl",
+  "internvl3_5") identifying which model produced it. This is required
+  (no default) so that a missing/forgotten --model-tag fails loudly with a
+  CLI error instead of silently writing an ambiguous or wrong tag into the
+  results. This does NOT by itself let two different models safely share
+  the same --results-dir: the resume/dedup key in _record_key() is still
+  (video_id, qid[, alpha]) only, so if you point two different models at
+  the same --results-dir, the second model's run will treat the first
+  model's records as "already done" and skip them, not overwrite them with
+  its own results. --model-tag is for *after-the-fact* identification of
+  which model a record came from (e.g. if you inspect a file and need to
+  confirm), not a substitute for using separate --results-dir per model.
+
 Other datasets (e.g. NExT-GQA):
   --filtered-json / --video-dir / --results-dir override the CG-Bench
   defaults below, so this same script can run against
@@ -76,6 +90,7 @@ Other datasets (e.g. NExT-GQA):
       --filtered-json nextgqa_pipeline/nextgqa_filtered.json \
       --video-dir source_datasets/next_gqa/videos \
       --results-dir nextgqa_result \
+      --model-tag qwen3vl \
       --limit 5
 
   Example (insufficient):
@@ -83,6 +98,7 @@ Other datasets (e.g. NExT-GQA):
       --filtered-json nextgqa_pipeline/nextgqa_filtered.json \
       --insufficient-video-dir source_datasets/next_gqa/freeze_videos \
       --results-dir nextgqa_result \
+      --model-tag qwen3vl \
       --limit 5
 """
 
@@ -523,6 +539,7 @@ def process_entry(
     sampling: str,
     evidence_fraction: float,
     task: str,
+    model_tag: str,
     video_id_mapping: dict | None = None,
 ) -> dict:
     video_id = entry["video_id"]
@@ -610,6 +627,7 @@ def process_entry(
         **entry,
         "task": task,
         "sampling": sampling,
+        "model_tag": model_tag,
         "evidence_condition": evidence_condition,
         "sampled_seconds": [round(t, 2) for t in timestamps],
         "model_response": raw_response,
@@ -647,6 +665,13 @@ def _record_key(rec: dict):
     (video_id, qid, alpha) for partial(C2) records. A plain (video_id, qid)
     key would collapse every alpha level of the same anchor onto one jsonl
     line and silently drop the rest of the dose-response curve.
+
+    NOTE: this key does NOT include model_tag. If you point two different
+    models at the same --results-dir, the second model's run will see the
+    first model's records as "already done" (same video_id/qid[/alpha]) and
+    skip them rather than adding its own -- --model-tag alone does not make
+    it safe to share --results-dir across models. Use separate
+    --results-dir per model.
     """
     if rec.get("alpha") is not None:
         return (rec["video_id"], rec["qid"], rec["alpha"])
@@ -699,6 +724,7 @@ def run_evaluation(
     video_dir: Path,
     output_path: Path,
     *,
+    model_tag: str,
     insufficient: bool = False,
     num_frames: int = NUM_FRAMES,
     frame_width: int = FRAME_WIDTH,
@@ -760,6 +786,7 @@ def run_evaluation(
                 sampling=sampling,
                 evidence_fraction=evidence_fraction,
                 task=task,
+                model_tag=model_tag,
                 video_id_mapping=video_id_mapping,
             ): idx
             for idx, entry in to_submit.items()
@@ -871,8 +898,10 @@ def main():
     parser.add_argument(
         "--results-dir", type=Path, default=RESULTS_DIR,
         help="Where result .json/.jsonl files are written (default: "
-             f"CG-Bench's {RESULTS_DIR}). Use a separate directory (e.g. "
-             "nextgqa_result) to avoid mixing with CG-Bench's results.",
+             f"CG-Bench's {RESULTS_DIR}). Use a separate directory per model "
+             "(e.g. cgbench_result_internvl3_5) -- see the module docstring's "
+             "'Multi-model tagging' note: --model-tag alone does not make it "
+             "safe to share --results-dir across models.",
     )
     parser.add_argument(
         "--video-id-mapping", type=Path, default=NEXTGQA_MAPPING_JSON,
@@ -888,6 +917,19 @@ def main():
         help=(
             "qa = pure multiple-choice answering; "
             "classify = answerability classification"
+        ),
+    )
+
+    parser.add_argument(
+        "--model-tag",
+        required=True,
+        help=(
+            "Identifier written into every output record's 'model_tag' "
+            "field (e.g. 'qwen3vl', 'internvl3_5'). Required -- no default "
+            "-- so a forgotten --model-tag fails as a CLI error instead of "
+            "silently tagging results ambiguously. Does NOT make it safe to "
+            "point two different models at the same --results-dir (see "
+            "module docstring); use a separate --results-dir per model."
         ),
     )
 
@@ -936,7 +978,7 @@ def main():
 
     try:
         _client.models.list()
-        print(f"Connected to vLLM at {VLLM_BASE_URL} model={MODEL_NAME}\n")
+        print(f"Connected to vLLM at {VLLM_BASE_URL} model={MODEL_NAME} model_tag={args.model_tag}\n")
 
     except Exception as e:
         raise SystemExit(
@@ -968,7 +1010,7 @@ def main():
     )
 
     print(
-        f"task={args.task}  "
+        f"task={args.task}  model_tag={args.model_tag}  "
         f"num_frames={args.num_frames}  "
         f"frame_width={args.frame_width}  "
         f"sampling={args.sampling}  "
@@ -986,6 +1028,7 @@ def main():
             sufficient,
             args.video_dir,
             args.results_dir / f"sufficient{suffix}",
+            model_tag=args.model_tag,
             num_frames=args.num_frames,
             frame_width=args.frame_width,
             sampling=args.sampling,
@@ -1001,6 +1044,7 @@ def main():
             hallucination,
             args.video_dir,
             args.results_dir / f"hallucination{suffix}",
+            model_tag=args.model_tag,
             num_frames=args.num_frames,
             frame_width=args.frame_width,
             sampling=args.sampling,
@@ -1016,6 +1060,7 @@ def main():
             sufficient,
             args.insufficient_video_dir,
             args.results_dir / f"insufficient{suffix}",
+            model_tag=args.model_tag,
             insufficient=True,
             num_frames=args.num_frames,
             frame_width=args.frame_width,
@@ -1046,6 +1091,7 @@ def main():
             partial_tasks,
             PARTIAL_VIDEOS_DIR,
             args.results_dir / f"partial{suffix}",
+            model_tag=args.model_tag,
             num_frames=args.num_frames,
             frame_width=args.frame_width,
             sampling=args.sampling,

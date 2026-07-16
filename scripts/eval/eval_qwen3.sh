@@ -1,12 +1,12 @@
 #!/bin/bash
-#SBATCH --job-name=cgbench_eval
+#SBATCH --job-name=cgbench_eval_qwen3vl
 #SBATCH -p debug
 #SBATCH --gres=gpu:2
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=128G
 #SBATCH --time=10:00:00
-#SBATCH --output=logs/eval_%j.out
-#SBATCH --error=logs/eval_%j.err
+#SBATCH --output=logs/eval_qwen3vl_%j.out
+#SBATCH --error=logs/eval_qwen3vl_%j.err
 
 set -uo pipefail -e
 
@@ -23,6 +23,7 @@ echo "SLURM_JOB_GPUS=[${SLURM_JOB_GPUS:-<unset>}]"
 echo "SLURM_STEP_GPUS=[${SLURM_STEP_GPUS:-<unset>}]"
 
 MODEL_PATH="/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/models/Qwen3-VL"
+SERVED_NAME="qwen3-vl"
 PORT=8000
 TP=2
 
@@ -30,7 +31,7 @@ export VLLM_ATTENTION_BACKEND=TORCH_SDPA
 export VLLM_MM_ATTENTION_BACKEND=TORCH_SDPA
 
 export VLLM_BASE_URL="http://localhost:${PORT}/v1"
-export VLLM_MODEL="qwen3-vl"
+export VLLM_MODEL="${SERVED_NAME}"
 
 source /home/hansirui_2nd/anaconda3/etc/profile.d/conda.sh
 conda activate /aifs4su/hansirui_2nd/harry/envs_qwen3vl
@@ -42,10 +43,10 @@ mkdir -p logs
 echo "Job on node: $(hostname)"
 nvidia-smi
 
-echo "Starting vLLM server..."
+echo "Starting vLLM server (Qwen3-VL)..."
 
 vllm serve "${MODEL_PATH}" \
-    --served-model-name qwen3-vl \
+    --served-model-name "${SERVED_NAME}" \
     --tensor-parallel-size "${TP}" \
     --max-model-len 32768 \
     --limit-mm-per-prompt '{"image": 130}' \
@@ -72,7 +73,7 @@ for i in $(seq 1 120); do
         exit 1
     fi
 
-    if curl -s "http://localhost:${PORT}/v1/models" | grep -q "qwen3-vl"; then
+    if curl -s "http://localhost:${PORT}/v1/models" | grep -q "${SERVED_NAME}"; then
         echo "vLLM ready after ~$((i * 10))s"
         READY=1
         break
@@ -89,52 +90,20 @@ if [ "${READY}" -ne 1 ]; then
     exit 1
 fi
 
-echo "Starting evaluation..."
+echo "Starting evaluation (Qwen3-VL)..."
 
-# Set to "--limit 5" (or similar) for a quick sanity-check run before
-# committing this 2-GPU, 10-hour job to the full sweep. Leave empty for a
-# full run over every entry in --filtered-json.
 LIMIT_ARGS=""
 
-# Already ran: sufficient/qa (results in nextgqa_result/sufficient.qa.json).
-# python scripts/eval/evaluate.py \
-#     --mode sufficient --task qa \
-#     --filtered-json nextgqa_pipeline/nextgqa_filtered.json \
-#     --video-dir source_datasets/next_gqa/videos \
-#     --results-dir nextgqa_result \
-#     --workers 8 \
-#     ${LIMIT_ARGS}
-
-
-
-# Now: insufficient/qa, against the NExT-GQA freeze videos built by
-# scripts/vqa/build_freeze_nextgqa.sh. --insufficient-video-dir's
-# {video_id}_q{qid}_freeze.mp4 naming is flat regardless of dataset, so no
-# --video-id-mapping is needed here (--video-dir is irrelevant for this
-# mode and is omitted). evaluate.py's process_entry() always writes the
-# literal string "insufficient" into the output record's evidence_condition
-# field when insufficient=True (see evidence_condition assignment near
-# process_entry()), overriding whatever the source anchor's own
-# evidence_condition was -- so nextgqa_result/insufficient.qa.json will have
-# evidence_condition == "insufficient" for every record, no extra flag needed.
-
-# Temporarily disable errexit so a non-zero exit from evaluate.py can be
-# captured and reported here, instead of -e killing the script before this
-# point is ever reached.
 set +e
-# python scripts/eval/evaluate.py \
-#     --mode sufficient --task classify \
-#     --filtered-json nextgqa_pipeline/nextgqa_filtered.json \
-#     --video-dir source_datasets/next_gqa/videos \
-#     --results-dir nextgqa_result \
-#     --workers 8 \
-#     ${LIMIT_ARGS}
 
+# --model-tag 写死为 qwen3vl,--results-dir 也写死到对应目录,
+# 不依赖任何外部变量传入。
 python scripts/eval/evaluate.py \
     --mode insufficient --task classify \
     --filtered-json nextgqa_pipeline/nextgqa_filtered.json \
     --insufficient-video-dir source_datasets/next_gqa/freeze_videos \
-    --results-dir nextgqa_result \
+    --results-dir nextgqa_result_qwen3vl \
+    --model-tag qwen3vl \
     --workers 8 \
     ${LIMIT_ARGS}
 EVAL_EXIT=$?

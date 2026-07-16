@@ -8,11 +8,24 @@ everything else (duration, non-evidence frames/audio) unchanged.
   * 对每个（合并后的）evidence 区间，先用一次轻量 ffmpeg 抽出一张"冻结帧"：
       - --freeze-source pre   : evidence 开始前的一帧（默认）
       - --freeze-source first : evidence 区间的第一帧
+        （警告：first 冻结的就是证据帧本身，对每个 item 都是完全泄漏，
+          仅供调试用途，不要用于正式 C3 刺激构建。）
     存成临时 PNG。
   * 主编码时把这张 PNG 用 overlay=...:enable='between(t,s,e)' 叠在该区间上，
     等价于把区间内画面替换为这一张静止帧。
   * 时长精确保留：单输入流、单遍编码、时间戳不动；区间外画面逐帧不变。
   * 音频默认在区间内静音（volume=0），与遮黑版一致；--keep-audio 可保留原音。
+
+顶头区间处理（泄漏修复）：
+  pre 模式下，若某个（合并后的）区间满足 start - 1/fps < 0，则不存在
+  "区间开始前的一帧"可取。旧行为是 max(0.0, start-dt) 把时间戳夹回 0.0，
+  即取到 evidence 区间的第一帧本身 —— 冻结帧就是证据帧，完全泄漏。
+  新行为：该 item 整条跳过，不产出视频；report 记录
+      status = "skip_head_interval"
+      head_interval_start = 触发跳过的区间 start 值
+  多区间 item 只要有任意一个合并后区间顶头即整条跳过，保持条件内刺激纯净。
+  注意：判断基于合并后区间（merge_intervals 之后），且用 start < dt 而非
+  start == 0，覆盖浮点/低 fps 边界情况。
 
 One output video is produced PER QUESTION (per qid), because the same video_id
 can map to multiple questions with different evidence intervals.
@@ -197,12 +210,20 @@ def check_binaries(args):
 
 
 def freeze_timestamp(start, fps, args):
-    """要抽取的冻结帧时间戳。"""
+    """要抽取的冻结帧时间戳。
+
+    pre 模式下若区间顶头（start - 1/fps < 0，不存在区间前的帧），返回 None，
+    由调用方决定跳过该 item。旧实现用 max(0.0, start-dt) 会把时间戳夹回
+    区间内第一帧，导致冻结帧就是证据帧本身（完全泄漏）。
+    """
     if args.freeze_source == "first":
         return max(0.0, start)
     # pre: evidence 开始前的一帧
     dt = (1.0 / fps) if (fps and fps > 0) else (1.0 / 30.0)
-    return max(0.0, start - dt)
+    ts = start - dt
+    if ts < 0.0:
+        return None
+    return ts
 
 
 def extract_freeze_frame(inp, ts, out_png, args):
@@ -344,12 +365,27 @@ def process_entry(i, entries, stem_index, args, video_id_mapping=None):
     fps = probe_fps(inp, args.ffprobe)
     rec["has_audio"] = audio
 
+    # ---- 顶头检查先于任何编码：pre 模式下任一合并区间无前帧可取则整条跳过 ----
+    if args.freeze_source == "pre":
+        for s, _e in merged:
+            if freeze_timestamp(s, fps, args) is None:
+                rec["status"] = "skip_head_interval"
+                rec["head_interval_start"] = s
+                rec["fps"] = fps
+                return rec
+
     # ---- 抽冻结帧（每个区间一张），放到一个临时目录里 ----
     tmpdir = tempfile.mkdtemp(prefix=f"freeze_{qid}_", dir=args.tmp_dir)
     try:
         freeze_pngs = []
         for k, (s, _e) in enumerate(merged):
             ts = freeze_timestamp(s, fps, args)
+            if ts is None:
+                # 理论上已被上面的顶头检查拦截；防御性兜底，避免静默回退。
+                rec["status"] = "skip_head_interval"
+                rec["head_interval_start"] = s
+                rec["fps"] = fps
+                return rec
             png = os.path.join(tmpdir, f"frz_{k}.png")
             ok, err = extract_freeze_frame(inp, ts, png, args)
             if not ok:
@@ -422,7 +458,9 @@ def main():
                          "for CG-Bench runs.")
     # ---- 帧冻结特有 ----
     ap.add_argument("--freeze-source", choices=["pre", "first"], default="pre",
-                    help="pre=evidence 前一帧（默认）；first=区间第一帧。")
+                    help="pre=evidence 前一帧（默认；区间顶头无前帧可取时整条 "
+                         "skip，report 记 skip_head_interval）；first=区间第一帧"
+                         "（警告：冻结的就是证据帧本身，完全泄漏，仅供调试）。")
     ap.add_argument("--keep-audio", action="store_true",
                     help="区间内保留原音（默认与遮黑版一致：静音）。")
     ap.add_argument("--tmp-dir", default=None,
