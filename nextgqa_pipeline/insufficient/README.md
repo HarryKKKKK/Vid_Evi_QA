@@ -31,8 +31,9 @@ The unit of processing is `(video, question)`.
 9. Enforce both a maximum coverage ratio and an absolute minimum visible time.
    Encode exactly one permanent final freeze video for each surviving item.
 
-Qwen3-VL should remain outside the construction endpoint list if it will be used
-as the independent downstream evaluator.
+The bundled Slurm launchers currently use Qwen3-VL as the construction model.
+Consequently Qwen3-VL is not a held-out downstream evaluator for videos produced
+by this configuration; use a different model for independent final evaluation.
 
 ## Files
 
@@ -62,17 +63,19 @@ letters are an error, never a negative evidence decision.
 
 ## Pilot first
 
-The bundled server defaults to 1 FPS and permits 192 images per prompt.  Local
+The bundled Qwen3-VL server uses two GPUs with tensor parallelism 2, defaults to
+1 FPS, permits 192 images per prompt, and uses the already-tested 32768-token
+context plus `max_pixels=75264`.  Local
 NExT-GQA videos reach 180 seconds, so 2 FPS can require 360 images plus a much
-larger model context.  Before changing to 2 FPS, run a stratified pilot and set
-both `MAX_IMAGES` and `MAX_MODEL_LEN` high enough.
+larger model context.  Before changing to 2 FPS, run a stratified pilot and
+confirm both the image limit and context budget.
 
 Start the one-item tokenizer/logprob smoke test manually after launching a vLLM
 server:
 
 ```bash
 python nextgqa_pipeline/insufficient/smoke_test_logprobs.py \
-  --endpoint internvl3_5_8b_construct,http://127.0.0.1:8000/v1,internvl3_5-8b
+  --endpoint qwen3vl_construct,http://127.0.0.1:8000/v1,qwen3-vl
 ```
 
 Run a 20-item measurement pilot:
