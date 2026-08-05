@@ -1,6 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=eval_minicpmv45
-#SBATCH -p debug
+#SBATCH -p llm
+#SBATCH --qos=llm
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=128G
@@ -23,21 +24,28 @@ echo "SLURM_JOB_GPUS=[${SLURM_JOB_GPUS:-<unset>}]"
 echo "SLURM_STEP_GPUS=[${SLURM_STEP_GPUS:-<unset>}]"
 
 # ==============================================================================
-# TP / MAX_MODEL_LEN / LIMIT_IMAGES / 是否需要 --trust-remote-code 这几项
-# 尚未经过 probe_minicpmv45.sbatch.sh 的实测确认,不能沿用 InternVL3.5 的
-# 40960 或任何别的模型的数值直接套用。脚本在这里中止,逼你先跑探测。
+# 以下几项已在探测阶段(job 206709)验证过能正常启动 server:
+#   - conda 环境 envs_qwen3vl(vLLM 0.11.0 原生支持 MiniCPMV4_5)
+#   - VLLM_ATTENTION_BACKEND=TORCH_SDPA(避开 PTX 工具链报错)
+#   - --trust-remote-code 不报错(是否必需未确认,但无害)
+#   - --limit-mm-per-prompt 的 JSON 格式被正常解析
+#
+# 注意: MAX_MODEL_LEN=16384 在 32 帧真实抽帧场景下是否够用,
+# 目前【尚未验证过】—— job 206729 那次因为 GPU 显存被其他进程占用
+# (Free memory 24.92/79.11 GiB)在启动阶段就直接失败了,根本没跑到
+# evaluate.py 那一步。这次去掉 --limit 直接跑全量,如果中途报
+# "prompt 太长" 之类的 400 错误,说明 MAX_MODEL_LEN 需要调大;
+# 个别样本报错会被记录到 .skipped.jsonl,不会中断整体 job,
+# 跑完后请检查该文件确认跳过数量是否在可接受范围。
 # ==============================================================================
-echo "[FATAL] TP / MAX_MODEL_LEN / LIMIT_IMAGES 尚未实测确认,脚本中止。" >&2
-echo "        请先运行 probe_minicpmv45.sbatch.sh,确认好数值后删除本行及上面这段 exit。" >&2
-exit 1
 
 MODEL_PATH="/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/models/MiniCPM-V-4_5"
 SERVED_NAME="minicpm-v-4_5"
 PORT=8000
 
-TP=<TODO: 需实测确认>
-MAX_MODEL_LEN=<TODO: 需实测确认>
-LIMIT_IMAGES=<TODO: 需实测确认>
+TP=1
+MAX_MODEL_LEN=16384
+LIMIT_IMAGES=130
 
 export VLLM_ATTENTION_BACKEND=TORCH_SDPA
 export VLLM_MM_ATTENTION_BACKEND=TORCH_SDPA
@@ -109,10 +117,28 @@ LIMIT_ARGS=""
 
 set +e
 
+# python scripts/eval/evaluate.py \
+#     --mode sufficient --task qa \
+#     --filtered-json nextgqa_pipeline/nextgqa_filtered.json \
+#     --video-dir source_datasets/next_gqa/videos \
+#     --results-dir nextgqa_result_minicpmv45 \
+#     --model-tag minicpmv45 \
+#     --workers 8 \
+#     ${LIMIT_ARGS}
+
+# python scripts/eval/evaluate.py \
+#     --mode sufficient --task classify \
+#     --filtered-json nextgqa_pipeline/nextgqa_filtered.json \
+#     --video-dir source_datasets/next_gqa/videos \
+#     --results-dir nextgqa_result_minicpmv45 \
+#     --model-tag minicpmv45 \
+#     --workers 8 \
+#     ${LIMIT_ARGS}
+
 python scripts/eval/evaluate.py \
-    --mode sufficient --task qa \
+    --mode insufficient --task classify \
     --filtered-json nextgqa_pipeline/nextgqa_filtered.json \
-    --video-dir source_datasets/next_gqa/videos \
+    --insufficient-video-dir source_datasets/next_gqa/freeze_videos \
     --results-dir nextgqa_result_minicpmv45 \
     --model-tag minicpmv45 \
     --workers 8 \
