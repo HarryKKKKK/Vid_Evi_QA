@@ -51,3 +51,11 @@ source_datasets/cg_bench/cg_subtitles/
 models/
 output/
 tmp/
+
+# NExT-GQA generated measurements, audits and evaluation outputs.
+# Keep these on the experiment server or external artifact storage, not Git.
+nextgqa_pipeline/insufficient/*.json
+nextgqa_pipeline/insufficient/*.jsonl
+nextgqa_pipeline/nextgqa_filtered_no_evidence_leak.json
+nextgqa_result_qwen3vl_no_evidence_leak/*.json
+nextgqa_result_qwen3vl_no_evidence_leak/*.jsonl

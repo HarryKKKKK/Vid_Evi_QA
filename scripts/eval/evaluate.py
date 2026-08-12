@@ -485,7 +485,10 @@ def call_llm(
                 "content": content,
             }
         ],
-        max_tokens=512,
+        # Some otherwise valid JSON responses include a long evidence string
+        # and were observed to truncate just before the closing quote/braces.
+        # 768 preserves the same prompt/decision while allowing valid closure.
+        max_tokens=768,
         temperature=0.0,
     )
 
