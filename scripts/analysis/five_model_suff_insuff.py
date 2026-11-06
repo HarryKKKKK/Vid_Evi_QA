@@ -10,20 +10,20 @@ from pathlib import Path
 
 RUNS = {
     "Qwen3-VL-32B": {
-        "sufficient": "nextgqa_result_qwen3vl_partial_no_evidence_leak/sufficient_alpha1.classify.json",
-        "insufficient": "nextgqa_result_qwen3vl_no_evidence_leak/insufficient.classify.json",
+        "sufficient": "results/nextgqa_result_qwen3vl_partial_no_evidence_leak/sufficient_alpha1.classify.json",
+        "insufficient": "results/nextgqa_result_qwen3vl_no_evidence_leak/insufficient.classify.json",
     },
     "Qwen2.5-VL-32B": {
-        "sufficient": "nextgqa_result_qwen25_32f_sufficient/sufficient.classify.json",
-        "insufficient": "nextgqa_result_qwen25_32f_insufficient/insufficient.classify.json",
+        "sufficient": "results/nextgqa_result_qwen25_32f_sufficient/sufficient.classify.json",
+        "insufficient": "results/nextgqa_result_qwen25_32f_insufficient/insufficient.classify.json",
     },
     "LLaVA-OneVision-7B": {
-        "sufficient": "nextgqa_result_llava_onevision_32f_video_sufficient/sufficient.classify.json",
-        "insufficient": "nextgqa_result_llava_onevision_32f_video_insufficient/insufficient.classify.json",
+        "sufficient": "results/nextgqa_result_llava_onevision_32f_video_sufficient/sufficient.classify.json",
+        "insufficient": "results/nextgqa_result_llava_onevision_32f_video_insufficient/insufficient.classify.json",
     },
     "InternVL3.5-8B": {
-        "sufficient": "nextgqa_result_internvl35_32f_patch3_sufficient/sufficient.classify.json",
-        "insufficient": "nextgqa_result_internvl35_32f_patch3_insufficient/insufficient.classify.json",
+        "sufficient": "results/nextgqa_result_internvl35_32f_patch3_sufficient/sufficient.classify.json",
+        "insufficient": "results/nextgqa_result_internvl35_32f_patch3_insufficient/insufficient.classify.json",
     },
 }
 

@@ -20,8 +20,8 @@ python pipelines/media/build_partial.py --help
 
 实际运行前检查输入路径。apply、finalize、publish 和视频生成命令会写入产物，不是只读检查。
 
-旧 nextgqa_pipeline/、etbench_pipeline/、scripts/analysis/ 和 scripts/vqa/ 路径保留 Python 兼容入口。已有 Slurm 脚本继续调用旧路径；维护实现时编辑这里的文件。数据、报告和 Slurm 提交脚本本轮不搬迁。
+旧 results/build/nextgqa/、results/build/etbench/、scripts/analysis/ 和 scripts/vqa/ 路径保留 Python 兼容入口。已有 Slurm 脚本继续调用旧路径；维护实现时编辑这里的文件。数据、报告和 Slurm 提交脚本本轮不搬迁。
 
 Partial 预生成视频已清理。生成代码保留，但固定 seed 的运行时逐帧加噪尚未实现，旧评测不能直接读取已清空的视频目录。
 
-完整映射见根目录 script_migration.json 和 docs/SCRIPT_LAYOUT.md。
+完整映射见根目录 script_migration.json 和 scripts/docs/SCRIPT_LAYOUT.md。

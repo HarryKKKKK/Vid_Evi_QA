@@ -12,7 +12,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-INSUFFICIENT = ROOT / "nextgqa_pipeline/insufficient"
+INSUFFICIENT = ROOT / "results/build/nextgqa/insufficient"
 sys.path.insert(0, str(INSUFFICIENT))
 from ground_windows import candidate_windows  # noqa: E402
 
@@ -68,7 +68,7 @@ def main() -> None:
     thresholds = json.loads((INSUFFICIENT / "thresholds.json").read_text(encoding="utf-8"))
     qwen_rows = {
         f"{row['video_id']}_q{row['qid']}": row
-        for row in json.loads((ROOT / "nextgqa_result_qwen3vl_no_evidence_leak/insufficient.classify.json").read_text(encoding="utf-8"))
+        for row in json.loads((ROOT / "results/nextgqa_result_qwen3vl_no_evidence_leak/insufficient.classify.json").read_text(encoding="utf-8"))
     }
     groundings = latest(str(INSUFFICIENT / "correct_answer_evidence_groundings*.jsonl"))
     classifications = latest(str(INSUFFICIENT / "correct_answer_evidence_classifications8.*.jsonl"))

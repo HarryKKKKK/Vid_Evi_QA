@@ -14,7 +14,7 @@ ROOT = Path("/aifs4su/hansirui_2nd/harry/Vid_Evi_QA")
 SAMPLE = ROOT / "results/closed_v2_sample800_20260919/sample800.jsonl"
 UNRESOLVED = ROOT / "results/closed_paper_sample_20260920/gemini25pro_unresolved_responses.jsonl"
 FAILURES = ROOT / "results/gemini25pro_v2_sample800_20260919/merged.classify.skipped.jsonl"
-UNIVERSE = ROOT / "reports/final_benchmark_aligned/final/all_condition_records.jsonl"
+UNIVERSE = ROOT / "results/reports/final_benchmark_aligned/final/all_condition_records.jsonl"
 OUT = ROOT / "results/gemini25pro_v2_retry49_20260920"
 SEED = 20260920
 

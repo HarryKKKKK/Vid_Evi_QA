@@ -10,17 +10,17 @@ the gate output instead of being silently treated as clean.
 
 from __future__ import annotations
 
-# Layout compatibility: data stays at its existing paths; frozen copies remain standalone.
+# Source location bootstrap; frozen copies remain standalone.
 from pathlib import Path as _LayoutPath
 import sys as _layout_sys
 _layout_file = _LayoutPath(__file__).resolve()
 _layout_root = (_layout_file.parents[3]
                 if _layout_file.as_posix().endswith('/pipelines/nextgqa/insufficient/build_pre_window_gate_json.py') else None)
-_LAYOUT_LEGACY_FILE = str(_layout_root / 'nextgqa_pipeline/insufficient/build_pre_window_gate_json.py') if _layout_root else __file__
+_LAYOUT_LEGACY_FILE = str(_layout_root / 'pipelines/nextgqa/insufficient/build_pre_window_gate_json.py') if _layout_root else __file__
 if _layout_root is not None:
-    for _layout_dir in (_layout_root, _layout_root / 'src',
+    for _layout_dir in (_layout_root, _layout_root / 'scripts/src',
                         _layout_root / 'scripts/eval',
-                        _layout_root / 'nextgqa_pipeline/insufficient', _layout_file.parent):
+                        _layout_root / 'pipelines/nextgqa/insufficient', _layout_file.parent):
         if str(_layout_dir) not in _layout_sys.path:
             _layout_sys.path.insert(0, str(_layout_dir))
 
@@ -33,11 +33,11 @@ from collections import Counter
 from pathlib import Path
 
 
-ROOT = Path(_LAYOUT_LEGACY_FILE).resolve().parents[2]
-DEFAULT_SOURCE = ROOT / "nextgqa_pipeline/nextgqa_filtered.json"
-DEFAULT_OUTPUT = ROOT / "nextgqa_pipeline/nextgqa_filtered_pre_window_pass.json"
-DEFAULT_AUDIT = ROOT / "nextgqa_pipeline/insufficient/pre_window_gate_audit.json"
-DEFAULT_EXCLUDED_KEYS = ROOT / "nextgqa_pipeline/insufficient/pre_window_gate_exclude_keys.txt"
+ROOT = Path(_LAYOUT_LEGACY_FILE).resolve().parents[3]
+DEFAULT_SOURCE = ROOT / "results/build/nextgqa/nextgqa_filtered.json"
+DEFAULT_OUTPUT = ROOT / "results/build/nextgqa/nextgqa_filtered_pre_window_pass.json"
+DEFAULT_AUDIT = ROOT / "results/build/nextgqa/insufficient/pre_window_gate_audit.json"
+DEFAULT_EXCLUDED_KEYS = ROOT / "results/build/nextgqa/insufficient/pre_window_gate_exclude_keys.txt"
 
 
 def parse_args() -> argparse.Namespace:

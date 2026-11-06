@@ -8,17 +8,17 @@ only pairs with visible, mutually exclusive slot values.
 
 from __future__ import annotations
 
-# Layout compatibility: data stays at its existing paths; frozen copies remain standalone.
+# Source location bootstrap; frozen copies remain standalone.
 from pathlib import Path as _LayoutPath
 import sys as _layout_sys
 _layout_file = _LayoutPath(__file__).resolve()
 _layout_root = (_layout_file.parents[3]
                 if _layout_file.as_posix().endswith('/pipelines/etbench/conflict/build_visual_contrast_jobs.py') else None)
-_LAYOUT_LEGACY_FILE = str(_layout_root / 'etbench_pipeline/conflict/build_visual_contrast_jobs.py') if _layout_root else __file__
+_LAYOUT_LEGACY_FILE = str(_layout_root / 'pipelines/etbench/conflict/build_visual_contrast_jobs.py') if _layout_root else __file__
 if _layout_root is not None:
-    for _layout_dir in (_layout_root, _layout_root / 'src',
+    for _layout_dir in (_layout_root, _layout_root / 'scripts/src',
                         _layout_root / 'scripts/eval',
-                        _layout_root / 'etbench_pipeline/conflict', _layout_file.parent):
+                        _layout_root / 'pipelines/etbench/conflict', _layout_file.parent):
         if str(_layout_dir) not in _layout_sys.path:
             _layout_sys.path.insert(0, str(_layout_dir))
 
@@ -30,14 +30,14 @@ from pathlib import Path
 from typing import Any, Iterable
 
 
-ROOT = Path(_LAYOUT_LEGACY_FILE).resolve().parents[2]
+ROOT = Path(_LAYOUT_LEGACY_FILE).resolve().parents[3]
 DEFAULT_INPUT = (
     ROOT
     / "source_datasets/et_bench/conflict_candidates_perception_test.json"
 )
-DEFAULT_OUTPUT = Path(_LAYOUT_LEGACY_FILE).resolve().parent / "visual_contrast_jobs.jsonl"
+DEFAULT_OUTPUT = ROOT / "results/build/etbench/conflict" / "visual_contrast_jobs.jsonl"
 DEFAULT_INSTANCE_OUTPUT = (
-    Path(_LAYOUT_LEGACY_FILE).resolve().parent / "visual_instance_jobs.jsonl"
+    ROOT / "results/build/etbench/conflict" / "visual_instance_jobs.jsonl"
 )
 DEFAULT_VIDEO_ROOT = ROOT / "source_datasets/et_bench/ETBench/videos"
 

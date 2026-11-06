@@ -16,7 +16,7 @@ MAX_MODEL_LEN=${MAX_MODEL_LEN:-32768}
 GPU_MEMORY_UTILIZATION=${GPU_MEMORY_UTILIZATION:-0.90}
 ROOT=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA
 ENV_DIR=/aifs4su/hansirui_2nd/harry/envs_qwen3vl
-LOG_FILE="${ROOT}/logs/smoke_${SERVED_NAME}.log"
+LOG_FILE="${ROOT}/results/logs/smoke_${SERVED_NAME}.log"
 
 unset http_proxy https_proxy HTTP_PROXY HTTPS_PROXY
 export NO_PROXY=localhost,127.0.0.1
@@ -27,7 +27,7 @@ export VLLM_ATTENTION_BACKEND=TORCH_SDPA
 export VLLM_MM_ATTENTION_BACKEND=TORCH_SDPA
 
 cd "${ROOT}"
-mkdir -p logs
+mkdir -p results/logs
 
 extra_args=()
 if [[ "${TRUST_REMOTE_CODE}" == "true" ]]; then

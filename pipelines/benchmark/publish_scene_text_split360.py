@@ -4,7 +4,7 @@ No images, model inference, new objects or new negative options. Default: dry-ru
 """
 from __future__ import annotations
 
-# Layout compatibility: data stays at its existing paths; frozen copies remain standalone.
+# Source location bootstrap; frozen copies remain standalone.
 from pathlib import Path as _LayoutPath
 import sys as _layout_sys
 _layout_file = _LayoutPath(__file__).resolve()
@@ -12,7 +12,7 @@ _layout_root = (_layout_file.parents[2]
                 if _layout_file.as_posix().endswith('/pipelines/benchmark/publish_scene_text_split360.py') else None)
 _LAYOUT_LEGACY_FILE = str(_layout_root / 'scripts/analysis/publish_scene_text_split360.py') if _layout_root else __file__
 if _layout_root is not None:
-    for _layout_dir in (_layout_root, _layout_root / 'src',
+    for _layout_dir in (_layout_root, _layout_root / 'scripts/src',
                         _layout_root / 'scripts/eval',
                         _layout_root / 'scripts/analysis', _layout_file.parent):
         if str(_layout_dir) not in _layout_sys.path:
@@ -26,7 +26,7 @@ from pathlib import Path
 import apply_personal_scene_repairs as core
 
 RELEASE = 'manual_scene_v3_20260902_text360'
-BASE = Path('reports/final_benchmark_aligned')
+BASE = Path('results/reports/final_benchmark_aligned')
 
 
 def build(root):
@@ -191,7 +191,7 @@ def plan(root):
         put(path,data)
     fingerprints = {r['id']:core.fingerprint(r) for r in combined}
     stats['stale_scene_results_archived'] = {}
-    for directory in (root/'reports/conflict_final_audit').iterdir():
+    for directory in (root/'results/reports/conflict_final_audit').iterdir():
         if not directory.is_dir():
             continue
         for name in ['conflict_eval.json','conflict_eval.jsonl']:

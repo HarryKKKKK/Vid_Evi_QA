@@ -8,7 +8,7 @@ fi
 
 ROOT=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA
 PYTHON=/aifs4su/hansirui_2nd/harry/envs_qwen3vl/bin/python
-OUTPUT_DIR=${LANGUAGE_PRIOR_OUTPUT_DIR:-${ROOT}/reports/language_prior_screen/full_5279}
+OUTPUT_DIR=${LANGUAGE_PRIOR_OUTPUT_DIR:-${ROOT}/results/reports/language_prior_screen/full_5279}
 PERMUTATIONS=${LANGUAGE_PRIOR_PERMUTATIONS:-5}
 WORKERS=${LANGUAGE_PRIOR_WORKERS:-8}
 MODE=$1

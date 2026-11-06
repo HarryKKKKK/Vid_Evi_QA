@@ -6,7 +6,7 @@ Default is a dry run. Preserves every non-scene record and frozen source files.
 """
 from __future__ import annotations
 
-# Layout compatibility: data stays at its existing paths; frozen copies remain standalone.
+# Source location bootstrap; frozen copies remain standalone.
 from pathlib import Path as _LayoutPath
 import sys as _layout_sys
 _layout_file = _LayoutPath(__file__).resolve()
@@ -14,7 +14,7 @@ _layout_root = (_layout_file.parents[2]
                 if _layout_file.as_posix().endswith('/pipelines/benchmark/apply_personal_scene_repairs.py') else None)
 _LAYOUT_LEGACY_FILE = str(_layout_root / 'scripts/analysis/apply_personal_scene_repairs.py') if _layout_root else __file__
 if _layout_root is not None:
-    for _layout_dir in (_layout_root, _layout_root / 'src',
+    for _layout_dir in (_layout_root, _layout_root / 'scripts/src',
                         _layout_root / 'scripts/eval',
                         _layout_root / 'scripts/analysis', _layout_file.parent):
         if str(_layout_dir) not in _layout_sys.path:
@@ -176,7 +176,7 @@ def build_repairs(source, authored, frames):
 
 
 def plan(root, authored_path, frames_paths):
-    base = root / 'reports/final_benchmark_aligned'
+    base = root / 'results/reports/final_benchmark_aligned'
     final = base / 'final'
     scene_base = base / 'scene_manual_v3'
     source = read_rows(final/'conflict_qa_five_options.jsonl')
@@ -227,7 +227,7 @@ def plan(root, authored_path, frames_paths):
     # Purge stale predictions from BOTH cache formats. Backups keep all old
     # answers recoverable; no evaluation is launched here.
     eval_report = {}
-    for directory in sorted((root/'reports/conflict_final_audit').iterdir()):
+    for directory in sorted((root/'results/reports/conflict_final_audit').iterdir()):
         if not directory.is_dir():
             continue
         for filename in ['conflict_eval.json', 'conflict_eval.jsonl']:
@@ -296,7 +296,7 @@ def main():
     parser.add_argument('--apply', action='store_true')
     args = parser.parse_args()
     root = args.root.resolve()
-    base = root/'reports/final_benchmark_aligned/scene_manual_v3'
+    base = root/'results/reports/final_benchmark_aligned/scene_manual_v3'
     authored_path = base/'authored_repairs.json'
     frames_paths = [base/f'frames_batch{i:02d}/manifest.json' for i in [1, 2]]
     changes, stats, repaired, retired, pending = plan(root, authored_path, frames_paths)

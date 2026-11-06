@@ -14,7 +14,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_INPUT = ROOT / "etbench_pipeline/conflict/full_v2_qwen3vl_mistral24b/merged/conflict_qa_v2.jsonl"
+DEFAULT_INPUT = ROOT / "results/build/etbench/conflict/full_v2_qwen3vl_mistral24b/merged/conflict_qa_v2.jsonl"
 
 SYSTEM = """You are auditing a video-QA benchmark. Judge only the supplied text metadata; do not pretend to see the video.
 A genuine conflict item must ask one coherent question and present at least two different, context-dependent answers, each tied to a distinct occurrence. Every option must answer the same semantic slot requested by the question. Evidence descriptions must textually support their option. Temporal-localization options at distinct occurrences are valid conflict cases.

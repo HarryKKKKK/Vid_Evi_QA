@@ -18,13 +18,13 @@ from typing import Any, Iterable
 
 
 ROOT = Path(__file__).resolve().parents[2]
-DEFAULT_NEXT_MANIFEST = ROOT / "nextgqa_pipeline/nextgqa_filtered_no_evidence_leak.json"
-DEFAULT_NEXT_CANDIDATES = ROOT / "nextgqa_pipeline/partial_candidates_full_n5279.json"
-DEFAULT_PARTIAL_META = ROOT / "nextgqa_pipeline/partial_candidates_full_n5279.meta.json"
-DEFAULT_CONFLICT_QA = ROOT / "etbench_pipeline/conflict/full_v2_qwen3vl_mistral24b/merged/conflict_qa_v2.jsonl"
-DEFAULT_ET_INSTANCES = ROOT / "etbench_pipeline/conflict/visual_instance_jobs.jsonl"
-DEFAULT_EXCLUSIONS = ROOT / "reports/language_prior_screen/combined_5279/removal_candidates.json"
-DEFAULT_OUTPUT = ROOT / "reports/retained_benchmark_statistics"
+DEFAULT_NEXT_MANIFEST = ROOT / "results/build/nextgqa/nextgqa_filtered_no_evidence_leak.json"
+DEFAULT_NEXT_CANDIDATES = ROOT / "results/build/nextgqa/partial_candidates_full_n5279.json"
+DEFAULT_PARTIAL_META = ROOT / "results/build/nextgqa/partial_candidates_full_n5279.meta.json"
+DEFAULT_CONFLICT_QA = ROOT / "results/build/etbench/conflict/full_v2_qwen3vl_mistral24b/merged/conflict_qa_v2.jsonl"
+DEFAULT_ET_INSTANCES = ROOT / "results/build/etbench/conflict/visual_instance_jobs.jsonl"
+DEFAULT_EXCLUSIONS = ROOT / "results/reports/language_prior_screen/combined_5279/removal_candidates.json"
+DEFAULT_OUTPUT = ROOT / "results/reports/retained_benchmark_statistics"
 
 
 def args() -> argparse.Namespace:

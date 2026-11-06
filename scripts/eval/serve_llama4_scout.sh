@@ -5,8 +5,8 @@
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=128G
 #SBATCH --time=10:00:00
-#SBATCH --output=logs/llama4_serve_%j.out
-#SBATCH --error=logs/llama4_serve_%j.err
+#SBATCH --output=results/logs/llama4_serve_%j.out
+#SBATCH --error=results/logs/llama4_serve_%j.err
 
 # Serves Llama-4-Scout-17B-16E-Instruct via vLLM as a second model, alongside
 # the existing Qwen3-VL server (eval.sh). Mirrors eval.sh's SLURM/vLLM launch
@@ -71,7 +71,7 @@ conda activate /aifs4su/hansirui_2nd/harry/envs_qwen3vl
 
 cd /aifs4su/hansirui_2nd/harry/Vid_Evi_QA
 
-mkdir -p logs
+mkdir -p results/logs
 
 echo "Job on node: $(hostname)"
 nvidia-smi
@@ -129,7 +129,7 @@ echo "vLLM server up at ${VLLM_BASE_URL} (served-model-name=${SERVED_NAME})."
 echo "Run evaluate.py against it, e.g.:"
 echo "  VLLM_BASE_URL=${VLLM_BASE_URL} VLLM_MODEL=${SERVED_NAME} \\"
 echo "      python scripts/eval/evaluate.py --mode sufficient --task qa \\"
-echo "      --filtered-json nextgqa_pipeline/nextgqa_filtered.json \\"
+echo "      --filtered-json results/build/nextgqa/nextgqa_filtered.json \\"
 echo "      --video-dir source_datasets/next_gqa/videos \\"
 echo "      --results-dir nextgqa_result --workers 8 --limit 5"
 

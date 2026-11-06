@@ -3,17 +3,17 @@
 
 from __future__ import annotations
 
-# Layout compatibility: data stays at its existing paths; frozen copies remain standalone.
+# Source location bootstrap; frozen copies remain standalone.
 from pathlib import Path as _LayoutPath
 import sys as _layout_sys
 _layout_file = _LayoutPath(__file__).resolve()
 _layout_root = (_layout_file.parents[3]
                 if _layout_file.as_posix().endswith('/pipelines/nextgqa/insufficient/report_no_leak_eval.py') else None)
-_LAYOUT_LEGACY_FILE = str(_layout_root / 'nextgqa_pipeline/insufficient/report_no_leak_eval.py') if _layout_root else __file__
+_LAYOUT_LEGACY_FILE = str(_layout_root / 'pipelines/nextgqa/insufficient/report_no_leak_eval.py') if _layout_root else __file__
 if _layout_root is not None:
-    for _layout_dir in (_layout_root, _layout_root / 'src',
+    for _layout_dir in (_layout_root, _layout_root / 'scripts/src',
                         _layout_root / 'scripts/eval',
-                        _layout_root / 'nextgqa_pipeline/insufficient', _layout_file.parent):
+                        _layout_root / 'pipelines/nextgqa/insufficient', _layout_file.parent):
         if str(_layout_dir) not in _layout_sys.path:
             _layout_sys.path.insert(0, str(_layout_dir))
 
@@ -24,14 +24,14 @@ from collections import Counter
 from pathlib import Path
 
 
-ROOT = Path(_LAYOUT_LEGACY_FILE).resolve().parents[2]
+ROOT = Path(_LAYOUT_LEGACY_FILE).resolve().parents[3]
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--metadata", type=Path,
-        default=ROOT / "nextgqa_pipeline/nextgqa_filtered_no_evidence_leak.json",
+        default=ROOT / "results/build/nextgqa/nextgqa_filtered_no_evidence_leak.json",
     )
     parser.add_argument(
         "--freeze-dir", type=Path,
@@ -39,7 +39,7 @@ def main() -> None:
     )
     parser.add_argument(
         "--results", type=Path,
-        default=ROOT / "nextgqa_result_qwen3vl_no_evidence_leak/insufficient.classify.json",
+        default=ROOT / "results/nextgqa_result_qwen3vl_no_evidence_leak/insufficient.classify.json",
     )
     args = parser.parse_args()
 

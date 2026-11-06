@@ -5,8 +5,8 @@
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=16G
 #SBATCH --time=01:00:00
-#SBATCH --output=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/logs/merge_prompt_full_%j.out
-#SBATCH --error=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/logs/merge_prompt_full_%j.err
+#SBATCH --output=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/results/logs/merge_prompt_full_%j.out
+#SBATCH --error=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/results/logs/merge_prompt_full_%j.err
 set -euo pipefail
 ROOT=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA
 cd "${ROOT}"

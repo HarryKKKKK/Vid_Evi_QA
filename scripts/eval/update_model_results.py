@@ -130,7 +130,7 @@ def summarize(path: Path, condition: str) -> dict:
 
 def discover(root: Path) -> list[dict]:
     summaries = []
-    for path in sorted(root.glob("nextgqa_result_*/*.classify.jsonl")):
+    for path in sorted(root.glob("results/nextgqa_result_*/*.classify.jsonl")):
         condition = RESULT_NAMES.get(path.name)
         dirname = path.parent.name.lower()
         if not condition or any(marker in dirname for marker in EXCLUDED_DIR_MARKERS):
@@ -244,7 +244,7 @@ def render(root: Path, summaries: list[dict]) -> str:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[2])
-    parser.add_argument("--output", default="reports/results/MODEL_RESULTS.md")
+    parser.add_argument("--output", default="results/reports/results/MODEL_RESULTS.md")
     args = parser.parse_args()
     root = args.root.resolve()
     output = root / args.output

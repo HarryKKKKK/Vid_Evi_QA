@@ -9,9 +9,9 @@ p = argparse.ArgumentParser()
 p.add_argument('--root', type=Path, required=True)
 p.add_argument('--out', type=Path, required=True)
 args = p.parse_args()
-base = args.root/'reports/final_benchmark_aligned/scene_manual_v3'
+base = args.root/'results/reports/final_benchmark_aligned/scene_manual_v3'
 pending = [json.loads(x) for x in (base/'manual_scene_v3_20260902_batch01/scene_pending.jsonl').read_text().splitlines()]
-groups = {r['job_id']: r for r in map(json.loads, (args.root/'etbench_pipeline/conflict/visual_contrast_jobs.jsonl').read_text().splitlines())}
+groups = {r['job_id']: r for r in map(json.loads, (args.root/'results/build/etbench/conflict/visual_contrast_jobs.jsonl').read_text().splitlines())}
 args.out.mkdir(parents=True, exist_ok=True)
 pages = []
 for start in range(0, len(pending), 4):

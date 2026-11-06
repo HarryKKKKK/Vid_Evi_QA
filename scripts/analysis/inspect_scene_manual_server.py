@@ -4,17 +4,17 @@ import json
 from pathlib import Path
 
 root = Path('/aifs4su/hansirui_2nd/harry/Vid_Evi_QA')
-for rel in ['reports/final_benchmark_aligned/final/conflict_qa_five_options.jsonl',
-            'reports/final_benchmark_aligned/scene_atomic_v2/conflict_qa_five_options.current.jsonl',
-            'reports/final_benchmark_aligned/scene_atomic_v2/scene_v1_removed.jsonl']:
+for rel in ['results/reports/final_benchmark_aligned/final/conflict_qa_five_options.jsonl',
+            'results/reports/final_benchmark_aligned/scene_atomic_v2/conflict_qa_five_options.current.jsonl',
+            'results/reports/final_benchmark_aligned/scene_atomic_v2/scene_v1_removed.jsonl']:
     path = root / rel
     rows = [json.loads(x) for x in path.read_text().splitlines() if x.strip()]
     print(json.dumps({'path': rel, 'sha256': hashlib.sha256(path.read_bytes()).hexdigest(),
                       'rows': len(rows), 'scene': sum(r.get('conflict_type') == 'scene_context' for r in rows)}))
-scene = [json.loads(x) for x in (root/'reports/final_benchmark_aligned/scene_atomic_v2/scene_v1_removed.jsonl').read_text().splitlines()]
+scene = [json.loads(x) for x in (root/'results/reports/final_benchmark_aligned/scene_atomic_v2/scene_v1_removed.jsonl').read_text().splitlines()]
 video_root = root / 'source_datasets/et_bench/ETBench/videos'
 print('VIDEOS', len(scene), sum((video_root/r['video']).is_file() for r in scene))
-for path in sorted((root/'reports/conflict_final_audit').glob('*/conflict_eval.json')):
+for path in sorted((root/'results/reports/conflict_final_audit').glob('*/conflict_eval.json')):
     rows = json.loads(path.read_text())
     print(json.dumps({'eval': str(path.relative_to(root)), 'rows': len(rows),
                       'scene': sum(r.get('conflict_type', r.get('question_type')) == 'scene_context' for r in rows),

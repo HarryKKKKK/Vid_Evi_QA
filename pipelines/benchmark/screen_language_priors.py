@@ -13,7 +13,7 @@ runs, which is useful when local text-model servers cannot run simultaneously.
 
 from __future__ import annotations
 
-# Layout compatibility: data stays at its existing paths; frozen copies remain standalone.
+# Source location bootstrap; frozen copies remain standalone.
 from pathlib import Path as _LayoutPath
 import sys as _layout_sys
 _layout_file = _LayoutPath(__file__).resolve()
@@ -21,7 +21,7 @@ _layout_root = (_layout_file.parents[2]
                 if _layout_file.as_posix().endswith('/pipelines/benchmark/screen_language_priors.py') else None)
 _LAYOUT_LEGACY_FILE = str(_layout_root / 'scripts/analysis/screen_language_priors.py') if _layout_root else __file__
 if _layout_root is not None:
-    for _layout_dir in (_layout_root, _layout_root / 'src',
+    for _layout_dir in (_layout_root, _layout_root / 'scripts/src',
                         _layout_root / 'scripts/eval',
                         _layout_root / 'scripts/analysis', _layout_file.parent):
         if str(_layout_dir) not in _layout_sys.path:
@@ -44,9 +44,9 @@ from typing import Any
 
 
 ROOT = Path(_LAYOUT_LEGACY_FILE).resolve().parents[2]
-DEFAULT_MANIFEST = ROOT / "nextgqa_pipeline/nextgqa_filtered_no_evidence_leak.json"
-DEFAULT_CANDIDATES = ROOT / "nextgqa_pipeline/partial_candidates_full_n5279.json"
-DEFAULT_OUTPUT_DIR = ROOT / "reports/language_prior_screen"
+DEFAULT_MANIFEST = ROOT / "results/build/nextgqa/nextgqa_filtered_no_evidence_leak.json"
+DEFAULT_CANDIDATES = ROOT / "results/build/nextgqa/partial_candidates_full_n5279.json"
+DEFAULT_OUTPUT_DIR = ROOT / "results/reports/language_prior_screen"
 LETTERS = "ABCDE"
 SYSTEM_PROMPT = (
     "You are taking a multiple-choice video question test without access to the video. "

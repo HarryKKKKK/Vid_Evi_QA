@@ -13,7 +13,7 @@ from pathlib import Path
 ROOT = Path("/aifs4su/hansirui_2nd/harry/Vid_Evi_QA")
 CURRENT = ROOT / "results/closed_paper_sample_20260920/gemini25pro_sample800_final.jsonl"
 GPT_SAMPLE = ROOT / "results/closed_paper_sample_20260920/gpt4o_main_table_sample800.jsonl"
-UNIVERSE = ROOT / "reports/final_benchmark_aligned/final/all_condition_records.jsonl"
+UNIVERSE = ROOT / "results/reports/final_benchmark_aligned/final/all_condition_records.jsonl"
 OUT = ROOT / "results/gemini25pro_main_table_add479_20260921"
 SEED = 20260921
 

@@ -42,12 +42,12 @@ def main():
     if args.action == 'prepare':
         if release.exists():
             raise SystemExit('release already exists; verify/reuse or choose a new name')
-        source = ROOT/'reports/final_benchmark_aligned/final/all_condition_records.jsonl'
+        source = ROOT/'results/reports/final_benchmark_aligned/final/all_condition_records.jsonl'
         rows = read_manifest(source)
         (release/'code').mkdir(parents=True)
         shutil.copy2(source, release/'all_condition_records.jsonl')
         for name in FILES:
-            source_dir = ROOT/'configs' if name == 'vllm_models.sh' else ROOT/'jobs/lib' if name in RUNNER_FILES else ROOT/'scripts/eval'
+            source_dir = ROOT/'scripts/configs' if name == 'vllm_models.sh' else ROOT/'scripts/jobs/lib' if name in RUNNER_FILES else ROOT/'scripts/eval'
             copy_script(source_dir/name, release/'code'/name)
         config = {'created_utc': datetime.now(timezone.utc).isoformat(), 'prompt_version': PROMPT_VERSION,
                   'prompt_sha256': PROMPT_SHA256,

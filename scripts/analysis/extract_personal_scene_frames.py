@@ -11,8 +11,8 @@ p.add_argument('--keys', required=True)
 p.add_argument('--out', type=Path, required=True)
 p.add_argument('--samples', type=int, default=5)
 args = p.parse_args()
-scene = [json.loads(x) for x in (args.root/'reports/final_benchmark_aligned/scene_atomic_v2/scene_v1_removed.jsonl').read_text().splitlines()]
-groups = {r['job_id']: r for r in map(json.loads, (args.root/'etbench_pipeline/conflict/visual_contrast_jobs.jsonl').read_text().splitlines())}
+scene = [json.loads(x) for x in (args.root/'results/reports/final_benchmark_aligned/scene_atomic_v2/scene_v1_removed.jsonl').read_text().splitlines()]
+groups = {r['job_id']: r for r in map(json.loads, (args.root/'results/build/etbench/conflict/visual_contrast_jobs.jsonl').read_text().splitlines())}
 keys = set(args.keys.split(','))
 args.out.mkdir(parents=True, exist_ok=True)
 manifest = []

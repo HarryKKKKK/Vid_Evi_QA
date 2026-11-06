@@ -5,8 +5,8 @@
 #SBATCH --cpus-per-task=12
 #SBATCH --mem=64G
 #SBATCH --time=1-00:00:00
-#SBATCH --output=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/logs/v22_small_%A_%a.out
-#SBATCH --error=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/logs/v22_small_%A_%a.err
+#SBATCH --output=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/results/logs/v22_small_%A_%a.out
+#SBATCH --error=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/results/logs/v22_small_%A_%a.err
 set -euo pipefail
 if [[ $# -ne 2 ]]; then
     echo "Usage: $0 RELEASE MODEL_KIND" >&2

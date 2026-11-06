@@ -3,17 +3,17 @@
 
 from __future__ import annotations
 
-# Layout compatibility: data stays at its existing paths; frozen copies remain standalone.
+# Source location bootstrap; frozen copies remain standalone.
 from pathlib import Path as _LayoutPath
 import sys as _layout_sys
 _layout_file = _LayoutPath(__file__).resolve()
 _layout_root = (_layout_file.parents[3]
                 if _layout_file.as_posix().endswith('/pipelines/nextgqa/insufficient/summarize_dense_ineligible.py') else None)
-_LAYOUT_LEGACY_FILE = str(_layout_root / 'nextgqa_pipeline/insufficient/summarize_dense_ineligible.py') if _layout_root else __file__
+_LAYOUT_LEGACY_FILE = str(_layout_root / 'pipelines/nextgqa/insufficient/summarize_dense_ineligible.py') if _layout_root else __file__
 if _layout_root is not None:
-    for _layout_dir in (_layout_root, _layout_root / 'src',
+    for _layout_dir in (_layout_root, _layout_root / 'scripts/src',
                         _layout_root / 'scripts/eval',
-                        _layout_root / 'nextgqa_pipeline/insufficient', _layout_file.parent):
+                        _layout_root / 'pipelines/nextgqa/insufficient', _layout_file.parent):
         if str(_layout_dir) not in _layout_sys.path:
             _layout_sys.path.insert(0, str(_layout_dir))
 
@@ -27,10 +27,10 @@ from pathlib import Path
 from common import atomic_write_json, latest_jsonl_records
 
 
-ROOT = Path(_LAYOUT_LEGACY_FILE).resolve().parents[2]
-DEFAULT_INPUT = str(ROOT / "nextgqa_pipeline/insufficient/dense_ineligible_classifications.*.jsonl")
-DEFAULT_OUTPUT = ROOT / "nextgqa_pipeline/insufficient/dense_ineligible_item_audit.json"
-DEFAULT_EXCLUDE = ROOT / "nextgqa_pipeline/insufficient/dense_ineligible_evidence_leak_keys.txt"
+ROOT = Path(_LAYOUT_LEGACY_FILE).resolve().parents[3]
+DEFAULT_INPUT = str(ROOT / "results/build/nextgqa/insufficient/dense_ineligible_classifications.*.jsonl")
+DEFAULT_OUTPUT = ROOT / "results/build/nextgqa/insufficient/dense_ineligible_item_audit.json"
+DEFAULT_EXCLUDE = ROOT / "results/build/nextgqa/insufficient/dense_ineligible_evidence_leak_keys.txt"
 
 
 def parse_args() -> argparse.Namespace:

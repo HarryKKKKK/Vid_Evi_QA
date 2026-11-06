@@ -7,11 +7,11 @@ BASE_URL=${BASE_URL:-http://127.0.0.1:18025/v1}
 MODEL=${MODEL:-qwen2.5-vl-32b-conservatism}
 WORKERS=${WORKERS:-4}
 WAIT_SECONDS=${WAIT_SECONDS:-60}
-SAMPLE=${SAMPLE:-ablation_results/qwen25_conservatism/sample_n300.json}
-OUTPUT=${OUTPUT:-ablation_results/qwen25_conservatism/results.jsonl}
+SAMPLE=${SAMPLE:-results/ablation_results/qwen25_conservatism/sample_n300.json}
+OUTPUT=${OUTPUT:-results/ablation_results/qwen25_conservatism/results.jsonl}
 
 cd "${ROOT}"
-mkdir -p logs ablation_results/qwen25_conservatism
+mkdir -p results/logs results/ablation_results/qwen25_conservatism
 
 "${PYTHON}" scripts/analysis/qwen25_conservatism_experiment.py \
   --sample "${SAMPLE}" --prepare-only

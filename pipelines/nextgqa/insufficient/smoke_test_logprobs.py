@@ -3,17 +3,17 @@
 
 from __future__ import annotations
 
-# Layout compatibility: data stays at its existing paths; frozen copies remain standalone.
+# Source location bootstrap; frozen copies remain standalone.
 from pathlib import Path as _LayoutPath
 import sys as _layout_sys
 _layout_file = _LayoutPath(__file__).resolve()
 _layout_root = (_layout_file.parents[3]
                 if _layout_file.as_posix().endswith('/pipelines/nextgqa/insufficient/smoke_test_logprobs.py') else None)
-_LAYOUT_LEGACY_FILE = str(_layout_root / 'nextgqa_pipeline/insufficient/smoke_test_logprobs.py') if _layout_root else __file__
+_LAYOUT_LEGACY_FILE = str(_layout_root / 'pipelines/nextgqa/insufficient/smoke_test_logprobs.py') if _layout_root else __file__
 if _layout_root is not None:
-    for _layout_dir in (_layout_root, _layout_root / 'src',
+    for _layout_dir in (_layout_root, _layout_root / 'scripts/src',
                         _layout_root / 'scripts/eval',
-                        _layout_root / 'nextgqa_pipeline/insufficient', _layout_file.parent):
+                        _layout_root / 'pipelines/nextgqa/insufficient', _layout_file.parent):
         if str(_layout_dir) not in _layout_sys.path:
             _layout_sys.path.insert(0, str(_layout_dir))
 
@@ -24,7 +24,7 @@ from pathlib import Path
 from common import ForcedChoiceScorer, extract_frame_grid, load_worklist, parse_endpoints
 
 
-ROOT = Path(_LAYOUT_LEGACY_FILE).resolve().parents[2]
+ROOT = Path(_LAYOUT_LEGACY_FILE).resolve().parents[3]
 
 
 def main() -> None:
@@ -35,7 +35,7 @@ def main() -> None:
     parser.add_argument("--frame-width", type=int, default=336)
     args = parser.parse_args()
     items = load_worklist(
-        ROOT / "nextgqa_pipeline/nextgqa_filtered.json",
+        ROOT / "results/build/nextgqa/nextgqa_filtered.json",
         ROOT / "source_datasets/next_gqa/videos",
         ROOT / "source_datasets/next_gqa/NExT-GQA/datasets/nextgqa/map_vid_vidorID.json",
     )

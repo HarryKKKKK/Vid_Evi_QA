@@ -7,7 +7,7 @@ from pathlib import Path
 import shutil
 
 ROOT = Path('/aifs4su/hansirui_2nd/harry/Vid_Evi_QA')
-REPORT = ROOT/'reports/model_retirement_20260903'
+REPORT = ROOT/'results/reports/model_retirement_20260903'
 JOBS = {'376718', '376723', '376725', '376727', '376736'}
 
 def targets():
@@ -23,7 +23,7 @@ def targets():
                 dirs.remove(name)
         for name in files:
             p = parent/name
-            special = parent == ROOT/'logs' and any(name in {f'open_v2_smoke_{j}.out', f'open_v2_smoke_{j}.err'} for j in JOBS)
+            special = parent == ROOT/'results/logs' and any(name in {f'open_v2_smoke_{j}.out', f'open_v2_smoke_{j}.err'} for j in JOBS)
             if 'nvila' in name.lower() or special:
                 found.append(p)
     return sorted(found)
@@ -31,7 +31,7 @@ def targets():
 def validate(p):
     if p.is_symlink() or not p.resolve().is_relative_to(ROOT.resolve()) or p.resolve() == ROOT.resolve():
         raise RuntimeError(f'Unsafe target {p}')
-    if 'nvila' not in p.name.lower() and not (p.parent == ROOT/'logs' and any(p.name in {f'open_v2_smoke_{j}.out', f'open_v2_smoke_{j}.err'} for j in JOBS)):
+    if 'nvila' not in p.name.lower() and not (p.parent == ROOT/'results/logs' and any(p.name in {f'open_v2_smoke_{j}.out', f'open_v2_smoke_{j}.err'} for j in JOBS)):
         raise RuntimeError(f'Not an exact retired-model target {p}')
 
 def main():

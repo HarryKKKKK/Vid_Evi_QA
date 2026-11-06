@@ -6,8 +6,8 @@
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=128G
 #SBATCH --time=1-00:00:00
-#SBATCH --output=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/logs/missing_retry_%A_%a.out
-#SBATCH --error=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/logs/missing_retry_%A_%a.err
+#SBATCH --output=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/results/logs/missing_retry_%A_%a.out
+#SBATCH --error=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/results/logs/missing_retry_%A_%a.err
 set -euo pipefail
 
 ROOT=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA

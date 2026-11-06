@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path("/aifs4su/hansirui_2nd/harry/Vid_Evi_QA")
 RUN = ROOT / "results/gemini25pro_main_table_add479_20260921"
 CURRENT = ROOT / "results/closed_paper_sample_20260920/gemini25pro_sample800_final.jsonl"
-UNIVERSE = ROOT / "reports/final_benchmark_aligned/final/all_condition_records.jsonl"
+UNIVERSE = ROOT / "results/reports/final_benchmark_aligned/final/all_condition_records.jsonl"
 
 
 def read(path):

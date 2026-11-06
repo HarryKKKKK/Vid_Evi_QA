@@ -1,6 +1,6 @@
 """Read-only post-publication checks on either host."""
 
-# Layout compatibility: data stays at its existing paths; frozen copies remain standalone.
+# Source location bootstrap; frozen copies remain standalone.
 from pathlib import Path as _LayoutPath
 import sys as _layout_sys
 _layout_file = _LayoutPath(__file__).resolve()
@@ -8,7 +8,7 @@ _layout_root = (_layout_file.parents[2]
                 if _layout_file.as_posix().endswith('/pipelines/benchmark/verify_scene_multiplicity_release.py') else None)
 _LAYOUT_LEGACY_FILE = str(_layout_root / 'scripts/analysis/verify_scene_multiplicity_release.py') if _layout_root else __file__
 if _layout_root is not None:
-    for _layout_dir in (_layout_root, _layout_root / 'src',
+    for _layout_dir in (_layout_root, _layout_root / 'scripts/src',
                         _layout_root / 'scripts/eval',
                         _layout_root / 'scripts/analysis', _layout_file.parent):
         if str(_layout_dir) not in _layout_sys.path:
@@ -23,7 +23,7 @@ p = argparse.ArgumentParser(description=__doc__)
 p.add_argument('--root', required=True, type=Path)
 args = p.parse_args()
 root = args.root.resolve()
-base = root/'reports/final_benchmark_aligned/scene_manual_v3'
+base = root/'results/reports/final_benchmark_aligned/scene_manual_v3'
 release = base/'manual_scene_v3_20260902_spatial01'
 revised = core.read_rows(release/'scene_all_revised_with_types.jsonl')
 expected = {r['id']:r for r in revised}
@@ -37,7 +37,7 @@ for entry in transaction['files']:
         assert core.digest((release/'backup'/entry['path']).read_bytes()) == entry['before_sha256']
 for rel in ['final/conflict_qa_five_options.jsonl','final/all_unique_qa.jsonl',
             'final/all_condition_records.jsonl','scene_atomic_v2/conflict_qa_five_options.current.jsonl']:
-    path = root/'reports/final_benchmark_aligned'/rel
+    path = root/'results/reports/final_benchmark_aligned'/rel
     rows = core.read_rows(path)
     old = core.read_rows(release/'backup'/path.relative_to(root))
     assert {r['id']:r for r in rows if core.is_scene(r)} == expected
@@ -54,7 +54,7 @@ for r in old:
     assert {k:v for k,v in expected[r['id']].items() if k != 'answer_multiplicity'} == r
 queue = core.read_rows(release/'scene_review_queue.jsonl')
 assert len(queue) == 360 and len({r['id'] for r in queue+revised}) == 375
-for rel in ['scripts/eval/evaluate.py','etbench_pipeline/conflict/evaluate_conflict_v2.py']:
+for rel in ['scripts/eval/evaluate.py','scripts/src/vid_evi_qa/evaluation/evaluate_conflict_v2.py']:
     text = (root/rel).read_text(encoding='utf-8')
     compile(text,rel,'exec')
     assert 'different intervals support at least two incompatible' not in text

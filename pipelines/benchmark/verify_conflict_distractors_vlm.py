@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-# Layout compatibility: data stays at its existing paths; frozen copies remain standalone.
+# Source location bootstrap; frozen copies remain standalone.
 from pathlib import Path as _LayoutPath
 import sys as _layout_sys
 _layout_file = _LayoutPath(__file__).resolve()
@@ -11,7 +11,7 @@ _layout_root = (_layout_file.parents[2]
                 if _layout_file.as_posix().endswith('/pipelines/benchmark/verify_conflict_distractors_vlm.py') else None)
 _LAYOUT_LEGACY_FILE = str(_layout_root / 'scripts/analysis/verify_conflict_distractors_vlm.py') if _layout_root else __file__
 if _layout_root is not None:
-    for _layout_dir in (_layout_root, _layout_root / 'src',
+    for _layout_dir in (_layout_root, _layout_root / 'scripts/src',
                         _layout_root / 'scripts/eval',
                         _layout_root / 'scripts/analysis', _layout_file.parent):
         if str(_layout_dir) not in _layout_sys.path:
@@ -29,11 +29,11 @@ from pathlib import Path
 from openai import OpenAI
 
 ROOT = Path(_LAYOUT_LEGACY_FILE).resolve().parents[2]
-CONFLICT_DIR = ROOT / "etbench_pipeline" / "conflict"
+CONFLICT_DIR = ROOT / "results/build/etbench" / "conflict"
 for path in (ROOT, CONFLICT_DIR):
     if str(path) not in sys.path:
         sys.path.insert(0, str(path))
-from etbench_pipeline.conflict.run_conflict_pipeline_v2 import encode_frames
+from pipelines.etbench.conflict.run_conflict_pipeline_v2 import encode_frames
 
 
 PROMPT = """You are validating one proposed distractor for a video-QA benchmark. The frames cover

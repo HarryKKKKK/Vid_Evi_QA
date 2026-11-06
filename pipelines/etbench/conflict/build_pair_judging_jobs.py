@@ -2,17 +2,17 @@
 
 from __future__ import annotations
 
-# Layout compatibility: data stays at its existing paths; frozen copies remain standalone.
+# Source location bootstrap; frozen copies remain standalone.
 from pathlib import Path as _LayoutPath
 import sys as _layout_sys
 _layout_file = _LayoutPath(__file__).resolve()
 _layout_root = (_layout_file.parents[3]
                 if _layout_file.as_posix().endswith('/pipelines/etbench/conflict/build_pair_judging_jobs.py') else None)
-_LAYOUT_LEGACY_FILE = str(_layout_root / 'etbench_pipeline/conflict/build_pair_judging_jobs.py') if _layout_root else __file__
+_LAYOUT_LEGACY_FILE = str(_layout_root / 'pipelines/etbench/conflict/build_pair_judging_jobs.py') if _layout_root else __file__
 if _layout_root is not None:
-    for _layout_dir in (_layout_root, _layout_root / 'src',
+    for _layout_dir in (_layout_root, _layout_root / 'scripts/src',
                         _layout_root / 'scripts/eval',
-                        _layout_root / 'etbench_pipeline/conflict', _layout_file.parent):
+                        _layout_root / 'pipelines/etbench/conflict', _layout_file.parent):
         if str(_layout_dir) not in _layout_sys.path:
             _layout_sys.path.insert(0, str(_layout_dir))
 
@@ -26,7 +26,7 @@ from pathlib import Path
 from typing import Any, Iterable
 
 
-SCRIPT_DIR = Path(_LAYOUT_LEGACY_FILE).resolve().parent
+SCRIPT_DIR = Path(_LAYOUT_LEGACY_FILE).resolve().parents[3] / "results/build/etbench/conflict"
 DEFAULT_GROUPS = SCRIPT_DIR / "visual_contrast_jobs.jsonl"
 DEFAULT_RESULTS = SCRIPT_DIR / "visual_instance_results.jsonl"
 DEFAULT_OUTPUT = SCRIPT_DIR / "pair_judging_jobs.jsonl"

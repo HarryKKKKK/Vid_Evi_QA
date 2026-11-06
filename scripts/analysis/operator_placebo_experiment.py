@@ -34,7 +34,7 @@ CONDITIONS = (
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--sample", type=Path, required=True)
-    parser.add_argument("--metadata", type=Path, default=Path("nextgqa_pipeline/nextgqa_filtered_no_evidence_leak_eval_clean.json"))
+    parser.add_argument("--metadata", type=Path, default=Path("results/build/nextgqa/nextgqa_filtered_no_evidence_leak_eval_clean.json"))
     parser.add_argument("--mapping", type=Path, default=Path("source_datasets/next_gqa/NExT-GQA/datasets/nextgqa/map_vid_vidorID.json"))
     parser.add_argument("--source-video-dir", type=Path, default=Path("source_datasets/next_gqa/videos"))
     parser.add_argument("--noise-video-dir", type=Path, default=Path("source_datasets/next_gqa/partial_videos_no_evidence_leak"))

@@ -8,8 +8,8 @@ from collections import defaultdict
 ROOT = Path('/aifs4su/hansirui_2nd/harry/Vid_Evi_QA')
 
 def main():
-    claims = ROOT/'nextgqa_pipeline/insufficient/multimodel_correct_answer_claims.initial.jsonl'
-    reportfile = ROOT/'nextgqa_pipeline/insufficient/multimodel_correct_answer_report.initial.json'
+    claims = ROOT/'results/build/nextgqa/insufficient/multimodel_correct_answer_claims.initial.jsonl'
+    reportfile = ROOT/'results/build/nextgqa/insufficient/multimodel_correct_answer_report.initial.json'
     for p in [claims, reportfile]:
         assert not p.is_symlink() and p.resolve().is_relative_to(ROOT.resolve()), p
     original = claims.read_bytes()
@@ -41,7 +41,7 @@ def main():
     receipt = {'removed_model_rows':removed, 'retained_rows':len(rows), 'other_rows_byte_identical':True,
                'before_sha256':hashlib.sha256(original).hexdigest(),
                'after_sha256':hashlib.sha256(claims.read_bytes()).hexdigest(), 'overall':report['overall']}
-    (ROOT/'reports/model_retirement_20260903/mixed_claims_cleanup.json').write_text(json.dumps(receipt,indent=2)+'\n')
+    (ROOT/'results/reports/model_retirement_20260903/mixed_claims_cleanup.json').write_text(json.dumps(receipt,indent=2)+'\n')
     print(json.dumps(receipt,indent=2))
 
 if __name__ == '__main__':

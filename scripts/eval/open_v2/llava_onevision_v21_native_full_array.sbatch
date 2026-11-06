@@ -6,8 +6,8 @@
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=128G
 #SBATCH --time=08:00:00
-#SBATCH --output=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/logs/llavaov_v21_native_%A_%a.out
-#SBATCH --error=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/logs/llavaov_v21_native_%A_%a.err
+#SBATCH --output=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/results/logs/llavaov_v21_native_%A_%a.out
+#SBATCH --error=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/results/logs/llavaov_v21_native_%A_%a.err
 set -euo pipefail
 
 ROOT=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA

@@ -1,11 +1,69 @@
+# Python
 __pycache__/
 *.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.eggs/
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+.claude/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Secrets / env
 .env
 .env.*
 *.key
-*.pem
-/logs/
-/results/
+
+# Logs
+*.log
+logs/
+
+# Videos
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.webm
+*.zip
+*.pdf
+source_datasets/cg_bench/raw/
+source_datasets/cg_bench/cg_subtitles/
+
+output/
+tmp/
+
+# NExT-GQA generated measurements, audits and evaluation outputs.
+# Keep these on the experiment server or external artifact storage, not Git.
+results/build/nextgqa/insufficient/*.json
+results/build/nextgqa/insufficient/*.jsonl
+results/build/nextgqa/nextgqa_filtered_no_evidence_leak.json
+nextgqa_result_qwen3vl_no_evidence_leak/*.json
+nextgqa_result_qwen3vl_no_evidence_leak/*.jsonl
+
+# Heavy/private artifacts stay on the server, outside source control.
 /source_datasets/
-/.runtime/
-/tmp/
+/models/*
+!/models/model_download/
+!/models/model_running/
+/results/
+/.runtime
+/.pytest_cache/

@@ -6,8 +6,8 @@
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=128G
 #SBATCH --time=4-00:00:00
-#SBATCH --output=logs/eval_v2_%j.out
-#SBATCH --error=logs/eval_v2_%j.err
+#SBATCH --output=results/logs/eval_v2_%j.out
+#SBATCH --error=results/logs/eval_v2_%j.err
 set -euo pipefail
 ROOT=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA
 cd "${ROOT}"

@@ -36,7 +36,7 @@ cd "${ROOT}"
     --batch-size 8 \
     --max-new-tokens 64 \
     --threads 64 \
-    --output-dir reports/language_prior_screen/full_5279_qwen_cpu
+    --output-dir results/reports/language_prior_screen/full_5279_qwen_cpu
 
 "${PYTHON}" scripts/analysis/screen_language_priors_offline.py \
     --backend llama \
@@ -46,14 +46,14 @@ cd "${ROOT}"
     --batch-size 8 \
     --max-new-tokens 64 \
     --threads 64 \
-    --output-dir reports/language_prior_screen/full_5279_llama_cpu
+    --output-dir results/reports/language_prior_screen/full_5279_llama_cpu
 
 "${PYTHON}" scripts/analysis/merge_language_prior_runs.py \
-    --input reports/language_prior_screen/full_5279/raw_predictions.jsonl \
-    --input reports/language_prior_screen/full_5279_qwen_cpu/raw_predictions.jsonl \
-    --input reports/language_prior_screen/full_5279_llama_cpu/raw_predictions.jsonl \
-    --output-dir reports/language_prior_screen/combined_5279
+    --input results/reports/language_prior_screen/full_5279/raw_predictions.jsonl \
+    --input results/reports/language_prior_screen/full_5279_qwen_cpu/raw_predictions.jsonl \
+    --input results/reports/language_prior_screen/full_5279_llama_cpu/raw_predictions.jsonl \
+    --output-dir results/reports/language_prior_screen/combined_5279
 
 exec "${PYTHON}" scripts/analysis/summarize_retained_benchmark.py \
-    --exclusions reports/language_prior_screen/combined_5279/removal_candidates.json \
-    --output-dir reports/language_prior_screen/combined_5279/retained_benchmark_statistics
+    --exclusions results/reports/language_prior_screen/combined_5279/removal_candidates.json \
+    --output-dir results/reports/language_prior_screen/combined_5279/retained_benchmark_statistics

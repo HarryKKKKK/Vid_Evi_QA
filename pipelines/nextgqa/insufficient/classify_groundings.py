@@ -12,17 +12,17 @@ final label. A single dissenting or hallucinating grounder cannot confirm a leak
 
 from __future__ import annotations
 
-# Layout compatibility: data stays at its existing paths; frozen copies remain standalone.
+# Source location bootstrap; frozen copies remain standalone.
 from pathlib import Path as _LayoutPath
 import sys as _layout_sys
 _layout_file = _LayoutPath(__file__).resolve()
 _layout_root = (_layout_file.parents[3]
                 if _layout_file.as_posix().endswith('/pipelines/nextgqa/insufficient/classify_groundings.py') else None)
-_LAYOUT_LEGACY_FILE = str(_layout_root / 'nextgqa_pipeline/insufficient/classify_groundings.py') if _layout_root else __file__
+_LAYOUT_LEGACY_FILE = str(_layout_root / 'pipelines/nextgqa/insufficient/classify_groundings.py') if _layout_root else __file__
 if _layout_root is not None:
-    for _layout_dir in (_layout_root, _layout_root / 'src',
+    for _layout_dir in (_layout_root, _layout_root / 'scripts/src',
                         _layout_root / 'scripts/eval',
-                        _layout_root / 'nextgqa_pipeline/insufficient', _layout_file.parent):
+                        _layout_root / 'pipelines/nextgqa/insufficient', _layout_file.parent):
         if str(_layout_dir) not in _layout_sys.path:
             _layout_sys.path.insert(0, str(_layout_dir))
 
@@ -39,9 +39,9 @@ from pathlib import Path
 from common import append_jsonl, latest_jsonl_records, parse_endpoints, selected_indices
 
 
-ROOT = Path(_LAYOUT_LEGACY_FILE).resolve().parents[2]
-DEFAULT_GROUNDINGS = str(ROOT / "nextgqa_pipeline/insufficient/window_groundings*.jsonl")
-DEFAULT_OUTPUT = ROOT / "nextgqa_pipeline/insufficient/leak_classifications.jsonl"
+ROOT = Path(_LAYOUT_LEGACY_FILE).resolve().parents[3]
+DEFAULT_GROUNDINGS = str(ROOT / "results/build/nextgqa/insufficient/window_groundings*.jsonl")
+DEFAULT_OUTPUT = ROOT / "results/build/nextgqa/insufficient/leak_classifications.jsonl"
 CLASSIFIER_PROMPT_VERSION = "nextgqa-text-leak-classifier-ensemble-v2.0"
 
 

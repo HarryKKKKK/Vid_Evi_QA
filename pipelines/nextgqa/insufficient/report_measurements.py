@@ -8,25 +8,25 @@ sufficiency.
 
 Example
 -------
-python nextgqa_pipeline/insufficient/report_measurements.py \
-  --measurements 'nextgqa_pipeline/insufficient/measurements.[0-7].jsonl' \
-  --output-json nextgqa_pipeline/insufficient/measurement_report.json \
-  --output-markdown nextgqa_pipeline/insufficient/measurement_report.md
+python pipelines/nextgqa/insufficient/report_measurements.py \
+  --measurements 'results/build/nextgqa/insufficient/measurements.[0-7].jsonl' \
+  --output-json results/build/nextgqa/insufficient/measurement_report.json \
+  --output-markdown results/build/nextgqa/insufficient/measurement_report.md
 """
 
 from __future__ import annotations
 
-# Layout compatibility: data stays at its existing paths; frozen copies remain standalone.
+# Source location bootstrap; frozen copies remain standalone.
 from pathlib import Path as _LayoutPath
 import sys as _layout_sys
 _layout_file = _LayoutPath(__file__).resolve()
 _layout_root = (_layout_file.parents[3]
                 if _layout_file.as_posix().endswith('/pipelines/nextgqa/insufficient/report_measurements.py') else None)
-_LAYOUT_LEGACY_FILE = str(_layout_root / 'nextgqa_pipeline/insufficient/report_measurements.py') if _layout_root else __file__
+_LAYOUT_LEGACY_FILE = str(_layout_root / 'pipelines/nextgqa/insufficient/report_measurements.py') if _layout_root else __file__
 if _layout_root is not None:
-    for _layout_dir in (_layout_root, _layout_root / 'src',
+    for _layout_dir in (_layout_root, _layout_root / 'scripts/src',
                         _layout_root / 'scripts/eval',
-                        _layout_root / 'nextgqa_pipeline/insufficient', _layout_file.parent):
+                        _layout_root / 'pipelines/nextgqa/insufficient', _layout_file.parent):
         if str(_layout_dir) not in _layout_sys.path:
             _layout_sys.path.insert(0, str(_layout_dir))
 
@@ -40,10 +40,10 @@ from pathlib import Path
 from typing import Iterator, Sequence
 
 
-ROOT = Path(_LAYOUT_LEGACY_FILE).resolve().parents[2]
-DEFAULT_GLOB = str(ROOT / "nextgqa_pipeline/insufficient/measurements.*.jsonl")
-DEFAULT_JSON = ROOT / "nextgqa_pipeline/insufficient/measurement_report.json"
-DEFAULT_MARKDOWN = ROOT / "nextgqa_pipeline/insufficient/measurement_report.md"
+ROOT = Path(_LAYOUT_LEGACY_FILE).resolve().parents[3]
+DEFAULT_GLOB = str(ROOT / "results/build/nextgqa/insufficient/measurements.*.jsonl")
+DEFAULT_JSON = ROOT / "results/build/nextgqa/insufficient/measurement_report.json"
+DEFAULT_MARKDOWN = ROOT / "results/build/nextgqa/insufficient/measurement_report.md"
 
 
 def parse_args() -> argparse.Namespace:

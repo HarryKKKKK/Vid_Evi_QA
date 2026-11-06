@@ -9,17 +9,17 @@ description of every resulting window.
 
 from __future__ import annotations
 
-# Layout compatibility: data stays at its existing paths; frozen copies remain standalone.
+# Source location bootstrap; frozen copies remain standalone.
 from pathlib import Path as _LayoutPath
 import sys as _layout_sys
 _layout_file = _LayoutPath(__file__).resolve()
 _layout_root = (_layout_file.parents[3]
                 if _layout_file.as_posix().endswith('/pipelines/nextgqa/insufficient/dense_ground_ineligible.py') else None)
-_LAYOUT_LEGACY_FILE = str(_layout_root / 'nextgqa_pipeline/insufficient/dense_ground_ineligible.py') if _layout_root else __file__
+_LAYOUT_LEGACY_FILE = str(_layout_root / 'pipelines/nextgqa/insufficient/dense_ground_ineligible.py') if _layout_root else __file__
 if _layout_root is not None:
-    for _layout_dir in (_layout_root, _layout_root / 'src',
+    for _layout_dir in (_layout_root, _layout_root / 'scripts/src',
                         _layout_root / 'scripts/eval',
-                        _layout_root / 'nextgqa_pipeline/insufficient', _layout_file.parent):
+                        _layout_root / 'pipelines/nextgqa/insufficient', _layout_file.parent):
         if str(_layout_dir) not in _layout_sys.path:
             _layout_sys.path.insert(0, str(_layout_dir))
 
@@ -45,12 +45,12 @@ from common import (
 from ground_windows import GROUNDING_PROMPT_VERSION, WindowGrounder
 
 
-ROOT = Path(_LAYOUT_LEGACY_FILE).resolve().parents[2]
-DEFAULT_FILTERED = ROOT / "nextgqa_pipeline/nextgqa_filtered.json"
+ROOT = Path(_LAYOUT_LEGACY_FILE).resolve().parents[3]
+DEFAULT_FILTERED = ROOT / "results/build/nextgqa/nextgqa_filtered.json"
 DEFAULT_VIDEOS = ROOT / "source_datasets/next_gqa/videos"
 DEFAULT_MAPPING = ROOT / "source_datasets/next_gqa/NExT-GQA/datasets/nextgqa/map_vid_vidorID.json"
-DEFAULT_MEASUREMENTS = str(ROOT / "nextgqa_pipeline/insufficient/measurements.*.jsonl")
-DEFAULT_OUTPUT = ROOT / "nextgqa_pipeline/insufficient/dense_ineligible_groundings.jsonl"
+DEFAULT_MEASUREMENTS = str(ROOT / "results/build/nextgqa/insufficient/measurements.*.jsonl")
+DEFAULT_OUTPUT = ROOT / "results/build/nextgqa/insufficient/dense_ineligible_groundings.jsonl"
 DENSE_PIPELINE_VERSION = "nextgqa-dense-ineligible-grounding-v1.0"
 
 

@@ -9,17 +9,17 @@ member, so they must be checked against the video before publication.
 
 from __future__ import annotations
 
-# Layout compatibility: data stays at its existing paths; frozen copies remain standalone.
+# Source location bootstrap; frozen copies remain standalone.
 from pathlib import Path as _LayoutPath
 import sys as _layout_sys
 _layout_file = _LayoutPath(__file__).resolve()
 _layout_root = (_layout_file.parents[3]
                 if _layout_file.as_posix().endswith('/pipelines/etbench/conflict/scene_atomic_rebuild.py') else None)
-_LAYOUT_LEGACY_FILE = str(_layout_root / 'etbench_pipeline/conflict/scene_atomic_rebuild.py') if _layout_root else __file__
+_LAYOUT_LEGACY_FILE = str(_layout_root / 'pipelines/etbench/conflict/scene_atomic_rebuild.py') if _layout_root else __file__
 if _layout_root is not None:
-    for _layout_dir in (_layout_root, _layout_root / 'src',
+    for _layout_dir in (_layout_root, _layout_root / 'scripts/src',
                         _layout_root / 'scripts/eval',
-                        _layout_root / 'etbench_pipeline/conflict', _layout_file.parent):
+                        _layout_root / 'pipelines/etbench/conflict', _layout_file.parent):
         if str(_layout_dir) not in _layout_sys.path:
             _layout_sys.path.insert(0, str(_layout_dir))
 

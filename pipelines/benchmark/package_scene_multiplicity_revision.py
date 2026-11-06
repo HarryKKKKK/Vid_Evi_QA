@@ -1,6 +1,6 @@
 """Publish explicit human scene edits under the user-confirmed time/space policy."""
 
-# Layout compatibility: data stays at its existing paths; frozen copies remain standalone.
+# Source location bootstrap; frozen copies remain standalone.
 from pathlib import Path as _LayoutPath
 import sys as _layout_sys
 _layout_file = _LayoutPath(__file__).resolve()
@@ -8,7 +8,7 @@ _layout_root = (_layout_file.parents[2]
                 if _layout_file.as_posix().endswith('/pipelines/benchmark/package_scene_multiplicity_revision.py') else None)
 _LAYOUT_LEGACY_FILE = str(_layout_root / 'scripts/analysis/package_scene_multiplicity_revision.py') if _layout_root else __file__
 if _layout_root is not None:
-    for _layout_dir in (_layout_root, _layout_root / 'src',
+    for _layout_dir in (_layout_root, _layout_root / 'scripts/src',
                         _layout_root / 'scripts/eval',
                         _layout_root / 'scripts/analysis', _layout_file.parent):
         if str(_layout_dir) not in _layout_sys.path:
@@ -28,14 +28,14 @@ def main():
     p.add_argument('--apply', action='store_true')
     args = p.parse_args()
     root = args.root.resolve()
-    base = root/'reports/final_benchmark_aligned/scene_manual_v3'
+    base = root/'results/reports/final_benchmark_aligned/scene_manual_v3'
     authored = core.read_rows(base/'authored_spatial_repairs.json')
     source = core.read_rows(base/'remote_snapshot/conflict_qa_five_options.jsonl')
     frames = [s for i in [1, 2] for s in core.read_rows(base/f'frames_batch{i:02d}/manifest.json')]
     revised, retired, _ = core.build_repairs(source, authored, frames)
     assert not retired
     existing = core.read_rows(base/'manual_scene_v3_20260902_batch01/scene_repaired.jsonl')
-    active_paths = [root/'reports/final_benchmark_aligned'/rel for rel in [
+    active_paths = [root/'results/reports/final_benchmark_aligned'/rel for rel in [
         'final/conflict_qa_five_options.jsonl', 'final/all_unique_qa.jsonl',
         'final/all_condition_records.jsonl', 'scene_atomic_v2/conflict_qa_five_options.current.jsonl']]
     before = {p: core.digest(p.read_bytes()) for p in active_paths}
@@ -71,7 +71,7 @@ def main():
         'active_file_sha256_before':{str(p.relative_to(root)):h for p,h in before.items()}}
     assert authored['evaluation_contract'] == 'reject_if_multiple_valid_options'
     changes = {p:core.encode(p,core.replace_scene(core.read_rows(p),all_revised)) for p in active_paths}
-    final = root/'reports/final_benchmark_aligned/final'
+    final = root/'results/reports/final_benchmark_aligned/final'
     conflict = core.replace_scene(core.read_rows(active_paths[0]), all_revised)
     summary_path = final/'summary.json'
     summary = core.read_rows(summary_path)
@@ -85,7 +85,7 @@ def main():
         'scene_answer_multiplicity_counts':stats['classification_counts'],
         'scene_acceptance_policy':'time_or_space_v1', 'scene_verification_note':authored['verification_method']})
     changes[summary_path] = core.encode(summary_path,summary)
-    v2 = root/'reports/final_benchmark_aligned/scene_atomic_v2'
+    v2 = root/'results/reports/final_benchmark_aligned/scene_atomic_v2'
     for filename in ['summary.json','manual_review_progress.json','MANUAL_PUBLICATION_LOCK.json']:
         path = v2/filename
         data = core.read_rows(path)
@@ -104,7 +104,7 @@ def main():
          'Use CONFLICTING_EVIDENCE when at least two distinct options are correct for the question, so no unique option can be selected. The correct options may be supported at different times or simultaneously in the same frame; factual contradiction and separate intervals are not required.'),
         ('For CONFLICTING_EVIDENCE, provide at least two evidence groups describing the incompatible information.',
          'For CONFLICTING_EVIDENCE, provide at least two evidence groups explaining why distinct options satisfy the question. The groups may share the same timestamp when both answers are supported in one frame.')]
-    for rel in ['scripts/eval/evaluate.py','etbench_pipeline/conflict/evaluate_conflict_v2.py']:
+    for rel in ['scripts/eval/evaluate.py','scripts/src/vid_evi_qa/evaluation/evaluate_conflict_v2.py']:
         path = root/rel
         content = path.read_text(encoding='utf-8')
         for old,new in replacements:
@@ -131,7 +131,7 @@ def main():
                 content = content.replace(old,new)
         compile(content,str(path),'exec')
         changes[path] = content.encode('utf-8')
-    for directory in (root/'reports/conflict_final_audit').iterdir():
+    for directory in (root/'results/reports/conflict_final_audit').iterdir():
         path = directory/'summary.json'
         if path.is_file() and (directory/'conflict_eval.json').is_file():
             data = core.read_rows(path)
@@ -139,7 +139,7 @@ def main():
                 'current_prompt_version':'hierarchical_classify_multi_answer_v2',
                 'existing_predictions_are_not_current_prompt_results':True})
             changes[path] = core.encode(path,data)
-    prompt_doc = root/'etbench_pipeline/conflict/CONFLICT_EVAL_PROMPT.md'
+    prompt_doc = root/'pipelines/etbench/conflict/CONFLICT_EVAL_PROMPT.md'
     changes[prompt_doc] = ('# Conflict multi-answer evaluation contract\n\n'
         'User-confirmed 2026-09-02: at least two distinct correct options trigger UNANSWERABLE / R / CONFLICTING_EVIDENCE. '
         'The evidence may occur at different times or simultaneously in one frame; factual contradiction is not required. '
@@ -156,7 +156,7 @@ def main():
     for path in [base/'README.md',v2/'manual_review_all_375/INDEX.md',v2/'MANUAL_WORKFLOW.md']:
         content = path.read_text(encoding='utf-8') if path.is_file() else ''
         history = '\n\n以下先前日期内容保留为历史，旧准入/退出结论不代表当前标准。\n\n'+content if content else '\n'
-        changes[path] = ('> '+announcement+'\n> 正式修改记录：reports/final_benchmark_aligned/scene_manual_v3/'+authored['release']+'/REVISIONS.md'+history).encode('utf-8')
+        changes[path] = ('> '+announcement+'\n> 正式修改记录：results/reports/final_benchmark_aligned/scene_manual_v3/'+authored['release']+'/REVISIONS.md'+history).encode('utf-8')
     out = base/authored['release']
     if args.apply:
         assert before == {p:core.digest(p.read_bytes()) for p in active_paths}

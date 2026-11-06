@@ -5,8 +5,8 @@
 #SBATCH --cpus-per-task=12
 #SBATCH --mem=96G
 #SBATCH --time=1-00:00:00
-#SBATCH --output=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/logs/frontier_full_%A_%a.out
-#SBATCH --error=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/logs/frontier_full_%A_%a.err
+#SBATCH --output=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/results/logs/frontier_full_%A_%a.out
+#SBATCH --error=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/results/logs/frontier_full_%A_%a.err
 set -euo pipefail
 RELEASE=$1
 KIND=$2

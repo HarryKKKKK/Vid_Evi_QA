@@ -41,23 +41,23 @@ Resumable: existing outputs are skipped unless --overwrite.
 Other datasets (e.g. NExT-GQA):
   --json/--video-dir/--output-dir already override the CG-Bench defaults
   below, so this script can build freeze videos for
-  nextgqa_pipeline/nextgqa_filtered.json too. Video lookup is dataset-aware
+  results/build/nextgqa/nextgqa_filtered.json too. Video lookup is dataset-aware
   via each entry's `source_dataset` field: "cgbench" entries keep the
   existing flat-directory stem lookup (build_stem_index() + os.listdir);
   "nextgqa" entries are resolved through --video-id-mapping (defaults to
   NExT-GQA's own map_vid_vidorID.json) because NExT-GQA videos live under a
   {folder}/{vidorID}.mp4 layout, not flat {video_id}.mp4 (see
-  nextgqa_pipeline/README.md).
+  pipelines/nextgqa/README.md).
 
   Example:
     python scripts/vqa/build_freeze.py \
-      --json nextgqa_pipeline/nextgqa_filtered.json \
+      --json results/build/nextgqa/nextgqa_filtered.json \
       --video-dir source_datasets/next_gqa/videos \
       --output-dir source_datasets/next_gqa/freeze_videos \
       --preflight
 """
 
-# Layout compatibility: data stays at its existing paths; frozen copies remain standalone.
+# Source location bootstrap; frozen copies remain standalone.
 from pathlib import Path as _LayoutPath
 import sys as _layout_sys
 _layout_file = _LayoutPath(__file__).resolve()
@@ -65,7 +65,7 @@ _layout_root = (_layout_file.parents[2]
                 if _layout_file.as_posix().endswith('/pipelines/media/build_freeze.py') else None)
 _LAYOUT_LEGACY_FILE = str(_layout_root / 'scripts/vqa/build_freeze.py') if _layout_root else __file__
 if _layout_root is not None:
-    for _layout_dir in (_layout_root, _layout_root / 'src',
+    for _layout_dir in (_layout_root, _layout_root / 'scripts/src',
                         _layout_root / 'scripts/eval',
                         _layout_root / 'scripts/vqa', _layout_file.parent):
         if str(_layout_dir) not in _layout_sys.path:
@@ -505,7 +505,7 @@ def main():
                     help="Cap entries processed (after sharding); for tests.")
     ap.add_argument("--preflight", action="store_true")
     ap.add_argument("--print-count", action="store_true")
-    ap.add_argument("--report", default="freeze_build_report.jsonl")
+    ap.add_argument("--report", default="results/build/media/freeze_build_report.jsonl")
     ap.add_argument("--ffmpeg", default="ffmpeg")
     ap.add_argument("--ffprobe", default="ffprobe")
     args = ap.parse_args()
@@ -562,6 +562,7 @@ def main():
         base, ext = os.path.splitext(args.report)
         report_path = f"{base}.{shard}{ext}"
 
+    os.makedirs(os.path.dirname(os.path.abspath(report_path)), exist_ok=True)
     with open(report_path, "a", encoding="utf-8") as f:
         for rec in report:
             f.write(json.dumps(rec, ensure_ascii=False) + "\n")

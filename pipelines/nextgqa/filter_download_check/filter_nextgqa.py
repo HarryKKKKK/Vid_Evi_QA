@@ -42,13 +42,13 @@ stored verbatim in ``question_type``. Every retained sample is written as
 
 Example
 -------
-python nextgqa_pipeline/filter_download_check/filter_nextgqa.py \\
+python pipelines/nextgqa/filter_download_check/filter_nextgqa.py \\
   --annotation-dir source_datasets/next_gqa/NExT-GQA/datasets/nextgqa \\
   --cgbench-template cgbench_pipeline/cgbench_filtered.json \\
-  --output nextgqa_pipeline/nextgqa_filtered.json \\
-  --summary-json nextgqa_pipeline/nextgqa_filter_summary.json \\
-  --summary-txt nextgqa_pipeline/nextgqa_filter_summary.txt \\
-  --rejected-json nextgqa_pipeline/nextgqa_rejected.json \\
+  --output results/build/nextgqa/nextgqa_filtered.json \\
+  --summary-json results/build/nextgqa/nextgqa_filter_summary.json \\
+  --summary-txt results/build/nextgqa/nextgqa_filter_summary.txt \\
+  --rejected-json results/build/nextgqa/nextgqa_rejected.json \\
   --frame-counts 32 64 \\
   --sampling-mode bin_center \\
   --frame-hit-policy all \\
@@ -57,17 +57,17 @@ python nextgqa_pipeline/filter_download_check/filter_nextgqa.py \\
 
 from __future__ import annotations
 
-# Layout compatibility: data stays at its existing paths; frozen copies remain standalone.
+# Source location bootstrap; frozen copies remain standalone.
 from pathlib import Path as _LayoutPath
 import sys as _layout_sys
 _layout_file = _LayoutPath(__file__).resolve()
 _layout_root = (_layout_file.parents[3]
                 if _layout_file.as_posix().endswith('/pipelines/nextgqa/filter_download_check/filter_nextgqa.py') else None)
-_LAYOUT_LEGACY_FILE = str(_layout_root / 'nextgqa_pipeline/filter_download_check/filter_nextgqa.py') if _layout_root else __file__
+_LAYOUT_LEGACY_FILE = str(_layout_root / 'pipelines/nextgqa/filter_download_check/filter_nextgqa.py') if _layout_root else __file__
 if _layout_root is not None:
-    for _layout_dir in (_layout_root, _layout_root / 'src',
+    for _layout_dir in (_layout_root, _layout_root / 'scripts/src',
                         _layout_root / 'scripts/eval',
-                        _layout_root / 'nextgqa_pipeline/filter_download_check', _layout_file.parent):
+                        _layout_root / 'pipelines/nextgqa/filter_download_check', _layout_file.parent):
         if str(_layout_dir) not in _layout_sys.path:
             _layout_sys.path.insert(0, str(_layout_dir))
 
@@ -81,15 +81,15 @@ from collections import Counter, OrderedDict
 from pathlib import Path
 from typing import Any, Iterable
 
-REPO_ROOT = Path(_LAYOUT_LEGACY_FILE).resolve().parents[2]
+REPO_ROOT = Path(_LAYOUT_LEGACY_FILE).resolve().parents[3]
 DEFAULT_ANNOTATION_DIR = (
     REPO_ROOT / "source_datasets" / "next_gqa" / "NExT-GQA" / "datasets" / "nextgqa"
 )
 DEFAULT_CGBENCH_TEMPLATE = REPO_ROOT / "cgbench_pipeline" / "cgbench_filtered.json"
-DEFAULT_OUTPUT = REPO_ROOT / "nextgqa_pipeline" / "nextgqa_filtered.json"
-DEFAULT_SUMMARY_JSON = REPO_ROOT / "nextgqa_pipeline" / "nextgqa_filter_summary.json"
-DEFAULT_SUMMARY_TXT = REPO_ROOT / "nextgqa_pipeline" / "nextgqa_filter_summary.txt"
-DEFAULT_REJECTED_JSON = REPO_ROOT / "nextgqa_pipeline" / "nextgqa_rejected.json"
+DEFAULT_OUTPUT = REPO_ROOT / "results/build/nextgqa" / "nextgqa_filtered.json"
+DEFAULT_SUMMARY_JSON = REPO_ROOT / "results/build/nextgqa" / "nextgqa_filter_summary.json"
+DEFAULT_SUMMARY_TXT = REPO_ROOT / "results/build/nextgqa" / "nextgqa_filter_summary.txt"
+DEFAULT_REJECTED_JSON = REPO_ROOT / "results/build/nextgqa" / "nextgqa_rejected.json"
 
 CSV_FILENAME = "test.csv"
 GROUNDING_FILENAME = "gsub_test.json"

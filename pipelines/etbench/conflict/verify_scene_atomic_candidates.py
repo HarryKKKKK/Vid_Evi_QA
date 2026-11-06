@@ -3,17 +3,17 @@
 
 from __future__ import annotations
 
-# Layout compatibility: data stays at its existing paths; frozen copies remain standalone.
+# Source location bootstrap; frozen copies remain standalone.
 from pathlib import Path as _LayoutPath
 import sys as _layout_sys
 _layout_file = _LayoutPath(__file__).resolve()
 _layout_root = (_layout_file.parents[3]
                 if _layout_file.as_posix().endswith('/pipelines/etbench/conflict/verify_scene_atomic_candidates.py') else None)
-_LAYOUT_LEGACY_FILE = str(_layout_root / 'etbench_pipeline/conflict/verify_scene_atomic_candidates.py') if _layout_root else __file__
+_LAYOUT_LEGACY_FILE = str(_layout_root / 'pipelines/etbench/conflict/verify_scene_atomic_candidates.py') if _layout_root else __file__
 if _layout_root is not None:
-    for _layout_dir in (_layout_root, _layout_root / 'src',
+    for _layout_dir in (_layout_root, _layout_root / 'scripts/src',
                         _layout_root / 'scripts/eval',
-                        _layout_root / 'etbench_pipeline/conflict', _layout_file.parent):
+                        _layout_root / 'pipelines/etbench/conflict', _layout_file.parent):
         if str(_layout_dir) not in _layout_sys.path:
             _layout_sys.path.insert(0, str(_layout_dir))
 
@@ -28,8 +28,8 @@ from pathlib import Path
 
 from openai import OpenAI
 
-ROOT = Path(_LAYOUT_LEGACY_FILE).resolve().parents[2]
-sys.path.insert(0, str(ROOT / "etbench_pipeline" / "conflict"))
+ROOT = Path(_LAYOUT_LEGACY_FILE).resolve().parents[3]
+sys.path.insert(0, str(ROOT / "results/build/etbench" / "conflict"))
 from run_conflict_pipeline_v2 import encode_frames
 
 

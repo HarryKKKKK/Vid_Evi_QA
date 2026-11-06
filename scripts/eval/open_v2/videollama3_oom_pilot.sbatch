@@ -6,8 +6,8 @@
 #SBATCH --mem=96G
 #SBATCH --time=02:00:00
 #SBATCH --array=0-2
-#SBATCH --output=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/logs/videollama3_oom_pilot_%A_%a.out
-#SBATCH --error=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/logs/videollama3_oom_pilot_%A_%a.err
+#SBATCH --output=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/results/logs/videollama3_oom_pilot_%A_%a.out
+#SBATCH --error=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA/results/logs/videollama3_oom_pilot_%A_%a.err
 set -euo pipefail
 
 ROOT=/aifs4su/hansirui_2nd/harry/Vid_Evi_QA
