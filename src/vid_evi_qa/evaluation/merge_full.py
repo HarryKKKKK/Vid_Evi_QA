@@ -23,6 +23,7 @@ import sys
 parent = Path(_LAYOUT_LEGACY_FILE).resolve().parents[1]
 sys.path.insert(0, str(parent if (parent/'prompt_v2.py').is_file() else parent/'eval'))
 from prompt_v2 import PROMPT_SHA256, PROMPT_VERSION, record_identity, response_errors
+import prompt_v2 as _prompt_protocol
 
 
 def main():
@@ -56,17 +57,18 @@ def main():
                or x.get('prompt_sha256') != PROMPT_SHA256 or response_errors(x.get('model_parsed'))]
     missing = [x for x in wanted if x not in found]
     obsolete = sorted(str(x) for x in set(found)-set(wanted))
-    report = {'status':'complete' if not missing and not duplicates and not obsolete else 'incomplete',
+    report = {'status':'complete' if not missing and not duplicates and not obsolete and not invalid else 'incomplete',
               'kind':args.kind, 'expected_records':len(wanted), 'result_records':len(ordered),
               'shard_files':len(shard_files), 'missing_ids':missing, 'duplicate_ids':duplicates,
               'obsolete_ids':obsolete, 'invalid_records':len(invalid), 'invalid_ids':invalid,
               'prompt_version':PROMPT_VERSION, 'prompt_sha256':PROMPT_SHA256,
+              'response_validation_version':getattr(_prompt_protocol, 'RESPONSE_VALIDATION_VERSION', 'legacy-unversioned'),
               'conditions':dict(Counter(x.get('evidence_condition') for x in ordered))}
     (outdir/'merged.classify.validation.json').write_text(
         json.dumps(report, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
     print(json.dumps(report, ensure_ascii=False, indent=2))
     if report['status'] != 'complete':
-        raise SystemExit('One or more full-evaluation shards are incomplete')
+        raise SystemExit('Full-evaluation shards are incomplete, duplicated, obsolete, or schema-invalid')
 
 
 if __name__ == '__main__':

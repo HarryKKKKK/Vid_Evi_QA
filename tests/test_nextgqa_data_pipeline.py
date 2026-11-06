@@ -1,14 +1,15 @@
-"""Unit tests for the NExT-GQA filtering / manifest pipeline.
+"""Unit tests for the maintained NExT-GQA filtering pipeline.
 
 These tests use small synthetic fixtures (no real annotation files needed)
 and exercise the pure helper functions in
-``nextgqa_pipeline/filter_download_check/filter_nextgqa.py`` and
-``nextgqa_pipeline/filter_download_check/build_nextgqa_video_manifest.py``.
+The maintained filter_nextgqa.py module is exercised here.
+The manifest builder was retired in commit 1558e80 (2026-08-05); its two
+historical tests remain in Git history instead of blocking these tests.
 
 Note on scope: `filter_nextgqa.py` does NOT filter on question `type`, does
 NOT require gold-answer/option matching, does NOT require a minimum evidence
-interval count above one, and does NOT enforce a minimum gap between
-intervals. These tests reflect that current behavior.
+interval count above one, and does NOT enforce a minimum gap, interval duration, or evidence coverage threshold.
+It requires the configured uniform frame samplers to hit evidence. These tests reflect that current behavior.
 
 Run with:
   pytest -q tests/test_nextgqa_data_pipeline.py
@@ -25,7 +26,13 @@ if str(PIPELINE_DIR) not in sys.path:
     sys.path.insert(0, str(PIPELINE_DIR))
 
 import filter_nextgqa as fn  # noqa: E402
-import build_nextgqa_video_manifest as bm  # noqa: E402
+
+
+def _run_filter(rows, grounding, mapping):
+    # Current CLI contract: both 32/64-frame plans must hit at least one interval.
+    return fn.run_filter(rows, grounding, mapping, frame_counts=[32, 64],
+                         sampling_mode="bin_center", frame_hit_policy="all",
+                         interval_hit_policy="any")
 
 
 # ── qid / video_id join (int vs string) ──────────────────────────────────────
@@ -43,7 +50,7 @@ def test_qid_non_numeric_values_are_not_rejected():
     grounding = {"1000": {"duration": 100.0, "location": {"q-extra-1": [[1.0, 5.0]]}, "fps": 30.0}}
     mapping = {"1000": "0001/1000"}
 
-    retained, counters, reasons, rejected, issues = fn.run_filter(rows, grounding, mapping)
+    retained, counters, reasons, rejected, issues, sampling = _run_filter(rows, grounding, mapping)
     assert len(retained) == 1
     assert retained[0]["qid"] == "q-extra-1"
 
@@ -86,7 +93,7 @@ def test_unmatched_answer_does_not_reject_sample():
     grounding = {"1000": {"duration": 100.0, "location": {"1": [[1.0, 5.0]]}, "fps": 30.0}}
     mapping = {"1000": "0001/1000"}
 
-    retained, counters, reasons, rejected, issues = fn.run_filter(rows, grounding, mapping)
+    retained, counters, reasons, rejected, issues, sampling = _run_filter(rows, grounding, mapping)
     assert len(retained) == 1
     assert retained[0]["answer"] == "not one of the options"
     assert len(issues) == 1
@@ -100,7 +107,7 @@ def test_matched_answer_is_converted_to_letter():
     grounding = {"1000": {"duration": 100.0, "location": {"1": [[1.0, 5.0]]}, "fps": 30.0}}
     mapping = {"1000": "0001/1000"}
 
-    retained, *_rest = fn.run_filter(rows, grounding, mapping)
+    retained, *_rest = _run_filter(rows, grounding, mapping)
     assert retained[0]["answer"] == "B"
 
 
@@ -158,15 +165,16 @@ def test_zero_length_interval_dropped():
 
 # ── union duration / coverage ─────────────────────────────────────────────
 
-def test_union_duration():
-    intervals = [{"start": 1.0, "end": 5.0}, {"start": 20.0, "end": 25.0}]
-    assert fn.compute_union_duration(intervals) == 9.0
+def test_bin_center_timestamps_avoid_container_endpoint():
+    assert fn.generate_uniform_timestamps(8.0, 4, "bin_center") == [1.0, 3.0, 5.0, 7.0]
 
 
-def test_coverage_ratio():
-    intervals = [{"start": 0.0, "end": 10.0}, {"start": 20.0, "end": 30.0}]
-    union = fn.compute_union_duration(intervals)
-    assert union / 100.0 == 0.2
+def test_sampling_hits_include_interval_boundaries():
+    hits = fn.evaluate_sampling_hits([1.0, 3.0, 5.0],
+                                    [{"start": 1.0, "end": 3.0}, {"start": 6.0, "end": 7.0}])
+    assert hits["hit_frame_count"] == 2
+    assert hits["any_interval_hit"] is True
+    assert hits["all_intervals_hit"] is False
 
 
 # ── end-to-end run_filter over synthetic CSV rows ────────────────────────
@@ -185,7 +193,7 @@ def test_original_type_preserved_and_evidence_condition_sufficient():
     grounding = {"1000": {"duration": 100.0, "location": {"1": [[1.0, 5.0], [20.0, 25.0]]}, "fps": 30.0}}
     mapping = {"1000": "0001/1000"}
 
-    retained, counters, reasons, rejected, issues = fn.run_filter(rows, grounding, mapping)
+    retained, counters, reasons, rejected, issues, sampling = _run_filter(rows, grounding, mapping)
 
     assert len(retained) == 1
     record = retained[0]
@@ -209,7 +217,7 @@ def test_all_retained_records_have_sufficient_condition():
     }
     mapping = {"1000": "0001/1000"}
 
-    retained, *_rest = fn.run_filter(rows, grounding, mapping)
+    retained, *_rest = _run_filter(rows, grounding, mapping)
     assert len(retained) == 2
     assert all(r["evidence_condition"] == "sufficient" for r in retained)
 
@@ -220,7 +228,7 @@ def test_question_type_is_not_a_filtering_condition():
     grounding = {"1000": {"duration": 100.0, "location": {"1": [[1.0, 5.0]]}, "fps": 30.0}}
     mapping = {"1000": "0001/1000"}
 
-    retained, counters, reasons, rejected, issues = fn.run_filter(rows, grounding, mapping)
+    retained, counters, reasons, rejected, issues, sampling = _run_filter(rows, grounding, mapping)
     assert len(retained) == 1
     assert retained[0]["question_type"] == "DL"
     assert not reasons
@@ -231,7 +239,7 @@ def test_single_evidence_interval_is_sufficient():
     grounding = {"1000": {"duration": 100.0, "location": {"1": [[1.0, 5.0]]}, "fps": 30.0}}
     mapping = {"1000": "0001/1000"}
 
-    retained, counters, reasons, rejected, issues = fn.run_filter(rows, grounding, mapping)
+    retained, counters, reasons, rejected, issues, sampling = _run_filter(rows, grounding, mapping)
     assert len(retained) == 1
     assert retained[0]["evidence_count"] == 1
 
@@ -241,7 +249,7 @@ def test_small_gap_between_intervals_no_longer_rejected():
     grounding = {"1000": {"duration": 100.0, "location": {"1": [[1.0, 5.0], [6.0, 10.0]]}, "fps": 30.0}}
     mapping = {"1000": "0001/1000"}
 
-    retained, counters, reasons, rejected, issues = fn.run_filter(rows, grounding, mapping)
+    retained, counters, reasons, rejected, issues, sampling = _run_filter(rows, grounding, mapping)
     assert len(retained) == 1
     assert retained[0]["evidence_count"] == 2
     assert "gap_too_small" not in reasons
@@ -253,20 +261,21 @@ def test_interval_duration_boundary_inclusive():
     grounding = {"1000": {"duration": 200.0, "location": {"1": [[0.0, 3.0], [50.0, 80.0]]}, "fps": 30.0}}
     mapping = {"1000": "0001/1000"}
 
-    retained, counters, reasons, rejected, issues = fn.run_filter(rows, grounding, mapping)
+    retained, counters, reasons, rejected, issues, sampling = _run_filter(rows, grounding, mapping)
     assert len(retained) == 1
     durations = sorted(iv["end"] - iv["start"] for iv in retained[0]["evidence_intervals"])
     assert durations == [3.0, 30.0]
 
 
-def test_interval_duration_just_outside_bounds_rejected():
+def test_short_interval_is_rejected_for_sampling_miss_not_duration():
     rows = [_make_row(video_id="1000", qid="1")]
     grounding = {"1000": {"duration": 200.0, "location": {"1": [[0.0, 2.9]]}, "fps": 30.0}}
-    mapping = {"1000": "0001/1000"}
-
-    retained, counters, reasons, rejected, issues = fn.run_filter(rows, grounding, mapping)
-    assert len(retained) == 0
-    assert reasons["interval_duration_out_of_range"] == 1
+    retained, _, reasons, rejected, _, sampling = _run_filter(rows, grounding, {"1000": "0001/1000"})
+    assert retained == []
+    assert reasons["frame_sampling_misses_evidence"] == 1
+    assert "interval_duration_out_of_range" not in reasons
+    assert rejected[0]["details"]["failed_frame_counts"] == [32]
+    assert sampling["per_frame_count_pass_counts_before_combined_policy"]["64"] == 1
 
 
 def test_coverage_ratio_boundary_inclusive():
@@ -275,21 +284,17 @@ def test_coverage_ratio_boundary_inclusive():
     grounding = {"1000": {"duration": 50.0, "location": {"1": [[0.0, 30.0]]}, "fps": 30.0}}
     mapping = {"1000": "0001/1000"}
 
-    retained, counters, reasons, rejected, issues = fn.run_filter(rows, grounding, mapping)
+    retained, counters, reasons, rejected, issues, sampling = _run_filter(rows, grounding, mapping)
     assert len(retained) == 1
 
 
-def test_coverage_ratio_just_over_bound_rejected():
+def test_high_coverage_is_not_a_filtering_condition():
     rows = [_make_row(video_id="1000", qid="1")]
-    # two non-touching intervals (gap=2, so they are NOT merged) with
-    # durations 16.0 and 14.5 (each within [3, 30]); union = 30.5,
-    # ratio = 30.5 / 50.0 = 0.61 > 0.60
     grounding = {"1000": {"duration": 50.0, "location": {"1": [[0.0, 16.0], [18.0, 32.5]]}, "fps": 30.0}}
-    mapping = {"1000": "0001/1000"}
-
-    retained, counters, reasons, rejected, issues = fn.run_filter(rows, grounding, mapping)
-    assert len(retained) == 0
-    assert reasons["coverage_ratio_too_high"] == 1
+    retained, _, reasons, _, _, sampling = _run_filter(rows, grounding, {"1000": "0001/1000"})
+    assert len(retained) == 1
+    assert "coverage_ratio_too_high" not in reasons
+    assert sampling["frame_counts"] == [32, 64]
 
 
 def test_row_rejected_when_no_valid_evidence_intervals():
@@ -298,7 +303,7 @@ def test_row_rejected_when_no_valid_evidence_intervals():
     grounding = {"1000": {"duration": 100.0, "location": {"1": [[5.0, 5.0]]}, "fps": 30.0}}
     mapping = {"1000": "0001/1000"}
 
-    retained, counters, reasons, rejected, issues = fn.run_filter(rows, grounding, mapping)
+    retained, counters, reasons, rejected, issues, sampling = _run_filter(rows, grounding, mapping)
     assert len(retained) == 0
     assert reasons["no_valid_evidence_intervals"] == 1
 
@@ -308,7 +313,7 @@ def test_duplicate_csv_rows_deduplicated():
     grounding = {"1000": {"duration": 100.0, "location": {"1": [[1.0, 5.0], [20.0, 25.0]]}, "fps": 30.0}}
     mapping = {"1000": "0001/1000"}
 
-    retained, counters, reasons, rejected, issues = fn.run_filter(rows, grounding, mapping)
+    retained, counters, reasons, rejected, issues, sampling = _run_filter(rows, grounding, mapping)
     assert counters["raw_csv_rows"] == 2
     assert counters["after_duplicate_removal"] == 1
     assert reasons["duplicate_csv_row"] == 1
@@ -319,7 +324,7 @@ def test_row_rejected_when_grounding_missing():
     rows = [_make_row(video_id="1000", qid="1")]
     grounding = {}
     mapping = {"1000": "0001/1000"}
-    retained, counters, reasons, rejected, issues = fn.run_filter(rows, grounding, mapping)
+    retained, counters, reasons, rejected, issues, sampling = _run_filter(rows, grounding, mapping)
     assert len(retained) == 0
     assert reasons["missing_grounding_annotation"] == 1
 
@@ -328,7 +333,7 @@ def test_row_rejected_when_mapping_missing():
     rows = [_make_row(video_id="1000", qid="1")]
     grounding = {"1000": {"duration": 100.0, "location": {"1": [[1.0, 5.0]]}, "fps": 30.0}}
     mapping = {}
-    retained, counters, reasons, rejected, issues = fn.run_filter(rows, grounding, mapping)
+    retained, counters, reasons, rejected, issues, sampling = _run_filter(rows, grounding, mapping)
     assert len(retained) == 0
     assert reasons["missing_video_mapping"] == 1
 
@@ -337,7 +342,7 @@ def test_row_rejected_when_empty_question():
     rows = [_make_row(video_id="1000", qid="1", question="   ")]
     grounding = {"1000": {"duration": 100.0, "location": {"1": [[1.0, 5.0]]}, "fps": 30.0}}
     mapping = {"1000": "0001/1000"}
-    retained, counters, reasons, rejected, issues = fn.run_filter(rows, grounding, mapping)
+    retained, counters, reasons, rejected, issues, sampling = _run_filter(rows, grounding, mapping)
     assert len(retained) == 0
     assert reasons["empty_question"] == 1
 
@@ -346,36 +351,15 @@ def test_row_rejected_when_option_incomplete():
     rows = [_make_row(video_id="1000", qid="1", a3="")]
     grounding = {"1000": {"duration": 100.0, "location": {"1": [[1.0, 5.0]]}, "fps": 30.0}}
     mapping = {"1000": "0001/1000"}
-    retained, counters, reasons, rejected, issues = fn.run_filter(rows, grounding, mapping)
+    retained, counters, reasons, rejected, issues, sampling = _run_filter(rows, grounding, mapping)
     assert len(retained) == 0
     assert reasons["incomplete_options"] == 1
 
 
 # ── manifest deduplication ────────────────────────────────────────────────
 
-def test_manifest_dedups_repeated_video():
-    filtered = [
-        {"video_id": "1000", "qid": "1"},
-        {"video_id": "1000", "qid": "2"},
-        {"video_id": "2000", "qid": "5"},
-    ]
-    mapping = {"1000": "0001/1000", "2000": "0002/2000"}
-
-    manifest, missing = bm.build_manifest(filtered, mapping)
-    assert missing == []
-    assert len(manifest) == 2
-    entry_1000 = next(e for e in manifest if e["video_id"] == "1000")
-    assert entry_1000["required_by_qids"] == ["1", "2"]
-    assert entry_1000["expected_relative_path"] == "0001/1000.mp4"
 
 
-def test_manifest_reports_missing_mapping():
-    filtered = [{"video_id": "9999", "qid": "1"}]
-    mapping = {}
-    manifest, missing = bm.build_manifest(filtered, mapping)
-    assert missing == ["9999"]
-    assert manifest[0]["expected_relative_path"] is None
-    assert manifest[0]["status"] == "unknown"
 
 
 # ── schema validation ─────────────────────────────────────────────────────

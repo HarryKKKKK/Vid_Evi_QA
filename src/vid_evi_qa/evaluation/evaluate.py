@@ -135,6 +135,7 @@ sys.path.insert(0, str(Path(_LAYOUT_LEGACY_FILE).resolve().parent))
 from prompt_v2 import (PROMPT_VERSION, PROMPT_SHA256, RESPONSE_JSON_SCHEMA,
                        build_prompt, fingerprint, response_errors, reusable,
                        record_identity)
+import prompt_v2 as _prompt_protocol
 
 
 # -- Hyperparameters ----------------------------------------------------------
@@ -1015,6 +1016,10 @@ def run_evaluation(
                 result["evaluation_config"] = evaluation_config
                 result["prompt_sha256"] = PROMPT_SHA256 if task == "classify" else None
                 result["schema_errors"] = response_errors(result["model_parsed"]) if task == "classify" else []
+                result["response_validation_version"] = (
+                    getattr(_prompt_protocol, "RESPONSE_VALIDATION_VERSION", "legacy-unversioned")
+                    if task == "classify" else None
+                )
                 results_by_idx[out["idx"]] = result
 
                 append_jsonl(jsonl_path, result)

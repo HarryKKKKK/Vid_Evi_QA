@@ -19,6 +19,7 @@ from collections import Counter
 import json
 from pathlib import Path
 from prompt_v2 import PROMPT_VERSION, PROMPT_SHA256, response_errors, record_identity
+import prompt_v2 as _prompt_protocol
 
 
 def read_manifest(path):
@@ -44,7 +45,8 @@ def main():
     args = parser.parse_args()
     manifest = read_manifest(args.manifest)
     report = {"expected_records": len(manifest), "condition_counts": dict(Counter(x["evidence_condition"] for x in manifest)),
-              "prompt_version": PROMPT_VERSION, "prompt_sha256": PROMPT_SHA256}
+              "prompt_version": PROMPT_VERSION, "prompt_sha256": PROMPT_SHA256,
+              "response_validation_version": getattr(_prompt_protocol, "RESPONSE_VALIDATION_VERSION", "legacy-unversioned")}
     failed = False
     if args.result:
         results = json.loads(args.result.read_text(encoding="utf-8")) if args.result.exists() else []

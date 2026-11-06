@@ -17,21 +17,24 @@ def valid(conflict=False):
     return {'label': 'UNANSWERABLE' if conflict else 'ANSWERABLE', 'answer': 'R' if conflict else 'A',
             'decision_probabilities': {'ANSWERABLE': 0.1 if conflict else 0.9, 'UNANSWERABLE': 0.9 if conflict else 0.1},
             'reject_reason': 'CONFLICTING_EVIDENCE' if conflict else None,
-            'evidence': [{'group_id': 'G'+str(i), 'evidence_seconds': [[1, 1]], 'description': 'object '+str(i)}
+            'evidence': [{'group_id': 'G'+str(i+1), 'evidence_seconds': [[1, 1]],
+                          'description': 'Option '+ 'ABCDE'[i] + ': visible object '+str(i)}
                          for i in range(2 if conflict else 1)], 'reason': 'Two supported choices.' if conflict else 'One supported choice.'}
 
 
 class V2Tests(unittest.TestCase):
-    def test_no_pipe_and_all_three_examples_are_valid_json(self):
-        self.assertEqual(PROMPT_VERSION, 'v2.1')
+    def test_no_pipe_and_all_four_examples_are_valid_json(self):
+        self.assertEqual(PROMPT_VERSION, 'v2.2')
         self.assertNotIn('|', TEMPLATE)
         self.assertNotIn('start_second', TEMPLATE)
         examples = [json.loads(line) for line in TEMPLATE.splitlines() if line.startswith('{"label":')]
-        self.assertEqual(len(examples), 3)
+        self.assertEqual(len(examples), 4)
         for example in examples:
             self.assertEqual(response_errors(example), [])
-        self.assertEqual([x['reject_reason'] for x in examples], [None, 'INSUFFICIENT_EVIDENCE', 'CONFLICTING_EVIDENCE'])
+        self.assertEqual([x['reject_reason'] for x in examples],
+                         [None, 'INSUFFICIENT_EVIDENCE', 'CONFLICTING_EVIDENCE', 'CONFLICTING_EVIDENCE'])
         self.assertEqual(examples[2]['evidence'][0]['evidence_seconds'], examples[2]['evidence'][1]['evidence_seconds'])
+        self.assertNotEqual(examples[3]['evidence'][0]['evidence_seconds'], examples[3]['evidence'][1]['evidence_seconds'])
 
     def test_exact_template_and_shared_entry_points(self):
         choices = ['carrot', 'chair', 'cup', 'hat', 'fork']

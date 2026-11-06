@@ -123,6 +123,12 @@ def test_conflict_evaluator_uses_same_unprompted_evidence_schema() -> None:
         "label": "UNANSWERABLE",
         "answer": "R",
         "reject_reason": "CONFLICTING_EVIDENCE",
+        "decision_probabilities": {"ANSWERABLE": 0.1, "UNANSWERABLE": 0.9},
+        "evidence": [
+            {"group_id": "G1", "evidence_seconds": [[1, 1]], "description": "Option A: visible red cup."},
+            {"group_id": "G2", "evidence_seconds": [[1, 1]], "description": "Option B: visible blue cup."},
+        ],
+        "reason": "Two distinct options are supported.",
         "option_probabilities_if_answered": {"A": 0.45, "B": 0.44, "C": 0.11},
     }, ["A", "B"])
     assert scored["label_correct"] is True
@@ -137,7 +143,8 @@ def test_multiple_correct_options_in_one_frame_trigger_rejection() -> None:
             {'option_id': letter, 'answer': choice} for letter, choice in zip('ABCDE', ['A carrot','A chair','A cup','A hat','A fork'])]),
     ]
     for prompt in prompts:
-        assert 'timestamps may overlap' in prompt
+        assert 'Their time intervals may overlap.' in prompt
         assert 'at least two distinct options satisfy the question' in prompt
-        assert 'different supported answers in separate groups' in prompt
+        assert 'one group for each distinct supported answer' in prompt
+        assert 'simultaneously in the same frame' in prompt
         assert 'different intervals support at least two incompatible' not in prompt

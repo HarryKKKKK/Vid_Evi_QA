@@ -19,7 +19,7 @@
 若单独把兼容入口复制出项目而未带实现，导出会明确报错，避免生成不可复现的包。
 既有 results/、codex_runs/ 中的代码快照没有更新。
 
-## 验证与既有问题
+## 迁移提交 99b6e76 时的验证与既有问题
 - 迁移后去除路径引导代码并还原路径表达式，79 个实现的 Python AST 与迁移前完全一致。
 - Windows Python 3.14 与服务器原有 Python 3.12 环境均验证为 56 passed / 4 个同样的既有失败。服务器测试依赖只放在临时目录，未修改训练环境。
 - 新增 12 项迁移回归测试：新旧 CLI、默认产物位置、可 monkeypatch 的旧模块、脱离源码树的冻结包、自带 prompt 和适配器导出等。
@@ -27,6 +27,10 @@
 - 四项既有失败：test_no_pipe_and_all_three_examples_are_valid_json、test_overlap_conflict_and_empty_insufficient、test_real_resume_flow_and_active_jsonl_cleanup、test_multiple_correct_options_in_one_frame_trigger_rejection。旧用例与当前 v2.2 的版本/响应 schema/prompt 不符，需另行按协议确认修订。
 - tests/test_nextgqa_data_pipeline.py 在迁移前即依赖缺失的 build_nextgqa_video_manifest.py，无法收集。本轮保留并记录，未补造实现或静默跳过。
 - 未运行 GPU 推理、API 评测或真实数据重建；CPU 回归不代表模型评测通过。
+
+## 后续问题修复
+用户随后授权修复既有不合理实现。旧测试已按当前 v2.2 协议和采样规则更新；废弃 manifest 工具的两条测试依赖已按 Git 历史确认移除。
+评测响应校验、Conflict 计分和合并完成状态也已修复。最新完整测试不再排除数据管线文件。细节见 [校验修复记录](VALIDATION_FIXES.md)。
 
 ## 精确迁移表
 | 旧入口 | 维护实现 |

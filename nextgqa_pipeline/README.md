@@ -1,5 +1,8 @@
 # NExT-GQA Data Preparation
 
+> 2026-11-06 维护说明：实现已迁入 pipelines/nextgqa/，本目录保留兼容入口和原数据产物。以下旧阶段说明包含历史工具，不能直接作为当前可运行清单。manifest 生成器等旧工具已在提交 1558e80（2026-08-05）移除。当前筛选默认要求 32/64 帧均匀采样方案均命中证据；不使用证据时长或覆盖率阈值。当前入口见 [数据管线说明](../pipelines/README.md)。
+
+
 本目录实现 NExT-GQA（test split）**sufficient anchor** 数据的筛选与原始视频准备，
 风格和产物 schema 都以 `cgbench_pipeline/`（见仓库根 [README.md](../README.md)）为模板。
 

@@ -19,6 +19,7 @@ import json
 import math
 
 PROMPT_VERSION = "v2.2"
+RESPONSE_VALIDATION_VERSION = "v2.2-validator-20261106"
 TEMPLATE = '''Answer the multiple-choice question using only the supplied video frames. Each frame is labeled with its timestamp in seconds.
 
 Apply this decision rule before writing JSON:
@@ -168,7 +169,12 @@ def response_errors(parsed):
     else:
         errors.append("invalid label")
     def number(x):
-        return isinstance(x, (int, float)) and not isinstance(x, bool) and math.isfinite(x)
+        if not isinstance(x, (int, float)) or isinstance(x, bool):
+            return False
+        try:
+            return math.isfinite(x)
+        except OverflowError:
+            return False
     probs = parsed.get("decision_probabilities")
     if (not isinstance(probs, dict) or set(probs) != {"ANSWERABLE", "UNANSWERABLE"}
             or not all(number(x) and 0 <= x <= 1 for x in probs.values())
@@ -181,12 +187,13 @@ def response_errors(parsed):
         if len(evidence) > 5:
             errors.append("too many evidence groups")
         seen = set()
+        supported_options = set()
         for group in evidence:
             if not isinstance(group, dict):
                 errors.append("evidence group must be an object")
                 continue
             gid = group.get("group_id")
-            if gid not in {"G1", "G2", "G3", "G4", "G5"} or gid in seen:
+            if not isinstance(gid, str) or gid not in {"G1", "G2", "G3", "G4", "G5"} or gid in seen:
                 errors.append("invalid or duplicate group_id")
             else:
                 seen.add(gid)
@@ -194,6 +201,13 @@ def response_errors(parsed):
             if (not isinstance(description, str) or not description.strip()
                     or not description.startswith(tuple(f"Option {x}: " for x in "ABCDE"))):
                 errors.append("missing evidence description")
+            else:
+                option = description[len("Option ")]
+                if option in supported_options:
+                    errors.append("duplicate supported option")
+                supported_options.add(option)
+                if not description[len("Option A: "):].strip():
+                    errors.append("empty evidence description")
             intervals = group.get("evidence_seconds")
             if not isinstance(intervals, list) or not intervals:
                 errors.append("missing evidence intervals")
@@ -203,8 +217,12 @@ def response_errors(parsed):
                      or not all(number(x) for x in pair) or not 0 <= pair[0] <= pair[1]
                      for pair in intervals):
                 errors.append("invalid evidence interval")
-        if reject == "CONFLICTING_EVIDENCE" and len(evidence) < 2:
+        if label == "ANSWERABLE" and (not isinstance(answer, str) or supported_options != {answer}):
+            errors.append("answerable decision requires evidence for exactly the selected option")
+        if reject == "CONFLICTING_EVIDENCE" and len(supported_options) < 2:
             errors.append("conflict requires separate supported-answer groups")
+        if reject == "INSUFFICIENT_EVIDENCE" and supported_options:
+            errors.append("insufficient rejection contains supported-option evidence")
     if not isinstance(parsed.get("reason"), str) or not parsed["reason"].strip():
         errors.append("missing reason")
     if parsed.get("parse_error"):

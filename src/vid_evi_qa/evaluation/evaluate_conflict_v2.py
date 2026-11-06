@@ -32,6 +32,7 @@ from openai import OpenAI
 import sys
 sys.path.insert(0, str(Path(_LAYOUT_LEGACY_FILE).resolve().parents[2] / "scripts" / "eval"))
 from prompt_v2 import PROMPT_VERSION, PROMPT_SHA256, build_prompt as render_v2, fingerprint, response_errors
+import prompt_v2 as _prompt_protocol
 
 from run_conflict_pipeline_v2 import encode_frames
 
@@ -103,6 +104,9 @@ def evidence_points(record: dict, group: dict, core_by_key: dict, temporal_by_ke
 
 
 def score(parsed: dict, expected: list[str]) -> dict:
+    schema_errors = response_errors(parsed)
+    if not isinstance(parsed, dict):
+        parsed = {}
     expected_set = set(expected)
     raw_probabilities = parsed.get("option_probabilities_if_answered")
     probabilities = {}
@@ -132,7 +136,7 @@ def score(parsed: dict, expected: list[str]) -> dict:
     label = str(parsed.get("label", "")).strip().upper()
     answer = str(parsed.get("answer", "")).strip().upper()
     reject_reason = str(parsed.get("reject_reason", "")).strip().upper()
-    conflict_correct = (
+    decision_matches_gold = (
         label == "UNANSWERABLE"
         and answer == "R"
         and reject_reason == "CONFLICTING_EVIDENCE"
@@ -144,7 +148,10 @@ def score(parsed: dict, expected: list[str]) -> dict:
         "predicted_label": label,
         "predicted_answer": answer,
         "predicted_reject_reason": reject_reason,
-        "label_correct": conflict_correct,
+        "label_correct": decision_matches_gold and not schema_errors,
+        "decision_matches_gold": decision_matches_gold,
+        "schema_errors": schema_errors,
+        "response_validation_version": getattr(_prompt_protocol, "RESPONSE_VALIDATION_VERSION", "legacy-unversioned"),
         "expected_option_ids": expected,
         "predicted_option_ids": predicted,
         "option_set_source": "top_k_conditional_probabilities" if probabilities else "not_requested_in_v2",
