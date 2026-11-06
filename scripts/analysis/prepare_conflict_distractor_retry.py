@@ -1,0 +1,39 @@
+#!/usr/bin/env python3
+"""Build expanded distractor requests for unresolved aligned conflict QA."""
+
+import argparse
+import json
+from pathlib import Path
+
+
+def read_jsonl(path: Path):
+    return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--requests", type=Path, required=True)
+    parser.add_argument("--unresolved", type=Path, required=True)
+    parser.add_argument("--candidates", type=Path, required=True)
+    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--candidate-count", type=int, default=12)
+    args = parser.parse_args()
+    requests = {row["id"]: row for row in read_jsonl(args.requests)}
+    candidates = {row["id"]: row for row in read_jsonl(args.candidates)}
+    unresolved = json.loads(args.unresolved.read_text(encoding="utf-8"))
+    rows = []
+    for item in unresolved:
+        item_id = item["id"]
+        row = json.loads(json.dumps(requests[item_id]))
+        row["candidate_count"] = args.candidate_count
+        row["avoid_candidates"] = candidates.get(item_id, {}).get("candidates", [])
+        rows.append(row)
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    with args.output.open("w", encoding="utf-8") as stream:
+        for row in rows:
+            stream.write(json.dumps(row, ensure_ascii=False) + "\n")
+    print(json.dumps({"retry_requests": len(rows), "candidate_count": args.candidate_count}))
+
+
+if __name__ == "__main__":
+    main()
