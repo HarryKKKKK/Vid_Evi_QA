@@ -1,0 +1,52 @@
+[
+  {
+    "path": "scripts/tmp/test.sh",
+    "sha256": "f5abc622704b12b38759eb76bda03038ba4ee84270bbbf0c85e40cca97ec820a",
+    "reason": "Unfinished MiniCPM draft: unconditional exit 1 and unresolved TODO parameters; later eval_mini.sh already completed this draft."
+  },
+  {
+    "path": "scripts/eval/eval_inter.sh",
+    "sha256": "cef40fcaeea78b6efe1433b3cad70d82c73b616dbdc152f24d311af313baafba",
+    "reason": "Unreferenced early InternVL sufficient launcher; retained full_sufficient_internvl35.sbatch and run_sufficient_model.sh provide the maintained entry. Historical parameters differ; not claimed equivalent."
+  },
+  {
+    "path": "scripts/eval/eval_mini.sh",
+    "sha256": "7fe5cde60d66a9c99450ec7d458a71fbe8e2c5eb1c4876c74cbd725c4f07180f",
+    "reason": "Unreferenced early launcher hardwired to missing source_datasets/next_gqa/freeze_videos; current MiniCPM adapter retained in scripts/eval/open_v2."
+  },
+  {
+    "path": "scripts/eval/eval_qwen3.sh",
+    "sha256": "77c536e3321c82791af2ca0053212def9b0b09a6c64034fcbcd1671283a510dc",
+    "reason": "Unreferenced early launcher hardwired to missing source_datasets/next_gqa/freeze_videos; no-leak evaluation and merged runners retained."
+  },
+  {
+    "path": "scripts/eval/check_video.sh",
+    "sha256": "e7fd5dff5b9a31b6c5b430a32cd21970eaefe593aa9d3437ad26b01efeeb7fa2",
+    "reason": "Unreferenced old wrapper hardwired to missing freeze_videos; reusable check_video_frame_extraction.py retained."
+  },
+  {
+    "path": "scripts/eval/launch_internvl3_5_8b_tmux.sh",
+    "sha256": "24bc6714fd4bdaeea448e72d849f0e4ca071aa8271d99a86ecef4990cbf0b999",
+    "reason": "Unreferenced wrapper submits scripts/eval/serve_internvl3_5_8b.sbatch, which no longer exists."
+  },
+  {
+    "path": "scripts/vqa/build_insufficient.py",
+    "sha256": "dfc361b46abe43c4030f3563dcfd0c4b1bd7903f7eda3b68418258787434a022",
+    "reason": "Legacy CG-Bench blackout builder explicitly superseded by freeze in historical README; CG-Bench inputs absent. Only remaining code-tree reference is a docstring comparison in build_partial.py, not an import/call."
+  },
+  {
+    "path": "scripts/eval/run_sufficient_model.sh.pre_qa_task_20260824",
+    "sha256": "438b433c1ae928340baabfa74ccaf2b990329bf6494d564f4a2ceae4465fa081",
+    "reason": "Unreferenced timestamped backup; live run_sufficient_model.sh retained."
+  },
+  {
+    "path": "scripts/analysis/qwen25_conservatism_experiment.py.pre_diagnostic_20260824",
+    "sha256": "5e7b137e6a77b2c511e390c6ea8f8fff46b6e8f3f8764017b762f14304a50dcc",
+    "reason": "Unreferenced timestamped backup; live qwen25_conservatism_experiment.py retained."
+  },
+  {
+    "path": "scripts/analysis/partial_seeded_control_experiment.py.before_repr_ess_20260916",
+    "sha256": "317e21090c4e789f00ec39a1be53adcfe5dcbb8c5424203147af3d68131e3052",
+    "reason": "Unreferenced timestamped backup; live partial_seeded_control_experiment.py retained."
+  }
+]
