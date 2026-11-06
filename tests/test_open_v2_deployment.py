@@ -10,11 +10,15 @@ import base64
 import io
 
 ROOT = Path(__file__).resolve().parents[1]/'scripts/eval/open_v2'
+import sys
+sys.path.insert(0, str(ROOT.parents[2] / 'src'))
+from vid_evi_qa.common.script_export import resolve_script
+
 
 
 class DeploymentTests(unittest.TestCase):
     def test_repeated_frames_get_distinct_cache_ids_without_changing_pixels(self):
-        tree = ast.parse((ROOT/'evaluate_open.py').read_text(encoding='utf-8'))
+        tree = ast.parse(resolve_script(ROOT/'evaluate_open.py').read_text(encoding='utf-8'))
         function = next(x for x in tree.body if isinstance(x, ast.FunctionDef) and x.name == 'add_position_aware_image_ids')
         namespace = {'hashlib':hashlib}
         exec(compile(ast.Module(body=[function],type_ignores=[]),'cache_ids','exec'),namespace)
@@ -42,11 +46,11 @@ class DeploymentTests(unittest.TestCase):
     def test_adapters_parse_and_do_not_modify_approved_prompt(self):
         for source in ROOT.glob('*.py'):
             ast.parse(source.read_text(encoding='utf-8'))
-        text = (ROOT/'evaluate_open.py').read_text(encoding='utf-8')
+        text = resolve_script(ROOT/'evaluate_open.py').read_text(encoding='utf-8')
         self.assertNotIn('build_instruction =', text)
         self.assertNotIn('build_prompt =', text)
         self.assertIn('extra_body',text)
-        text = (ROOT/'run_smoke.py').read_text(encoding='utf-8')
+        text = resolve_script(ROOT/'run_smoke.py').read_text(encoding='utf-8')
         self.assertIn('SLURM_JOB_ID',text)
         self.assertIn("'--num-frames','32'", text)
         self.assertIn("'--workers','1'", text)
@@ -56,14 +60,14 @@ class DeploymentTests(unittest.TestCase):
         self.assertIn("'--media-mode',media_mode", text)
 
     def test_schema_preflight_is_cpu_only_and_compiles_frozen_schema(self):
-        text = (ROOT/'preflight_schema.py').read_text(encoding='utf-8')
+        text = resolve_script(ROOT/'preflight_schema.py').read_text(encoding='utf-8')
         self.assertIn('compile_json_schema', text)
         self.assertIn('RESPONSE_JSON_SCHEMA', text)
         self.assertNotIn('.cuda(', text)
         self.assertNotIn('AutoModel', text)
 
     def test_native_adapter_preserves_frame_order_and_prompt(self):
-        tree = ast.parse((ROOT/'evaluate_molmo.py').read_text(encoding='utf-8'))
+        tree = ast.parse(resolve_script(ROOT/'evaluate_molmo.py').read_text(encoding='utf-8'))
         function = next(x for x in tree.body if isinstance(x, ast.FunctionDef) and x.name == 'make_messages')
         namespace = {'base64':base64, 'io':io}
         exec(compile(ast.Module(body=[function],type_ignores=[]),'native_messages','exec'),namespace)
@@ -79,7 +83,7 @@ class DeploymentTests(unittest.TestCase):
             {'type':'text','text':'unchanged v2 prompt'}]}])
 
     def test_native_generation_limit_and_protocol_differences_are_explicit(self):
-        text=(ROOT/'evaluate_molmo.py').read_text(encoding='utf-8')
+        text=resolve_script(ROOT/'evaluate_molmo.py').read_text(encoding='utf-8')
         self.assertIn("MAX_OUTPUT_TOKENS = int(os.environ.get('V2_MAX_TOKENS', '8192'))", text)
         self.assertIn('max_new_tokens=MAX_OUTPUT_TOKENS, do_sample=False',text)
         self.assertIn("response_format='json_schema' if constrained else 'unconstrained_text'",text)
@@ -90,7 +94,7 @@ class DeploymentTests(unittest.TestCase):
         self.assertIn('evaluate.main(backend_preflight=native_preflight)',text)
 
     def test_glm_extracts_only_final_not_reasoning_json(self):
-        tree=ast.parse((ROOT/'evaluate_glm.py').read_text(encoding='utf-8'))
+        tree=ast.parse(resolve_script(ROOT/'evaluate_glm.py').read_text(encoding='utf-8'))
         function=next(x for x in tree.body if isinstance(x,ast.FunctionDef) and x.name=='final_answer_text')
         namespace={'json':__import__('json')}
         exec(compile(ast.Module(body=[function],type_ignores=[]),'glm_final','exec'),namespace)
@@ -105,14 +109,14 @@ class DeploymentTests(unittest.TestCase):
         self.assertEqual(extract('<think><answer>analysis</answer>'),'')
 
     def test_glm_preserves_raw_and_does_not_invent_fields(self):
-        text=(ROOT/'evaluate_glm.py').read_text(encoding='utf-8')
+        text=resolve_script(ROOT/'evaluate_glm.py').read_text(encoding='utf-8')
         self.assertIn("model_response=capture['raw']",text)
         self.assertIn("final_answer_text=capture['final']",text)
         self.assertIn("kwargs.pop('response_format', None)",text)
         self.assertNotIn('build_instruction =',text)
 
     def test_format20_profile_is_unique_and_balanced(self):
-        tree=ast.parse((ROOT/'prepare.py').read_text(encoding='utf-8'))
+        tree=ast.parse(resolve_script(ROOT/'prepare.py').read_text(encoding='utf-8'))
         function=next(x for x in tree.body if isinstance(x,ast.FunctionDef) and x.name=='select_records')
         namespace={'json':__import__('json')}
         exec(compile(ast.Module(body=[function],type_ignores=[]),'select_records','exec'),namespace)
@@ -129,17 +133,17 @@ class DeploymentTests(unittest.TestCase):
         self.assertEqual(counts,{'sufficient':4,'insufficient':4,'partially_sufficient':4,'conflicting':8})
 
     def test_prepare_can_freeze_prompt_and_evaluator_together(self):
-        text = (ROOT/'prepare.py').read_text(encoding='utf-8')
+        text = resolve_script(ROOT/'prepare.py').read_text(encoding='utf-8')
         self.assertIn("'--prompt-source'", text)
         self.assertIn("dest/'eval/prompt_v2.py'", text)
         self.assertIn("dest/'eval/evaluate.py'", text)
         self.assertIn("'__pycache__', '*.pyc'", text)
 
     def test_full_array_is_sharded_resumable_and_not_debug(self):
-        prepare = (ROOT/'prepare.py').read_text(encoding='utf-8')
-        runner = (ROOT/'full_small_array.sbatch').read_text(encoding='utf-8')
-        merger = (ROOT/'merge_full.py').read_text(encoding='utf-8')
-        submit = (ROOT/'submit_full.py').read_text(encoding='utf-8')
+        prepare = resolve_script(ROOT/'prepare.py').read_text(encoding='utf-8')
+        runner = resolve_script(ROOT/'full_small_array.sbatch').read_text(encoding='utf-8')
+        merger = resolve_script(ROOT/'merge_full.py').read_text(encoding='utf-8')
+        submit = resolve_script(ROOT/'submit_full.py').read_text(encoding='utf-8')
         self.assertIn("profile == 'full'", prepare)
         self.assertIn("selected[index::args.num_shards]", prepare)
         self.assertIn('#SBATCH --partition=llm', runner)

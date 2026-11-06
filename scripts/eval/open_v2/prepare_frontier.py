@@ -4,6 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 import shutil
+from script_export import copy_script
 
 from frontier_models import MODELS
 from prepare import BASE, SOURCE, select_records
@@ -38,8 +39,8 @@ def main():
         selected = select_records(rows, "format20")
         eval_source = base / "code"
     destination.mkdir(parents=True)
-    shutil.copytree(eval_source, destination / "eval", ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
-    shutil.copytree(SOURCE, destination / "adapters", ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+    shutil.copytree(eval_source, destination / "eval", copy_function=copy_script, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+    shutil.copytree(SOURCE, destination / "adapters", copy_function=copy_script, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
     (destination / "smoke.jsonl").write_text("".join(json.dumps(row, ensure_ascii=False) + "\n" for row in selected))
     num_shards = 0
     if args.sample_profile == "full":

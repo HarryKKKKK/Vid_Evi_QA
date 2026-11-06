@@ -4,6 +4,7 @@ import argparse
 import json
 from pathlib import Path
 import shutil
+from script_export import copy_script
 import sys
 from models import MODELS
 
@@ -68,12 +69,12 @@ def main():
     rows = [json.loads(x) for x in (base/'all_condition_records.jsonl').read_text().splitlines() if x.strip()]
     selected = select_records(rows, args.sample_profile)
     dest.mkdir(parents=True)
-    shutil.copytree(base/'code', dest/'eval', ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
+    shutil.copytree(base/'code', dest/'eval', copy_function=copy_script, ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
     if args.evaluator_source:
-        shutil.copy2(args.evaluator_source, dest/'eval/evaluate.py')
+        copy_script(args.evaluator_source, dest/'eval/evaluate.py')
     if args.prompt_source:
-        shutil.copy2(args.prompt_source, dest/'eval/prompt_v2.py')
-    shutil.copytree(SOURCE, dest/'adapters', ignore=shutil.ignore_patterns('__pycache__'))
+        copy_script(args.prompt_source, dest/'eval/prompt_v2.py')
+    shutil.copytree(SOURCE, dest/'adapters', copy_function=copy_script, ignore=shutil.ignore_patterns('__pycache__'))
     (dest/'smoke.jsonl').write_text(''.join(json.dumps(x, ensure_ascii=False)+'\n' for x in selected))
     if args.num_shards:
         if args.sample_profile != 'full' or args.num_shards < 1:

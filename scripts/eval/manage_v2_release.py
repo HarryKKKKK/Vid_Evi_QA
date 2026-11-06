@@ -5,6 +5,7 @@ import json
 import os
 from pathlib import Path
 import shutil
+from script_export import copy_script
 import subprocess
 from datetime import datetime, timezone
 from check_v2_run import read_manifest
@@ -12,7 +13,7 @@ from prompt_v2 import PROMPT_VERSION, PROMPT_SHA256
 
 ROOT = Path('/aifs4su/hansirui_2nd/harry/Vid_Evi_QA')
 FILES = ['evaluate.py', 'prompt_v2.py', 'check_v2_run.py', 'run_merged_model.sh',
-         'eval_merged_v2.sbatch', 'manage_v2_release.py']
+         'eval_merged_v2.sbatch', 'manage_v2_release.py', 'script_export.py']
 
 
 def sha(path):
@@ -44,7 +45,7 @@ def main():
         (release/'code').mkdir(parents=True)
         shutil.copy2(source, release/'all_condition_records.jsonl')
         for name in FILES:
-            shutil.copy2(ROOT/'scripts/eval'/name, release/'code'/name)
+            copy_script(ROOT/'scripts/eval'/name, release/'code'/name)
         config = {'created_utc': datetime.now(timezone.utc).isoformat(), 'prompt_version': PROMPT_VERSION,
                   'prompt_sha256': PROMPT_SHA256,
                   'records': len(rows), 'source_manifest': str(source), 'media_mode': 'frames',

@@ -20,3 +20,8 @@ Use the parent commit of the cleanup commit to recover removed scripts.
 Pre-generated Partial videos were deleted at the user's request on 2026-11-06.
 Fixed-seed on-demand frame noise is not implemented yet. Old Partial runners/builders are kept for reference and regeneration, not declared runnable.
 See SCRIPT_AUDIT.md in the cleanup revision for deletion evidence and consolidation candidates.
+
+## Organized data and evaluation implementation
+The 2026-11-06 refactor places 57 data modules under pipelines/ and 22 evaluation modules under src/vid_evi_qa/.
+Legacy Python commands remain compatible; data and historical frozen releases remain in their original locations.
+See [data pipelines](pipelines/README.md), [evaluation implementation](src/vid_evi_qa/README.md), and [migration details and known test limitations](docs/SCRIPT_LAYOUT.md).
