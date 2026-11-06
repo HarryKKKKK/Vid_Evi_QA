@@ -39,7 +39,7 @@ for spec in "${specs[@]}"; do
     --gres="gpu:${tp}" \
     --array="0-$((NUM_SHARDS - 1))%${NUM_SHARDS}" \
     --export="ALL,GROUNDING_MODEL_TAG=${tag},GROUNDING_MODEL_KIND=${model_kind},GROUNDING_MODEL_PATH=${model_path},GROUNDING_SERVED_NAME=${served_name},TP=${tp},NUM_SHARDS=${NUM_SHARDS},GROUNDING_OUTPUT=${output}" \
-    nextgqa_pipeline/insufficient/ground_windows.sbatch)
+    jobs/build/nextgqa/ground_windows.sbatch)
   job_ids+=("${job_id}")
   echo "submitted grounder ${tag}: ${job_id} -> ${output%.jsonl}.*.jsonl"
 done
@@ -51,7 +51,7 @@ if [[ -n "${CLASSIFIER_MODEL_PATH:-}" ]]; then
     --dependency="afterok:${dependency}" \
     --array="0-$((NUM_SHARDS - 1))%${NUM_SHARDS}" \
     --export="ALL,NUM_SHARDS=${NUM_SHARDS},GROUNDINGS=${GROUNDING_PREFIX}_*.jsonl,CLASSIFICATION_OUTPUT=${CLASSIFICATION_OUTPUT},MIN_GROUNDER_SUPPORT=${MIN_GROUNDER_SUPPORT},EXPECTED_GROUNDERS=${EXPECTED_GROUNDERS}" \
-    nextgqa_pipeline/insufficient/classify_groundings.sbatch)
+    jobs/build/nextgqa/classify_groundings.sbatch)
   echo "submitted ensemble judge: ${judge_job} (after ${dependency})"
 else
   echo "CLASSIFIER_MODEL_PATH is unset; grounding jobs were submitted without the judge."

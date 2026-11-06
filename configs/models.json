@@ -1,0 +1,26 @@
+{
+  "qwen25": {
+    "kind": "qwen25",
+    "path": "models/Qwen2.5-VL-32B-Instruct",
+    "served_name": "qwen2.5-vl-32b",
+    "resource": "gpu2"
+  },
+  "qwen3": {
+    "kind": "qwen3",
+    "path": "models/Qwen3-VL",
+    "served_name": "qwen3-vl",
+    "resource": "gpu2"
+  },
+  "llava": {
+    "kind": "llava",
+    "path": "models/LLaVA-OneVision-Qwen2-7B-OV",
+    "served_name": "llava-onevision-qwen2-7b-ov",
+    "resource": "gpu1"
+  },
+  "internvl": {
+    "kind": "internvl",
+    "path": "models/InternVL3_5-8B",
+    "served_name": "internvl3.5-8b",
+    "resource": "gpu1"
+  }
+}

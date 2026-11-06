@@ -121,7 +121,7 @@ python nextgqa_pipeline/insufficient/smoke_test_logprobs.py \
 Run a 20-item measurement pilot:
 
 ```bash
-NUM_SHARDS=1 LIMIT=20 sbatch nextgqa_pipeline/insufficient/measure.sbatch
+NUM_SHARDS=1 LIMIT=20 sbatch jobs/build/nextgqa/measure.sbatch
 ```
 
 Inspect the JSONL before calibration.  In particular compare single/multi-
@@ -135,13 +135,13 @@ does not lose recall.
 Stage 1 -- measurements:
 
 ```bash
-NUM_SHARDS=8 sbatch --array=0-7%8 nextgqa_pipeline/insufficient/measure.sbatch
+NUM_SHARDS=8 sbatch --array=0-7%8 jobs/build/nextgqa/measure.sbatch
 ```
 
 Stage 2 -- calibration, only after every measurement shard finishes:
 
 ```bash
-sbatch nextgqa_pipeline/insufficient/calibrate.sbatch
+sbatch jobs/build/nextgqa/calibrate.sbatch
 ```
 
 Read `thresholds.json` before finalization.  A scale with fewer than 20 contained-
@@ -151,7 +151,7 @@ and is not used for discovery.
 Stage 3 -- residual verification and final videos:
 
 ```bash
-NUM_SHARDS=8 sbatch --array=0-7%8 nextgqa_pipeline/insufficient/finalize.sbatch
+NUM_SHARDS=8 sbatch --array=0-7%8 jobs/build/nextgqa/finalize.sbatch
 ```
 
 Final videos:
@@ -175,7 +175,7 @@ gold controls.  It must be included in sensitivity analysis and may be changed
 before calibration, for example:
 
 ```bash
-RESIDUAL_THRESHOLD=0.05 sbatch nextgqa_pipeline/insufficient/calibrate.sbatch
+RESIDUAL_THRESHOLD=0.05 sbatch jobs/build/nextgqa/calibrate.sbatch
 ```
 
 ## Resume behavior
@@ -260,7 +260,7 @@ but not sufficient for production leak confirmation):
 
 ```bash
 NUM_SHARDS=1 LIMIT=20 MAX_WINDOWS_PER_ITEM=3 \
-  sbatch nextgqa_pipeline/insufficient/ground_windows.sbatch
+  sbatch jobs/build/nextgqa/ground_windows.sbatch
 ```
 
 Run sharded grounding.  The sbatch default keeps five windows per item; set
@@ -269,7 +269,7 @@ candidate window:
 
 ```bash
 NUM_SHARDS=8 MAX_WINDOWS_PER_ITEM=5 \
-  sbatch --array=0-7 nextgqa_pipeline/insufficient/ground_windows.sbatch
+  sbatch --array=0-7 jobs/build/nextgqa/ground_windows.sbatch
 ```
 
 Run the independent text judge.  `CLASSIFIER_MODEL_PATH` is intentionally
@@ -278,7 +278,7 @@ required so that the evaluator model is selected explicitly:
 ```bash
 CLASSIFIER_MODEL_PATH=/absolute/path/to/text-model \
 NUM_SHARDS=8 \
-  sbatch --array=0-7 nextgqa_pipeline/insufficient/classify_groundings.sbatch
+  sbatch --array=0-7 jobs/build/nextgqa/classify_groundings.sbatch
 ```
 
 For the production 3--4-grounder workflow, provide semicolon-separated model
@@ -462,7 +462,7 @@ produced all 5,397 expected videos with no missing outputs:
 ```bash
 NUM_SHARDS=16 JOBS=4 THREADS=4 \
   sbatch --array=0-15%8 \
-  nextgqa_pipeline/insufficient/build_no_leak_freeze.sbatch
+  jobs/build/nextgqa/build_no_leak_freeze.sbatch
 ```
 
 ```text
@@ -475,7 +475,7 @@ source_datasets/next_gqa/freeze_videos_no_evidence_leak/
 Run after freeze construction:
 
 ```bash
-sbatch nextgqa_pipeline/insufficient/eval_qwen3_no_leak.sbatch
+sbatch jobs/build/nextgqa/eval_qwen3_no_leak.sbatch
 ```
 
 The completed run covered 5,397/5,397 unique QA items with no missing videos or

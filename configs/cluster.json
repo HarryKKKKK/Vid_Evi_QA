@@ -1,0 +1,22 @@
+{
+  "root": "/aifs4su/hansirui_2nd/harry/Vid_Evi_QA",
+  "python_env": "/aifs4su/hansirui_2nd/harry/envs_qwen3vl",
+  "profiles": {
+    "gpu2": {
+      "partition": "llm",
+      "qos": "llm",
+      "gres": "gpu:2",
+      "cpus-per-task": "16",
+      "mem": "128G",
+      "time": "4-00:00:00"
+    },
+    "gpu1": {
+      "partition": "llm",
+      "qos": "llm",
+      "gres": "gpu:1",
+      "cpus-per-task": "16",
+      "mem": "96G",
+      "time": "4-00:00:00"
+    }
+  }
+}

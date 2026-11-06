@@ -41,7 +41,7 @@ GROUND_JOB=$(
   GROUNDING_SERVED_NAME=qwen3-vl-grounder \
   sbatch --parsable \
     --array="${ARRAY_SPEC}" \
-    nextgqa_pipeline/insufficient/ground_windows.sbatch
+    jobs/build/nextgqa/ground_windows.sbatch
 )
 
 CLASSIFIER_JOB=$(
@@ -52,7 +52,7 @@ CLASSIFIER_JOB=$(
   sbatch --parsable \
     --dependency="afterok:${GROUND_JOB}" \
     --array="${ARRAY_SPEC}" \
-    nextgqa_pipeline/insufficient/classify_groundings.sbatch
+    jobs/build/nextgqa/classify_groundings.sbatch
 )
 
 cat <<EOF

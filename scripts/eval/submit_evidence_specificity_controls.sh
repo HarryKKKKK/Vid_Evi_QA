@@ -11,10 +11,10 @@ mkdir -p logs
 
 selective_job=$(${SBATCH} --parsable --array=0-14%3 \
   --export=ALL,PROTOCOL=selective,RUN_TAG="${RUN_TAG}" \
-  scripts/eval/evidence_specificity_controls.sbatch)
+  jobs/experiments/evidence_specificity_controls.sbatch)
 forced_job=$(${SBATCH} --parsable --array=0-14%3 \
   --export=ALL,PROTOCOL=forced,RUN_TAG="${RUN_TAG}" \
-  scripts/eval/evidence_specificity_controls.sbatch)
+  jobs/experiments/evidence_specificity_controls.sbatch)
 
 printf 'SELECTIVE_JOB=%s\nFORCED_JOB=%s\n' "${selective_job}" "${forced_job}"
 ${SQUEUE} -j "${selective_job},${forced_job}" -o '%.18i %.28j %.2t %.10M %.24R'

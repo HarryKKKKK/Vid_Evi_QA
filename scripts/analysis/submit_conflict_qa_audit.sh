@@ -11,12 +11,12 @@ mkdir -p "${OUTPUT}" logs/conflict_qa_audit
 
 AUDIT_JOB=$(sbatch --parsable \
     --export="ALL,CONFLICT_AUDIT_OUTPUT=${OUTPUT},CONFLICT_AUDIT_PER_TYPE=${PER_TYPE},CONFLICT_AUDIT_MAX_NEW_TOKENS=${MAX_NEW_TOKENS}" \
-    scripts/analysis/run_conflict_qa_audit.sbatch)
+    jobs/analysis/run_conflict_qa_audit.sbatch)
 AUDIT_ID=${AUDIT_JOB%%;*}
 MERGE_JOB=$(sbatch --parsable \
     --dependency="afterok:${AUDIT_ID}" \
     --export="ALL,CONFLICT_AUDIT_OUTPUT=${OUTPUT}" \
-    scripts/analysis/summarize_conflict_qa_audit.sbatch)
+    jobs/analysis/summarize_conflict_qa_audit.sbatch)
 
 echo "AUDIT_JOB=${AUDIT_JOB}"
 echo "MERGE_JOB=${MERGE_JOB}"

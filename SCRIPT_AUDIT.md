@@ -1,5 +1,7 @@
 # Script cleanup audit — 2026-11-06
 
+This is the first-pass historical audit. The later job cleanup consolidates the runner families below; see [job cleanup](docs/JOB_LAYOUT.md) and job_migration.json for current replacements.
+
 ## Scope and evidence
 Conservative first-pass cleanup only. No directory restructuring, evaluator/prompt/metric changes, model runs, or job submissions.
 The live server lost only the ten files below; data, weights, results, frozen experiment releases, and remaining code were not modified.

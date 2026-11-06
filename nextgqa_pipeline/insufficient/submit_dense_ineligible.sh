@@ -29,13 +29,13 @@ GROUND_JOB=$(
   NUM_SHARDS="${NUM_SHARDS}" FPS="${FPS}" CORE_SECONDS="${CORE_SECONDS}" \
   CONTEXT_PADDING="${CONTEXT_PADDING}" GROUNDING_MODEL_PATH="${QWEN3_MODEL_PATH}" \
   sbatch --parsable --array="${ARRAY_SPEC}" \
-    nextgqa_pipeline/insufficient/dense_ground_ineligible.sbatch
+    jobs/build/nextgqa/dense_ground_ineligible.sbatch
 )
 
 CLASSIFIER_JOB=$(
   NUM_SHARDS="${NUM_SHARDS}" CLASSIFIER_MODEL_PATH="${QWEN3_MODEL_PATH}" \
   sbatch --parsable --dependency="afterok:${GROUND_JOB}" --array="${ARRAY_SPEC}" \
-    nextgqa_pipeline/insufficient/classify_dense_ineligible.sbatch
+    jobs/build/nextgqa/classify_dense_ineligible.sbatch
 )
 
 cat <<EOF

@@ -25,3 +25,6 @@ See SCRIPT_AUDIT.md in the cleanup revision for deletion evidence and consolidat
 The 2026-11-06 refactor places 57 data modules under pipelines/ and 22 evaluation modules under src/vid_evi_qa/.
 Legacy Python commands remain compatible; data and historical frozen releases remain in their original locations.
 See [data pipelines](pipelines/README.md), [evaluation implementation](src/vid_evi_qa/README.md), and [migration details and known test limitations](docs/SCRIPT_LAYOUT.md).
+
+## Running and Slurm jobs
+Use `python jobs/submit.py list` for the job catalog. Model/experiment presets live under configs/; specialized jobs are grouped under jobs/. Default execution previews the command; --submit explicitly calls Slurm. See [job layout and migration](docs/JOB_LAYOUT.md).

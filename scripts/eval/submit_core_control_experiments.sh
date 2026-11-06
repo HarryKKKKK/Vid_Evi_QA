@@ -8,11 +8,11 @@ export SLURM_CONF=${SLURM_CONF:-/cm/shared/apps/slurm/var/etc/slurm/slurm.conf}
 cd "${ROOT}"
 
 resolution_job=$(${SBATCH} --parsable --array=0-2%1 \
-  scripts/eval/qwen25_resolution_prompt_ablation.sbatch)
+  jobs/experiments/qwen25_resolution_prompt_ablation.sbatch)
 blind_job=$(${SBATCH} --parsable --array=0-3%1 \
-  scripts/eval/matched_blind_multimodel.sbatch)
+  jobs/experiments/matched_blind_multimodel.sbatch)
 operator_job=$(${SBATCH} --parsable --dependency="afterok:${blind_job}" --array=0-2%1 \
-  scripts/eval/operator_placebo_multimodel.sbatch)
+  jobs/experiments/operator_placebo_multimodel.sbatch)
 
 echo "RESOLUTION_JOB=${resolution_job}"
 echo "BLIND_JOB=${blind_job}"
